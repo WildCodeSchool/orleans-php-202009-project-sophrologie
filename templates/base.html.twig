@@ -3,7 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <link rel="icon" type="image/png" href="{{ asset('build/images/favicon.png') }}" />
-    <title>{% block title %}Welcome!{% endblock %}</title>
+    <link rel="stylesheet" href="/build/app.css">
+    <script src="/build/app.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Arizonia&family=PT+Serif&family=Playfair+Display:ital@0;1&display=swap');
+    </style>
+    <title>{% block title %}INSPIRE & EXPIRE{% endblock %}</title>
     {% block stylesheets %}
         {{ encore_entry_link_tags('app') }}
     {% endblock %}
