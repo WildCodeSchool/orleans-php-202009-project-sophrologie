@@ -1,14 +1,18 @@
 @import 'variables.scss';
-@import "~bootstrap/scss/bootstrap";
+@import '~bootstrap/scss/bootstrap';
 
 p {
     font-family: $text-font;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     font-family: $title-font;
 }
 
-h4, h5, h6 {
+h4,
+h5,
+h6 {
     font-family: $sub-title-font;
 }
