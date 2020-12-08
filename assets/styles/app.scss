@@ -12,3 +12,10 @@ h1, h2, h3 {
 h4, h5, h6 {
     font-family: $sub-title-font;
 }
+
+.sophro-picture {
+    width: 250px;
+    height: 220px;
+    border-radius: 50%;
+    box-shadow: 5px 5px 2px 1px rgba(0, 0, 0, .5);
+}
