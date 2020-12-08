@@ -18,14 +18,18 @@
 
     <section class="container">
         <div class="row">
+
             {% for event in events %}
                 <div class="col-sm-12 col-md-6 col-lg-4">
                     <div class="card margin">
-                        <img class="card-img-top" src="{{event.url }}" alt="{{ event.title }}">
+                        <img class="card-img-top" src="{{ event.url }}" alt="{{ event.title }}">
                         <div class="card-body">
                             <h5 class="card-title text-center"> {{ event.title }} </h5>
                             <p class="card-text"></p>
-                            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse{{ event.id }}" aria-expanded="false" aria-controls="collapse{{ event.id }}">En savoir plus</button>
+                            <button class="btn btn-primary" type="button" data-toggle="collapse"
+                                    data-target="#collapse{{ event.id }}" aria-expanded="false"
+                                    aria-controls="collapse{{ event.id }}">En savoir plus
+                            </button>
                             <div class="collapse" id="collapse{{ event.id }}"><p>{{ event.description }}</p></div>
                         </div>
                     </div>
