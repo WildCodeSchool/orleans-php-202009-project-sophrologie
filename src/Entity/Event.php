@@ -32,6 +32,16 @@ class Event
      */
     private ?string $url;
 
+    /**
+     * @ORM\Column(type="date", nullable=true)
+     */
+    private ?\DateTimeInterface $date;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private ?string $eventlink;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -69,6 +79,30 @@ class Event
     public function setUrl(?string $url): self
     {
         $this->url = $url;
+
+        return $this;
+    }
+
+    public function getDate(): ?\DateTimeInterface
+    {
+        return $this->date;
+    }
+
+    public function setDate(?\DateTimeInterface $date): self
+    {
+        $this->date = $date;
+
+        return $this;
+    }
+
+    public function getEventlink(): ?string
+    {
+        return $this->eventlink;
+    }
+
+    public function setEventlink(?string $eventlink): self
+    {
+        $this->eventlink = $eventlink;
 
         return $this;
     }
