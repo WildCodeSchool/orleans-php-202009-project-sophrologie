@@ -1,20 +1,22 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ parent() }} | Sophrologie{% endblock %}
+{% block title %}{{ parent() }}{% endblock %}
 
 {% block body %}
-    <h1>Projet 3 - Sophrologie | Entreprise INSPIRE et EXPIR</h1>
+    <h1>INSPIRE & EXPIRE</h1>
 
 
     <section class="section2 jumbotron container bg-white py-5 px-0 d-lg-flex text-lg-left">
         <div class="d-flex align-items-center justify-content-center">
-            <img class="sophro-picture mr-lg-5 mb-sm-5" src="{{ asset('build/images/pp-cliente.png') }}" alt="picture of the sophrologist">
+            <img class="sophro-picture mr-lg-5 mb-sm-5"
+                 src="{{ asset('build/images/profil.png') }}"
+                 alt="Photo de profil de la sophrologue">
         </div>
         <div class="ml-5">
             <h2 class="display-4 mb-4">Charlotte Ricordeau</h2>
             <h3 class="mb-4">Sophrologue - Diététicienne - Nutritionniste</h3>
             <p class="mb-4">(Texte à remplir)</p>
-            <a class="btn btn-primary" href="#" role="button">En découvrir plus sur moi</a>
+            <a class="btn btn-primary text-info border-primary " href="#" role="button">En découvrir plus sur moi</a>
         </div>
     </section>
 {% endblock %}
