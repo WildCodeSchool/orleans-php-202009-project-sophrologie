@@ -1,8 +1,21 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout.html.twig' %}
 
 {% block title %}{{ parent() }} | Sophrologie{% endblock %}
 
+{% block stylesheets %}
+    {{ encore_entry_link_tags('home') }}
+{% endblock %}
+
 {% block body %}
-    <h1>Projet 3 - Sophrologie | Entreprise INSPIRE et EXPIRE</h1>
-    <a href="#" class="btn btn-primary">zoefjpoesdceqs</a>
+    <section class="section1">
+        <div class="title text-light w-100 text-center">
+            <h1 class="display-4">INSPIRE & EXPIRE</h1>
+        </div>
+        <div class="intro-btn w-100 text-center">
+            <a href="#" class="btn-lg btn-primary text-info">Prendre RDV</a>
+        </div>
+        <img src="{{ asset('build/images/waterfalls.png') }}"
+             alt="women sitting on a banch in front of waterfalls"
+             class="intro-img">
+    </section>
 {% endblock %}
