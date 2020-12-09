@@ -25,5 +25,6 @@
     },
     "dependencies": {
         "sass-loader": "^9.0.1"
+        "jquery": "^3.5.1"
     }
 }
