@@ -1,0 +1,21 @@
+@import 'app.scss';
+
+.navAdmin {
+  box-shadow:0 2px 8px 1px;
+}
+
+a.navbar-brand {
+  font-family: $logo-font;
+  font-size: $font-size-titlte;
+}
+
+
+.nav-page li {
+  font-family: $title-font;
+  font-size: $font-size-p;
+
+}
+
+.nav-page li:hover {
+  opacity: 0.3;
+}
