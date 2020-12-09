@@ -17,3 +17,32 @@ h5,
 h6 {
     font-family: $sub-title-font;
 }
+
+
+.banner {
+    display: flex;
+    justify-content: flex-end;
+    background-size: cover;
+    height: 300px;
+}
+.sheettop{
+    padding-top: $spacing*10;
+}
+
+.card-img-top {
+    display: flex;
+    align-items: center;
+    margin-bottom : 40PX;
+    opacity: 85%;
+}
+
+.layout{
+    display:inline-block;
+}
+
+
+.margin
+{
+    margin-bottom : 80PX;
+
+}

@@ -8,7 +8,7 @@
 
 
     <div class="card bg-white text-white">
-        <img class="img banner" src="{{ asset('build/images/lake.jpg') }}" alt="bannière">
+        <img class="img banner" src="{{ asset('build/images/snow.jpg') }}" alt="bannière">
         <div class="card-img-overlay">
             <h1 class="card-title text-center">ACTUALITES</h1>
             <h3 class="card-text text-center">Votre Sophrologue à votre rencontre</h3>
@@ -16,7 +16,7 @@
     </div>
 
 
-    <section class="container">
+    <section class="container sheettop">
         <div class="row">
 
             {% for event in events %}
@@ -25,11 +25,9 @@
                         <img class="card-img-top" src="{{ event.url }}" alt="{{ event.title }}">
                         <div class="card-body">
                             <h5 class="card-title text-center"> {{ event.title }} </h5>
-                            <p class="card-text"></p>
-                            <button class="btn btn-primary" type="button" data-toggle="collapse"
-                                    data-target="#collapse{{ event.id }}" aria-expanded="false"
-                                    aria-controls="collapse{{ event.id }}">En savoir plus
-                            </button>
+                            <p class="card-text">{{ event.description }}</p>
+
+                            <a href="" class="btn btn-info center-block"> lien détaillé</a>
                             <div class="collapse" id="collapse{{ event.id }}"><p>{{ event.description }}</p></div>
                         </div>
                     </div>
