@@ -1,19 +1,19 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ parent() }} | Sophrologie{% endblock %}
+{% block title %}{{ parent() }}{% endblock %}
 
 {% block body %}
-    <h1>Projet 3 - Sophrologie | Entreprise INSPIRE et EXPIR</h1>
+    <h1>INSPIRE & EXPIRE</h1>
 
     <section class="section3 jumbotron jumbotron-fluid">
         <div class="container">
             <div class="d-flex">
-                <img src="https://img.icons8.com/officel/80/000000/reflector-bulb.png" class="ampoule mb-4 mr-4"/>
-                <h2 class="display-4 mb-4">Qu'est ce que la sophrologie ?</h2>
+                <img src="{{ asset('build/images/lightbulb.png') }}"/>
+                <h2 class="display-4">Qu'est ce que la sophrologie ?</h2>
             </div>
 
             <p>(Texte à remplir)</p>
-            <a href="#" class="btn btn-primary">En savoir plus</a>
+            <a href="#" class="btn btn-primary text-info">En savoir plus</a>
         </div>
     </section>
 {% endblock %}

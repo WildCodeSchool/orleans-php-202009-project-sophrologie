@@ -1,20 +1,8 @@
 $primary: #9FC5E9;
 $secondary: #A2C3C8;
-$tertiary: #FFE59A;
+$warning: #FFE59A;
 $quartenary: #f9ca9c;
-
-
-$primary-light: lighten($primary, 25%);
-$primary-dark: darken($primary, 25%);
-
-$secondary-light: lighten($secondary, 25%);
-$secondary-dark: darken($secondary, 25%);
-
-$tertiary-light: lighten($tertiary, 25%);
-$tertiary-dark: darken($tertiary, 25%);
-
-$quartenary-light: lighten($quartenary, 25%);
-$quartenary-dark: darken($quartenary, 25%);
+$info: darken($primary, 50%);
 
 $light:#fff6db;
 $dark:#000000;
