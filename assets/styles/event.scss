@@ -27,7 +27,7 @@ h6 {
 }
 
 .sheettop{
-    padding-top: $spacing*10;
+    padding-top: $spacing-section;
 }
 
 .card-img-top {
@@ -44,6 +44,6 @@ h6 {
 
 .margin
 {
-    margin-bottom : 80PX;
+    margin-bottom : $spacing-section;
 
 }

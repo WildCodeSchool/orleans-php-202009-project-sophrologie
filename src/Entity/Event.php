@@ -42,6 +42,17 @@ class Event
      */
     private ?string $eventlink;
 
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private ?string $article;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private string $category;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -103,6 +114,31 @@ class Event
     public function setEventlink(?string $eventlink): self
     {
         $this->eventlink = $eventlink;
+
+        return $this;
+    }
+
+
+    public function getArticle(): ?string
+    {
+        return $this->article;
+    }
+
+    public function setArticle(?string $article): self
+    {
+        $this->article = $article;
+
+        return $this;
+    }
+
+    public function getCategory(): ?string
+    {
+        return $this->category;
+    }
+
+    public function setCategory(string $category): self
+    {
+        $this->category = $category;
 
         return $this;
     }

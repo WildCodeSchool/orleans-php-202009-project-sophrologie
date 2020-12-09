@@ -18,6 +18,7 @@ class EventFixtures extends Fixture
          Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum 
          ultrices diam. Maecenas ligula massa, varius a, semper congue, ');
             $event1->setEventlink('https://www.salon-terre-naturelle-orleans.fr/');
+            $event1->setCategory('EVENEMENT');
             $manager->persist($event1);
         }
 
