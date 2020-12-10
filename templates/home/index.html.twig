@@ -1,21 +1,25 @@
 {% extends 'layout.html.twig' %}
 
-{% block title %}{{ parent() }} | Sophrologie{% endblock %}
+{% block title %}{{ parent() }}{% endblock %}
 
 {% block stylesheets %}
     {{ encore_entry_link_tags('home') }}
 {% endblock %}
 
 {% block body %}
-    <section class="section1">
-        <div class="title text-light w-100 text-center">
-            <h1 class="display-4">INSPIRE & EXPIRE</h1>
+    <h1>INSPIRE & EXPIRE</h1>
+
+    <section class="section2 jumbotron container bg-white py-5 px-0 d-lg-flex text-lg-left">
+        <div class="d-flex align-items-center justify-content-center">
+            <img class="sophro-picture mr-lg-5 mb-sm-5"
+                 src="{{ asset('build/images/profil.png') }}"
+                 alt="Photo de profil de la sophrologue">
         </div>
-        <div class="intro-btn w-100 text-center">
-            <a href="#" class="btn-lg btn-primary text-info">Prendre RDV</a>
+        <div class="ml-5">
+            <h2 class="display-4 mb-4">Charlotte Ricordeau</h2>
+            <h3 class="mb-4">Sophrologue - Diététicienne - Nutritionniste</h3>
+            <p class="mb-4">(Texte à remplir)</p>
+            <a class="btn btn-primary text-info border-primary " href="#" role="button">En découvrir plus sur moi</a>
         </div>
-        <img src="{{ asset('build/images/waterfalls.png') }}"
-             alt="women sitting on a banch in front of waterfalls"
-             class="intro-img">
     </section>
 {% endblock %}
