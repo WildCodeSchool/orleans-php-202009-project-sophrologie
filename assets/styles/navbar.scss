@@ -1,10 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Arizonia&family=PT+Serif&family=Playfair+Display:ital@0;1&display=swap');
 @import 'variables.scss';
-@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap/scss/bootstrap";
 
-p,
-a {
+p {
     font-family: $text-font;
+}
+
+h1,
+h2,
+h3 {
 }
 
 h1,
@@ -19,9 +23,9 @@ h6 {
     font-family: $sub-title-font;
 }
 
-.sophro-picture {
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    box-shadow: 5px 5px 2px 1px rgba(0, 0, 0, .5);
+.nav-link {
+    font-family: $title-font;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
+
