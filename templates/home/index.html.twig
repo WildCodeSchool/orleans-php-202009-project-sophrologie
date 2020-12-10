@@ -1,8 +1,46 @@
 {% extends 'layout.html.twig' %}
 
-{% block title %}{{ parent() }} | Sophrologie{% endblock %}
+{% block title %}{{ parent() }}{% endblock %}
+
+{% block stylesheets %}
+    {{ encore_entry_link_tags('home') }}
+{% endblock %}
 
 {% block body %}
-    <h1>Projet 3 - Sophrologie | Entreprise INSPIRE et EXPIRE</h1>
-    <a href="#" class="btn btn-primary">zoefjpoesdceqs</a>
+    <section class="section1">
+        <div class="title text-light w-100 text-center">
+            <h1 class="display-4">INSPIRE & EXPIRE</h1>
+        </div>
+        <div class="intro-btn w-100 text-center">
+            <a href="#" class="btn-lg btn-primary text-info">Prendre RDV</a>
+        </div>
+        <img src="{{ asset('build/images/waterfalls.png') }}"
+             alt="women sitting on a banch in front of waterfalls"
+             class="intro-img">
+    </section>
+
+    <section class="section2 jumbotron container bg-white py-5 px-0 d-lg-flex text-lg-left">
+        <div class="d-flex align-items-center justify-content-center">
+            <img class="sophro-picture mr-lg-5 mb-sm-5" src="{{ asset('build/images/profil.png') }}" alt="picture of the sophrologist">
+        </div>
+        <div class="ml-5">
+            <h2 class="display-4 mb-4">Charlotte Ricordeau</h2>
+            <h3 class="mb-4">Sophrologue - Diététicienne - Nutritionniste</h3>
+            <p class="mb-4">(Texte à remplir)</p>
+            <a class="btn btn-primary" href="#" role="button">En découvrir plus sur moi</a>
+        </div>
+    </section>
+
+
+    <section class="section3 jumbotron jumbotron-fluid">
+        <div class="container">
+            <div class="d-flex">
+                <img src="{{ asset('build/images/lightbulb.png') }}"/>
+                <h2 class="display-4">Qu'est ce que la sophrologie ?</h2>
+            </div>
+
+            <p>(Texte à remplir)</p>
+            <a href="#" class="btn btn-primary text-info">En savoir plus</a>
+        </div>
+    </section>
 {% endblock %}

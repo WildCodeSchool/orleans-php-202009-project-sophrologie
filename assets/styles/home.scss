@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Arizonia&family=PT+Serif&family=Playfair+Display:ital@0;1&display=swap');
+@import 'variables.scss';
+@import '~bootstrap/scss/bootstrap';
+
+p {
+    font-family: $text-font;
+}
+
+h1,
+h2,
+h3 {
+    font-family: $title-font;
+}
+
+h4,
+h5,
+h6 {
+    font-family: $sub-title-font;
+}
+
+.intro-img {
+    width: 100%;
+    height: 80%;
+}
+
+.section1 {
+    position: relative;
+}
+
+.title {
+    position: absolute;
+    top: 100px;
+}
+
+.intro-btn {
+    position: absolute;
+    bottom: 20px;
+}
+
+.sophro-picture {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    box-shadow: 5px 5px 2px 1px rgba(0, 0, 0, .5);
+}
