@@ -36,6 +36,8 @@ Encore
      */
     .addEntry('app', './assets/js/app.js')
     .addEntry('event', './assets/styles/event.scss')
+    .addEntry('navbarAdmin', './assets/js/navbarAdmin.js')
+    .addEntry('contact', './assets/styles/contact.scss')
     .addEntry('home', './assets/styles/home.scss')
     .addEntry('navbar', './assets/styles/navbar.scss')
 
