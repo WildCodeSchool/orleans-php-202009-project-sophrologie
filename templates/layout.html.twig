@@ -2,4 +2,10 @@
 
 {% block title %}Welcome to {{ parent() }}{% endblock %}
 
-{% block body %}{% endblock %}
+
+{% block body %}
+
+    {% block footer %}
+        {% include 'includes/_footer.html.twig' %}
+    {% endblock %}
+{% endblock %}
