@@ -7,10 +7,18 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+/**
+ * @Route("/event", name="event_")
+ */
+
 class EventController extends AbstractController
 {
+
     /**
-     * @Route("/event", name="event")
+     * Show all rows from Event’s entity
+     *
+     * @Route("/", name="index")
+     * @return Response A response instance
      */
     public function index(EventRepository $eventRepository): Response
     {
