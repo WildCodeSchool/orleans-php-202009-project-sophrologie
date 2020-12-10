@@ -6,7 +6,7 @@
     <link rel="icon" type="image/png" href="{{ asset('build/images/favicon.png') }}" />
     <title>{% block title %}INSPIRE & EXPIRE{% endblock %}</title>
     {% block stylesheets %}
-        {{ encore_entry_link_tags('footer') }}
+        {{ encore_entry_link_tags('app') }}
     {% endblock %}
 </head>
 <body>
@@ -18,7 +18,7 @@
 
 
 {% block footer %}
-    {{ encore_entry_script_tags('app') }}
+    {{ encore_entry_script_tags('footer') }}
 {% endblock %}
 {% block javascripts %}
 {% endblock %}
