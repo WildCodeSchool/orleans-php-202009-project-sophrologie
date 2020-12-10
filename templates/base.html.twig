@@ -6,21 +6,20 @@
     <link rel="icon" type="image/png" href="{{ asset('build/images/favicon.png') }}" />
     <title>{% block title %}INSPIRE & EXPIRE{% endblock %}</title>
     {% block stylesheets %}
-        {{ encore_entry_link_tags('footer') }}
+        {{ encore_entry_link_tags('app') }}
     {% endblock %}
 </head>
 <body>
 {% block navbar %}
-    {% include 'includes/_navbar.html.twig' %}
 {% endblock %}
 {% block body %}
 {% endblock %}
 
 
 {% block footer %}
-    {{ encore_entry_script_tags('app') }}
 {% endblock %}
 {% block javascripts %}
+    {{ encore_entry_script_tags('app') }}
 {% endblock %}
 </body>
 </html>
