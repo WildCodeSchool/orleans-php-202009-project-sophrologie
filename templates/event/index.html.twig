@@ -1,0 +1,42 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Actualités | {{ parent() }}{% endblock %}
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('event') }}
+    {% endblock %}
+{% block body %}
+
+
+    <div class="card bg-white text-white">
+        <img class="img banner" src="{{ asset('build/images/snow.jpg') }}" alt="bannière">
+        <div class="card-img-overlay">
+            <h1 class="card-title text-center">ACTUALITES</h1>
+            <h3 class="card-text text-center">Votre Sophrologue à votre rencontre</h3>
+        </div>
+    </div>
+
+
+    <section class="container sheettop">
+        <div class="row">
+
+            {% for event in events %}
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <div class="card margin">
+                        <div class="card-header">{{ event.category }}</div>
+                        <img class="card-img-top" src="{{ event.url }}" alt="{{ event.title }}">
+                        <div class="card-body">
+
+                            <h5 class="card-title text-center"> {{ event.title }} </h5>
+                            <p class="card-text">{{ event.description }}</p>
+
+
+                        </div>
+                    </div>
+                </div>
+            {% else %}
+                "Il n'y a actuellement aucun évènement de programmé, merci de venir consulter cette section ultérieurement"
+            {% endfor %}
+        </div>
+    </section>
+
+{% endblock %}
