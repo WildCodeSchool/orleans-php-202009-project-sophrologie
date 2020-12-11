@@ -5,6 +5,7 @@ namespace App\DataFixtures;
 use App\Entity\Event;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
+use DateTime;
 
 class EventFixtures extends Fixture
 {
@@ -19,6 +20,7 @@ class EventFixtures extends Fixture
          ultrices diam. Maecenas ligula massa, varius a, semper congue, ');
             $event1->setEventlink('https://www.salon-terre-naturelle-orleans.fr/');
             $event1->setCategory('EVENEMENT');
+            $event1->setDate(new DateTime());
             $manager->persist($event1);
         }
 
