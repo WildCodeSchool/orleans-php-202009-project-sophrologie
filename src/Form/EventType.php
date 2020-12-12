@@ -67,7 +67,7 @@ class EventType extends AbstractType
             ->add('video', UrlType::class, [
                 'label' => 'lien vers une vidéo youtube de relaxation',
                 'attr' => [
-                    'placeholder' => 'https//lien-vers-le-site-de-la-manifestation.com',
+                    'placeholder' => 'https//lien-vers-la-video.com',
                 ],
             ]);
     }

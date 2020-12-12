@@ -1,17 +1,25 @@
-{% extends 'base.html.twig' %}
+{% extends 'layoutAdmin.html.twig' %}
 {% form_theme form 'bootstrap_4_layout.html.twig' %}
 {% block title %}{{parent()}}| Ajout d'actualités {% endblock %}
-
+    {% block stylesheets %}
+      {{ encore_entry_link_tags('newEvent') }}
+    {% endblock %}
 {% block body %}
-  <main class="container">
-    <h1> Ajout d'actualités</h1>
 
+    <section class="sheettop">
+  <main class="container ">
+      <div class="row">
+          <div class="col-md-8 offset-md-2">
+              <h1 class="title">Ajouter une actualité</h1>
+          </div>
+      </div>
     {{ form_start(form) }}
     {{ form_widget(form) }}
     <button class="btn btn-primary">Enregister</button>
     {{ form_end(form) }}
-    <a class="btn btn-outline-primary mt-5" href="">Back</a>
+    <a class="btn btn-outline-primary mt-5" href="">Retour</a>
   </main>
+    </section>
 {% endblock %}
 
 
