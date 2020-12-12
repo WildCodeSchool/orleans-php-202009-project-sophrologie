@@ -43,3 +43,37 @@ h6 {
     border-radius: 50%;
     box-shadow: 5px 5px 2px 1px rgba(0, 0, 0, .5);
 }
+
+
+.card-text {
+    opacity:0;
+    transition: opacity 1s;
+}
+
+.card-img-overlay:hover {
+    .card-text {
+        opacity:1;
+    }
+}
+
+.speciality {
+    img {
+        filter: brightness(100%);
+        -webkit-filter: brightness(100%);
+        -moz-filter: brightness(100%);
+        -o-filter: brightness(100%);
+        transition: filter 1s;
+    }
+}
+
+.speciality:hover {
+    img {
+        filter: brightness(75%);
+        -webkit-filter: brightness(75%);
+        -moz-filter: brightness(75%);
+        -o-filter: brightness(75%);
+    }
+    h5 {
+        display: none;
+    }
+}
