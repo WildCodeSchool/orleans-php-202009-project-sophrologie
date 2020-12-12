@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+{% block title %}{{parent()}}| Ajout d'actualités {% endblock %}
+
+{% block body %}
+  <main class="container">
+    <h1> Ajout d'actualités</h1>
+
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    <button class="btn btn-primary">Enregister</button>
+    {{ form_end(form) }}
+    <a class="btn btn-outline-primary mt-5" href="">Back</a>
+  </main>
+{% endblock %}
+
+
+
