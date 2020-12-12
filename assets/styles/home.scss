@@ -20,8 +20,8 @@ h6 {
 }
 
 .intro-img {
-    width: 100%;
     height: 80%;
+    width: 100%;
 }
 
 .section1 {
@@ -33,35 +33,32 @@ h6 {
 }
 
 .intro-btn {
-    position: absolute;
     bottom: 10px;
+    position: absolute;
 }
 
 .sophro-picture {
-    width: 250px;
-    height: 250px;
     border-radius: 50%;
     box-shadow: 5px 5px 2px 1px rgba(0, 0, 0, .5);
+    height: 250px;
+    width: 250px;
 }
 
 
 .card-text {
-    opacity:0;
+    opacity: 0;
     transition: opacity 1s;
 }
 
 .card-img-overlay:hover {
     .card-text {
-        opacity:1;
+        opacity: 1;
     }
 }
 
 .speciality {
     img {
         filter: brightness(100%);
-        -webkit-filter: brightness(100%);
-        -moz-filter: brightness(100%);
-        -o-filter: brightness(100%);
         transition: filter 1s;
     }
 }
@@ -69,9 +66,6 @@ h6 {
 .speciality:hover {
     img {
         filter: brightness(75%);
-        -webkit-filter: brightness(75%);
-        -moz-filter: brightness(75%);
-        -o-filter: brightness(75%);
     }
     h5 {
         display: none;
