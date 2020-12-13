@@ -69,4 +69,15 @@ class AdminEventController extends AbstractController
             'event' => $event,
         ]);
     }
+
+    /**
+     * @Route("/delete/{id}", name="delete", methods={"POST"})
+     */
+    public function delete(Event $event, EntityManagerInterface $entityManager): Response
+    {
+        $entityManager->remove($event);
+        $entityManager->flush();
+
+        return $this->redirectToRoute('admin_event_index');
+    }
 }
