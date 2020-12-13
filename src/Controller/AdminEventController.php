@@ -71,12 +71,18 @@ class AdminEventController extends AbstractController
     }
 
     /**
-     * @Route("/delete/{id}", name="delete", methods={"POST"})
+     * @Route("/delete/{id}", name="delete", methods={"DELETE"})
+     * @return Response
      */
-    public function delete(Event $event, EntityManagerInterface $entityManager): Response
+
+
+    public function delete(Request $request, Event $event): Response
     {
-        $entityManager->remove($event);
-        $entityManager->flush();
+        if ($this->isCsrfTokenValid('delete' . $event->getId(), $request->request->get('_token'))) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->remove($event);
+            $entityManager->flush();
+        }
 
         return $this->redirectToRoute('admin_event_index');
     }
