@@ -59,16 +59,4 @@ class AdminEventController extends AbstractController
             'event' => $event,
         ]);
     }
-
-
-
-    /**
-     * @Route("/admin/event/index", name="admin_event")
-     */
-    public function index(): Response
-    {
-        return $this->render('admin_event/new.html.twig', [
-            'controller_name' => 'AdminEventController',
-        ]);
-    }
 }
