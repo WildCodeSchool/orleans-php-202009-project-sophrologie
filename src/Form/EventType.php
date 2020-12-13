@@ -10,6 +10,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\UrlType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 
 class EventType extends AbstractType
 {
@@ -36,9 +37,13 @@ class EventType extends AbstractType
                     'placeholder' => 'https//image.jpeg',
                 ],
             ])
-            ->add('date', DateTimeType::class, [
+            ->add('eventdate', DateType::class, [
                 'label' => 'date de publication',
+                'widget' => 'single_text',
+                'format' => 'yyyy-MM-dd',
                 'required' => false,
+
+
             ])
             ->add('category', TextType::class, [
                 'label' => 'catégorie',
@@ -60,8 +65,10 @@ class EventType extends AbstractType
                     'placeholder' => 'Vous pouvez saisir ici le texte de l\'article que vous souhaitez publier',
                 ],
             ])
-            ->add('date', DateTimeType::class, [
+            ->add('date', DateType::class, [
                 'label' => 'date de la manifestation',
+                'widget' => 'single_text',
+                'format' => 'yyyy-MM-dd',
                 'required' => false,
             ])
             ->add('eventlink', UrlType::class, [
