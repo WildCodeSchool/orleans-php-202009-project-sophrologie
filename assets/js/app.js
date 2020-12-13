@@ -12,6 +12,7 @@ import '../styles/contact.scss';
 import '../styles/home.scss';
 import '../styles/navbar.scss';
 import '../styles/newEvent.scss';
+import '../styles/adminList.scss';
 
 // Need jQuery? Install it with "yarn add jquery", then uncomment to import it.
 // import $ from 'jquery';

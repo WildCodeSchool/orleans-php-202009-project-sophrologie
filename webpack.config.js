@@ -42,7 +42,7 @@ Encore
     .addEntry('home', './assets/styles/home.scss')
     .addEntry('navbar', './assets/styles/navbar.scss')
     .addEntry('newEvent', './assets/styles/newEvent.scss')
-
+    .addEntry('adminList', './assets/styles/adminList.scss')
 
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
     .splitEntryChunks()
