@@ -24,21 +24,21 @@ class EventType extends AbstractType
                 ],
             ])
             ->add('description', TextareaType::class, [
-                'label' => 'description',
+                'label' => 'Description',
                 'required' => false,
                 'attr' => [
                     'placeholder' => 'salon du bien être',
                 ],
             ])
             ->add('url', UrlType::class, [
-                'label' => 'lien de l\'image',
+                'label' => 'Lien de l\'image',
                 'required' => false,
                 'attr' => [
                     'placeholder' => 'https//image.jpeg',
                 ],
             ])
             ->add('eventdate', DateType::class, [
-                'label' => 'date de publication',
+                'label' => 'Date de publication',
                 'widget' => 'single_text',
                 'format' => 'yyyy-MM-dd',
                 'required' => false,
@@ -46,40 +46,40 @@ class EventType extends AbstractType
 
             ])
             ->add('category', TextType::class, [
-                'label' => 'catégorie',
+                'label' => 'Catégorie',
                 'attr' => [
                     'placeholder' => 'Evènement, Actualités, Interviews',
                 ],
             ])
             ->add('summary', TextareaType::class, [
-                'label' => 'résumé',
+                'label' => 'Résumé',
                 'required' => false,
                 'attr' => [
                     'placeholder' => 'résumé de l\'article que vous souhaitez publier',
                 ],
             ])
             ->add('article', TextareaType::class, [
-                'label' => 'article',
+                'label' => 'Article',
                 'required' => false,
                 'attr' => [
                     'placeholder' => 'Vous pouvez saisir ici le texte de l\'article que vous souhaitez publier',
                 ],
             ])
             ->add('date', DateType::class, [
-                'label' => 'date de la manifestation',
+                'label' => 'Date de la manifestation',
                 'widget' => 'single_text',
                 'format' => 'yyyy-MM-dd',
                 'required' => false,
             ])
             ->add('eventlink', UrlType::class, [
-                'label' => 'lien vers le site de l\'évènement',
+                'label' => 'Lien vers le site de l\'évènement',
                 'required' => false,
                 'attr' => [
                     'placeholder' => 'https//lien-vers-le-site-de-la-manifestation.com',
                 ],
             ])
             ->add('video', UrlType::class, [
-                'label' => 'lien vers une vidéo youtube de relaxation',
+                'label' => 'Lien vers une vidéo youtube de relaxation',
                 'required' => false,
                 'attr' => [
                     'placeholder' => 'https//lien-vers-la-video.com',
