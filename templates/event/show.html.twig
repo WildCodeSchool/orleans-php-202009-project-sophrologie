@@ -1,0 +1,39 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Actualités | {{ parent() }}{% endblock %}
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('event') }}
+    {% endblock %}
+{% block body %}
+
+
+
+
+
+    <section class="container sheettop">
+               <section class="section2 jumbotron container bg-white py-4 py-lg-5 px-0 mb-0 d-lg-flex text-lg-left">
+                <div class="d-flex align-items-center justify-content-center">
+                    <img src="{{ event.url }}" alt="{{ event.title }}">
+                </div>
+                <div class="container ml-lg-5 text-center text-lg-left">
+                    <h3 class="mb-4">Publié le {{event.date|date('d/m/Y')}}</h3>
+                    <h2 class="mb-4">{{ event.title }}</h2>
+                    <h3 class="mb-4">{{event.date|date('d/m/Y')}}</h3>
+                    <p class="card-text">{{ event.description }}</p>
+                    <p class="card-text">{{ event.description }}</p>
+                </div>
+             </section>
+            <section class="section2 jumbotron container bg-white px-0 mb-0 text-lg-left">
+                <p class="card-text">{{ event.description }}</p>
+                <p class="card-text">{{ event.description }}</p>
+                <p class="card-text">{{ event.description }}</p>
+                <p class="card-text">{{ event.description }}</p>
+
+
+            <a href="https://www.salon-terre-naturelle-orleans.fr/" class="btn btn-primary" role="button">En savoir plus</a>
+
+    </section>
+        </section>
+
+
+{% endblock %}

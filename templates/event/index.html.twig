@@ -30,9 +30,13 @@
 
                             <h5 class="card-title text-center"> {{ event.title }} </h5>
                             <p class="card-text">{{ event.description }}</p>
-
-
-                        </div>
+                            <button class="btn btn-primary" type="button" data-toggle="collapse"
+                                    data-target="#collapse{{ event.id }}" aria-expanded="false"
+                                    aria-controls="collapse{{ event.id }}">En savoir plus
+                            </button>
+                            <div class="collapse" id="collapse{{ event.id }}"><p>{{ event.description }}</p></div>
+                            <a href="{{ path ('event_show',{'id' :event.id}) }}" class="btn btn-primary" role="button">En savoir plus</a>
+                            </div>
                     </div>
                 </div>
             {% else %}
