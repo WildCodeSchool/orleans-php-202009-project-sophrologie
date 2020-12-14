@@ -28,7 +28,7 @@ class EventFixtures extends Fixture
             $event1->setArticle('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus.
          Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum 
          ultrices diam. Maecenas ligula massa, varius a, semper congue, ');
-            $event1->setVideo('https://www.youtube.com/watch?v=vnprysVcddk&feature=youtu.be')
+            $event1->setVideo('https://www.youtube.com/watch?v=vnprysVcddk&feature=youtu.be');
             $manager->persist($event1);
         }
 
