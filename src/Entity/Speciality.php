@@ -21,21 +21,21 @@ class Speciality
     /**
      * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank()
-     * @Assert\Length(max="255", maxMessage="Vous ne pouvez dépasser la limite de {{ limit }} caractères")
+     * @Assert\Length(max="255")
      */
     private ?string $title;
 
     /**
      * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank()
-     * @Assert\Length(max="255", maxMessage="Vous ne pouvez dépasser la limite de {{ limit }} caractères")
+     * @Assert\Length(max="255")
      */
     private ?string $description;
 
     /**
      * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank()
-     * @Assert\Length(max="255", maxMessage="Vous ne pouvez dépasser la limite de {{ limit }} caractères")
+     * @Assert\Length(max="255")
      */
     private ?string $image;
 

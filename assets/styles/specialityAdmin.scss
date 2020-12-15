@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Arizonia&family=PT+Serif&family=Playfair+Display:ital@0;1&display=swap');
+@import 'variables.scss';
+@import '~bootstrap/scss/bootstrap';
+
+p {
+  font-family: $text-font;
+}
+
+h1,
+h2,
+h3 {
+  font-family: $title-font;
+  font-size: x-large;
+}
+
+h4,
+h5,
+h6 {
+  font-family: $sub-title-font;
+}
+
+label {
+  font-family: $text-font;
+  margin: 0;
+}
