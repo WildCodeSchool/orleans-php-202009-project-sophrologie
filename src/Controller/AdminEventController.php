@@ -10,11 +10,16 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 
+/**
+ * @Route("/admin/event", name="admin_event_")
+ */
 class AdminEventController extends AbstractController
 {
+
     /**
-     * @Route("/admin/event/new", name="admin_new")
+     * @Route("/new", name="new")
      * @param Request $request
      * @param EntityManagerInterface $entityManager
      * @return Response
@@ -33,6 +38,27 @@ class AdminEventController extends AbstractController
 
         return $this->render('admin_event/new.html.twig', [
             'form' => $form->createView(),
+        ]);
+    }
+
+    /**
+     * @Route("/edit/{id}", name="edit")
+     * @ParamConverter("event", class="App\Entity\Event", options={"mapping": {"id": "id"}})
+     */
+    public function edit(Request $request, Event $event): Response
+    {
+        $form = $this->createForm(EventType::class, $event);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirectToRoute('admin_event_new');
+        }
+
+        return $this->render('admin_event/edit.html.twig', [
+            'form' => $form->createView(),
+            'event' => $event,
         ]);
     }
 }
