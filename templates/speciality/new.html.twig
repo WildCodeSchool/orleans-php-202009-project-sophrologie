@@ -7,29 +7,15 @@
 {% endblock %}
 
 {% block body %}
-    <section class="container form-section my-5">
-        <h1 class="mb-5 text-lg-left text-center">Ajouter une nouvelle spécialité</h1>
+    <section class="container my-5">
+        <h1 class="mb-5 text-lg-left text-center">Ajouter une spécialité</h1>
         <div class="text-dark">
-        {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
-            <div class="form-group mb-4">
-                <p class="m-0">{{ form_label(form.title, 'Titre') }}</p>
-                <p class="m-0">{{ form_widget(form.title) }}</p>
-                <p class="m-0">{{ form_errors(form.title) }}</p>
+            <div class="text-dark">
+                {{ form_start(form) }}
+                {{ form_widget(form) }}
+                <button class="btn btn-primary">Modifier</button>
+                {{ form_end(form) }}
             </div>
-            <div class="form-group mb-4">
-                <p class="m-0">{{ form_label(form.description, 'Description') }}</p>
-                <p class="m-0">{{ form_widget(form.description) }}</p>
-                <p class="m-0">{{ form_errors(form.description) }}</p>
-            </div>
-            <div class="form-group mb-4">
-                <p class="m-0">{{ form_label(form.image, 'Image URL') }}</p>
-                <p class="m-0">{{ form_widget(form.image) }}</p>
-                <p class="m-0">{{ form_errors(form.image) }}</p>
-            </div>
-            <div class="text-lg-left text-center">
-                <a type="submit" class="btn btn-primary"><p class="m-0">Ajouter</p></a>
-            </div>
-        {{ form_end(form) }}
         </div>
     </section>
 {% endblock %}
