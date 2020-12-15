@@ -41,6 +41,7 @@ Encore
     .addEntry('contact', './assets/styles/contact.scss')
     .addEntry('home', './assets/styles/home.scss')
     .addEntry('navbar', './assets/styles/navbar.scss')
+    .addEntry('newEvent', './assets/styles/newEvent.scss')
 
 
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
