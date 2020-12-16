@@ -12,7 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
 /**
  * Class AdminHomeController
  * @package App\Controller
- * @Route("/admin/speciality")
+ * @Route("/admin/speciality" name="admin_")
  */
 class AdminSpecialityController extends AbstractController
 {
@@ -21,7 +21,7 @@ class AdminSpecialityController extends AbstractController
      * @return Response
      * @Route("/new",  name="new_speciality")
      */
-    public function newSpeciality(Request $request): Response
+    public function new(Request $request): Response
     {
         $speciality = new Speciality();
         $form = $this->createForm(SpecialityType::class, $speciality);
