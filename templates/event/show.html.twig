@@ -5,13 +5,8 @@
         {{ encore_entry_link_tags('event') }}
     {% endblock %}
 {% block body %}
-
-
-
-
-
-    <section class="container sheettop">
-        <h5 class="mb-4 text-right">Publié le {{ event.date|date('d/m/Y') }}</h5>
+    <section class="container sheettop mb-3 mb-lg-5">
+        <h5 class="mb-4 text-lg-right">Publié le {{ event.date|date('d/m/Y') }}</h5>
         <h2 class="mb-4 text-center">{{ event.title }}</h2>
         <h4 class="mb-4 text-center">{{ event.date|date('d/m/Y') }}</h4>
         <section class="section2 jumbotron container bg-white py-4 py-lg-5 px-0 mb-0 d-lg-flex text-lg-left">
@@ -23,17 +18,26 @@
                 <p class="card-text">{{ event.summary }}</p>
 
             </div>
+
         </section>
         <section class="section2 jumbotron container bg-white py-4 py-lg-5 px-0 mb-0 d-lg-flex text-lg-left">
-            <div class="container ml-lg-5 text-left text-lg-left">
+            <div class="d-flex container text-left text-lg-left p-0">
             <p class="card-text">{{ event.article }}</p>
             </div>
-
-            <a href="https://www.salon-terre-naturelle-orleans.fr/" class="btn btn-primary" role="button">En savoir
-                plus</a>
-
         </section>
+        <div class="container mr-auto px-0">
+            {% if event.eventlink != '' %}
+                <a href="{{ event.eventlink}}" class="btn btn-secondary ">En savoir plus</a>
+            {% else %}
+            {% endif %}
+
+            {% if event.video != '' %}
+                <a href="{{ event.video}}" class="btn btn-secondary">Lien vers la vidéo</a>
+            {% else %}
+            {% endif %}
+        </div>
     </section>
 
-
 {% endblock %}
+
+

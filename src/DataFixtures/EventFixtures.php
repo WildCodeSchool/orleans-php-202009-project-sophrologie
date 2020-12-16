@@ -24,7 +24,7 @@ class EventFixtures extends Fixture
             $event->setDate($faker->dateTime());
             $event->setEventdate($faker->dateTime());
             $event->setSummary($faker->text());
-            $event->setArticle($faker->text());
+            $event->setArticle($faker->text(1500));
             $event->setVideo($faker->url());
             $manager->persist($event);
         }
