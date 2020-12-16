@@ -16,7 +16,6 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class AdminHomeController extends AbstractController
 {
-
     /**
      * @return Response
      * @Route("/", name="home")

@@ -30,7 +30,7 @@ class AdminSpecialityController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($speciality);
             $entityManager->flush();
-            return $this->redirectToRoute('home');
+            return $this->redirectToRoute('home/index.html.twig');
         }
         return $this->render('speciality/new.html.twig', [
             "form" => $form->createView(),
@@ -50,7 +50,7 @@ class AdminSpecialityController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('home');
+            return $this->redirectToRoute('home/index.html.twig');
         }
 
         return $this->render('speciality/edit.html.twig', [
