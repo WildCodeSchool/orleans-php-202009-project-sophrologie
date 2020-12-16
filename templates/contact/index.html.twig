@@ -1,6 +1,6 @@
 {% extends 'layout.html.twig' %}
 
-{% block title %}Contact{% endblock %}
+{% block title %}Inspire & Expire Contact{% endblock %}
 
 {% block stylesheets %}
     {{ encore_entry_link_tags('contact') }}
@@ -9,16 +9,16 @@
 {% block body %}
     <header>
         <div class="card bg-white text-white">
-            <img class="img banner" src="{{ asset('build/images/snow.jpg') }}" alt="bannière">
+            <img class="intro-img" src="{{ asset('build/images/snow.jpg') }}" alt="bannière">
             <div class="card-img-overlay">
                 <h1 class="timetable-title text-center">CONTACT</h1>
             </div>
         </div>
     </header>
-    <section class="timetable-section">
+    <section class="timetable-section pt-5 pb-5">
         <div class="row mx-0 text-justify d-flex justify-content-center align-items-center">
-            <div class="col-lg-3 col-sm-8 col-10 timetable-text">
-                <h2 class="timetable-title">Les horaires</h2>
+            <div class="col-lg-2 col-sm-10 col-7 timetable-text">
+                <h2 class="mx-0 timetable-title mb-5">Les horaires</h2>
                 <p>Lundi : 9h00-19h00</p>
                 <p>Mardi : 9h00-19h00</p>
                 <p>Mercredi : 9h00-19h00</p>
@@ -27,8 +27,8 @@
                 <p>Samedi : 9h00-13h00</p>
                 <p>Dimanche : Fermé</p>
             </div>
-            <div class="col-lg-3 col-sm-8 offset-lg-1 timetable-image d-flex justify-content-center">
-                <img class="img-timetable" src="{{ asset('build/images/contact-timetable.jpg') }}" alt="Image journal horaires"/>
+            <div class="col-lg-4 col-sm-10 offset-lg-1 pt-5 timetable-image d-flex justify-content-center">
+                <img class="img-timetable col-12" src="{{ asset('build/images/contact-timetable.jpg') }}" alt="Image journal horaires"/>
             </div>
         </div>
     </section>
