@@ -41,6 +41,7 @@ Encore
     .addEntry('contact', './assets/styles/contact.scss')
     .addEntry('home', './assets/styles/home.scss')
     .addEntry('navbar', './assets/styles/navbar.scss')
+    .addEntry('speciality', './assets/styles/specialityAdmin.scss')
     .addEntry('newEvent', './assets/styles/newEvent.scss')
 
 
