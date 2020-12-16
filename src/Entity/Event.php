@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\EventRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=EventRepository::class)
@@ -14,11 +15,14 @@ class Event
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     *
      */
     private int $id;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank()
+     * @Assert\Length(max=255)
      */
     private string $title;
 
@@ -29,16 +33,22 @@ class Event
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Assert\Length(max=255)
+     * @Assert\Url()
      */
     private ?string $url;
 
     /**
      * @ORM\Column(type="date", nullable=true)
+     * @Assert\Type("DateTime")
+
      */
     private ?\DateTimeInterface $date;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Assert\Length(max=255)
+     * @Assert\Url()
      */
     private ?string $eventlink;
 
@@ -50,8 +60,28 @@ class Event
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Length(max=255)
      */
     private string $category;
+
+    /**
+     * @ORM\Column(type="date", nullable=true)
+     * @Assert\Type("DateTime")
+
+     */
+    private ?\DateTimeInterface $eventdate;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private ?string $summary;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     * @Assert\Length(max=255)
+     * @Assert\Url()
+     */
+    private ?string $video;
 
     public function getId(): ?int
     {
@@ -139,6 +169,42 @@ class Event
     public function setCategory(string $category): self
     {
         $this->category = $category;
+
+        return $this;
+    }
+
+    public function getEventdate(): ?\DateTimeInterface
+    {
+        return $this->eventdate;
+    }
+
+    public function setEventdate(?\DateTimeInterface $eventdate): self
+    {
+        $this->eventdate = $eventdate;
+
+        return $this;
+    }
+
+    public function getSummary(): ?string
+    {
+        return $this->summary;
+    }
+
+    public function setSummary(?string $summary): self
+    {
+        $this->summary = $summary;
+
+        return $this;
+    }
+
+    public function getVideo(): ?string
+    {
+        return $this->video;
+    }
+
+    public function setVideo(?string $video): self
+    {
+        $this->video = $video;
 
         return $this;
     }
