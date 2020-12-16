@@ -17,10 +17,10 @@ class EventFixtures extends Fixture
             $event = new Event();
 
             $event->setTitle($faker->word);
-            $event->setUrl($faker->imageUrl(150, 150));
+            $event->setUrl($faker->imageUrl(300, 300));
             $event->setDescription($faker->text());
             $event->setEventlink($faker->url());
-            $event->setCategory($faker->text());
+            $event->setCategory($faker->Word());
             $event->setDate($faker->dateTime());
             $event->setEventdate($faker->dateTime());
             $event->setSummary($faker->text());
