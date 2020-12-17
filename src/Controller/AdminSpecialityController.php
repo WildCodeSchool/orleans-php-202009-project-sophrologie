@@ -17,6 +17,23 @@ use Symfony\Component\Routing\Annotation\Route;
 class AdminSpecialityController extends AbstractController
 {
     /**
+     * @Route("/index", name="index_speciality")
+     * @return Response
+     */
+    public function index(): Response
+    {
+        $specialities = $this->getDoctrine()
+            ->getRepository(Speciality::class)
+            ->findAll();
+
+        return $this->render(
+            'speciality/indexAdmin.html.twig',
+            [
+                'specialities' => $specialities]
+        );
+    }
+
+    /**
      * @param Request $request
      * @return Response
      * @Route("/new",  name="new_speciality")
@@ -30,7 +47,7 @@ class AdminSpecialityController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($speciality);
             $entityManager->flush();
-            return $this->redirectToRoute('home/index.html.twig');
+            return $this->redirectToRoute('admin_index_speciality');
         }
         return $this->render('speciality/new.html.twig', [
             "form" => $form->createView(),
@@ -39,6 +56,7 @@ class AdminSpecialityController extends AbstractController
 
     /**
      * @Route("/{id}/edit", name="edit_speciality", methods={"GET","POST"})
+     * @param Request $request
      * @param Speciality $speciality
      * @return Response
      */
@@ -50,7 +68,7 @@ class AdminSpecialityController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('home/index.html.twig');
+            return $this->redirectToRoute('admin_index_speciality');
         }
 
         return $this->render('speciality/edit.html.twig', [
