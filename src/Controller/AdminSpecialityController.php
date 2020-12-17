@@ -17,6 +17,23 @@ use Symfony\Component\Routing\Annotation\Route;
 class AdminSpecialityController extends AbstractController
 {
     /**
+     * @Route("/index", name="index")
+     * @return Response
+     */
+    public function index(): Response
+    {
+        $specialities = $this->getDoctrine()
+            ->getRepository(Speciality::class)
+            ->findAll();
+
+        return $this->render(
+            'speciality/indexAdmin.html.twig',
+            [
+                'specialities' => $specialities]
+        );
+    }
+
+    /**
      * @param Request $request
      * @return Response
      * @Route("/new",  name="new_speciality")
