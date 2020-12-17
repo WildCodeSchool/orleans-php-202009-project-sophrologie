@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Arizonia&family=PT+Serif&family=Playfair+Display:ital@0;1&display=swap');
 @import 'variables.scss';
-@import "~bootstrap/scss/bootstrap";
+@import '~bootstrap/scss/bootstrap';
 
-p {
+p,
+a {
     font-family: $text-font;
 }
 
@@ -17,3 +18,4 @@ h5,
 h6 {
     font-family: $sub-title-font;
 }
+

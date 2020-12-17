@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Arizonia&family=PT+Serif&family=Playfair+Display:ital@0;1&display=swap');
+@import 'variables.scss';
+@import '~bootstrap/scss/bootstrap';
+
+p {
+    font-family: $text-font;
+}
+
+h1,
+h2,
+h3 {
+    font-family: $title-font;
+    font-size: x-large;
+}
+
+h4,
+h5,
+h6 {
+    font-family: $sub-title-font;
+}
+
+.intro-img {
+    height: 80%;
+    width: 100%;
+}
+
+.section1 {
+    position: relative;
+}
+
+.title {
+    position: absolute;
+}
+
+.intro-btn {
+    bottom: 10px;
+    position: absolute;
+}
+
+.sophro-picture {
+    border-radius: 50%;
+    box-shadow: 5px 5px 2px 1px rgba(0, 0, 0, .5);
+    height: 250px;
+    width: 250px;
+}
+
+
+.card-text {
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.card-img-overlay:hover {
+    .card-text {
+        opacity: 1;
+    }
+}
+
+.speciality {
+    img {
+        box-shadow: 5px 5px 5px $dark;
+        filter: brightness(100%);
+        transition: filter 1s;
+    }
+}
+
+.speciality:hover {
+    img {
+        filter: brightness(75%);
+    }
+
+    h5 {
+        display: none;
+    }
+}

@@ -2,7 +2,10 @@
 
 namespace App\Controller;
 
+use App\Entity\Speciality;
+use App\Form\SpecialityType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -22,5 +25,6 @@ class AdminHomeController extends AbstractController
     {
 
         return $this->render('admin/index.html.twig');
+
     }
 }
