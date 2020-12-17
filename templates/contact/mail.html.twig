@@ -1,9 +1,17 @@
-<style>
-</style>
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Reception de mail</title>
+    </head>
+    <body>
+        <h1>Une personne vous a contacté par le biais du formulaire de contact :</h1>
+        <h2>{{ contact.firstname }} {{ contact.lastname }}</h2>
+        <p>Sur le thème : {{ contact.theme }}</p>
+        <p>Message : {{ contact.message }}</p>
+    </body>
+</html>
 
-<h1>Une personne vous a contacté par le biais du formulaire de contact :</h1>
-<br/><br/>
-<h2>{{ contact.firstname }}</h2>
-<h2>{{ contact.lastname }}</h2>
-<h2>{{ contact.theme }}</h2>
-<p>Message : {{ contact.message }}</p>

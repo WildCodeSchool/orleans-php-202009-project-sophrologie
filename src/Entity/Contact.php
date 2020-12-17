@@ -9,39 +9,39 @@ class Contact
 
 
     /**
-     * @Assert\Length(max=50, maxMessage="La taille du prénom doit être inférieure à {{ limit }} caractères")
-     * @Assert\NotBlank(message="Merci de saisir votre prénom")
+     * @Assert\Length(max=50)
+     * @Assert\NotBlank
      */
     private ?string $firstname;
 
     /**
-     * @Assert\Length(max=50, maxMessage="La taille du nom doit être inférieure à {{ limit }} caractères")
-     * @Assert\NotBlank(message="Merci de saisir votre nom")
+     * @Assert\Length(max=50)
+     * @Assert\NotBlank
      */
     private ?string $lastname;
 
     /**
-     * @Assert\Length(max=20, maxMessage="Votre téléphone doit être inférieur à {{ limit }} caractères")
-     * @Assert\NotBlank(message="Merci de saisir votre téléphone")
+     * @Assert\Length(max=20)
+     * @Assert\NotBlank
      */
     private ?string $phone;
 
     /**
-     * @Assert\Length(max=100, maxMessage="Votre email doit être inférieur à {{ limit }} caractères")
-     * @Assert\Email(message = "L'email '{{ value }}' n'est pas un format d'email valide.")
-     * @Assert\NotBlank(message="Merci de saisir votre adresse email")
+     * @Assert\Length(max=100)
+     * @Assert\Email
+     * @Assert\NotBlank
      */
     private ?string $email;
 
     /**
-     * @Assert\Length(max=255, maxMessage="Le thème {{value}} doit être inférieur à {{ limit }} caractères")
-     * @Assert\NotBlank(message="Merci de saisir un thème")
+     * @Assert\Length(max=255)
+     * @Assert\NotBlank
      */
     private ?string $theme;
 
     /**
-     * @Assert\Length(max=1500, maxMessage="Le message doit être inférieur à {{ limit }} caractères")
-     * @Assert\NotBlank(message="Merci de saisir un message")
+     * @Assert\Length(max=1500)
+     * @Assert\NotBlank
      */
     private ?string $message;
     private ?int $id;
