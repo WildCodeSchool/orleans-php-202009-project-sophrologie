@@ -20,10 +20,7 @@ class AdminHomeController extends AbstractController
      */
     public function index(): Response
     {
-        $sectionAdmins = ["Spécialité","Séance","Témoignage", "Spécialité"];
 
-        return $this->render('admin/layoutAdmin.html.twig', [
-            "sections" => $sectionAdmins
-        ]);
+        return $this->render('admin/index.html.twig');
     }
 }
