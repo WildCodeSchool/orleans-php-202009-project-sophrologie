@@ -58,6 +58,7 @@ h6 {
 
 .speciality {
     img {
+        box-shadow: 5px 5px 5px $dark;
         filter: brightness(100%);
         transition: filter 1s;
     }
