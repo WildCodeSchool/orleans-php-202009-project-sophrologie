@@ -6,14 +6,16 @@
     {% endblock %}
 {% block body %}
 
-
-    <div class="card bg-white text-white">
-        <img class="img banner" src="{{ asset('build/images/snow.jpg') }}" alt="bannière">
-        <div class="card-img-overlay">
-            <h1 class="card-title text-center">ACTUALITES</h1>
-            <h3 class="card-text text-center">Votre Sophrologue à votre rencontre</h3>
+    <header>
+        <div class="card bg-white text-white">
+            <img class="img banner" src="{{ asset('build/images/snow.jpg') }}" alt="bannière">
+            <div class="card-img-overlay">
+                <h1 class="card-title text-center">ACTUALITES</h1>
+            </div>
         </div>
-    </div>
+    </header>
+
+
 
 
     <section class="container sheettop">
@@ -22,15 +24,14 @@
             {% for event in events %}
                 <div class="col-sm-12 col-md-6 col-lg-4">
                     <div class="card margin">
-                        <div class="card-header">{{ event.category }}</div>
+                        <div class="card-header text-center">{{ event.category }}</div>
                         <img class="card-img-top" src="{{ event.url }}" alt="{{ event.title }}">
                         <div class="card-body">
-
                             <h5 class="card-title text-center"> {{ event.title }} </h5>
                             <p class="card-text">{{ event.description }}</p>
-                            <a href="{{ event.eventlink}}" class="btn btn-secondary">En savoir plus</a>
 
-                        </div>
+                            <a href="{{ path ('event_show',{'id' :event.id}) }}" class="btn btn-primary" role="button">En savoir plus</a>
+                            </div>
                     </div>
                 </div>
             {% else %}
