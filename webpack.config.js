@@ -42,7 +42,7 @@ Encore
     .addEntry('home', './assets/styles/home.scss')
     .addEntry('navbar', './assets/styles/navbar.scss')
     .addEntry('newEvent', './assets/styles/newEvent.scss')
-
+    .addEntry('seances', './assets/styles/seances.scss')
 
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
     .splitEntryChunks()
@@ -71,7 +71,7 @@ Encore
     })
 
     // enables Sass/SCSS support
-    .enableSassLoader()
+    .enableSassLoader();
 
 // uncomment if you use TypeScript
 // .enableTypeScriptLoader()

@@ -1,0 +1,51 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Seance Individuelle{% endblock %}
+{% block stylesheets %}
+    {{ encore_entry_link_tags('seances') }}
+{% endblock %}
+
+{% block body %}
+    <header>
+        <div class="card bg-white text-white">
+            <img class="img banner" src="{{ asset('build/images/snow.jpg') }}" alt="bannière">
+            <div class="card-img-overlay">
+                <h1 class="timetable-title text-center text-uppercase">Seance individuelle</h1>
+            </div>
+        </div>
+    </header>
+    <div class="container-fluid py-3">
+        <div class="row text-center">
+            <div class="col-12 ">
+                <h2>Déroulement d'une séance</h2>
+            </div>
+        </div>
+        <div class="row pt-5 text-center ">
+            <div class="col-md-4">
+                <div class="">
+                    <img class="pb-4" src="{{ asset('build/images/pin.png') }}" alt="">
+                </div>
+                <img src="{{ asset('build/images/number1.png') }}" alt="">
+                <h3>Entretien préalable</h3>
+                <p>Celui-ci vous permet d’exprimer vos besoins et vos attentes.</p>
+            </div>
+            <div class="col-md-4 ">
+                <div>
+                    <img class="pb-4" src="{{ asset('build/images/pin.png') }}" alt="">
+                </div>
+                <img src="{{ asset('build/images/number2.png') }}" alt="">
+                <h3>Pratique de la sophrologie</h3>
+                <p>exercices de respiration associés à des mouvements physiques doux</p>
+            </div>
+
+            <div class="col-md-4 ">
+                <div>
+                    <img class="pb-4" src="{{ asset('build/images/pin.png') }}" alt="">
+                </div>
+                <img src="{{ asset('build/images/number3.png') }}" alt="">
+                <h3>Temps d'échange après la séance</h3>
+                <p> Vous pouvez vous exprimer librement et en toute confiance sur le vécu de votre séance.</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
