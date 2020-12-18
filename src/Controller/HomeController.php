@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Speciality;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -11,9 +12,15 @@ class HomeController extends AbstractController
 {
     /**
      * @Route("/", name="home")
+     * @return Response
      */
     public function index(): Response
     {
-        return $this->render('home/index.html.twig');
+        $specialities = $this->getDoctrine()
+            ->getRepository(Speciality::class)
+            ->findAll();
+        return $this->render('home/index.html.twig', [
+            'specialities' => $specialities
+        ]);
     }
 }
