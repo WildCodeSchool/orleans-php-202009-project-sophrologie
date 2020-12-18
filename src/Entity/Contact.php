@@ -31,13 +31,13 @@ class Contact
      * @Assert\Email
      * @Assert\NotBlank
      */
-    private ?string $email;
+    private string $email;
 
     /**
      * @Assert\Length(max=255)
      * @Assert\NotBlank
      */
-    private ?string $theme;
+    private string $theme;
 
     /**
      * @Assert\Length(max=1500)
@@ -87,7 +87,7 @@ class Contact
         return $this;
     }
 
-    public function getEmail(): ?string
+    public function getEmail(): string
     {
         return $this->email;
     }
@@ -99,7 +99,7 @@ class Contact
         return $this;
     }
 
-    public function getTheme(): ?string
+    public function getTheme(): string
     {
         return $this->theme;
     }

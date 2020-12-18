@@ -23,15 +23,15 @@ class ContactController extends AbstractController
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $email = (new Email())
-                ->from('admin@monsite.com')
+                ->from($contact->getEmail())
                 ->to($this->getParameter('mailer_from'))
-                ->subject('Message de contact')
+                ->subject($contact->getTheme())
                 ->html($this->renderView('contact/mail.html.twig', [
                     'contact' => $contact,
                 ]));
             $mailer->send($email);
             $this->addFlash('success', 'Votre message a bien été envoyé !');
-            return $this->redirectToRoute('home');
+            //return $this->redirectToRoute('home');
         }
         return $this->render('contact/index.html.twig', [
             'form' => $form->createView()
