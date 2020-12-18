@@ -8,6 +8,15 @@
 {% endblock %}
 
 {% block body %}
+    {% set days = {
+        0: {'day':'Mon', 'jour':'LUNDI', 'horaire':'9h00-19h00'},
+        1: {'day':'Tue', 'jour':'MARDI', 'horaire':'9h00-19h00'},
+        2: {'day':'Wed', 'jour':'MERCREDI', 'horaire':'9h00-19h00'},
+        3: {'day':'Thu', 'jour':'JEUDI', 'horaire':'9h00-19h00'},
+        4: {'day':'Fri', 'jour':'VENDREDI', 'horaire':'9h00-19h00'},
+        5: {'day':'Sat', 'jour':'SAMEDI', 'horaire':'9h00-13h00'},
+        6: {'day':'Sun', 'jour':'DIMANCHE', 'horaire':'Fermé'},
+    } %}
     <header>
         <div class="card bg-white text-white">
             <img class="intro-img" src="{{ asset('build/images/snow.jpg') }}" alt="bannière">
@@ -16,24 +25,31 @@
             </div>
         </div>
     </header>
-    <section class="timetable-section pt-5 pb-5">
-        <div class="row mx-0 text-justify d-flex justify-content-center align-items-center">
-            <div class="col-lg-2 col-sm-10 col-7 timetable-text">
-                <h2 class="mx-0 timetable-title mb-5">Les horaires</h2>
-                <p>Lundi : 9h00-19h00</p>
-                <p>Mardi : 9h00-19h00</p>
-                <p>Mercredi : 9h00-19h00</p>
-                <p>Jeudi : 9h00-19h00</p>
-                <p>Vendredi : 9h00-19h00</p>
-                <p>Samedi : 9h00-13h00</p>
-                <p>Dimanche : Fermé</p>
-            </div>
-            <div class="col-lg-4 col-sm-10 offset-lg-1 pt-5 timetable-image d-flex justify-content-center">
-                <img class="img-timetable col-sm-10" src="{{ asset('build/images/contact-timetable.jpg') }}" alt="Image journal horaires"/
+    <section class="timetable-section py-5 mt-5 d-flex align-items-center">
+        <div class="card container p-0 my-5">
+            <div class="row no-gutters">
+                <div class="p-0 col-lg-6 col-sm-12 col-12">
+                    <img class="img-timetable w-100 h-100" src="{{ asset('build/images/contact-timetable.jpg') }}"
+                         alt="Image journal horaires"/>
+                </div>
+                <div class="col-lg-6 col-sm-12 col-12 mb-0">
+                    <div class="card-body">
+                        <h2 class="card-title mb-4 text-center">Horaires d'ouverture</h2>
+                        <ul class="list-group list-group-flush text-center d-flex align-items-center">
+                            {% for day in days %}
+                                <li class="{% if "now"|date('D') == day.day %}list-group-item w-50 strongDay {% else %}
+                                list-group-item w-50{% endif %}">{{ day.jour }} : {{ day.horaire }}</li>
+                            {% endfor %}
+                        </ul>
+                        <p class="card-text text-center mt-2"><small
+                                    class="text-muted">Le cabinet respecte les normes d’accès pour les personnes à mobilité
+                                réduite</small></p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-    <section class="form-section container mt-6 mb-5">
+    <section class="form-section container my-5">
         <div class="row mx-0">
             <div class="col-lg-6 col-sm-12 col-12 mb-0 contact-right">
                 <h3 class="text-center mt-5">Vous avez des questions ?</h3>
