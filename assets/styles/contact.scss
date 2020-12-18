@@ -1,11 +1,12 @@
 @import 'app.scss';
 
 .timetable-section {
-    margin-top: $spacing-section;
+    background-color: $grey1;
 }
 
-.timetable-title {
-    margin-bottom: $spacing-6;
+.intro-img {
+    height: 80%;
+    width: 100%;
 }
 
 .form-section {
