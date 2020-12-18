@@ -1,4 +1,5 @@
 {% extends 'layout.html.twig' %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
 
 {% block title %}Contact{% endblock %}
 
@@ -28,7 +29,53 @@
                 <p>Dimanche : Fermé</p>
             </div>
             <div class="col-lg-3 col-sm-8 offset-lg-1 timetable-image d-flex justify-content-center">
-                <img class="img-timetable" src="{{ asset('build/images/contact-timetable.jpg') }}" alt="Image journal horaires"/>
+                <img class="img-timetable" src="{{ asset('build/images/contact-timetable.jpg') }}"
+                     alt="Image journal horaires"/>
+            </div>
+        </div>
+    </section>
+    <section class="form-section container mt-6 mb-5">
+        <div class="row mx-0">
+            <div class="col-lg-6 col-sm-12 col-12 mb-0 contact-right">
+                <h3 class="text-center mt-5">Vous avez des questions ?</h3>
+                <h3 class="text-center mb-5">Vous souhaitez prendre un RDV ?</h3>
+                {{ form_start(form) }}
+                <div class="row">
+                    <div class="col my-2">
+                        {{ form_label(form.firstname, 'Prénom') }}
+                        {{ form_widget(form.firstname) }}
+                    </div>
+                    <div class="col my-2">
+                        {{ form_label(form.lastname, 'Nom') }}
+                        {{ form_widget(form.lastname) }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col my-2">
+                        {{ form_label(form.phone, 'Numéro de téléphone') }}
+                        {{ form_widget(form.phone) }}
+                    </div>
+                    <div class="col my-2">
+                        {{ form_label(form.email, 'Adresse Email') }}
+                        {{ form_widget(form.email) }}
+                    </div>
+                </div>
+                <div class="my-2">
+                    <div class="my-2">
+                        {{ form_label(form.theme, 'Thème') }}
+                        {{ form_widget(form.theme) }}
+                    </div>
+                    <div class="my-2">
+                        {{ form_label(form.message, 'Message') }}
+                        {{ form_widget(form.message) }}
+                    </div>
+                </div>
+                <button class="btn btn-primary text-info my-2">{{ ('Envoyer') }}</button>
+                {{ form_end(form) }}
+            </div>
+            <div class="p-0 col-lg-6 col-sm-12 col-12">
+                <img class="img-timetable w-100 h-100" src="{{ asset('build/images/phone-contact.jpg') }}"
+                     alt="Image téléphone contact"/>
             </div>
         </div>
     </section>
