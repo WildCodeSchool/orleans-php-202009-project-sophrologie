@@ -76,4 +76,21 @@ class AdminSpecialityController extends AbstractController
             'form' => $form->createView(),
         ]);
     }
+
+    /**
+     * @Route("/{id}/delete", name="delete_speciality", methods={"DELETE"})
+     * @param Request $request
+     * @param Speciality $speciality
+     * @return Response
+     */
+    public function delete(Request $request, Speciality $speciality): Response
+    {
+        if ($this->isCsrfTokenValid('delete' . $speciality->getId(), $request->request->get('_token'))) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->remove($speciality);
+            $entityManager->flush();
+        }
+
+        return $this->redirectToRoute('admin_index_speciality');
+    }
 }
