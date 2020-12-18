@@ -1,5 +1,3 @@
-
-{% block stylesheet %}{{ encore_entry_link_tags('navbarAdmin') }}{% endblock %}
 <div class="navAdmin">
     <nav class="navbar navbar-expand-lg  navbar-light bg-transparent">
         <a class="navbar-brand" href="#">Espace Administrateur</a>
@@ -9,13 +7,13 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav nav-page w-100 d-flex justify-content-center">
                 <li class="nav-item">
-                    <a class="nav-link text-dark" href="#">Accueil<span class="sr-only">(current)</span></a>
+                    <a class="nav-link text-dark" href="{{ path("app_admin_home") }}">Accueil<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark" href="#">Accompagnement</a>
+                    <a class="nav-link text-dark" href="{{ path("admin_event_index") }}">Actualité</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark" href="#">Séance</a>
+                    <a class="nav-link text-dark" href="{{ path("admin_index_speciality") }}">Spécialité</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-dark" href="#">Témoignage</a>
