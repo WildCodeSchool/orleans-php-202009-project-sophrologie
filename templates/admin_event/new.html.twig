@@ -1,0 +1,29 @@
+{% extends 'layoutAdmin.html.twig' %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+{% block title %}{{parent()}}| Ajout d'actualités {% endblock %}
+    {% block stylesheets %}
+      {{ encore_entry_link_tags('newEvent') }}
+    {% endblock %}
+{% block body %}
+
+<main class="container ">
+    <section class="sheettop">
+
+      <div class="row">
+          <div class="col-md-8 offset-md-2">
+              <h1 class="title">Ajouter une actualité</h1>
+          </div>
+      </div>
+
+      {% include 'admin_event/_form.html.twig' with {'label_button': 'Ajouter'} %}
+
+
+      <a class="btn btn-outline-primary mt-5" href="{{ path('admin_event_index') }}">Retour à la liste</a>
+
+    </section>
+  </main>
+
+{% endblock %}
+
+
+
