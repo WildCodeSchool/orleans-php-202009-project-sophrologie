@@ -2,7 +2,8 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" type="image/png" href="{{ asset('build/images/favicon.png') }}"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="{{ asset('build/images/favicon.png') }}" />
     <title>{% block title %}INSPIRE & EXPIRE{% endblock %}</title>
     {% block stylesheets %}
         {{ encore_entry_link_tags('app') }}
@@ -10,14 +11,15 @@
 </head>
 <body>
 {% block navbar %}
-    {% include 'includes/_navbar.html.twig' %}
 {% endblock %}
 {% block body %}
 {% endblock %}
 
+
+{% block footer %}
+{% endblock %}
 {% block javascripts %}
     {{ encore_entry_script_tags('app') }}
 {% endblock %}
-
 </body>
 </html>

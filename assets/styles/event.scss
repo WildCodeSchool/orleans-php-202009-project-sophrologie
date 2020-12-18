@@ -19,12 +19,6 @@ h6 {
 }
 
 
-.banner {
-    display: flex;
-    justify-content: flex-end;
-    background-size: cover;
-    height: 300px;
-}
 
 .sheettop{
     padding-top: $spacing-section;
@@ -33,7 +27,6 @@ h6 {
 .card-img-top {
     display: flex;
     align-items: center;
-    margin-bottom : 40PX;
     opacity: 85%;
 }
 
@@ -46,4 +39,9 @@ h6 {
 {
     margin-bottom : $spacing-section;
 
+}
+
+imgdetail {
+    width: 300px;
+    height: 300px;
 }

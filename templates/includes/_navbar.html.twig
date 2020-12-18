@@ -1,7 +1,7 @@
 {% block stylesheets %}
     {{ encore_entry_link_tags('navbar') }}
 {% endblock %}
-<nav class="navbar navbar-expand-lg navbar-light shadow p-2 mb-5">
+<nav class="navbar navbar-expand-lg navbar-light shadow p-2">
     <a class="navbar-brand nav-link" href="#">Inspire Expire</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -10,7 +10,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav px-5 ml-auto">
             <li class="nav-item">
-                <a class="nav-link" href="#">Accueil</a>
+                <a class="nav-link" href="{{ path("home") }}">Accueil</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Sophrologie</a>
@@ -19,10 +19,10 @@
                 <a class="nav-link" href="#">Séances</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Actualités</a>
+                <a class="nav-link" href="{{ path("event_index")}}">Actualités</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Contact</a>
+                <a class="nav-link" href="{{ path("contact")}}">Contact</a>
             </li>
         </ul>
     </div>
