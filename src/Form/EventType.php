@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Event;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -45,12 +46,15 @@ class EventType extends AbstractType
 
 
             ])
-            ->add('category', TextType::class, [
-                'label' => 'Catégorie',
-                'attr' => [
-                    'placeholder' => 'Evènement, Actualités, Interviews',
-                ],
+
+            ->add('category', ChoiceType::class, [
+                'choices' => [
+                    'Enregistrements' => 'Enregistrements',
+                    'Articles' => 'Article',
+                    'Evènenents' => 'Evènements',
+                      ]
             ])
+
             ->add('summary', TextareaType::class, [
                 'label' => 'Résumé',
                 'required' => false,
