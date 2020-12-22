@@ -21,13 +21,19 @@ class AdminEventController extends AbstractController
      *
      * @Route("/index", name="index")
      */
+
     public function index(EventRepository $eventRepository): Response
     {
-        $events = $eventRepository->findAll();
+        $events = $eventRepository->findArchive(false);
+        $eventsArchive = $eventRepository->findArchive(true);
+
         return $this->render('admin_event/index.html.twig', [
             'events' => $events,
+            'eventsArchive' => $eventsArchive,
+
         ]);
     }
+
     /**
      * @Route("/new", name="new")
      * @param Request $request

@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Event;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -84,7 +85,13 @@ class EventType extends AbstractType
                 'attr' => [
                     'placeholder' => 'https//lien-vers-la-video.com',
                 ],
-            ]);
+            ])
+        ->add('archive', ChoiceType::class, [
+        'choices' => [
+            'Archive' => '1',
+            'En ligne' => '0',
+          ]
+        ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void
