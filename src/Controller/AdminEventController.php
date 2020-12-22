@@ -96,7 +96,7 @@ class AdminEventController extends AbstractController
     }
 
     /**
-     * @Route("/archive/{id}", name="archive")
+     * @Route("/archive/{id}", name="archive", methods={"POST"})
      * @ParamConverter("event", class="App\Entity\Event", options={"mapping": {"id": "id"}})
      */
     public function archive(Request $request, Event $event): Response
@@ -113,7 +113,7 @@ class AdminEventController extends AbstractController
     }
 
     /**
-     * @Route("/republish/{id}", name="republish")
+     * @Route("/republish/{id}", name="republish", methods={"POST"})
      * @ParamConverter("event", class="App\Entity\Event", options={"mapping": {"id": "id"}})
      */
     public function republish(Request $request, Event $event): Response
