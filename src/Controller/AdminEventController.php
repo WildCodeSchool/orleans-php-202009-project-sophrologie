@@ -94,4 +94,38 @@ class AdminEventController extends AbstractController
 
         return $this->redirectToRoute('admin_event_index');
     }
+
+    /**
+     * @Route("/archive/{id}", name="archive")
+     * @ParamConverter("event", class="App\Entity\Event", options={"mapping": {"id": "id"}})
+     */
+    public function archive(Request $request, Event $event): Response
+    {
+
+        if ($this->isCsrfTokenValid('archive' . $event->getId(), $request->request->get('_token'))) {
+            $event-> setArchive(true);
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirectToRoute('admin_event_index');
+        }
+
+        return $this->redirectToRoute('admin_event_index');
+    }
+
+    /**
+     * @Route("/republish/{id}", name="republish")
+     * @ParamConverter("event", class="App\Entity\Event", options={"mapping": {"id": "id"}})
+     */
+    public function republish(Request $request, Event $event): Response
+    {
+
+        if ($this->isCsrfTokenValid('republish' . $event->getId(), $request->request->get('_token'))) {
+            $event-> setArchive(false);
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirectToRoute('admin_event_index');
+        }
+
+        return $this->redirectToRoute('admin_event_index');
+    }
 }
