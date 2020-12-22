@@ -52,7 +52,7 @@ class AdminEventController extends AbstractController
     }
 
     /**
-     * @Route("/edit/{id}", name="edit")
+     * @Route("/edit/{id}", name="edit", methods={"POST"})
      * @ParamConverter("event", class="App\Entity\Event", options={"mapping": {"id": "id"}})
      */
     public function edit(Request $request, Event $event): Response
