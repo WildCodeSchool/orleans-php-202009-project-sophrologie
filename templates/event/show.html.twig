@@ -6,9 +6,9 @@
     {% endblock %}
 {% block body %}
     <section class="container sheettop mb-3 mb-lg-5">
-        <h5 class="mb-4 text-lg-right">Publié le {{ event.date|date('d/m/Y') }}</h5>
+        <h5 class="mb-4 text-lg-right">Publié le {{event.date is empty ? '' : event.date|date('d/m/Y')}}</h5>
         <h2 class="mb-4 text-center">{{ event.title }}</h2>
-        <h4 class="mb-4 text-center">{{ event.date|date('d/m/Y') }}</h4>
+        <h4 class="mb-4 text-center">{{event.eventdate is empty ? '' : event.eventdate|date('d/m/Y')}}</h4>
         <section class="section2 jumbotron container bg-white py-4 py-lg-5 px-0 mb-0 d-lg-flex text-lg-left">
             <div class="d-flex align-items-center justify-content-center">
                 <img class="imgdetail" src="{{ event.url }}" alt="{{ event.title }}">

@@ -24,8 +24,8 @@ class AdminEventController extends AbstractController
 
     public function index(EventRepository $eventRepository): Response
     {
-        $events = $eventRepository->findArchive(false);
-        $eventsArchive = $eventRepository->findArchive(true);
+        $events = $eventRepository->findBy(['archive' => 0], ['eventdate' => 'DESC']);
+        $eventsArchive = $eventRepository->findBy(['archive' => 1], ['eventdate' => 'ASC']);
 
         return $this->render('admin_event/index.html.twig', [
             'events' => $events,
@@ -33,6 +33,7 @@ class AdminEventController extends AbstractController
 
         ]);
     }
+
 
     /**
      * @Route("/new", name="new")
