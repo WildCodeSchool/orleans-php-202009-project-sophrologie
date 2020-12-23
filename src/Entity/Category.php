@@ -45,7 +45,7 @@ class Category
      * @ORM\OneToMany(targetEntity="App\Entity\Event", mappedBy="category")
      */
 
-    private ArrayCollection $events;
+    private Collection $events;
 
     public function __construct()
     {
