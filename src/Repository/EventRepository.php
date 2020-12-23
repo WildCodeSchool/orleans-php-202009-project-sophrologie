@@ -18,17 +18,4 @@ class EventRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Event::class);
     }
-
-/**
- * @return array<Event>
- */
-    public function findArchive(bool $archive): array
-    {
-        $queryBuilder = $this->createQueryBuilder('e')
-            ->where('e.archive = :archive')
-            ->setParameter('archive', $archive)
-            ->orderBy('e.date', 'DESC')
-            ->getQuery();
-        return $queryBuilder->getResult();
-    }
 }
