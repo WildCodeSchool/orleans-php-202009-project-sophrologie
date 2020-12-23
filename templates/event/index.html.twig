@@ -1,4 +1,6 @@
 {% extends 'layout.html.twig' %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+
 
 {% block title %}Actualités | {{ parent() }}{% endblock %}
     {% block stylesheets %}
@@ -15,8 +17,17 @@
         </div>
     </header>
 
+{% block form_row %}
+<div class="form_row">
+    {{ form_start(form) }}
 
+    {{ form_widget(form) }}
 
+    <button>Rechercher</button>
+
+    {{ form_end(form) }}
+</div>
+{% endblock form_row %}
 
     <section class="container sheettop">
         <div class="row">
