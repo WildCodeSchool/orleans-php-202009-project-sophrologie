@@ -51,7 +51,7 @@ class EventType extends AbstractType
                 'class' => Category::class,
                 'choice_label' => 'name',
                 'multiple' => false,
-                'by_reference' => false,
+                'by_reference' => true,
                 'expanded' => false
             ])
 
