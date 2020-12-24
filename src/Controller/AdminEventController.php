@@ -25,7 +25,7 @@ class AdminEventController extends AbstractController
     public function index(EventRepository $eventRepository): Response
     {
         $events = $eventRepository->findBy(['archive' => 0], ['eventdate' => 'DESC']);
-        $eventsArchive = $eventRepository->findBy(['archive' => 1], ['eventdate' => 'ASC']);
+        $eventsArchive = $eventRepository->findBy(['archive' => 1], ['eventdate' => 'DESC']);
 
         return $this->render('admin_event/index.html.twig', [
             'events' => $events,
