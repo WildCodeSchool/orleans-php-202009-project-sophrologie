@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Category;
 use App\Entity\Event;
 use App\Form\SearchEventFormType;
 use App\Repository\EventRepository;
@@ -29,9 +30,9 @@ class EventController extends AbstractController
         $form = $this->createForm(SearchEventFormType::class);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid() && !empty($form->getData()['searchcategory'])) {
+        if ($form->isSubmitted() && $form->isValid() && $form->getData()['searchcategory']->count() != 0) {
             $searchcategory = $form->getData()['searchcategory'];
-            $events = $eventRepository->findBy(['category' => $searchcategory,
+            $events = $eventRepository->findBy(['category' => $searchcategory->toArray(),
                 'archive' => 0], ['eventdate' => 'DESC']);
         } else {
             $events = $eventRepository->findBy(['archive' => 0], ['eventdate' => 'DESC']);

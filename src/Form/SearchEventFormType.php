@@ -2,6 +2,7 @@
 
 namespace App\Form;
 
+use App\Entity\Category;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
@@ -10,20 +11,19 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class SearchEventFormType extends AbstractType
 {
+
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('searchcategory', ChoiceType::class, [
-                'choices' =>
-                    [
-                        'Enregistrements' => 'Enregistrements',
-                        'Evèvements' => 'Evènements',
-                        'Actualités' => 'Actualités',
-                    ],
-                'label' => 'Recherche par catégorie',
+            ->add('searchcategory', EntityType::class, [
+                'class' => Category::class,
+                'choice_label' => 'name',
                 'multiple' => true,
-                'by_reference' => false,
-                'expanded' => true
+                'expanded' => true,
+                'label' => 'Afficher seulement ces catégories: ',
+                'label_attr' => [
+                    'class' => 'checkbox-inline'
+                ]
             ]);
     }
 
