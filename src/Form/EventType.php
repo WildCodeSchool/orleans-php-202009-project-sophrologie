@@ -50,10 +50,7 @@ class EventType extends AbstractType
             ->add('category', EntityType::class, [
                 'class' => Category::class,
                 'choice_label' => 'name',
-                'multiple' => false,
-                'by_reference' => true,
-                'expanded' => false
-            ])
+                 ])
 
             ->add('summary', TextareaType::class, [
                 'label' => 'Résumé',
