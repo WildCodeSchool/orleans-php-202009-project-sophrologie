@@ -10,6 +10,13 @@ use Faker;
 
 class EventFixtures extends Fixture
 {
+
+    public function getDependencies()
+    {
+        return [CategoryFixtures::class];
+    }
+
+
     public function load(ObjectManager $manager)
     {
             $faker = Faker\Factory::create('fr_FR');
@@ -20,8 +27,8 @@ class EventFixtures extends Fixture
             $event->setUrl($faker->imageUrl(300, 300));
             $event->setDescription($faker->text(200));
             $event->setEventlink($faker->url());
-            $event->setCategory($faker->Word());
             $event->setDate($faker->dateTime());
+            $event->setCategory($this->getReference('actualites'));
             $event->setEventdate($faker->dateTime());
             $event->setSummary($faker->text(500));
             $event->setArticle($faker->text(1500));
