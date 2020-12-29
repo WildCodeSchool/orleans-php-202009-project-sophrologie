@@ -45,6 +45,7 @@ Encore
     .addEntry('speciality', './assets/styles/specialityAdmin.scss')
     .addEntry('newEvent', './assets/styles/newEvent.scss')
     .addEntry('adminList', './assets/styles/adminList.scss')
+    .addEntry('login', './assets/styles/login.scss')
 
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
     .splitEntryChunks()
