@@ -1,0 +1,39 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Inspire & Expire Sophrologie{% endblock %}
+
+{% block stylesheets %}
+    {{ encore_entry_link_tags('sophrology') }}
+{% endblock %}
+
+{% block body %}
+    <header>
+        <div class="card bg-white text-white">
+            <img class="intro-img" src="{{ asset('build/images/snow.jpg') }}" alt="bannière">
+            <div class="card-img-overlay">
+                <h1 class="timetable-title text-center">LA SOPHROLOGIE</h1>
+            </div>
+        </div>
+    </header>
+    <section class="py-5 mb-5 d-flex row mx-0 justify-content-around">
+        <div class="col-lg-5 col-sm-12 d-flex justify-content-center align-items-center">
+            <img class="w-100 h-100 col-11 pt-3" src="{{ asset('build/images/sophrology-presentation.jpg') }}" alt="Image paix zen"/>
+        </div>
+        <div class="col-lg-5 col-sm-10 col-11">
+            <h2 class="text-center py-3">Qu'est-ce que la Sophrologie ?</h2>
+            <p class="text-justify">Créée par le médecin Alfonso Caycedo en 1966, la sophrologie est une méthode de relaxation
+                psychocorporelle qui permet de retrouver un bien-être au quotidien, de prendre conscience de ses
+                propres capacités et de les développer. <br/>
+                La sophrologie combine des exercices de <strong>respiration</strong>, de
+                <strong>détente musculaire</strong> et de <strong>visualisationmentale positive</strong>. Elle s’appuie sur des techniques occidentales (hypnose, autosuggestion)
+                et des pratiques orientales (yoga, méditation). <br/>
+                Il s’agit d’un outil de développement personnel reconnu par l’<strong>OrganisationMondiale de la Santé</strong> et le corps médical en tant que thérapie complémentaire à la médecine
+                classique et à la psychothérapie. C’est un « entraînement du corps et de l’esprit » pour parvenir à
+                une sérénité et un mieux-être. <br/>
+                <strong>Nota: Hypnose ≠Sophrologie</strong>: En sophrologie, vous restez maître de
+                vous-même. De plus, la sophrologie peut se pratiquer seul et en <strong>autonomie</strong>,
+                à votre rythme, chez vous, en prolongement des séances pédagogiques effectuées dans mon cabinet.
+            </p>
+        </div>
+    </section>
+{% endblock %}

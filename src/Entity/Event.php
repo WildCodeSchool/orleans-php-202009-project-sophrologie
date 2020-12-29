@@ -59,10 +59,12 @@ class Event
     private ?string $article;
 
     /**
-     * @ORM\Column(type="string", length=255)
-     * @Assert\Length(max=255)
+     *     /**
+     * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="events")
+     * @ORM\JoinColumn(nullable=false)
      */
-    private string $category;
+
+    private Category $category;
 
     /**
      * @ORM\Column(type="date", nullable=true)
@@ -161,12 +163,12 @@ class Event
         return $this;
     }
 
-    public function getCategory(): ?string
+    public function getCategory(): ?Category
     {
         return $this->category;
     }
 
-    public function setCategory(string $category): self
+    public function setCategory(Category $category): self
     {
         $this->category = $category;
 

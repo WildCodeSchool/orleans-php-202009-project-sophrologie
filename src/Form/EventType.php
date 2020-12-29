@@ -2,8 +2,11 @@
 
 namespace App\Form;
 
+use App\Entity\Category;
 use App\Entity\Event;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -42,15 +45,13 @@ class EventType extends AbstractType
                 'widget' => 'single_text',
                 'format' => 'yyyy-MM-dd',
                 'required' => false,
-
-
             ])
-            ->add('category', TextType::class, [
-                'label' => 'Catégorie',
-                'attr' => [
-                    'placeholder' => 'Evènement, Actualités, Interviews',
-                ],
-            ])
+
+            ->add('category', EntityType::class, [
+                'class' => Category::class,
+                'choice_label' => 'name',
+                 ])
+
             ->add('summary', TextareaType::class, [
                 'label' => 'Résumé',
                 'required' => false,
