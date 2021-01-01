@@ -41,36 +41,49 @@
         </div>
     </section>
     <section class="my-5 py-5">
-        {% set themes = {
-            0: {'title':'Vous guider', 'article':'À gérer votre stress et mieux
-            maîtriser vos émotions (la colère, la tristesse, évacuer vos tensions…). Vous permettre le lâcher-prise sur
-            les petites contrariétés du quotidien pour mieux vous préparer à surmonter les épreuves importantes.'},
-            1: {'title':'Vous préparer', 'article': 'À affronter un événement angoissant (un
-            changement dans votre vie, un traitement médical, une séparation, une phase douloureuse de votre vie…)'},
-            2: {'title': 'Vous apprendre', 'article':'À rester concentré(-e), à être plus
-            attentif(-ve), à être plus performant(e) au travail, à préparer un entretien ou un examen…) '},
-            3: {'title':'Vous aider', 'article':'À réduire un mal être corporel, des troubles du
-            comportement alimentaire (les compulsions alimentaires, la reconnaissance de la faim/ la satiété, les
-            grignotages répétitifs ou des troubles digestifs…)'},
-            4: {'title':'Vous permettre', 'article':'De retrouver un sommeil plus réparateur,
-            et/ou trouver le sommeil plus facilement. '}
-        } %}
         <div class="row mx-0 d-flex justify-content-center mb-5">
-            <h2 class="pt-1 col-lg-3 col-sm-12 col-11 text-right">La sophrologie, pour quoi ?</h2>
+            <h2 class="pt-1 col-lg-3 col-sm-12 text-right">La sophrologie, pour quoi ?</h2>
             <div class="p-1 sophrology-help"></div>
-            <p class="pt-2 text-justify col-lg-6 col-sm-12 col-11">La sophrologie est particulièrement efficace pour surmonter des
-                situations complexes et améliorer votre bien-être au quotidien. Vous apprendrez d’une part des
-                techniques et outils afin d’atteindre vos objectifs, et d’autre part, vous pourrez les réutiliser en
+            <p class="pt-2 text-justify col-lg-6 col-sm-12 col-11">La sophrologie est particulièrement efficace pour
+                surmonter des situations complexes et améliorer votre bien-être au quotidien. Vous apprendrez d’une part
+                des techniques et outils afin d’atteindre vos objectifs, et d’autre part, vous pourrez les réutiliser en
                 autonomie chez vous grâce à une pratique régulière. <br/>
                 La sophrologie est un accompagnement qui est adapté pour :</p>
         </div>
         <div class="row mx-0 d-flex justify-content-center container-fluid mt-5 pt-3">
-            {% for theme in themes %}
-                <ul class="col-lg-2 col-sm-12 col-11 list-group list-group-flush m-3">
-                    <li class="list-group-item text-center text-uppercase themes-sophro p-3"><h3>{{ theme.title }}</h3></li>
-                    <li class="w-100 h-100 list-group-item text-justify p-4">{{ theme.article }}</li>
-                </ul>
-            {% endfor %}
+            <ul class="col-lg-2 col-sm-12 list-group list-group-flush m-3">
+                <li class="list-group-item text-center text-uppercase themes-sophro p-3"><h3>Vous guider</h3></li>
+                <li class="w-100 h-100 list-group-item text-justify p-4">À gérer votre <strong>stress</strong> et mieux
+                    maîtriser vos <strong>émotions</strong> (la colère, la tristesse, évacuer vos tensions…). Vous
+                    permettre le lâcher-prise sur les petites contrariétés du quotidien pour mieux vous préparer à
+                    surmonter les épreuves importantes.</li>
+            </ul>
+            <ul class="col-lg-2 col-sm-12 list-group list-group-flush m-3">
+                <li class="list-group-item text-center text-uppercase themes-sophro p-3"><h3>Vous préparer</h3></li>
+                <li class="w-100 h-100 list-group-item text-justify p-4">À affronter un <strong>événement angoissant</strong> (un
+                    changement dans votre vie, un traitement médical, une séparation, une phase douloureuse de votre vie…)</li>
+            </ul>
+
+            <ul class="col-lg-2 col-sm-12 list-group list-group-flush m-3">
+                <li class="list-group-item text-center text-uppercase themes-sophro p-3"><h3>Vous apprendre</h3></li>
+                <li class="w-100 h-100 list-group-item text-justify p-4">À <strong>rester concentré(-e)</strong>, à être plus
+                    <strong>attentif(-ve)</strong>, à être <strong>plus performant(e) au travail</strong>, à préparer un
+                    entretien ou un examen…)</li>
+            </ul>
+
+            <ul class="col-lg-2 col-sm-12 list-group list-group-flush m-3">
+                <li class="list-group-item text-center text-uppercase themes-sophro p-3"><h3>Vous aider</h3></li>
+                <li class="w-100 h-100 list-group-item text-justify p-4">À réduire un <strong>mal être corporel</strong>,
+                    des troubles du
+                    <strong>comportement alimentaire</strong> (les compulsions alimentaires, la reconnaissance de la
+                    faim/ la satiété, les grignotages répétitifs ou des troubles digestifs…)</li>
+            </ul>
+
+            <ul class="col-lg-2 col-sm-12 list-group list-group-flush m-3">
+                <li class="list-group-item text-center text-uppercase themes-sophro p-3"><h3>Vous permettre</h3></li>
+                <li class="w-100 h-100 list-group-item text-justify p-4">De retrouver un <strong>sommeil</strong> plus
+                    réparateur, et/ou trouver le sommeil plus facilement.</li>
+            </ul>
         </div>
     </section>
 {% endblock %}
