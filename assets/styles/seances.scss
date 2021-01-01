@@ -18,3 +18,12 @@ h5,
 h6 {
     font-family: $sub-title-font;
 }
+
+.number {
+    font-size: $font-size-h2;
+    border: 10px solid $dark;
+}
+
+.etape {
+    width: $etape;
+}
