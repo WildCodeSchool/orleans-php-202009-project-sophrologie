@@ -85,6 +85,11 @@ class Event
      */
     private ?string $video;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private bool $archive;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -207,6 +212,18 @@ class Event
     public function setVideo(?string $video): self
     {
         $this->video = $video;
+
+        return $this;
+    }
+
+    public function getArchive(): ?bool
+    {
+        return $this->archive;
+    }
+
+    public function setArchive(bool $archive): self
+    {
+        $this->archive = $archive;
 
         return $this;
     }

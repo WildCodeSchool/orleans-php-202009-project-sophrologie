@@ -50,7 +50,9 @@ class EventType extends AbstractType
             ->add('category', EntityType::class, [
                 'class' => Category::class,
                 'choice_label' => 'name',
+
                  ])
+
 
             ->add('summary', TextareaType::class, [
                 'label' => 'Résumé',
@@ -85,7 +87,13 @@ class EventType extends AbstractType
                 'attr' => [
                     'placeholder' => 'https//lien-vers-la-video.com',
                 ],
-            ]);
+            ])
+        ->add('archive', ChoiceType::class, [
+        'choices' => [
+            'Archive' => '1',
+            'En ligne' => '0',
+          ]
+        ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void
