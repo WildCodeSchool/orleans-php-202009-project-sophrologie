@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\UserRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
@@ -19,6 +20,14 @@ class User implements UserInterface
     private ?int $id;
 
     /**
+     * @Assert\NotBlank(message=" Vous devez remplir ce champ ")
+     * @Assert\Length(
+     *     max="180",
+     *     maxMessage=" Le champ du mail ne peut dépasser {{ limit }} caractères ")
+     * @Assert\Regex(
+     *     pattern="/^[a-zA-Z-]+@[a-zA-Z-]+\.[a-zA-Z]{2,6}$/",
+     *     match=true,
+     *     message=" '{{ value }}' n'est pas une adresse mail valide "
      * @ORM\Column(type="string", length=180, unique=true)
      */
     private ?string $email;
@@ -30,6 +39,10 @@ class User implements UserInterface
 
     /**
      * @var string The hashed password
+     * @Assert\NotBlank(message=" Vous devez remplir ce champ ")
+     * @Assert\Length(
+     *     min="6",
+     *     minMessage=" Le champ du mot de passe doit contenir au minimum {{ limit }} caractères ")
      * @ORM\Column(type="string")
      */
     private string $password;
