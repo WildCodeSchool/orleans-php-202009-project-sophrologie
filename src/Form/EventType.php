@@ -51,7 +51,7 @@ class EventType extends AbstractType
                 'class' => Category::class,
                 'choice_label' => 'name',
 
-            ])
+                 ])
 
             ->add('summary', TextareaType::class, [
                 'label' => 'Résumé',
