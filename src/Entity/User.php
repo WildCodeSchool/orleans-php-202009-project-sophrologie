@@ -20,13 +20,9 @@ class User implements UserInterface
     private ?int $id;
 
     /**
-     * @Assert\NotBlank(message=" Vous devez remplir ce champ ")
-     * @Assert\Length(
-     *     max="180",
-     *     maxMessage=" Le champ du mail ne peut dépasser {{ limit }} caractères ")
-     * @Assert\Email(
-     *     message = "L'email inscrit '{{ value }}' n'est pas une adresse valide."
-     * )
+     * @Assert\NotBlank
+     * @Assert\Length(max="180")
+     * @Assert\Email
      * @ORM\Column(type="string", length=180, unique=true)
      */
     private ?string $email;
@@ -38,10 +34,8 @@ class User implements UserInterface
 
     /**
      * @var string The hashed password
-     * @Assert\NotBlank(message=" Vous devez remplir ce champ ")
-     * @Assert\Length(
-     *     min="6",
-     *     minMessage=" Le champ du mot de passe doit contenir au minimum {{ limit }} caractères ")
+     * @Assert\NotBlank
+     * @Assert\Length(min="6")
      * @ORM\Column(type="string")
      */
     private string $password;
