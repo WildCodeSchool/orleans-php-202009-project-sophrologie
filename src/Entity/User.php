@@ -24,10 +24,9 @@ class User implements UserInterface
      * @Assert\Length(
      *     max="180",
      *     maxMessage=" Le champ du mail ne peut dépasser {{ limit }} caractères ")
-     * @Assert\Regex(
-     *     pattern="/^[a-zA-Z-]+@[a-zA-Z-]+\.[a-zA-Z]{2,6}$/",
-     *     match=true,
-     *     message=" '{{ value }}' n'est pas une adresse mail valide "
+     * @Assert\Email(
+     *     message = "L'email inscrit '{{ value }}' n'est pas une adresse valide."
+     * )
      * @ORM\Column(type="string", length=180, unique=true)
      */
     private ?string $email;
