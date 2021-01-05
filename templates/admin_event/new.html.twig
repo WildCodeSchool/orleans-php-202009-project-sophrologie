@@ -8,15 +8,14 @@
 
 <main class="container ">
     <section class="sheettop">
-
-      <div class="row">
+        <div class="row">
           <div class="col-md-8 offset-md-2">
-              <h1 class="title">Ajouter une actualité</h1>
+              <h1 class="title mb-5">Ajouter une actualité</h1>
           </div>
-      </div>
-
-      {% include 'admin_event/_form.html.twig' with {'label_button': 'Ajouter'} %}
-
+        </div>
+        <div class="table-add-event">
+            {% include 'admin_event/_form.html.twig' with {'label_button': 'Ajouter'} %}
+        </div>
 
       <a class="btn btn-outline-primary mt-5" href="{{ path('admin_event_index') }}">Retour à la liste</a>
 
