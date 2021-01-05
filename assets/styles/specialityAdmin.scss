@@ -8,7 +8,6 @@ h1,
 h2,
 h3 {
     font-family: $title-font;
-    font-size: x-large;
 }
 
 h4,
@@ -26,4 +25,8 @@ td,
 th,
 .btn {
     font-family: $text-font;
+}
+
+table {
+    border: 2px solid $primary;
 }
