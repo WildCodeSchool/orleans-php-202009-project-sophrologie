@@ -53,7 +53,6 @@ class EventType extends AbstractType
 
                  ])
 
-
             ->add('summary', TextareaType::class, [
                 'label' => 'Résumé',
                 'required' => false,

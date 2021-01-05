@@ -95,4 +95,20 @@ class AdminEventController extends AbstractController
 
         return $this->redirectToRoute('admin_event_index');
     }
+
+    /**
+     * @Route("/archive/{id}", name="archive", methods={"POST"})
+     */
+    public function togglearchive(Request $request, Event $event): Response
+    {
+
+        if ($this->isCsrfTokenValid('archive' . $event->getId(), $request->request->get('_token'))) {
+            $event->setArchive(!$event->getArchive());
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirectToRoute('admin_event_index');
+        }
+
+        return $this->redirectToRoute('admin_event_index');
+    }
 }
