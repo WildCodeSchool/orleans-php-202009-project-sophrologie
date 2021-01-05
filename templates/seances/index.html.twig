@@ -6,33 +6,34 @@
 {% endblock %}
 
 {% block body %}
-<header>
-    <div class="card bg-white text-white">
-        <img class="img banner" src="{{ asset('build/images/snow.jpg') }}" alt="bannière">
-        <div class="card-img-overlay">
-            <h1 class="timetable-title text-center text-uppercase">Seance individuelle</h1>
+    <header>
+        <h1 class="timetable-title text-center text-uppercase">Seance individuelle</h1>
+    </header>
+    <div class="container-fluid py-3">
+        <div class=" text-center justify-content-center">
+            <h2>Déroulement d'une séance</h2>
         </div>
-    </div>
-</header>
-<div class="container py-3">
-    <div class="row text-center justify-content-center">
-        <h2>Déroulement d'une séance</h2>
-    </div>
-    <div class="row pt-5 text-center">
-        <div class="col-md-4">
-            <img class="d-none d-md-block" src="{{ asset('build/images/etape1.svg') }}" alt="etape1">
-            <img class="d-md-none" src="{{ asset('build/images/etape1m.svg') }}" alt="etape1">
-        </div>
-        <div class="col-md-4 ">
-            <img class="d-none d-md-block" src="{{ asset('build/images/etape2.svg') }}" alt="">
-            <img class="d-md-none" src="{{ asset('build/images/etape2m.svg') }}" alt="etape1">
+        <div class="row pt-md-5 chronological ">
+            <div class=" etape">
+                <h3 class="  text-md-left pl-2 font-weight-bold">Etape 1 - Entretien préalable</h3>
+                <p class="text-center text-md-left pb-5 pb-md-0 pl-2 mr-md-5">Définir l'objectif pour lequel vous
+                    souhaitez être
+                    accompagné(e)</p>
+            </div>
+            <div class="etape1">
+                <h3 class="text-center pt-5 pb-md-3 pt-md-0 font-weight-bold">Etape 2 - Pratique de <br>la sophrologie
+                </h3>
+                <div class="chronological">
+                    <p class="text-center ml-md-5 mr-md-5">Les exercices de respirations associées à des mouvements
+                        physiques
+                        doux vous amènent peut à peu à un état de détente du corps et du mental.</p>
+                </div>
+            </div>
 
-        </div>
-            <div class="col-md-4">
-                <img class="d-none d-md-block" src="{{ asset('build/images/etape3.svg') }}" alt="">
-                <img class="d-md-none" src="{{ asset('build/images/etape3m.svg') }}" alt="etape1">
-
+            <div class="etape1">
+                <h3 class="pt-5 pt-md-0 text-center font-weight-bold">Etape 3 - Temps d'échange <br>après la séance</h3>
+                <p class="pl-md-5 pt-md-5 text-center">Exprimer le vécu de votre séance</p>
             </div>
         </div>
     </div>
-    {% endblock %}
+{% endblock %}
