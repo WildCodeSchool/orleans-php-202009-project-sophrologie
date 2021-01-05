@@ -8,14 +8,13 @@
 
 {% block body %}
     <section class="container my-5">
-        <h1 class="mb-5 text-lg-left text-center">Modifier la spécalité " {{ speciality.title }} "</h1>
-        <div class="text-dark">
-            <div class="text-dark">
+        <h1 class="mb-5 text-center">Modifier la spécalité "{{ speciality.title }}"</h1>
+            <div class="admin-edit-speciality">
                 {{ form_start(form) }}
                 {{ form_widget(form) }}
                 <button class="btn btn-primary">Modifier</button>
                 {{ form_end(form) }}
             </div>
-        </div>
+        <a class="btn btn-outline-primary mt-5" href="{{ path('admin_index_speciality') }}">Retour à la liste</a>
     </section>
 {% endblock %}
