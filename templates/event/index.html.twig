@@ -39,7 +39,7 @@
                             <h5 class="card-title text-center"> {{event.eventdate is empty ? '' : event.eventdate|date('d/m/Y')}}</h5>
                             <p class="card-text">{{ event.description }}</p>
 
-                            <a href="{{ path ('event_show',{'id' :event.id}) }}" class="btn btn-primary" role="button">En savoir plus</a>
+                            <a href="{{ path ('event_show',{'id' :event.id}) }}" class="btn btn-outline-primary" role="button">En savoir plus</a>
                             </div>
                     </div>
                 </div>
