@@ -17,14 +17,14 @@
         5: {'day':'Sat', 'jour':'SAMEDI', 'horaire':'9h00-13h00'},
         6: {'day':'Sun', 'jour':'DIMANCHE', 'horaire':'Fermé'},
     } %}
-    <header>
+    <header class="my-5">
         <h1 class="timetable-title text-center py-5">CONTACT</h1>
     </header>
-    <section class="jumbotron timetable-section py-5 mt-5 d-flex align-items-center">
+    <section class="jumbotron timetable-section py-5 d-flex align-items-center">
         <div class="card container p-0 my-5">
             <div class="row no-gutters">
                 <div class="p-0 col-lg-6 col-sm-12 col-12">
-                    <img class="img-timetable w-100 h-100" src="{{ asset('build/images/contact-timetable.jpg') }}"
+                    <img class="img-timetable w-100 h-100" src="{{ asset('build/images/compass.jpg') }}"
                          alt="Image journal horaires"/>
                 </div>
                 <div class="col-lg-6 col-sm-12 col-12 mb-0">
@@ -44,11 +44,11 @@
             </div>
         </div>
     </section>
-    <section class="form-section container my-5">
+    <section class="form-section container pt-5 my-5">
         <div class="row mx-0">
-            <div class="jumbotron col-lg-6 col-sm-12 col-12 mb-0 contact-right">
+            <div class="jumbotron col-lg-6 col-sm-12 col-12 mb-0">
                 <h3 class="text-center">Vous avez des questions ?</h3>
-                <h3 class="text-center mb-2">Vous souhaitez prendre un RDV ?</h3>
+                <h3 class="text-center mb-4">Vous souhaitez prendre un RDV ?</h3>
                 {{ form_start(form) }}
                 <div class="row">
                     <div class="col my-2">
@@ -80,22 +80,24 @@
                         {{ form_widget(form.message) }}
                     </div>
                 </div>
-                <button class="btn btn-primary text-info my-2">{{ ('Envoyer') }}</button>
+                <button class="btn btn-primary text-info mt-2 mb-4">{{ ('Envoyer') }}</button>
                 {{ form_end(form) }}
+                <div class="my-4">
+                <h3 class="text-center">Vous souhaitez me joindre par téléphone ?</h3>
+                <p class="lead text-center">Contactez-moi au 06 27 30 98 90</p>
+                </div>
             </div>
             <div class="p-0 col-lg-6 col-sm-12 col-12">
-                <img class="img-timetable w-100 h-100" src="{{ asset('build/images/phone-contact.jpg') }}"
+                <img class="img-timetable w-100 h-100" src="{{ asset('build/images/sunflower.jpg') }}"
                      alt="Image téléphone contact"/>
             </div>
         </div>
     </section>
     <section class="map-section pt-5 mt-5">
         <div class="pb-3">
-            <h3 class="text-center">Vous souhaitez me joindre par téléphone ?</h3>
-            <p class="lead text-center">Contactez-moi au 06 27 30 98 90</p>
             <hr class="my-4 w-50">
             <h3 class="text-center">Situer le cabinet de Sophrologie</h3>
-            <p class="text-center">304 rue de Saint-Denis, 45560 Saint-Denis en Val</p>
+            <p class="text-center">Charlotte Ricordeau, Cabinet de Sophrologie, 304 rue de Saint-Denis, 45560 Saint-Denis en Val</p>
         </div>
         <div class="p-0 col-lg-12 col-sm-12">
             <iframe width="100%" height="500"
