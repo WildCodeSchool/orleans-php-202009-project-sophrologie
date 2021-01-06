@@ -4,53 +4,54 @@
 
 p,
 a {
-  font-family: $text-font;
+    font-family: $text-font;
 }
 
 h1,
 h2,
 h3 {
-  font-family: $title-font;
+    font-family: $title-font;
 }
 
 h4,
 h5,
 h6 {
-  font-family: $sub-title-font;
+    font-family: $sub-title-font;
 }
 
 .etape {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  background-color: $arrow;
-  height: 250px;
-  width: 500px;
-  clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 0% 50%, 0% 0%);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: $arrow;
+    height: 250px;
+    width: 500px;
+    clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 0% 50%, 0% 0%);
 
-  > h3 {
-    box-sizing: border-box;
-    & p {
-      box-sizing: content-box;
+    > h3 {
+        box-sizing: border-box;
 
-
+        & p {
+            box-sizing: content-box;
     }
   }
 }
 
 .etape1 {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  background-color: $arrow;
-  height: 250px;
-  width: 500px;
-  clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
-  > h3 {
-    box-sizing: border-box;
-    & p {
-      box-sizing: content-box;
-      margin-left: 80px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: $arrow;
+    height: 250px;
+    width: 500px;
+    clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+
+    >   h3 {
+        box-sizing: border-box;
+
+        & p {
+            box-sizing: content-box;
+            margin-left: 80px;
     }
   }
 }
@@ -58,55 +59,56 @@ h6 {
 
 
 .chronological {
-  color: $grey3;
-  margin: 0px 40px 0px 70px;
+    color: $grey3;
+    margin: 0px 40px 0px 70px;
 
 }
 
 @media screen and (max-width: 800px) {
-  .chronological {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin: 0;
+    .chronological {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: 0;
     }
 
-  .etape {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    background-color: $arrow;
-    height: 250px;
-    width: 500px;
-    clip-path: polygon(100% 0, 100% 75%, 50% 100%, 0 75%, 0 0, 50% 0);
+    .etape {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        background-color: $arrow;
+        height: 250px;
+        width: 500px;
+        clip-path: polygon(100% 0, 100% 75%, 50% 100%, 0 75%, 0 0, 50% 0);
 
-    > h3 {
-      box-sizing: border-box;
-      text-align: center;
-      & p {
-        box-sizing: border-box;
-        width: 150px;
+        > h3 {
+            box-sizing: border-box;
+            text-align: center;
+
+            & p {
+                box-sizing: border-box;
+                width: 150px;
       }
     }
   }
 
-  .etape1 {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    background-color: $arrow;
-    height: 250px;
-    width: 500px;
-    clip-path: polygon(50% 25%, 100% 0, 100% 75%, 50% 100%, 0 75%, 0% 0%);
+    .etape1 {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        background-color: $arrow;
+        height: 250px;
+        width: 500px;
+        clip-path: polygon(50% 25%, 100% 0, 100% 75%, 50% 100%, 0 75%, 0% 0%);
 
-    > h3 {
-      box-sizing: border-box;
-      font-size: 20px;
+        > h3 {
+            box-sizing: border-box;
+            font-size: 20px;
 
-      & p {
-        box-sizing: border-box;
-        font-size: 15px;
-        width: 150px;
+            & p {
+                box-sizing: border-box;
+                font-size: 15px;
+                width: 150px;
       }
 
     }
