@@ -10,10 +10,12 @@
   <main class="container ">
       <div class="row">
           <div class="col-md-8 offset-md-2">
-              <h1 class="title">Modifier l'actualité {{ event.title}} </h1>
+              <h1 class="title mb-5">Modifier l'actualité "{{ event.title}}" </h1>
           </div>
       </div>
-      {% include 'admin_event/_form.html.twig' with {'label_button': 'Modifier'} %}
+      <div class="admin-edit-event">
+          {% include 'admin_event/_form.html.twig' with {'label_button': 'Modifier'} %}
+      </div>
       <a class="btn btn-outline-primary mt-5" href="{{ path('admin_event_index') }}">Retour à la liste</a>
   </main>
     </section>
