@@ -159,9 +159,6 @@
     "nikic/php-parser": {
         "version": "v4.10.2"
     },
-    "ocramius/proxy-manager": {
-        "version": "2.8.0"
-    },
     "ondram/ci-detector": {
         "version": "3.5.1"
     },
