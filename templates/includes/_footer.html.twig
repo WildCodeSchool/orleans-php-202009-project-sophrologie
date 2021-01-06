@@ -1,7 +1,7 @@
 {% block stylesheets %}
     {{ encore_entry_link_tags('footer') }}
 {% endblock %}
-<footer class="footer">
+<footer class="footer container-fluid ">
     <div class="container-fluid ">
         <div class="row py-4 text-center text-md-left justify-content-around">
             <div class="col-12 col-md-3">
@@ -18,7 +18,7 @@
                 <h4>Liens utiles</h4>
                 <ul class="pl-0">
                     <li><a class="text-decoration-none" href="">Accueil</a></li>
-                    <li><a class="text-decoration-none" href="">Sophrologie</a></li>
+                    <li><a class="text-decoration-none" href="{{ path("sophrology") }}">Sophrologie</a></li>
                     <li><a class="text-decoration-none" href="">Séances</a></li>
                     <li><a class="text-decoration-none" href="">Actualités</a></li>
                     <li><a class="text-decoration-none" href="">Contact</a></li>
@@ -99,12 +99,19 @@
         </div>
         <hr class="py-0 ">
         <div class="col-12">
-            <ul class="text-center pl-0">
+            <ul class="text-center pl-0 py-2">
                 <li>
                     <a class="text-decoration-none" href="">Mentions légale</a>
                 </li>
                 <li>Site internet réalisé avec ❤ par la Wild Code School - copyright © Inspire-expire.com</li>
             </ul>
         </div>
+    </div>
+    <div class="btn-admin">
+        {% if app.user %}
+            <a class="btn btn-sm btn-admin-link" href="{{ path('app_logout') }}"> Se déconnecter</a>
+        {% else %}
+            <a class="btn btn-sm btn-admin-link" href="{{ path('app_login') }}"> Se connecter</a>
+        {% endif %}
     </div>
 </footer>
