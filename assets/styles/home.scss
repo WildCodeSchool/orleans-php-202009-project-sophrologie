@@ -42,32 +42,10 @@ h6 {
     width: 250px;
 }
 
-
-.card-text {
-    opacity: 0;
-    transition: opacity 1s;
-}
-
-.card-img-overlay:hover {
-    .card-text {
-        opacity: 1;
-    }
-}
-
-.speciality {
-    img {
-        box-shadow: 5px 5px 5px $dark;
-        filter: brightness(100%);
-        transition: filter 1s;
-    }
-}
-
-.speciality:hover {
-    img {
-        filter: brightness(75%);
-    }
-
-    h5 {
-        display: none;
+.speciality-card:hover {
+    background-color: $bg-card;
+    .speciality-card-title,
+    .speciality-card-text {
+        background-color: $bg-card;
     }
 }
