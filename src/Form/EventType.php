@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Category;
 use App\Entity\Event;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
@@ -60,7 +61,7 @@ class EventType extends AbstractType
                     'placeholder' => 'résumé de l\'article que vous souhaitez publier',
                 ],
             ])
-            ->add('article', TextareaType::class, [
+            ->add('article', CKEditorType::class, [
                 'label' => 'Article',
                 'required' => false,
                 'attr' => [
