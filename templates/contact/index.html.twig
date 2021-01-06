@@ -20,11 +20,11 @@
     <header class="my-5">
         <h1 class="timetable-title text-center py-5">CONTACT</h1>
     </header>
-    <section class="jumbotron timetable-section py-5 d-flex align-items-center">
+    <section class="timetable-section py-5 d-flex align-items-center">
         <div class="card container p-0 my-5">
             <div class="row no-gutters">
                 <div class="p-0 col-lg-6 col-sm-12 col-12">
-                    <img class="img-timetable w-100 h-100" src="{{ asset('build/images/compass.jpg') }}"
+                    <img class="img-timetable w-100 h-100" src="{{ asset('build/images/contact-timetable.jpg') }}"
                          alt="Image journal horaires"/>
                 </div>
                 <div class="col-lg-6 col-sm-12 col-12 mb-0">
@@ -45,9 +45,9 @@
         </div>
     </section>
     <section class="form-section container pt-5 my-5">
-        <div class="row mx-0">
-            <div class="jumbotron col-lg-6 col-sm-12 col-12 mb-0">
-                <h3 class="text-center">Vous avez des questions ?</h3>
+        <div class="contact-right row mx-0">
+            <div class="col-lg-6 col-sm-12 col-12 mb-0">
+                <h3 class="text-center pt-4">Vous avez des questions ?</h3>
                 <h3 class="text-center mb-4">Vous souhaitez prendre un RDV ?</h3>
                 {{ form_start(form) }}
                 <div class="row">
@@ -82,19 +82,19 @@
                 </div>
                 <button class="btn btn-primary text-info mt-2 mb-4">{{ ('Envoyer') }}</button>
                 {{ form_end(form) }}
-                <div class="my-4">
-                <h3 class="text-center">Vous souhaitez me joindre par téléphone ?</h3>
-                <p class="lead text-center">Contactez-moi au 06 27 30 98 90</p>
-                </div>
             </div>
             <div class="p-0 col-lg-6 col-sm-12 col-12">
-                <img class="img-timetable w-100 h-100" src="{{ asset('build/images/sunflower.jpg') }}"
+                <img class="img-timetable w-100 h-100" src="{{ asset('build/images/phone-contact.jpg') }}"
                      alt="Image téléphone contact"/>
             </div>
         </div>
     </section>
     <section class="map-section pt-5 mt-5">
         <div class="pb-3">
+            <div class="my-4">
+                <h3 class="text-center">Vous souhaitez me joindre par téléphone ?</h3>
+                <p class="lead text-center">Contactez-moi au 06 27 30 98 90</p>
+            </div>
             <hr class="my-4 w-50">
             <h3 class="text-center">Situer le cabinet de Sophrologie</h3>
             <p class="text-center">Charlotte Ricordeau, Cabinet de Sophrologie, 304 rue de Saint-Denis, 45560 Saint-Denis en Val</p>
@@ -106,4 +106,5 @@
             <a href="https://www.openstreetmap.org/?mlat=47.87967&amp;mlon=1.95240#map=19/47.87976/1.95282"></a>
         </div>
     </section>
+    </div>
 {% endblock %}
