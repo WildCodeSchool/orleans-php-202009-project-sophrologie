@@ -43,10 +43,16 @@ h6 {
 }
 
 .speciality-card:hover {
-    background-color: $bg-card;
+    background: linear-gradient($footer, darken($bg-card, 20%), darken($bg-card, 10%), $bg-card);
 
-    .speciality-card-title,
+    .speciality-card-title {
+        background-color: transparent;
+        > h3 {
+            color: $light;
+        }
+    }
+
     .speciality-card-text {
-        background-color: $bg-card;
+        background-color: transparent;
     }
 }
