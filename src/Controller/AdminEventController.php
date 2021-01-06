@@ -17,6 +17,23 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
  */
 class AdminEventController extends AbstractController
 {
+    /**
+     *
+     * @Route("/index", name="index")
+     */
+
+    public function index(EventRepository $eventRepository): Response
+    {
+        $events = $eventRepository->findBy(['archive' => 0], ['eventdate' => 'DESC']);
+        $eventsArchive = $eventRepository->findBy(['archive' => 1], ['eventdate' => 'DESC']);
+
+        return $this->render('admin_event/index.html.twig', [
+            'events' => $events,
+            'eventsArchive' => $eventsArchive,
+
+        ]);
+    }
+
 
     /**
      * @Route("/new", name="new")
@@ -33,7 +50,7 @@ class AdminEventController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->persist($event);
             $entityManager->flush();
-            return $this->redirectToRoute('admin_new');
+            return $this->redirectToRoute('admin_event_index');
         }
 
         return $this->render('admin_event/new.html.twig', [
@@ -53,12 +70,45 @@ class AdminEventController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('admin_event_new');
+            return $this->redirectToRoute('admin_event_index');
         }
 
         return $this->render('admin_event/edit.html.twig', [
             'form' => $form->createView(),
             'event' => $event,
         ]);
+    }
+
+    /**
+     * @Route("/delete/{id}", name="delete", methods={"DELETE"})
+     * @return Response
+     */
+
+
+    public function delete(Request $request, Event $event): Response
+    {
+        if ($this->isCsrfTokenValid('delete' . $event->getId(), $request->request->get('_token'))) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->remove($event);
+            $entityManager->flush();
+        }
+
+        return $this->redirectToRoute('admin_event_index');
+    }
+
+    /**
+     * @Route("/archive/{id}", name="archive", methods={"POST"})
+     */
+    public function togglearchive(Request $request, Event $event): Response
+    {
+
+        if ($this->isCsrfTokenValid('archive' . $event->getId(), $request->request->get('_token'))) {
+            $event->setArchive(!$event->getArchive());
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirectToRoute('admin_event_index');
+        }
+
+        return $this->redirectToRoute('admin_event_index');
     }
 }

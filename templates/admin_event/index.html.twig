@@ -1,0 +1,185 @@
+{% extends 'layoutAdmin.html.twig' %}
+
+{% block title %}Actualités | {{ parent() }}{% endblock %}
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('adminList') }}
+    {% endblock %}
+
+
+
+{% block body %}
+
+    <main class="sheettop container">
+        <h1 class="title">Liste des actualités</h1>
+
+        <a class="btn btn-primary" href="{{ path('admin_event_new') }}">
+            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-plus-circle" fill="currentColor"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                <path fill-rule="evenodd"
+                      d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+            </svg>
+            Ajouter une nouvelle actualité
+        </a>
+
+
+        <table class=" table table-hover event-list">
+            <thead class="bg-secondary text-light col-12">
+            <tr>
+                <th colspan="7" class="text-center">A la une sur le site</th>
+            </tr>
+            </thead>
+            <thead class="bg-primary text-light">
+            <tr>
+                <th>Date de la manifestation</th>
+                <th>Titre</th>
+                <th>Categorie</th>
+                <th>Date de publication</th>
+                <th>Modifier</th>
+                <th>Archiver</th>
+                <th>Supprimer</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for event in events %}
+
+
+                <tr>
+                    <td>{{ event.eventdate is empty ? 'N/A' : event.eventdate|date('d/m/Y') }}</td>
+                    <td>{{ event.title }}</td>
+                    <td>{{ event.category.name }}</td>
+                    <td>{{ event.date is empty ? 'N/A' : event.date|date('d/m/Y') }}</td>
+
+                    <td class="text-center">
+                        <div class="btn-group">
+                            <a class="btn btn-sm btn-outline-secondary"
+                               href="{{ path('admin_event_edit', {'id': event.id}) }}">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor"
+                                     class="bi bi-pen" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                          d="M13.498.795l.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001zm-.644.766a.5.5 0 0 0-.707 0L1.95 11.756l-.764 3.057 3.057-.764L14.44 3.854a.5.5 0 0 0 0-.708l-1.585-1.585z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    <td class="text-center">
+                        <form action="{{ path('admin_event_archive', {'id': event.id}) }}"
+                              onsubmit="return confirm('voulez vous archiver cette actualité?');" method="post">
+                            <input type="hidden" name="_token" value="{{ csrf_token('archive' ~ event.id) }}">
+                            <button class="btn btn-sm  btn-outline-secondary">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                     class="bi bi-box-arrow-in-down" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                          d="M3.5 6a.5.5 0 0 0-.5.5v8a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-8a.5.5 0 0 0-.5-.5h-2a.5.5 0 0 1 0-1h2A1.5 1.5 0 0 1 14 6.5v8a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 14.5v-8A1.5 1.5 0 0 1 3.5 5h2a.5.5 0 0 1 0 1h-2z"/>
+                                    <path fill-rule="evenodd"
+                                          d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+                                </svg>
+                            </button>
+                        </form>
+                    </td>
+                    </td>
+                    <td class="text-center">
+                        <form action="{{ path('admin_event_delete', {'id': event.id}) }}"
+                              onsubmit="return confirm('voulez vous supprimer?');" method="post">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ event.id) }}">
+                            <button class="btn btn-sm  btn-outline-danger">
+                                <svg width="12" height="12" viewBox="0 0 16 16" class="bi bi-trash" fill="currentColor"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                                    <path fill-rule="evenodd"
+                                          d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+                                </svg>
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+
+
+            {% endfor %}
+            </tbody>
+
+        </table>
+
+        <table class=" table table-hover event-list">
+            <thead class="bg-secondary text-light">
+            <tr>
+                <th colspan="7" class="text-center">Archives</th>
+            </tr>
+            </thead>
+            <thead class="bg-primary text-light">
+            <tr>
+                <th>Date de la manifestation</th>
+                <th>Titre</th>
+                <th>Categorie</th>
+                <th>Date de publication</th>
+                <th>Modifier</th>
+                <th>Republier</th>
+                <th>Supprimer</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for event in eventsArchive %}
+
+
+                <tr>
+                    <td>{{ event.eventdate is empty ? 'N/A' : event.eventdate|date('d/m/Y') }}</td>
+                    <td>{{ event.title }}</td>
+                    <td>{{ event.category.name }}</td>
+                    <td>{{ event.date is empty ? 'N/A' : event.date|date('d/m/Y') }}</td>
+                    <td class="text-center">
+                        <div class="btn-group">
+                            <a class="btn btn-sm btn-outline-secondary"
+                               href="{{ path('admin_event_edit', {'id': event.id}) }}">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor"
+                                     class="bi bi-pen" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                          d="M13.498.795l.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001zm-.644.766a.5.5 0 0 0-.707 0L1.95 11.756l-.764 3.057 3.057-.764L14.44 3.854a.5.5 0 0 0 0-.708l-1.585-1.585z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </td>
+                    <td class="text-center">
+                        <form action="{{ path('admin_event_archive', {'id': event.id}) }}"
+                              onsubmit="return confirm('voulez vous republier cette actualité?');" method="post">
+                            <input type="hidden" name="_token" value="{{ csrf_token('archive' ~ event.id) }}">
+                            <button class="btn btn-sm  btn-outline-secondary">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                     class="bi bi-box-arrow-up" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                          d="M3.5 6a.5.5 0 0 0-.5.5v8a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-8a.5.5 0 0 0-.5-.5h-2a.5.5 0 0 1 0-1h2A1.5 1.5 0 0 1 14 6.5v8a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 14.5v-8A1.5 1.5 0 0 1 3.5 5h2a.5.5 0 0 1 0 1h-2z"/>
+                                    <path fill-rule="evenodd"
+                                          d="M7.646.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 1.707V10.5a.5.5 0 0 1-1 0V1.707L5.354 3.854a.5.5 0 1 1-.708-.708l3-3z"/>
+                                </svg>
+                            </button>
+                        </form>
+                    </td>
+                    <td class="text-center">
+                        <form action="{{ path('admin_event_delete', {'id': event.id}) }}"
+                              onsubmit="return confirm('voulez vous supprimer?');" method="post">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ event.id) }}">
+                            <button class="btn btn-sm  btn-outline-danger">
+                                <svg width="12" height="12" viewBox="0 0 16 16" class="bi bi-trash" fill="currentColor"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                                    <path fill-rule="evenodd"
+                                          d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+                                </svg>
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+
+
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <a class="btn btn-primary" href="{{ path("admin_home") }}">
+
+            </svg>
+            Accueil administration
+        </a>
+
+    </main>
+{% endblock %}

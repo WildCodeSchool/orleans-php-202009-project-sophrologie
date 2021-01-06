@@ -1,21 +1,28 @@
-$primary: #9FC5E9;
-$secondary: #A2C3C8;
-$warning: #FFE59A;
+$primary: #9fc5e9;
+$secondary: #a2c3c8;
+$warning: #ffe59a;
 $quartenary: #f9ca9c;
 $info: darken($primary, 50%);
 
-$light:#fff6db;
+$strongWord: #006D77;
+
+$navbar: #83C5BE;
+$footer: #006D77;
+
+$light: #ffffff;
 $dark: #000000;
+
 
 $grey1:#cfcfcf;
 $grey2:#808080;
 $grey3:#fff6db;
 $arrow: #FF8C42;
 
-$logo-font : 'Arizonia', cursive;
-$title-font : 'Playfair Display', serif;
-$sub-title-font : 'Playfair Display', serif;
-$text-font : 'PT Serif', serif;
+
+$logo-font: 'Arizonia', cursive;
+$title-font: 'Playfair Display', serif;
+$sub-title-font: 'Playfair Display', serif;
+$text-font: 'PT Serif', serif;
 
 $font-size-titlte : 40px;
 $font-size-h2: 35px;
@@ -29,3 +36,4 @@ $spacing-4: $spacing*4;
 $spacing-6: $spacing*6;
 $spacing-section: $spacing*10;
 $etape: 50px;
+

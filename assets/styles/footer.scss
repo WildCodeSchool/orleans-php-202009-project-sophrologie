@@ -13,7 +13,7 @@ footer {
 }
 
 a {
-    color: $black;
+    color: $light;
 
     &:hover {
         color: $black;
@@ -32,4 +32,25 @@ h6 {
 
 h4 {
     text-transform: uppercase;
+}
+
+.footer {
+    background-color: $footer;
+    color: $light;
+    position: relative;
+}
+
+.btn-admin {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+
+    .btn-admin-link {
+        color: transparent;
+    }
+}
+
+.btn-admin-link:hover {
+    background-color: $light;
+    color: $info;
 }
