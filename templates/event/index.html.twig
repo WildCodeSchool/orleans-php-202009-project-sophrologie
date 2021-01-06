@@ -31,10 +31,10 @@
 
                 <ul class="col-lg-3 col-md-6  col-sm-12 list-group list-group-flush m-3">
                     <li class="list-group-item text-center text-uppercase themes-sophro p-3"><h3>{{ event.category.name }}</h3></li>
-                    <li class="list-group-item text-center text-uppercase themes-sophro p-3"><h5>{{ event.title }}</h5></li>
-                    <li class="list-group-item text-center text-uppercase themes-sophro p-3"><h6>{{event.eventdate is empty ? '' : event.eventdate|date('d/m/Y')}}</h6></li>
+                    <li class="text-center text-uppercase themes-sophro p-3 event_height"><h5>{{ event.title }} </h5></li>
+                    <li class="list-group-item text-center text-uppercase themes-sophro p-3 "><h6>{{event.eventdate is empty ? '' : event.eventdate|date('d/m/Y')}}</h6></li>
                     <li><img class="img-thumbnail little" src="{{ event.url }}" alt="{{ event.title }}"/> </li>
-                    <li class="w-100 h-100 list-group-item text-justify p-4">{{ event.description }}</li>
+                    <li class="w-100 h-100 text-justify p-4">{{ event.description }}</li>
                     <li> <a href="{{ path ('event_show',{'id' :event.id}) }}" class="btn btn-primary" role="button">En savoir plus</a></li>
                 </ul>
 
