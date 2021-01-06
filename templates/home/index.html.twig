@@ -8,14 +8,11 @@
 
 {% block body %}
     <section class="section1">
-        <div class="title text-light w-100 text-center">
-            <h1 class="mt-lg-5">INSPIRE & EXPIRE</h1>
-        </div>
         <div class="intro-btn w-100 text-center mb-2 mb-lg-3">
             <a href="#" class="btn-lg btn-primary text-info text-decoration-none
             py-lg-3 px-lg-4 py-2 px-3">Prendre RDV</a>
         </div>
-        <img src="{{ asset('build/images/waterfalls.png') }}"
+        <img src="{{ asset('build/images/accueil.jpg') }}"
              alt="women sitting on a banch in front of waterfalls"
              class="intro-img">
     </section>
@@ -70,6 +67,21 @@
                     capacités et de les développer.</p>
             </div>
             <a href="#" class="btn btn-primary text-info">En savoir plus</a>
+        </div>
+    </section>
+
+    <section class="container section4 my-4 my-lg-5">
+        <h2 class="text-center text-lg-left mb-4">Mes spécialités</h2>
+        <div class="row d-flex justify-content-center">
+            {%  for speciality in specialities %}
+            <div class="speciality p-2 text-white col-lg-4 col-md-4 col-10 mb-3 mb-lg-0">
+                <img class="card-img" src="{{ asset('build/images/cloudy.jpg') }}" alt="Card image">
+                <div class="card-img-overlay">
+                    <h5 class="card-title text-light text-center">{{ speciality.title }}</h5>
+                    <p class="card-text">{{ speciality.description }}</p>
+                </div>
+            </div>
+            {% endfor %}
         </div>
     </section>
 {% endblock %}

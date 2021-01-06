@@ -10,22 +10,30 @@ use Faker;
 
 class EventFixtures extends Fixture
 {
+
+    public function getDependencies()
+    {
+        return [CategoryFixtures::class];
+    }
+
+
     public function load(ObjectManager $manager)
     {
             $faker = Faker\Factory::create('fr_FR');
         for ($i = 1; $i <= 10; $i++) {
             $event = new Event();
 
-            $event->setTitle($faker->word);
-            $event->setUrl($faker->imageUrl(150, 150));
-            $event->setDescription($faker->text());
+            $event->setTitle($faker->text(50));
+            $event->setUrl($faker->imageUrl(300, 300));
+            $event->setDescription($faker->text(200));
             $event->setEventlink($faker->url());
-            $event->setCategory($faker->text());
             $event->setDate($faker->dateTime());
+            $event->setCategory($this->getReference('actualites'));
             $event->setEventdate($faker->dateTime());
-            $event->setSummary($faker->text());
-            $event->setArticle($faker->text());
+            $event->setSummary($faker->text(500));
+            $event->setArticle($faker->text(1500));
             $event->setVideo($faker->url());
+            $event->setArchive($faker->boolean);
             $manager->persist($event);
         }
         $manager->flush();

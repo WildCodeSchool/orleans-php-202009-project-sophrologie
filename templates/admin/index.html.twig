@@ -1,0 +1,63 @@
+{% extends 'layoutAdmin.html.twig' %}
+
+
+{% block stylesheets %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{ encore_entry_link_tags('adminHome') }}
+{% endblock %}
+
+{% block body %}
+    <div class="container-fluids d-flex flex-column justify-content-center my-5">
+
+        <div class="row">
+            <div class="col-12">
+                <div class="content-title rounded-top py-3 text-white">
+                    <h2 class="text-center font-weight-bolder">Section Administrable</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="row d-flex flex-row justify-content-center">
+            <div class="col d-flex justify-content-center my-5">
+                <a class="" href="#" title="lien vers les spécialité">
+                    <div  class="card text-white">
+                        <img  src="/build/images/specialite.abd16613.png" alt="speciality">
+                        <div class="position-absolute translate-middle w-100 h-100 d-flex justify-content-center align-items-center">
+                            <span class="card-title text-section">Spécialité</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col d-flex justify-content-center my-5">
+                <a class="" href="#" title="lien vers les spécialité">
+                    <div  class="card text-white">
+                        <img  src="/build/images/seance.08f36c0c.jpg" alt="speciality">
+                        <div class="position-absolute translate-middle w-100 h-100 d-flex justify-content-center align-items-center">
+                            <span class="card-title text-section">Séance</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col d-flex justify-content-center my-5">
+                <a class="" href="#" title="lien vers les actualités">
+                    <div class=" card text-white">
+                        <img  src="/build/images/actualite.4a3b64a8.jpg" alt="actualite">
+                        <div class="position-absolute translate-middle w-100 h-100 d-flex justify-content-center align-items-center">
+                            <span class="card-title text-section">Actualité</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col d-flex justify-content-center my-5">
+                <a class="" href="#" title="lien vers les témoignages">
+                    <div  class="card text-white">
+                        <img  src="/build/images/temoignage.05149101.png" alt="testimony">
+                        <div class="position-absolute translate-middle w-100 h-100 d-flex justify-content-center align-items-center">
+                            <span class="card-title text-section">Témoignage</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

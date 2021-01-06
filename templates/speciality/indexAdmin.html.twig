@@ -1,0 +1,40 @@
+{% extends 'layout.html.twig' %}
+
+{% block stylesheets %}
+    {{ encore_entry_link_tags('speciality') }}
+{% endblock %}
+
+{% block body %}
+    <section class="container my-5">
+        <h1 class="mb-5 text-lg-left text-center">Page d'accueil des spécialités</h1>
+        <table class="table table-striped table-dark">
+            <thead>
+            <tr class="text-lg-left text-center">
+                <th scope="col">Titre</th>
+                <th scope="col">Description</th>
+                <th scope="col">Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for speciality in specialities %}
+                <tr>
+                    <td class="text-light">{{ speciality.title }}</td>
+                    <td>{{ speciality.description }}</td>
+                    <td class="">
+                        <div class="d-flex flex-column">
+                            <a class="btn btn-primary mx-2" href="{{ path('admin_edit_speciality', {id: speciality.id}) }}">Modifier</a>
+                            <p class="mx-2">{{ include('speciality/_delete.html.twig') }}</p>
+                        </div>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <div class="text-right">
+            <a class="btn btn-primary" href="{{ path('admin_new_speciality') }}">Ajouter</a>
+        </div>
+    </section>
+    <section class="container-fluid mb-5">
+        <a class="btn btn-danger" href="{{ path('home') }}">Retour à l'accueil admin</a>
+    </section>
+{% endblock %}

@@ -1,6 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Arizonia&family=PT+Serif&family=Playfair+Display:ital@0;1&display=swap');
-@import 'variables.scss';
-@import "~bootstrap/scss/bootstrap";
+@import 'app.scss';
 
 p {
     font-family: $text-font;
@@ -39,4 +37,9 @@ h6 {
 {
     margin-bottom : $spacing-section;
 
+}
+
+.imgdetail {
+    width: 300px;
+    height: 300px;
 }

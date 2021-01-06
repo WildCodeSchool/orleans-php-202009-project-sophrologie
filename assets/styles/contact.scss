@@ -1,10 +1,10 @@
 @import 'app.scss';
 
-.timetable-section {
-    margin-top: $spacing-section;
+.timetable-section, .contact-right, .map-section {
+    background-color: $grey1;
 }
 
-.timetable-title {
-    margin-bottom: $spacing-6;
-}
+.strongDay {
+    font-weight: bold;
 
+}
