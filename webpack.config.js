@@ -44,6 +44,7 @@ Encore
     .addEntry('navbar', './assets/styles/navbar.scss')
     .addEntry('speciality', './assets/styles/specialityAdmin.scss')
     .addEntry('newEvent', './assets/styles/newEvent.scss')
+    .addEntry('seances', './assets/styles/seances.scss')
     .addEntry('adminList', './assets/styles/adminList.scss')
     .addEntry('login', './assets/styles/login.scss')
     .addEntry('sophrology', './assets/styles/sophrology.scss')
@@ -75,7 +76,7 @@ Encore
     })
 
     // enables Sass/SCSS support
-    .enableSassLoader()
+    .enableSassLoader();
 
 // uncomment if you use TypeScript
 // .enableTypeScriptLoader()
