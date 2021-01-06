@@ -22,5 +22,10 @@ h6 {
     font-family: $title-font;
     text-transform: uppercase;
     letter-spacing: 1px;
+    font-size: $font-size-h3;
+}
+
+.navbar {
+    background-color: $navbar;
 }
 

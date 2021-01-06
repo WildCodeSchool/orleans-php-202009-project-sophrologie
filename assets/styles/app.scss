@@ -12,6 +12,7 @@ h1,
 h2,
 h3 {
     font-family: $title-font;
+    color: #006D77;
 }
 
 h4,
@@ -19,4 +20,10 @@ h5,
 h6 {
     font-family: $sub-title-font;
 }
+
+strong {
+    color: $strongWord;
+}
+
+
 

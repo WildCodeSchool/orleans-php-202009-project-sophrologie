@@ -21,13 +21,20 @@ class AdminEventController extends AbstractController
      *
      * @Route("/index", name="index")
      */
+
     public function index(EventRepository $eventRepository): Response
     {
-        $events = $eventRepository->findAll();
+        $events = $eventRepository->findBy(['archive' => 0], ['eventdate' => 'DESC']);
+        $eventsArchive = $eventRepository->findBy(['archive' => 1], ['eventdate' => 'DESC']);
+
         return $this->render('admin_event/index.html.twig', [
             'events' => $events,
+            'eventsArchive' => $eventsArchive,
+
         ]);
     }
+
+
     /**
      * @Route("/new", name="new")
      * @param Request $request
@@ -84,6 +91,22 @@ class AdminEventController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($event);
             $entityManager->flush();
+        }
+
+        return $this->redirectToRoute('admin_event_index');
+    }
+
+    /**
+     * @Route("/archive/{id}", name="archive", methods={"POST"})
+     */
+    public function togglearchive(Request $request, Event $event): Response
+    {
+
+        if ($this->isCsrfTokenValid('archive' . $event->getId(), $request->request->get('_token'))) {
+            $event->setArchive(!$event->getArchive());
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirectToRoute('admin_event_index');
         }
 
         return $this->redirectToRoute('admin_event_index');
