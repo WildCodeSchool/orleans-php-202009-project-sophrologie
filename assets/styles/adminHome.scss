@@ -11,7 +11,7 @@ img {
     font-size: $spacing-2;
 }
 
-a:hover {
+a > .card:hover {
     .text-section {
         font-size: $spacing-4;
     }
