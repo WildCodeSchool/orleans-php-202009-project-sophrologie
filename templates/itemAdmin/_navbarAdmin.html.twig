@@ -2,10 +2,14 @@
     {{ encore_entry_link_tags('navbarAdmin') }}
 {% endblock %}
 
-<nav class="navbar navbar-expand-lg navbar-light bg-info d-flex align-items-center">
-    <div>
-        <p class="mb-0 mr-5 text-light">ESPACE ADMINISTRATEUR</p>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+<nav class="navbar navbar-expand-lg navbar-light d-flex align-items-center justify-content-center">
+    <div class="d-flex justify-content-center align-items-center flex-lg-row
+                flex-column">
+            <a href="{{ path('home') }}" class="mx-2 text-decoration-none text-light text-uppercase">
+                <img class="logo" src="{{ asset('build/images/logo.png') }}"/>
+            </a>
+        <p class="mb-lg-0 mr-lg-5 ml-lg-3 mx-0 my-2 text-light">ESPACE ADMINISTRATEUR</p>
+        <button class="navbar-toggler  my-2" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
     </div>
@@ -28,11 +32,11 @@
             </li>
         </ul>
     </div>
-    <li class="mt-2 mt-lg-0 list-unstyled">
+    <li class="mt-lg-2 mt-lg-0  my-2 list-unstyled d-flex align-items-center">
         {% if app.user %}
-            <a class="text-dark btn btn-primary" href="{{ path('app_logout') }}"> Se déconnecter</a>
+            <a class="text-light btn btn-outline-light" href="{{ path('app_logout') }}"> Se déconnecter</a>
         {% else %}
-            <a class="text-dark btn btn-primary" href="{{ path('app_login') }}"> Se connecter</a>
+            <a class="text-light btn btn-outline-light" href="{{ path('app_login') }}"> Se connecter</a>
         {% endif %}
     </li>
 </nav>
