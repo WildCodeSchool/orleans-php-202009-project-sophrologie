@@ -9,7 +9,7 @@
 {% block body %}
     <section class="section1">
         <div class="intro-btn w-100 text-center mb-2 mb-lg-3">
-            <a href="#" class="btn-lg btn-primary text-info text-decoration-none
+            <a href="#" class="btn-lg btn-light text-primary text-decoration-none
             py-lg-3 px-lg-4 py-2 px-3">Prendre RDV</a>
         </div>
         <img src="{{ asset('build/images/accueil.jpg') }}"
@@ -62,26 +62,31 @@
                 <h2 class="mb-3">Qu'est ce que la sophrologie ?</h2>
                 <p>La sophrologie est une méthode de relaxation psychocorporelle qui permet de retrouver un bien-être au
                     quotidien, de se détendre, de prendre conscience de ses propres capacités et de les développer.</p>
-                <p class="text-truncate">Créée par le médecin Alfonso Caycedo en 1966, la sophrologie est une méthode de relaxation
+                <p>Créée par le médecin Alfonso Caycedo en 1966, la sophrologie est une méthode de relaxation
                     psychocorporelle qui permet de retrouver un bien-être au quotidien, de prendre conscience de ses propres
                     capacités et de les développer.</p>
             </div>
+
             <a href="{{ path("sophrology") }}" class="btn btn-primary text-info">En savoir plus</a>
         </div>
     </section>
 
     <section class="container section4 my-4 my-lg-5">
         <h2 class="text-center text-lg-left mb-4">Mes spécialités</h2>
-        <div class="row d-flex justify-content-center">
-            {%  for speciality in specialities %}
-            <div class="speciality p-2 text-white col-lg-4 col-md-4 col-10 mb-3 mb-lg-0">
-                <img class="card-img" src="{{ asset('build/images/cloudy.jpg') }}" alt="Card image">
-                <div class="card-img-overlay">
-                    <h5 class="card-title text-light text-center">{{ speciality.title }}</h5>
-                    <p class="card-text">{{ speciality.description }}</p>
-                </div>
+            <div class="row mx-0 d-flex justify-content-around mt-2 pt-3">
+                {%  for speciality in specialities %}
+                    <ul class="speciality-card col-sm-12 col-md-5 col-lg-4 my-3 px-2 list-group list-group-flush">
+                        <li class="speciality-card-title list-group-item text-center text-uppercase">
+                            <h3>{{ speciality.title }}</h3>
+                        </li>
+                        <li class="speciality-card-text list-group-item">
+                            <p class="p-0">{{ speciality.description }}</p>
+                        </li>
+                    </ul>
+                {% endfor %}
             </div>
-            {% endfor %}
-        </div>
+
+
+
     </section>
 {% endblock %}
