@@ -16,7 +16,7 @@ a {
     color: $light;
 
     &:hover {
-        color: $black;
+        color: $navbar-dark-hover-color;
   }
 }
 
@@ -38,6 +38,14 @@ h4 {
     background-color: $footer;
     color: $light;
     position: relative;
+}
+
+.social-network {
+    fill: $light;
+    }
+
+.svg-footer{
+    fill: $light;
 }
 
 .btn-admin {

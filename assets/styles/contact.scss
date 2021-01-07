@@ -1,10 +1,14 @@
 @import 'app.scss';
 
-.timetable-section, .contact-right, .map-section {
-    background-color: $grey1;
-}
-
 .strongDay {
     font-weight: bold;
 
+}
+
+.timetable-section {
+    background-color: $grey1;
+}
+
+.contact-right {
+    background-color: $grey1;
 }
