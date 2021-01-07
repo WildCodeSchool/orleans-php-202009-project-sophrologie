@@ -16,6 +16,7 @@ import '../styles/specialityAdmin.scss';
 import '../styles/newEvent.scss';
 import '../styles/adminList.scss';
 import '../styles/login.scss';
+import '../styles/navbarAdmin.scss';
 
 // Need jQuery? Install it with "yarn add jquery", then uncomment to import it.
 // import $ from 'jquery';
