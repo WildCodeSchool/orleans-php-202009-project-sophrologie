@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "01d16c1c3ee06ce6e931af0147b02beb",
+    "content-hash": "e35bf6b6d79f7d829617b7c75d86adcd",
     "packages": [
         {
             "name": "composer/package-versions-deprecated",
@@ -1630,6 +1630,88 @@
                 }
             ],
             "time": "2020-12-22T15:47:11+00:00"
+        },
+        {
+            "name": "friendsofsymfony/ckeditor-bundle",
+            "version": "2.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FriendsOfSymfony/FOSCKEditorBundle.git",
+                "reference": "7e1cfe2a83faba0be02661d44289d35e940bb5ea"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSCKEditorBundle/zipball/7e1cfe2a83faba0be02661d44289d35e940bb5ea",
+                "reference": "7e1cfe2a83faba0be02661d44289d35e940bb5ea",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "ext-zip": "*",
+                "php": "^7.1",
+                "symfony/asset": "^3.4 || ^4.0 || ^5.0",
+                "symfony/config": "^3.4 || ^4.0 || ^5.0",
+                "symfony/dependency-injection": "^3.4 || ^4.0 || ^5.0",
+                "symfony/expression-language": "^3.4 || ^4.0 || ^5.0",
+                "symfony/form": "^3.4 || ^4.0 || ^5.0",
+                "symfony/framework-bundle": "^3.4 || ^4.0 || ^5.0",
+                "symfony/http-foundation": "^3.4 || ^4.0 || ^5.0",
+                "symfony/http-kernel": "^3.4 || ^4.0 || ^5.0",
+                "symfony/options-resolver": "^3.4 || ^4.0 || ^5.0",
+                "symfony/property-access": "^3.4 || ^4.0 || ^5.0",
+                "symfony/routing": "^3.4 || ^4.0 || ^5.0",
+                "symfony/twig-bundle": "^3.4 || ^4.0 || ^5.0",
+                "twig/twig": "^2.4 || ^3.0"
+            },
+            "conflict": {
+                "sebastian/environment": "<1.3.4",
+                "sebastian/exporter": "<2.0.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.0",
+                "matthiasnoback/symfony-dependency-injection-test": "^1.0 || ^2.0",
+                "phpunit/phpunit": "^6.0",
+                "symfony/console": "^3.4 || ^4.0 || ^5.0",
+                "symfony/phpunit-bridge": "^4.1 || ^5.0",
+                "symfony/yaml": "^3.4 || ^4.0 || ^5.0"
+            },
+            "suggest": {
+                "egeloen/form-extra-bundle": "Allows to load CKEditor asynchronously"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "FOS\\CKEditorBundle\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Eric GELOEN",
+                    "email": "geloen.eric@gmail.com"
+                },
+                {
+                    "name": "FriendsOfSymfony Community",
+                    "homepage": "https://github.com/FriendsOfSymfony/FOSCKEditorBundle/graphs/contributors"
+                }
+            ],
+            "description": "Provides a CKEditor integration for your Symfony project.",
+            "keywords": [
+                "CKEditor"
+            ],
+            "support": {
+                "issues": "https://github.com/FriendsOfSymfony/FOSCKEditorBundle/issues",
+                "source": "https://github.com/FriendsOfSymfony/FOSCKEditorBundle/tree/2.2.0"
+            },
+            "time": "2019-12-23T15:31:36+00:00"
         },
         {
             "name": "laminas/laminas-code",
@@ -9164,61 +9246,6 @@
                 }
             ],
             "time": "2020-10-28T21:31:18+00:00"
-        },
-        {
-            "name": "webimpress/safe-writer",
-            "version": "2.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/webimpress/safe-writer.git",
-                "reference": "5cfafdec5873c389036f14bf832a5efc9390dcdd"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/webimpress/safe-writer/zipball/5cfafdec5873c389036f14bf832a5efc9390dcdd",
-                "reference": "5cfafdec5873c389036f14bf832a5efc9390dcdd",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.2 || ^8.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^8.5.8 || ^9.3.7",
-                "vimeo/psalm": "^3.14.2",
-                "webimpress/coding-standard": "^1.1.5"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.1.x-dev",
-                    "dev-develop": "2.2.x-dev",
-                    "dev-release-1.0": "1.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Webimpress\\SafeWriter\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-2-Clause"
-            ],
-            "description": "Tool to write files safely, to avoid race conditions",
-            "keywords": [
-                "concurrent write",
-                "file writer",
-                "race condition",
-                "safe writer",
-                "webimpress"
-            ],
-            "funding": [
-                {
-                    "url": "https://github.com/michalbundyra",
-                    "type": "github"
-                }
-            ],
-            "time": "2020-08-25T07:21:11+00:00"
         }
     ],
     "aliases": [],
@@ -9232,5 +9259,5 @@
         "ext-iconv": "*"
     },
     "platform-dev": [],
-    "plugin-api-version": "1.1.0"
+    "plugin-api-version": "2.0.0"
 }
