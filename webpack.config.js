@@ -38,7 +38,7 @@ Encore
     .addEntry('adminHome', './assets/styles/adminHome.scss')
     .addEntry('footer', './assets/styles/footer.scss')
     .addEntry('event', './assets/styles/event.scss')
-    .addEntry('navbarAdmin', './assets/js/navbarAdmin.js')
+    .addEntry('navbarAdmin', './assets/styles/navbarAdmin.scss')
     .addEntry('contact', './assets/styles/contact.scss')
     .addEntry('home', './assets/styles/home.scss')
     .addEntry('navbar', './assets/styles/navbar.scss')
