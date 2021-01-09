@@ -102,7 +102,7 @@ class Event
      * @var File
      */
 
-    private ?File $urlFile;
+    private ?File $urlFile = null;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)

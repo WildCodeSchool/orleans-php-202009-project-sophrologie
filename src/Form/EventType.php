@@ -38,9 +38,10 @@ class EventType extends AbstractType
             ->add('urlFile', VichFileType::class, [
 
                 'required'      => false,
-                'allow_delete'  => true, // not mandatory, default is true
+                'allow_delete'  => false, // not mandatory, default is true
                 'download_uri' => true, // not mandatory, default is true
-
+                'label' => false,
+                'attr' => ['placeholder' => 'Sélectionner un fichier'],
             ])
             ->add('eventdate', DateType::class, [
                 'label' => 'Date de publication',
