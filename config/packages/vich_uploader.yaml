@@ -1,0 +1,8 @@
+vich_uploader:
+  db_driver: orm
+
+  mappings:
+    url_file:
+      uri_prefix: /images/url
+      upload_destination: '%upload_directory%'
+      namer: Vich\UploaderBundle\Naming\SmartUniqueNamer # or any other namer listed above

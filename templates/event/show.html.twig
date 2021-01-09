@@ -11,7 +11,7 @@
         <h4 class="mb-4 text-center">{{event.eventdate is empty ? '' : event.eventdate|date('d/m/Y')}}</h4>
         <section class="section2 jumbotron container bg-white py-4 py-lg-5 px-0 mb-0 d-lg-flex text-lg-left">
             <div class="d-flex align-items-center justify-content-center">
-                <img class="imgdetail" src="{{ event.url }}" alt="{{ event.title }}">
+                <img class="imgdetail" src="/uploads/{{ event.url }}" alt="{{ event.title }}">
             </div>
             <div class="container ml-lg-5 text-left text-lg-left">
                 <p class="card-text">{{ event.description }}</p>

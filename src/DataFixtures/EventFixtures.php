@@ -34,6 +34,8 @@ class EventFixtures extends Fixture
             $event->setArticle($faker->text(1500));
             $event->setVideo($faker->url());
             $event->setArchive($faker->boolean);
+            $event->setUrlFile();
+            $event->setUploadedAt($faker->dateTime());
             $manager->persist($event);
         }
         $manager->flush();

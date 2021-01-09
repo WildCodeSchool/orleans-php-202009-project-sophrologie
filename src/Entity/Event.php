@@ -4,10 +4,21 @@ namespace App\Entity;
 
 use App\Repository\EventRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\Collection;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use DateTime;
+use DateTimeInterface;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * @ORM\Entity(repositoryClass=EventRepository::class)
+ * @Vich\Uploadable
+ * @UniqueEntity(
+ *     fields={"title"},
+ *     message="L'actualité existe déjà'"
+ * )
  */
 class Event
 {
@@ -34,14 +45,12 @@ class Event
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      * @Assert\Length(max=255)
-     * @Assert\Url()
      */
-    private ?string $url;
+    private ?string $url = null;
 
     /**
      * @ORM\Column(type="date", nullable=true)
      * @Assert\Type("DateTime")
-
      */
     private ?\DateTimeInterface $date;
 
@@ -59,7 +68,6 @@ class Event
     private ?string $article;
 
     /**
-     *     /**
      * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="events")
      * @ORM\JoinColumn(nullable=false)
      */
@@ -69,7 +77,6 @@ class Event
     /**
      * @ORM\Column(type="date", nullable=true)
      * @Assert\Type("DateTime")
-
      */
     private ?\DateTimeInterface $eventdate;
 
@@ -89,6 +96,20 @@ class Event
      * @ORM\Column(type="boolean")
      */
     private bool $archive;
+
+    /**
+     * @Vich\UploadableField(mapping="url_file", fileNameProperty="url")
+     * @var File
+     */
+
+    private ?File $urlFile;
+
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     * @var DateTimeInterface
+     */
+
+    private \DateTimeInterface $uploadedAt ;
 
     public function getId(): ?int
     {
@@ -224,6 +245,33 @@ class Event
     public function setArchive(bool $archive): self
     {
         $this->archive = $archive;
+
+        return $this;
+    }
+
+    public function setUrlFile(File $image = null): Event
+    {
+        $this->urlFile = $image;
+        if ($image) {
+            $this->uploadedAt = new DateTime('now');
+        }
+        return $this;
+    }
+
+
+    public function getUrlFile(): ?File
+    {
+        return $this->urlFile;
+    }
+
+    public function getUploadedAt(): ?\DateTimeInterface
+    {
+        return $this->uploadedAt;
+    }
+
+    public function setUploadedAt(?\DateTimeInterface $uploadedAt): self
+    {
+        $this->uploadedAt = $uploadedAt;
 
         return $this;
     }
