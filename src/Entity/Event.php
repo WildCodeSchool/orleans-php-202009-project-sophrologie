@@ -109,7 +109,7 @@ class Event
      * @var DateTimeInterface
      */
 
-    private \DateTimeInterface $uploadedAt ;
+    private ?\DateTimeInterface $uploadedAt ;
 
     public function getId(): ?int
     {
