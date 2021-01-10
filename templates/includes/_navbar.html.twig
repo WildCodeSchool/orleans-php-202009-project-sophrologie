@@ -31,6 +31,21 @@
             <li class="nav-item pr-3">
                 <a class="nav-link" href="{{ path("contact") }}">Contact</a>
             </li>
+            <li class="nav-item pr-3 ">
+                {% if is_granted("ROLE_ADMIN") %}
+
+                    <a class="nav-link" href="{{ path("admin_home") }}">Administration</a>
+
+                {% endif %}
+            </li>
+            <li class="nav-item pr-3">
+                {% if is_granted("ROLE_USER") %}
+
+                    <a class="nav-link" href="{{ path('admin_user_index') }}">Mon espace</a>
+
+                {% endif %}
+
+            </li>
         </ul>
     </div>
 </nav>
