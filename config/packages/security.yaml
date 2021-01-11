@@ -40,6 +40,6 @@ security:
         ROLE_ADMIN: ROLE_PATIENT
 
     access_control:
-         - { path: ^/user, roles: ROLE_PATIENT }
+         - { path: ^/user/show/, roles: ROLE_PATIENT }
          - { path: ^/admin, roles: ROLE_ADMIN }
 
