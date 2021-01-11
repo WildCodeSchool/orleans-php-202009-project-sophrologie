@@ -24,6 +24,10 @@ h6 {
 
 .section1 {
     position: relative;
+    height: 85vh;
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-position: right 50% top 13%;;
 }
 
 .title {
@@ -31,7 +35,8 @@ h6 {
 }
 
 .intro-btn {
-    bottom: 5px;
+    top: 10px;
+    left: 10px;
     position: absolute;
 }
 
@@ -50,5 +55,16 @@ h6 {
 
     .speciality-card-text {
         background-color: transparent;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .section1 {
+        height: 30vh;
+    }
+
+    .intro-btn {
+        top: 5px;
+        left: 5px;
     }
 }
