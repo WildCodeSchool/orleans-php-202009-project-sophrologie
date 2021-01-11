@@ -15,17 +15,17 @@ class Faq
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
-    private $id;
+    private int $id;
 
     /**
      * @ORM\Column(type="text")
      */
-    private $subject;
+    private string $subject;
 
     /**
      * @ORM\Column(type="text")
      */
-    private $feedback;
+    private string $feedback;
 
     public function getId(): ?int
     {
