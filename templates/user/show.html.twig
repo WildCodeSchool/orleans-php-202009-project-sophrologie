@@ -1,0 +1,15 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Espace utilisateur | {{ parent() }}{% endblock %}
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+{% block body %}
+    <section class="container sheettop mb-3 mb-lg-5">
+        <h5 class="mb-4 text-lg-right">{{ user.email }}</h5>
+
+    </section>
+
+{% endblock %}
+
+

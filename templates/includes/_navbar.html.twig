@@ -41,7 +41,7 @@
             <li class="nav-item pr-3">
                 {% if is_granted("ROLE_USER") %}
 
-                    <a class="nav-link" href="{{ path('user_index') }}">Mon espace</a>
+                    <a class="nav-link" href="{{ path('user_show', {id: app.user.id}) }}">Mon espace</a>
 
                 {% endif %}
 
