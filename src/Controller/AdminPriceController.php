@@ -2,27 +2,27 @@
 
 namespace App\Controller;
 
-use App\Entity\Prices;
-use App\Form\PricesType;
-use App\Repository\PricesRepository;
+use App\Entity\Price;
+use App\Form\PriceType;
+use App\Repository\PriceRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/admin/prices", name="admin_prices_")
+ * @Route("/admin/price", name="admin_prices_")
  */
-class AdminPricesController extends AbstractController
+class AdminPriceController extends AbstractController
 {
     /**
      * @Route("/", name="index")
-     * @param PricesRepository $pricesRepository
+     * @param PriceRepository $pricesRepository
      * @return Response
      */
-    public function index(PricesRepository $pricesRepository): Response
+    public function index(PriceRepository $pricesRepository): Response
     {
-        return $this->render('admin_prices/index.html.twig', [
+        return $this->render('admin_price/index.html.twig', [
             'prices' => $pricesRepository->findAll(),
         ]);
     }
@@ -34,8 +34,8 @@ class AdminPricesController extends AbstractController
      */
     public function new(Request $request): Response
     {
-        $price = new Prices();
-        $form = $this->createForm(PricesType::class, $price);
+        $price = new Price();
+        $form = $this->createForm(PriceType::class, $price);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -46,10 +46,10 @@ class AdminPricesController extends AbstractController
             $this->addFlash('success', 'Le tarif à bien était ajouté');
 
 
-            return $this->redirectToRoute('prices_index');
+            return $this->redirectToRoute('admin_prices_index');
         }
 
-        return $this->render('admin_prices/new.html.twig', [
+        return $this->render('admin_price/new.html.twig', [
             'price' => $price,
             'form' => $form->createView(),
         ]);

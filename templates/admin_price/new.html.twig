@@ -6,7 +6,7 @@
 {% block body %}
     <h1 class="text-center pt-5">Ajouter un nouveau tarif</h1>
 <div class="container">
-    {%  include('admin_prices/_form.html.twig') with {'label_button': 'Ajouter'} %}
+    {%  include('admin_price/_form.html.twig') with {'label_button': 'Ajouter'} %}
 
     <a class="btn btn-outline-primary text-dark mt-3" href="{{ path('admin_prices_index') }}">Retour à la liste</a>
 </div>

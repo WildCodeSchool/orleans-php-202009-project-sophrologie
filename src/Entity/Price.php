@@ -2,14 +2,14 @@
 
 namespace App\Entity;
 
-use App\Repository\PricesRepository;
+use App\Repository\PriceRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=PricesRepository::class)
  */
-class Prices
+class Price
 {
     /**
      * @ORM\Id
@@ -21,13 +21,14 @@ class Prices
     /**
      * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank
-     * @Assert\Length(max="255", maxMessage="Le nom ne doit pas dépasser {{ value }} caractère.")
+     * @Assert\Length(max="255")
      */
     private ?string $name;
 
     /**
      * @ORM\Column(type="integer")
      * @Assert\NotBlank
+     * @Assert\Positive()
      */
     private ?int $price;
 
