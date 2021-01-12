@@ -46,7 +46,7 @@ class Event
      * @ORM\Column(type="string", length=255, nullable=true)
      * @Assert\Length(max=255)
      */
-    private ?string $url = null;
+    private ?string $picture = null;
 
     /**
      * @ORM\Column(type="date", nullable=true)
@@ -98,11 +98,12 @@ class Event
     private bool $archive;
 
     /**
-     * @Vich\UploadableField(mapping="url_file", fileNameProperty="url")
-     * @var File
+     * @Vich\UploadableField(mapping="picture_file", fileNameProperty="picture")
+     * @var File|null
+     * @Assert\File(maxSize="1000k", mimeTypes={"image/jpeg", "image/png", "image/pdf"})
      */
 
-    private ?File $urlFile = null;
+    private ?File $pictureFile = null;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
@@ -140,14 +141,14 @@ class Event
         return $this;
     }
 
-    public function getUrl(): ?string
+    public function getPicture(): ?string
     {
-        return $this->url;
+        return $this->picture;
     }
 
-    public function setUrl(?string $url): self
+    public function setPicture(?string $picture): self
     {
-        $this->url = $url;
+        $this->picture = $picture;
 
         return $this;
     }
@@ -249,9 +250,9 @@ class Event
         return $this;
     }
 
-    public function setUrlFile(File $image = null): Event
+    public function setPictureFile(File $image = null): Event
     {
-        $this->urlFile = $image;
+        $this->pictureFile = $image;
         if ($image) {
             $this->uploadedAt = new DateTime('now');
         }
@@ -259,9 +260,9 @@ class Event
     }
 
 
-    public function getUrlFile(): ?File
+    public function getPictureFile(): ?File
     {
-        return $this->urlFile;
+        return $this->pictureFile;
     }
 
     public function getUploadedAt(): ?\DateTimeInterface
