@@ -13,8 +13,11 @@
         <h1 class="title">Liste des actualités</h1>
 
         {{ form_start(form) }}
+
         {{ form_widget(form) }}
+
         <button>Search</button>
+
         {{ form_end(form) }}
 
         <a class="btn btn-primary" href="{{ path('admin_event_new') }}">
@@ -123,7 +126,7 @@
             </tr>
             </thead>
             <tbody>
- {#          {% for event in eventsArchive %}
+{#         {% for event in eventsArchive %}
 
 
                 <tr>
@@ -186,5 +189,5 @@
             Accueil administration
         </a>
 
-    </main> #}
+    </main>#}
  {% endblock %}
