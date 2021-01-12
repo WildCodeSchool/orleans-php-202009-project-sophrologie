@@ -22,8 +22,11 @@ class AdminEventController extends AbstractController
      * @Route("/index", name="index")
      */
 
-    public function index(EventRepository $eventRepository): Response
+    public function index(Request $request, EventRepository $eventRepository): Response
     {
+
+
+
         $events = $eventRepository->findBy(['archive' => 0], ['eventdate' => 'DESC']);
         $eventsArchive = $eventRepository->findBy(['archive' => 1], ['eventdate' => 'DESC']);
 
