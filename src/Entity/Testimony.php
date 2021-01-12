@@ -22,13 +22,14 @@ class Testimony
     /**
      * @ORM\Column(type="string", length=100)
      * @Assert\NotBlank
-     *
+     * @Assert\Length(max="100")
      */
     private ?string $title;
 
     /**
      * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank
+     * @Assert\Length(max="255")
      */
     private ?string $description;
 
@@ -41,11 +42,13 @@ class Testimony
     /**
      * @ORM\Column(type="string", length=75)
      * @Assert\NotBlank
+     * @Assert\Length(max="75")
      */
     private ?string $firtsname;
 
     /**
      * @ORM\Column(type="string", length=75, nullable=true)
+     * @Assert\Length(max="75")
      */
     private ?string $lastname;
 
