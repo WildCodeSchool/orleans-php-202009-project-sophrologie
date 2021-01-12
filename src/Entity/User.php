@@ -42,10 +42,14 @@ class User implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank
+     * @Assert\Length(min="2", max="100")
      */
     private string $lastname;
 
     /**
+     * @Assert\NotBlank
+     * @Assert\Length(min="2", max="100")
      * @ORM\Column(type="string", length=255)
      */
     private string $firstname;
