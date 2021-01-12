@@ -14,9 +14,21 @@ class PriceType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('name', TextType::class)
-            ->add('price', IntegerType::class)
-            ->add('description', TextType::class)
+            ->add('name', TextType::class, [
+                'label' => 'Nom',
+                'attr' => [
+                    'placeholder' => 'forfait',
+                ],])
+            ->add('price', IntegerType::class, [
+                'label' => 'Prix',
+                'attr' => [
+                    'placeholder' => 'Tarif',
+                ],])
+            ->add('description', TextType::class, [
+                'label' => 'Description',
+                'attr' => [
+                    'placeholder' => 'Type de paiements',
+                ],])
         ;
     }
 
