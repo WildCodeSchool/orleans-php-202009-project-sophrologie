@@ -35,6 +35,7 @@ $(document).ready(() => {
     $('[data-toggle="popover"]').popover();
 });
 
-$(document).ready(function () {
+$(document).ready(() => {
+    $('[data-toggle="popover"]').popover();
     bsCustomFileInput.init();
 });
