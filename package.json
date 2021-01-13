@@ -24,7 +24,8 @@
         "build": "encore production --progress"
     },
     "dependencies": {
-        "sass-loader": "^9.0.1",
-        "jquery": "^3.5.1"
+        "@fortawesome/fontawesome-free": "^5.15.1",
+        "jquery": "^3.5.1",
+        "sass-loader": "^9.0.1"
     }
 }
