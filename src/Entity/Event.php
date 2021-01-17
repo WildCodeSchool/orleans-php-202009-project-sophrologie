@@ -10,6 +10,7 @@ use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use DateTime;
 use DateTimeInterface;
+use DateTimeImmutable;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
@@ -111,6 +112,12 @@ class Event
      */
 
     private ?\DateTimeInterface $uploadedAt ;
+
+
+    public function __construct()
+    {
+        $this->uploadedAt = new DateTimeImmutable();
+    }
 
     public function getId(): ?int
     {
@@ -250,13 +257,12 @@ class Event
         return $this;
     }
 
-    public function setPictureFile(File $image = null): Event
+    public function setPictureFile(?File $pictureFile = null): void
     {
-        $this->pictureFile = $image;
-        if ($image) {
-            $this->uploadedAt = new DateTime('now');
+        $this->pictureFile = $pictureFile;
+        if (null !== $pictureFile) {
+            $this->uploadedAt = new DateTimeImmutable('now');
         }
-        return $this;
     }
 
 
