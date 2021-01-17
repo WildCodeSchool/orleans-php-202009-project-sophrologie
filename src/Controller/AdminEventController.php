@@ -40,6 +40,14 @@ class AdminEventController extends AbstractController
         ]);
     }
 
+    //**$events = $eventRepository->findBy(['archive' => 0], ['eventdate' => 'DESC']);
+//*$eventsArchive = $eventRepository->findBy(['archive' => 1], ['eventdate' => 'DESC']);
+
+//*return $this->render('admin_event/index.html.twig', [
+/*'events' => $events,
+'eventsArchive' => $eventsArchive,
+
+]);*/
 
     /**
      * @Route("/new", name="new")
