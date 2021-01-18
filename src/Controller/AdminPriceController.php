@@ -17,13 +17,13 @@ class AdminPriceController extends AbstractController
 {
     /**
      * @Route("/", name="index")
-     * @param PriceRepository $pricesRepository
+     * @param PriceRepository $priceRepository
      * @return Response
      */
-    public function index(PriceRepository $pricesRepository): Response
+    public function index(PriceRepository $priceRepository): Response
     {
         return $this->render('admin_price/index.html.twig', [
-            'prices' => $pricesRepository->findAll(),
+            'prices' => $priceRepository->findAll(),
         ]);
     }
 
@@ -50,6 +50,29 @@ class AdminPriceController extends AbstractController
         }
 
         return $this->render('admin_price/new.html.twig', [
+            'price' => $price,
+            'form' => $form->createView(),
+        ]);
+    }
+
+    /**
+     * @Route("/{id}/edit", name="edit", methods={"GET","POST"})
+     * @param Request $request
+     * @param Price $price
+     * @return Response
+     */
+    public function edit(Request $request, Price $price): Response
+    {
+        $form = $this->createForm(PriceType::class, $price);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirectToRoute('admin_prices_index');
+        }
+
+        return $this->render('admin_price/edit.html.twig', [
             'price' => $price,
             'form' => $form->createView(),
         ]);
