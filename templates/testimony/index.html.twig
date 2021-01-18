@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Testimony index{% endblock %}
+{% block title %}Témoignage index{% endblock %}
 
 {% block body %}
     <h1>Témoignage index</h1>
@@ -8,13 +8,13 @@
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Title</th>
+                <th>Numméro id</th>
+                <th>Titre</th>
                 <th>Description</th>
                 <th>Date</th>
-                <th>Firtsname</th>
-                <th>Lastname</th>
-                <th>Age</th>
+                <th>Prénom</th>
+                <th>Nom</th>
+                <th>Âge</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -29,17 +29,17 @@
                 <td>{{ testimony.lastname }}</td>
                 <td>{{ testimony.age }}</td>
                 <td>
-                    <a href="{{ path('testimony_show', {'id': testimony.id}) }}">show</a>
-                    <a href="{{ path('testimony_edit', {'id': testimony.id}) }}">edit</a>
+                    <a href="{{ path('testimony_show', {'id': testimony.id}) }}">Voir</a>
+                    <a href="{{ path('testimony_edit', {'id': testimony.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="8">no records found</td>
+                <td colspan="8">Information non disponible</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('testimony_new') }}">Create new</a>
+    <a href="{{ path('testimony_new') }}">Ajouter</a>
 {% endblock %}

@@ -12,7 +12,7 @@
                 <td>{{ testimony.id }}</td>
             </tr>
             <tr>
-                <th>Title</th>
+                <th>Titre</th>
                 <td>{{ testimony.title }}</td>
             </tr>
             <tr>
@@ -24,23 +24,23 @@
                 <td>{{ testimony.date ? testimony.date|date('Y-m-d') : '' }}</td>
             </tr>
             <tr>
-                <th>Firtsname</th>
+                <th>Prénom</th>
                 <td>{{ testimony.firtsname }}</td>
             </tr>
             <tr>
-                <th>Lastname</th>
+                <th>Nom</th>
                 <td>{{ testimony.lastname }}</td>
             </tr>
             <tr>
-                <th>Age</th>
+                <th>Âge</th>
                 <td>{{ testimony.age }}</td>
             </tr>
         </tbody>
     </table>
 
-    <a href="{{ path('testimony_index') }}">back to list</a>
+    <a href="{{ path('testimony_index') }}">Retour</a>
 
-    <a href="{{ path('testimony_edit', {'id': testimony.id}) }}">edit</a>
+    <a href="{{ path('testimony_edit', {'id': testimony.id}) }}">Modifier</a>
 
     {{ include('testimony/_delete_form.html.twig') }}
 {% endblock %}
