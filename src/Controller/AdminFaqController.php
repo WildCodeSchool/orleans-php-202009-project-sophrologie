@@ -79,4 +79,21 @@ class AdminFaqController extends AbstractController
             'form' => $form->createView(),
         ]);
     }
+
+    /**
+     * @Route("/{id}/delete", name="delete", methods={"DELETE"})
+     * @param Request $request
+     * @param Faq $faq
+     * @return Response
+     */
+    public function delete(Request $request, Faq $faq): Response
+    {
+        if ($this->isCsrfTokenValid('delete' . $faq->getId(), $request->request->get('_token'))) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->remove($faq);
+            $entityManager->flush();
+        }
+
+        return $this->redirectToRoute('admin_faq_index');
+    }
 }
