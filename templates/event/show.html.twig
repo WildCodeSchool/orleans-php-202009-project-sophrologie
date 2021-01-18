@@ -32,12 +32,12 @@
                 <a href="{{ event.eventlink}}" class="btn btn-primary text-light mb-5">Lien vers le site de l'évènement</a>
             {% else %}
             {% endif %}
-<div>
-            {% if event.video != '' %}
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/vnprysVcddk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            {% else %}
-            {% endif %}
-</div>
+            <div>
+                {% if event.video != '' %}
+                    <iframe width="560" height="315" src="{{ event.video}}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                {% else %}
+                {% endif %}
+            </div>
         </div>
     </section>
 
