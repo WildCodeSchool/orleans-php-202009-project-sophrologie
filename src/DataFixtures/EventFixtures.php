@@ -35,7 +35,7 @@ class EventFixtures extends Fixture
             $event->setEventdate($faker->dateTime());
             $event->setSummary($faker->text(500));
             $event->setArticle($faker->text(1500));
-            $event->setVideo($faker->url());
+            $event->setVideo('https://www.youtube.com/embed/vnprysVcddk');
             $event->setArchive($faker->boolean);
             $event->setPictureFile();
             $event->setUploadedAt($faker->dateTime());

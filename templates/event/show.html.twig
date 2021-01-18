@@ -26,16 +26,19 @@
             <p class="card-text">{{ event.article|raw }}</p>
             </div>
         </section>
+
+
         <div class="container mr-auto px-0">
             {% if event.eventlink != '' %}
-                <a href="{{ event.eventlink}}" class="btn btn-primary text-light ">Lien vers le site de l'évènement</a>
+                <a href="{{ event.eventlink}}" class="btn btn-primary text-light mb-5">Lien vers le site de l'évènement</a>
             {% else %}
             {% endif %}
-
-            {% if event.video != '' %}
-                <a href="{{ event.video}}" class="btn btn-primary text-light">Lien vers la vidéo</a>
-            {% else %}
-            {% endif %}
+            <div>
+                {% if event.video != '' %}
+                    <iframe width="560" height="315" src="{{ event.video}}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                {% else %}
+                {% endif %}
+            </div>
         </div>
     </section>
 
