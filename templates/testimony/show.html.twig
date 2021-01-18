@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Testimony{% endblock %}
+
+{% block body %}
+    <h1>Testimony</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ testimony.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ testimony.title }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ testimony.description }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{{ testimony.date ? testimony.date|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Firtsname</th>
+                <td>{{ testimony.firtsname }}</td>
+            </tr>
+            <tr>
+                <th>Lastname</th>
+                <td>{{ testimony.lastname }}</td>
+            </tr>
+            <tr>
+                <th>Age</th>
+                <td>{{ testimony.age }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('testimony_index') }}">back to list</a>
+
+    <a href="{{ path('testimony_edit', {'id': testimony.id}) }}">edit</a>
+
+    {{ include('testimony/_delete_form.html.twig') }}
+{% endblock %}
