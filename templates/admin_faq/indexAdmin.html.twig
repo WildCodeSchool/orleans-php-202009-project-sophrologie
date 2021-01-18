@@ -1,0 +1,40 @@
+{% extends 'layoutAdmin.html.twig' %}
+
+{% block stylesheets %}
+    {{ encore_entry_link_tags('faq') }}
+{% endblock %}
+
+{% block body %}
+    <section class="container my-5">
+        <h1 class="mb-5 text-lg-center text-left">Liste des questions FAQ</h1>
+        <a class="btn btn-primary mb-3" href="{{ path('admin_faq_new') }}">
+            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-plus-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+            </svg>
+            Ajouter une nouvelle question
+        </a>
+        <table class="table table-hover event-list">
+            <thead>
+            <tr class="text-lg-left text-center bg-primary text-light">
+                <th scope="col">Question</th>
+                <th scope="col">Réponse</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for faq in faqs %}
+                <tr>
+                    <td>{{ faq.subject }}</td>
+                    <td>{{ faq.feedback }}</td>
+                    <td>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </section>
+
+    <section class="container-fluid mb-5">
+        <a class="btn btn-danger" href="{{ path('admin_home') }}">Retour à l'accueil admin</a>
+    </section>
+{% endblock %}
