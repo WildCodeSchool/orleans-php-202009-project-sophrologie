@@ -3,11 +3,10 @@
 namespace App\DataFixtures;
 
 use Doctrine\Bundle\FixturesBundle\Fixture;
-use Doctrine\Bundle\FixturesBundle\FixtureGroupInterface;
 use Doctrine\Persistence\ObjectManager;
 use App\Entity\Category;
 
-class CategoryFixtures extends Fixture implements FixtureGroupInterface
+class CategoryFixtures extends Fixture
 {
     public function load(ObjectManager $manager)
     {
@@ -33,10 +32,5 @@ class CategoryFixtures extends Fixture implements FixtureGroupInterface
         // $manager->persist($product);
 
         $manager->flush();
-    }
-
-    public static function getGroups(): array
-    {
-        return ['group1'];
     }
 }

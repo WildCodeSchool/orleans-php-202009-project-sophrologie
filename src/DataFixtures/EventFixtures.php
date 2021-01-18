@@ -4,12 +4,11 @@ namespace App\DataFixtures;
 
 use App\Entity\Event;
 use Doctrine\Bundle\FixturesBundle\Fixture;
-use Doctrine\Bundle\FixturesBundle\FixtureGroupInterface;
 use Doctrine\Persistence\ObjectManager;
 use DateTime;
 use Faker;
 
-class EventFixtures extends Fixture implements FixtureGroupInterface
+class EventFixtures extends Fixture
 {
 
     public function getDependencies()
@@ -38,10 +37,5 @@ class EventFixtures extends Fixture implements FixtureGroupInterface
             $manager->persist($event);
         }
         $manager->flush();
-    }
-
-    public static function getGroups(): array
-    {
-        return ['userFixtures'];
     }
 }
