@@ -6,8 +6,9 @@ use App\Entity\User;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+use Doctrine\Bundle\FixturesBundle\FixtureGroupInterface;
 
-class UserFixtures extends Fixture
+class UserFixtures extends Fixture implements FixtureGroupInterface
 {
 
     private UserPasswordEncoderInterface $passwordEncoder;
@@ -28,8 +29,9 @@ class UserFixtures extends Fixture
             $admin,
             'adminpassword'
         ));
+        $manager->persist($admin);
 
-        for ($i = 0; $i > 10; $i++) {
+        for ($i = 0; $i < 10; $i++) {
             $user = new User();
             $user->setFirstname('User');
             $user->setLastname('Useritor');
@@ -39,12 +41,14 @@ class UserFixtures extends Fixture
                 $user,
                 'contributorpassword'
             ));
-
             $manager->persist($user);
         }
 
-
-
         $manager->flush();
+    }
+
+    public static function getGroups(): array
+    {
+         return ['group1'];
     }
 }

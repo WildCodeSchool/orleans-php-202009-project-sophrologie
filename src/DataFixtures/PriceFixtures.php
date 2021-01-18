@@ -4,10 +4,11 @@ namespace App\DataFixtures;
 
 use App\Entity\Price;
 use Doctrine\Bundle\FixturesBundle\Fixture;
+use Doctrine\Bundle\FixturesBundle\FixtureGroupInterface;
 use Doctrine\Persistence\ObjectManager;
 use Faker;
 
-class PriceFixtures extends Fixture
+class PriceFixtures extends Fixture implements FixtureGroupInterface
 {
     public function load(ObjectManager $manager)
     {
@@ -20,5 +21,11 @@ class PriceFixtures extends Fixture
             $manager->persist($prices);
         }
         $manager->flush();
+    }
+
+
+    public static function getGroups(): array
+    {
+        return ['group1'];
     }
 }
