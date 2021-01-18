@@ -56,4 +56,27 @@ class AdminFaqController extends AbstractController
             "form" => $form->createView(),
         ]);
     }
+
+    /**
+     * @Route("/{id}/edit", name="edit", methods={"GET","POST"})
+     * @param Request $request
+     * @param Faq $faq
+     * @return Response
+     */
+    public function edit(Request $request, Faq $faq): Response
+    {
+        $form = $this->createForm(FaqType::class, $faq);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirectToRoute('admin_faq_index');
+        }
+
+        return $this->render('admin_faq/edit.html.twig', [
+            'faq' => $faq,
+            'form' => $form->createView(),
+        ]);
+    }
 }
