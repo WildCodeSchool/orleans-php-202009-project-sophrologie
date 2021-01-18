@@ -29,13 +29,18 @@ class AdminEventController extends AbstractController
         $form = $this->createForm(SearchAdminEventType::class);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-            $search = $form->getData()['search']; /* equiv à $_POST['search'] sans symphony */
+            $search = $form->getData()['search'];
             $events = $eventRepository->findLikeName($search);
+            $eventsArchive = $eventRepository->findLikeName($search);
         } else {
-            $events = $eventRepository->findAll();
+            $events = $eventRepository->findBy(['archive' => 0], ['eventdate' => 'DESC']);
+            $eventsArchive = $eventRepository->findBy(['archive' => 1], ['eventdate' => 'DESC']);
         }
+
+
         return $this->render('admin_event/index.html.twig', [
             'events' => $events,
+            'eventsArchive' => $eventsArchive,
             'form' => $form->createView(),
         ]);
     }

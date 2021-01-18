@@ -31,7 +31,6 @@ class EventRepository extends ServiceEntityRepository
             ->orderBy('e.title', 'ASC')
             ->getQuery();
 
-
         return $queryBuilder->getResult();
     }
 }
