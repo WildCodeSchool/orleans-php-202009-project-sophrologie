@@ -15,7 +15,7 @@ class AdminUser extends \Symfony\Bundle\FrameworkBundle\Controller\AbstractContr
     /**
      * @return Response
      * @IsGranted("ROLE_USER", statusCode=404)
-     * @Route("/mon-compte/{firstname}/{lastname}", name="user")
+     * @Route("/mon-compte", name="user")
      */
     public function myAccount(): Response
     {
