@@ -1,0 +1,18 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Mon compte personnel{% endblock %}
+
+
+{% block body %}
+    <section class="container">
+        <h1 class="my-5 text-center">Mon compte personnel</h1>
+
+        <p class="text-center">Bienvenue sur votre espace <strong>{{ app.user.firstname }} {{ app.user.lastname }}</strong></p>
+
+        <p>
+            Prénom : <strong>{{ app.user.firstname }}</strong> <br>
+            Nom : <strong>{{ app.user.lastname }}</strong> <br>
+            Adresse email : <strong>{{ app.user.email }}</strong> <br>
+        </p>
+    </section>
+{% endblock %}

@@ -7,17 +7,17 @@
 {% endblock %}
 
 {% block body %}
-    <header class="my-5">
-        <h1 class="timetable-title text-center py-5">LA SOPHROLOGIE</h1>
-    </header>
-    <section class="py-5 mb-5 d-flex row mx-0 justify-content-around">
-        <div class="col-lg-5 col-sm-12 d-flex justify-content-center align-items-center">
-            <img class="w-100 h-100 col-11 pt-3" src="{{ asset('build/images/sophrology-presentation.jpg') }}"
+    <h1 class="timetable-title text-center py-5">LA SOPHROLOGIE</h1>
+    <section class="container-fluid mb-5
+                    d-flex flex-lg-row justify-content-around
+                    flex-column">
+        <div class="sophro-img mr-3 mt-3 d-flex align-items-center">
+            <img class="shadow p-1" src="{{ asset('build/images/sophrology-presentation.jpg') }}"
                  alt="Image paix zen"/>
         </div>
-        <div class="col-lg-5 col-sm-10 col-11">
-            <h2 class="text-center py-2 mb-4">La Sophrologie, qu'est ce que c'est ?</h2>
-            <p class="text-justify">Créée par le médecin Alfonso Caycedo en 1966, la sophrologie est une méthode de
+        <div class="sophro-text ml-lg-2 ml-0">
+            <h2 class="text-center mt-5 mb-4 my-lg-3">La Sophrologie, qu'est ce que c'est ?</h2>
+            <p class="text-justify flex-wrap">Créée par le médecin Alfonso Caycedo en 1966, la sophrologie est une méthode de
                 relaxation psychocorporelle qui permet de retrouver un bien-être au quotidien, de prendre conscience de
                 ses
                 propres capacités et de les développer. <br/>
@@ -35,15 +35,20 @@
             </p>
         </div>
     </section>
-    <section class="my-5">
-        <div class="sophrology-background row mx-0 d-flex justify-content-center py-5 mb-5">
-            <h2 class="pt-5 col-lg-3 col-sm-12">La sophrologie, pour quoi ?</h2>
-            <p class="pt-2 text-justify col-lg-6 col-sm-12 col-11">La sophrologie est particulièrement efficace pour
+
+    <section class="section3 jumbotron m-0 py-5">
+        <div class="container d-flex flex-lg-row align-items-center
+                    flex-column">
+            <h2 class="mb-4 m-lg-5">La sophrologie, pour qui ?</h2>
+            <p class="ml-lg-3 m-0">La sophrologie est particulièrement efficace pour
                 surmonter des situations complexes et améliorer votre bien-être au quotidien. Vous apprendrez d’une part
                 des techniques et outils afin d’atteindre vos objectifs, et d’autre part, vous pourrez les réutiliser en
                 autonomie chez vous grâce à une pratique régulière. <br/>
                 La sophrologie est un accompagnement qui est adapté pour :</p>
         </div>
+    </section>
+
+    <section>
         <div class="row mx-0 d-flex justify-content-center container-fluid mt-2 pt-3">
             <ul class="col-lg-2 col-sm-12 list-group list-group-flush m-3">
                 <li class="list-group-item text-center text-uppercase themes-sophro p-3"><h3>Vous guider</h3></li>
@@ -89,15 +94,19 @@
         </div>
     </section>
 
-    <section class="my-5 py-5">
-        <div class="sophrology-background row mx-0 d-flex justify-content-center py-5 mb-5">
-            <h2 class="pt-5 col-lg-3 col-sm-12">La sophrologie, pour qui ?</h2>
-            <p class="pt-2 text-justify col-lg-6 col-sm-12">La sophrologie est particulièrement adaptée pour vous aider à <strong>apaiser votre mental</strong>
+    <section class="section3 jumbotron m-0 py-5">
+        <div class="container d-flex flex-lg-row align-items-center
+                    flex-column">
+            <h2 class="mb-4 m-lg-5">La sophrologie, pour qui ?</h2>
+            <p class="ml-lg-3 m-0">La sophrologie est particulièrement adaptée pour vous aider à <strong>apaiser votre mental</strong>
                 et chasser les tensions accumulées dans une journée difficile. La relaxation vous accompagnera également
                 dans le vécu d’une <strong>situation déroutante et anxiogène</strong> (une séparation, un deuil, une maladie…).
                 La sophrologie peut aussi vous permettre de mieux <strong>trouver le sommeil</strong> et vous donner des outils
                 pour dormir sereinement.</p>
         </div>
+    </section>
+
+    <section>
         <div class="row mx-0 d-flex justify-content-center container-fluid mt-2 pt-3">
             <ul class="col-lg-4 col-sm-12 list-group list-group-flush m-4 p-3">
                 <li class="list-group-item text-center text-uppercase mb-4"><h3>Adultes</h3>
