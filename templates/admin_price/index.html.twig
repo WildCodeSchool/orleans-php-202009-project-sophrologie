@@ -39,6 +39,10 @@
                     <td>{{ price.name }}</td>
                     <td>{{ price.price }}</td>
                     <td>{{ price.description }}</td>
+                    <td>
+                        <a href="#">show</a>
+                        <a href="{{ path('admin_prices_edit', {'id': price.id }) }}">edit</a>
+                    </td>
                 </tr>
             {% else %}
                 <tr>
