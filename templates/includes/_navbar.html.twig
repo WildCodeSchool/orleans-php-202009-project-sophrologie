@@ -45,7 +45,7 @@
                         {% if is_granted("ROLE_ADMIN") %}
                             <a class="dropdown-item" href="{{ path('admin_home') }}">Espace Admin</a>
                         {% else %}
-                            <a class="dropdown-item" href="{{ path('user', {firstname : app.user.firstname, lastname : app.user.lastname}) }}">Mon compte</a>
+                            <a class="dropdown-item" href="{{ path('user') }}">Mon compte</a>
                         {% endif %}
                     {% else %}
                         <a class="dropdown-item" href="{{ path('app_login') }}">Se connecter</a>

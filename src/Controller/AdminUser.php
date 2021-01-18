@@ -13,12 +13,11 @@ class AdminUser extends \Symfony\Bundle\FrameworkBundle\Controller\AbstractContr
 {
 
     /**
-     * @param User $user
      * @return Response
      * @IsGranted("ROLE_USER", statusCode=404)
-     * @Route("/mon-compte/{firstname}/{lastname}", name="user")
+     * @Route("/mon-compte", name="user")
      */
-    public function myAccount(User $user): Response
+    public function myAccount(): Response
     {
         return $this->render('user/account.html.twig');
     }
