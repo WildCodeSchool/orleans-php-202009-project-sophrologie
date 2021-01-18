@@ -7,26 +7,25 @@
 {% endblock %}
 
 {% block body %}
-    <section class="section1">
-        <div class="intro-btn w-100 text-center mb-2 mb-lg-3">
-            <a href="#" class="btn-lg btn-light text-primary text-decoration-none
-            py-lg-3 px-lg-4 py-2 px-3">Prendre RDV</a>
+    <section class="section1 text-center shadow">
+        <div class="intro-btn text-center mb-2 mb-lg-3">
+            <a href="#" class="btn btn-lg btn-light text-primary text-decoration-none
+            py-lg-3 px-lg-4">Prendre RDV</a>
         </div>
-        <img src="{{ asset('build/images/accueil.jpg') }}"
-             alt="women sitting on a banch in front of waterfalls"
-             class="intro-img">
     </section>
 
     <section class="section2 container bg-white py-lg-5 pt-5 pb-3 px-0 mb-0 d-lg-flex text-lg-left">
         <div class="d-flex flex-column align-items-center justify-content-center text-center text-lg-left px-2">
-            <img class="sophro-picture mb-4" src="{{ asset('build/images/profil.png') }}" alt="picture of the sophrologist">
-            <p>Diplômée de l’Ecole Supérieure de Sophrologie Appliquée (ESSA) de Vincennes</p>
-            <p>Certifiée au Répertoire Nationale de Certification Professionnelle (RNCP)
-                <a href="https://www.sophrologie-francaise.com/index.php/devenir-sophrologue/rncp">
-                    <strong>Qualification reconnue par l’Etat</strong>
-                </a>
-            </p>
-            <p>Formation spécialisée Equilibre pondéral et Comportement Adapté (EPCA)</p>
+            <img class="sophro-picture mb-5 shadow p-1" src="{{ asset('build/images/profil.png') }}" alt="picture of the sophrologist">
+            <div class="mt-lg-5 mt-0">
+                <p class="mb-3 mb-lg-5">Diplômée de l’Ecole Supérieure de Sophrologie Appliquée (ESSA) de Vincennes</p>
+                <p class="mb-3 mb-lg-5">Certifiée au Répertoire Nationale de Certification Professionnelle (RNCP)
+                    <a href="https://www.sophrologie-francaise.com/index.php/devenir-sophrologue/rncp">
+                        <strong>Qualification reconnue par l’Etat</strong>
+                    </a>
+                </p>
+                <p class="mb-3 mb-lg-5">Formation spécialisée Equilibre pondéral et Comportement Adapté (EPCA)</p>
+            </div>
         </div>
         <hr>
         <div class="container ml-lg-5 text-center text-lg-left">
@@ -36,10 +35,7 @@
                     <img class="ml-lg-0 ml-3 mr-2" src="{{ asset('build/images/star.png') }}" alt="logo star">Sophrologue
                 </div>
                 <div class="d-flex align-items-center justify-content-center mb-2 mb-lg-0">
-                    <img class="ml-3 mr-2" src="{{ asset('build/images/star.png') }}" alt="logo star">Diététicienne
-                </div>
-                <div class="d-flex align-items-center justify-content-center mb-2 mb-lg-0">
-                    <img class="ml-3 mr-2" src="{{ asset('build/images/star.png') }}" alt="logo star">Nutritionniste
+                    <img class="ml-3 mr-2" src="{{ asset('build/images/star.png') }}" alt="logo star">Diététicienne Nutritionniste
                 </div>
             </h5>
             <p class="mb-4"><strong>Pourquoi suis-je devenue Sophrologue ?</strong> La sophrologie m’a beaucoup aidée pour mieux gérer certaines
@@ -59,15 +55,15 @@
     <section class="section3 jumbotron m-0 py-4 py-lg-5">
         <div class="container text-center text-lg-left px-0">
             <div class="d-flex flex-column">
-                <h2 class="mb-3">Qu'est ce que la sophrologie ?</h2>
-                <p>La sophrologie est une méthode de relaxation psychocorporelle qui permet de retrouver un bien-être au
+                <h2 class="mb-3 mb-lg-4">Qu'est ce que la sophrologie ?</h2>
+                <p class="mb-3 mb-lg-4">La sophrologie est une méthode de relaxation psychocorporelle qui permet de retrouver un bien-être au
                     quotidien, de se détendre, de prendre conscience de ses propres capacités et de les développer.</p>
-                <p>Créée par le médecin Alfonso Caycedo en 1966, la sophrologie est une méthode de relaxation
+                <p class="mb-3 mb-lg-4">Créée par le médecin Alfonso Caycedo en 1966, la sophrologie est une méthode de relaxation
                     psychocorporelle qui permet de retrouver un bien-être au quotidien, de prendre conscience de ses propres
                     capacités et de les développer.</p>
             </div>
 
-            <a href="{{ path("sophrology") }}" class="btn btn-primary text-info">En savoir plus</a>
+            <a href="{{ path("sophrology") }}" class="btn btn-primary text-light">En savoir plus</a>
         </div>
     </section>
 

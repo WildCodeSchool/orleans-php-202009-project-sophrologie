@@ -24,6 +24,11 @@ h6 {
 
 .section1 {
     position: relative;
+    height: 85vh;
+    background-image: url("../images/accueil.jpg");
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-position: right 50% top 13%;;
 }
 
 .title {
@@ -31,29 +36,36 @@ h6 {
 }
 
 .intro-btn {
-    bottom: 10px;
+    top: 10px;
+    left: 10px;
     position: absolute;
 }
 
 .sophro-picture {
     border-radius: 50%;
-    box-shadow: 5px 5px 2px 1px rgba(0, 0, 0, .5);
-    height: 250px;
-    width: 250px;
+    height: 275px;
+    width: 275px;
 }
 
 .speciality-card:hover {
-    background: linear-gradient($footer, darken($bg-card, 20%), darken($bg-card, 10%), $bg-card);
+    background-color: $bg-card;
 
     .speciality-card-title {
         background-color: transparent;
-
-        > h3 {
-            color: $light;
-        }
     }
 
     .speciality-card-text {
         background-color: transparent;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .section1 {
+        height: 30vh;
+    }
+
+    .intro-btn {
+        top: 5px;
+        left: 5px;
     }
 }
