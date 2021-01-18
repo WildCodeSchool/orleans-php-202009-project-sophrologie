@@ -30,8 +30,8 @@ class AdminEventController extends AbstractController
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $search = $form->getData()['search'];
-            $events = $eventRepository->findLikeName($search);
-            $eventsArchive = $eventRepository->findLikeName($search);
+            $events = $eventRepository->findLikeName($search, 0);
+            $eventsArchive = $eventRepository->findLikeName($search, 1);
         } else {
             $events = $eventRepository->findBy(['archive' => 0], ['eventdate' => 'DESC']);
             $eventsArchive = $eventRepository->findBy(['archive' => 1], ['eventdate' => 'DESC']);
@@ -45,14 +45,6 @@ class AdminEventController extends AbstractController
         ]);
     }
 
-    //**$events = $eventRepository->findBy(['archive' => 0], ['eventdate' => 'DESC']);
-//*$eventsArchive = $eventRepository->findBy(['archive' => 1], ['eventdate' => 'DESC']);
-
-//*return $this->render('admin_event/index.html.twig', [
-/*'events' => $events,
-'eventsArchive' => $eventsArchive,
-
-]);*/
 
     /**
      * @Route("/new", name="new")
