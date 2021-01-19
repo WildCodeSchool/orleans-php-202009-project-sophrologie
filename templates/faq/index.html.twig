@@ -7,5 +7,18 @@
 {% endblock %}
 
 {% block body %}
-    <h1 class="text-center py-5">BESOIN D'AIDE ?</h1>
+    <section>
+        <h1 class="text-center py-5 faq-section">BESOIN D'AIDE ?</h1>
+        <div class="container col-lg-8 text-center my-5">
+            <img class="w-50 h-50" src="{{ asset('build/images/compass.jpg') }}"/>
+        </div>
+        <div class="container my-3">
+                {% for faq in faqs %}
+                    <ul class="list-group list-group-flush my-5">
+                        <h3 class="list-group-item">{{ faq.subject }}</h3>
+                        <p class="list-group-item">{{ faq.feedback }}</p>
+                    </ul>
+                {% endfor %}
+        </div>
+    </section>
 {% endblock %}
