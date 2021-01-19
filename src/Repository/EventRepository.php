@@ -5,7 +5,7 @@ namespace App\Repository;
 use App\Entity\Event;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
-use http\Env\Response;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * @method Event|null find($id, $lockMode = null, $lockVersion = null)
