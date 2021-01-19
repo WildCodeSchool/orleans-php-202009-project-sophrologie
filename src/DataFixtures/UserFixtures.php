@@ -23,7 +23,7 @@ class UserFixtures extends Fixture
         $admin->setFirstname('Admin');
         $admin->setLastname('Adminator');
         $admin->setRoles(['ROLE_ADMIN']);
-        $admin->setEmail('amdin@inspireexpire.com');
+        $admin->setEmail('admin@inspireexpire.com');
         $admin->setPassword($this->passwordEncoder->encodePassword(
             $admin,
             'adminpassword'
@@ -32,8 +32,8 @@ class UserFixtures extends Fixture
 
         for ($i = 0; $i < 10; $i++) {
             $user = new User();
-            $user->setFirstname('User');
-            $user->setLastname('Useritor');
+            $user->setFirstname('UserFirstname' . $i);
+            $user->setLastname('UserLastname' . $i);
             $user->setEmail('user' . $i . '@inspireexpire.com');
             $user->setRoles(['ROLE_ADMIN']);
             $user->setPassword($this->passwordEncoder->encodePassword(

@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -51,6 +53,22 @@ class User implements UserInterface
      * @ORM\Column(type="string", length=255)
      */
     private string $firstname;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Report::class, mappedBy="author")
+     */
+    private ArrayCollection $reportsDoneByAdmin;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Report::class, mappedBy="patient")
+     */
+    private ArrayCollection $reportsForUsers;
+
+    public function __construct()
+    {
+        $this->reportsDoneByAdmin = new ArrayCollection();
+        $this->reportsForUsers = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -151,6 +169,66 @@ class User implements UserInterface
     public function setFirstname(string $firstname): self
     {
         $this->firstname = $firstname;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Report[]
+     */
+    public function getReportsDoneByAdmin(): Collection
+    {
+        return $this->reportsDoneByAdmin;
+    }
+
+    public function addReportsDoneByAdmin(Report $reportsDoneByAdmin): self
+    {
+        if (!$this->reportsDoneByAdmin->contains($reportsDoneByAdmin)) {
+            $this->reportsDoneByAdmin[] = $reportsDoneByAdmin;
+            $reportsDoneByAdmin->setAuthor($this);
+        }
+
+        return $this;
+    }
+
+    public function removeReportsDoneByAdmin(Report $reportsDoneByAdmin): self
+    {
+        if ($this->reportsDoneByAdmin->removeElement($reportsDoneByAdmin)) {
+            // set the owning side to null (unless already changed)
+            if ($reportsDoneByAdmin->getAuthor() === $this) {
+                $reportsDoneByAdmin->setAuthor(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Report[]
+     */
+    public function getReportsForUsers(): Collection
+    {
+        return $this->reportsForUsers;
+    }
+
+    public function addReportsForUser(Report $reportsForUser): self
+    {
+        if (!$this->reportsForUsers->contains($reportsForUser)) {
+            $this->reportsForUsers[] = $reportsForUser;
+            $reportsForUser->setPatient($this);
+        }
+
+        return $this;
+    }
+
+    public function removeReportsForUser(Report $reportsForUser): self
+    {
+        if ($this->reportsForUsers->removeElement($reportsForUser)) {
+            // set the owning side to null (unless already changed)
+            if ($reportsForUser->getPatient() === $this) {
+                $reportsForUser->setPatient(null);
+            }
+        }
 
         return $this;
     }
