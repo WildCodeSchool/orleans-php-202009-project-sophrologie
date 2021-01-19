@@ -1,0 +1,51 @@
+{% extends 'layoutAdmin.html.twig' %}
+
+{% block title %}Logos entreprises partenaires | {{ parent() }}{% endblock %}
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('adminList') }}
+    {% endblock %}
+
+{% block body %}
+
+<main class="sheettop container">
+    <h1>Entreprises partenaires - Logos </h1>
+
+    <table class=" table table-hover event-list">
+        <thead class="bg-primary text-light">
+            <tr>
+
+                <th>Company</th>
+                <th>Logo</th>
+                <th>Description</th>
+                <th>Modifier</th>
+                <th>Supprimer</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for logo in logos %}
+            <tr>
+
+                <td>{{ logo.company }}</td>
+                <td>{{ logo.logo }}</td>
+                <td>{{ logo.description }}</td>
+                <td>
+                    <a href="{{ path('logo_show', {'id': logo.id}) }}">show</a>
+                    <a href="{{ path('logo_edit', {'id': logo.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">Aucun logo d'entreprise partenaire enregistré</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+    <a class="btn btn-primary" href="{{ path("admin_home") }}">
+
+        </svg>
+        Accueil administration
+    </a>
+</main>
+{% endblock %}

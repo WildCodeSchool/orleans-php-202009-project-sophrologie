@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Logo{% endblock %}
+
+{% block body %}
+    <h1>Logo</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ logo.id }}</td>
+            </tr>
+            <tr>
+                <th>Company</th>
+                <td>{{ logo.company }}</td>
+            </tr>
+            <tr>
+                <th>Logo</th>
+                <td>{{ logo.logo }}</td>
+            </tr>
+            <tr>
+                <th>UploadedAt</th>
+                <td>{{ logo.uploadedAt ? logo.uploadedAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ logo.description }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('logo_index') }}">back to list</a>
+
+    <a href="{{ path('logo_edit', {'id': logo.id}) }}">edit</a>
+
+    {{ include('logo/_delete_form.html.twig') }}
+{% endblock %}
