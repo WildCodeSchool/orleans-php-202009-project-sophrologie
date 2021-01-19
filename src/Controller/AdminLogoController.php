@@ -14,18 +14,14 @@ use Symfony\Component\Routing\Annotation\Route;
  * @Route("/admin/logo", name="admin_logo_")
  */
 
-///**
-// * @Route("/logo")
-// */ *//
+
 class AdminLogoController extends AbstractController
 {
 
     /**
      *     * @Route("/index", name="index")
      */
-  //  /**
-    // * @Route("/", name="logo_index", methods={"GET"})
-    // */
+
     public function index(LogoRepository $logoRepository): Response
     {
         return $this->render('admin_logo/index.html.twig', [
