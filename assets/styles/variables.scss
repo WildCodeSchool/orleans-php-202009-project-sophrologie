@@ -31,7 +31,7 @@ $text-font: 'PT Serif', serif;
 $font-size-title : 40px;
 $font-size-h2: 35px;
 $font-size-h3: 25px;
-$font-size-p: 23px;
+$font-size-p: 20px;
 $font-navbar-footer-link: 23px;
 $font-navbar-footer-p: 20px;
 
@@ -43,3 +43,7 @@ $spacing-6: $spacing*6;
 $spacing-section: $spacing*10;
 $etape: 50px;
 
+$custom-file-text: (
+    en: "Browse",
+    fr: "Rechercher"
+);

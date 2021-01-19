@@ -1,0 +1,13 @@
+{% extends 'layoutAdmin.html.twig' %}
+
+{% block title %}Modification du témoignage{% endblock %}
+
+{% block body %}
+    <h1>Modification du témoignage</h1>
+
+    {{ include('testimony/_form.html.twig', {'button_label': 'Modifier'}) }}
+
+    <a href="{{ path('testimony_index') }}">Retour</a>
+
+    {{ include('testimony/_delete_form.html.twig') }}
+{% endblock %}
