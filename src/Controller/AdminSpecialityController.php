@@ -47,6 +47,7 @@ class AdminSpecialityController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($speciality);
             $entityManager->flush();
+            $this->addFlash('success', 'La spécialité a bien été ajoutée');
             return $this->redirectToRoute('admin_index_speciality');
         }
         return $this->render('speciality/new.html.twig', [
@@ -67,6 +68,7 @@ class AdminSpecialityController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
+            $this->addFlash('success', 'La spécialité a bien été modifiée');
 
             return $this->redirectToRoute('admin_index_speciality');
         }
@@ -89,6 +91,7 @@ class AdminSpecialityController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($speciality);
             $entityManager->flush();
+            $this->addFlash('danger', 'La spécialité a bien été supprimée');
         }
 
         return $this->redirectToRoute('admin_index_speciality');
