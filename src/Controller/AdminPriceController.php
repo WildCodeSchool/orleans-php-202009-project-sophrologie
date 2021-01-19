@@ -77,4 +77,21 @@ class AdminPriceController extends AbstractController
             'form' => $form->createView(),
         ]);
     }
+
+    /**
+     * @Route("/{id}", name="delete", methods={"DELETE"})
+     * @param Request $request
+     * @param Price $price
+     * @return Response
+     */
+    public function delete(Request $request, Price $price): Response
+    {
+        if ($this->isCsrfTokenValid('delete' . $price->getId(), $request->request->get('_token'))) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->remove($price);
+            $entityManager->flush();
+        }
+
+        return $this->redirectToRoute('admin_prices_index');
+    }
 }
