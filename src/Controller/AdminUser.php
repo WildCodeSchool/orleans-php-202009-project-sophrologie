@@ -16,14 +16,13 @@ class AdminUser extends \Symfony\Bundle\FrameworkBundle\Controller\AbstractContr
 
     /**
      * @param Request $request
-     * @param User $user
      * @return Response
      * @IsGranted("ROLE_USER", statusCode=404)
-     * @Route("/mon-compte/{firstname}/{lastname}", name="user")
+     * @Route("/mon-compte/", name="user")
      */
-    public function myAccount(Request $request, User $user): Response
+    public function myAccount(Request $request): Response
     {
-        $form = $this->createForm(UserType::class, $user);
+        $form = $this->createForm(UserType::class, $this->getUser());
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -33,7 +32,6 @@ class AdminUser extends \Symfony\Bundle\FrameworkBundle\Controller\AbstractContr
         }
 
         return $this->render('user/account.html.twig', [
-            'user' => $user,
             'formEditUser' => $form->createView(),
         ]);
     }
