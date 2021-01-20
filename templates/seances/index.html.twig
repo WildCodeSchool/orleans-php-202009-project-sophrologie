@@ -37,7 +37,7 @@
         </div>
         <section class="background-section">
             <h2 class="my-5 text-center text-uppercase">Forfaits/Tarifs des séances</h2>
-            <div class="container">
+            <div class="container text-center">
                 <div class="row">
                     {% for price in prices %}
                         <div class="col-md-4">
@@ -45,9 +45,9 @@
                                 <div class="card-body">
                                     <h3 class="card-title text-uppercase text-center">{{ price.name }}</h3>
                                     <hr>
-                                    <h1 class="text-center price py-5">{{ price.price }}€</h1>
+                                    <h1 class="text-center price py-5">{{ price.price }}€ *</h1>
                                     <p class="text-center">Possibilité de séance en ligne, sur prise de rendez-vous</p>
-                                    <p class="text-center text-muted">Types de paiements
+                                    <p class="text-center text-muted"> Types de paiements
                                         autorisés: {{ price.description }}</p>
                                     <a href="{{ path('contact') }}" class="btn btn-block btn-primary text-uppercase text-light">
                                         Prendre rendez-vous
@@ -56,15 +56,11 @@
                             </div>
                         </div>
                     {% endfor %}
-
-                    <p class="text-muted pt-5">La sécurité sociale ne prend pas en charge les séances de sophrologie,
-                        toutefois certaines mutuelles
-                        proposent un remboursement.</p>
-
-
-
                 </div>
             </div>
+            <p class="text-muted py-3 text-center">* La sécurité sociale ne prend pas en charge les séances de
+                sophrologie, toutefois certaines mutuelles proposent un remboursement.
+            </p>
         </section>
     </div>
 
