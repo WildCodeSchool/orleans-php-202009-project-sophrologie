@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Event;
+use App\Entity\EventSearch;
 use App\Form\EventType;
 use App\Form\SearchAdminEventType;
 use App\Repository\EventRepository;
@@ -25,22 +26,18 @@ class AdminEventController extends AbstractController
 
     public function index(Request $request, EventRepository $eventRepository): Response
     {
-
-        $form = $this->createForm(SearchAdminEventType::class);
+        $eventSearch = new EventSearch();
+        $form = $this->createForm(SearchAdminEventType::class, $eventSearch);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-            $search = $form->getData()['search'];
-            $events = $eventRepository->findLikeName($search, 0);
-            $eventsArchive = $eventRepository->findLikeName($search, 1);
-        } else {
-            $events = $eventRepository->findBy(['archive' => 0], ['eventdate' => 'DESC']);
-            $eventsArchive = $eventRepository->findBy(['archive' => 1], ['eventdate' => 'DESC']);
+            $events = $eventRepository->findLikeName($eventSearch->getSearch(), 0);
+            $eventsArchive = $eventRepository->findLikeName($eventSearch->getSearch(), 1);
         }
 
 
         return $this->render('admin_event/index.html.twig', [
-            'events' => $events,
-            'eventsArchive' => $eventsArchive,
+            'events' => $events ?? $eventRepository->findBy(['archive' => 0], ['eventdate' => 'DESC']),
+            'eventsArchive' => $eventsArchive ?? $eventRepository->findBy(['archive' => 1], ['eventdate' => 'DESC']),
             'form' => $form->createView(),
         ]);
     }

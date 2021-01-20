@@ -20,7 +20,7 @@ class EventRepository extends ServiceEntityRepository
         parent::__construct($registry, Event::class);
     }
 
-    public function findLikeName(string $name, int $archive): array
+    public function findLikeName(?string $name, int $archive): array
     {
         $queryBuilder = $this->createQueryBuilder('e')
             ->andWhere("e.title LIKE :name OR e.description LIKE :name OR e.summary LIKE :name OR e.article LIKE :name")
