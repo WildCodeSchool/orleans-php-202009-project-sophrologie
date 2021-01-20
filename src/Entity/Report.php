@@ -56,11 +56,11 @@ class Report
         return $this->author;
     }
 
-    public function setAuthor(?User $author): ?User
+    public function setAuthor(?User $author): self
     {
         $this->author = $author;
 
-        return $author;
+        return $this;
     }
 
     public function getPatient(): ?User
