@@ -4,13 +4,6 @@ p {
     font-family: $text-font;
 }
 
-.bannername {
-    font-size: 60px;
-}
-.bannertitle {
-    font-size: 50px;
-}
-
 h1,
 h2,
 h3 {
@@ -24,23 +17,31 @@ h6 {
     font-family: $sub-title-font;
 }
 
+header {
+    position: relative;
+    background-image: url("../images/pissenlits.jpg");
+    height: 70vh;
+}
+
+.home-page-logo {
+    position: absolute;
+    top: 2%;
+    filter: brightness(150%);
+}
+
+.home-page-titles {
+    position: absolute;
+    bottom: 2%;
+}
+
 .intro-img {
     height: 80%;
     width: 100%;
+    opacity: 0.75;
+    filter: brightness(90%);
 }
 
-header {
 
-    background-image: url("../images/pissenlits.jpg");
-    }
-.logo {
-    width : 90px;
-
-}
-.banner {
-    opacity: 80%;
-    filter : brightness(80%);
-}
 .section1 {
     position: relative;
     height: 85vh;
@@ -75,12 +76,5 @@ header {
 }
 
 @media screen and (max-width: 500px) {
-    .section1 {
-        height: 30vh;
-    }
 
-    .intro-btn {
-        top: 5px;
-        left: 5px;
-    }
 }
