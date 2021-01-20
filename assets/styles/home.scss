@@ -19,11 +19,14 @@ h6 {
 
 header {
     position: relative;
+}
+
+.background-image {
     background-image: url("../images/pissenlits.jpg");
     background-repeat:no-repeat;
     background-size: cover;
+    filter: brightness(80%);
     height: 70vh;
-    filter: brightness(75%);
 }
 
 .home-page-logo {
