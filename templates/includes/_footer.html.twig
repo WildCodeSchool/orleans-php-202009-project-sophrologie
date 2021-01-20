@@ -3,35 +3,36 @@
 {% endblock %}
 <footer class="footer container-fluid ">
     <div class="container-fluid ">
-        <div class="row py-4 text-center text-md-left justify-content-around">
+        <div class="row pt-4 text-center text-md-left justify-content-around">
             <div class="col-12 col-md-3">
-                <h4>Inspire Expire</h4>
-
-
-
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum cupiditate delectus dignissimos illum
-                    nisi odit pariatur, recusandae velit voluptatem voluptates. Aperiam assumenda dolorum facere fugiat
-                    fugit illo quae quasi voluptatibus?</p>
+                <h4 class="text-light">Inspire Expire</h4>
+                <p class="pt-md-2 footer-text-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum cupiditate delectus
+                    dignissimos illum nisi odit pariatur, recusandae velit voluptatem voluptates. Aperiam assumenda
+                    dolorum facere fugiat fugit illo quae quasi voluptatibus?
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum cupiditate delectus
+                    dignissimos illum nisi odit pariatur, recusandae velit voluptatem voluptates. Aperiam assumenda
+                    dolorum facere fugiat fugit illo quae quasi voluptatibus?
+                </p>
             </div>
             <div class="col-12 col-md-2 mt-3 mt-md-0">
-                <h4>Liens utiles</h4>
-                <ul class="pl-0">
-                    <li><a class="text-decoration-none" href="">Accueil</a></li>
-                    <li><a class="text-decoration-none" href="{{ path("sophrology") }}">Sophrologie</a></li>
-                    <li><a class="text-decoration-none" href="">Séances</a></li>
-                    <li><a class="text-decoration-none" href="">Actualités</a></li>
-                    <li><a class="text-decoration-none" href="">Contact</a></li>
+                <h4 class="text-light">Liens utiles</h4>
+                <ul class="pl-0 pt-md-2">
+                    <li><a class="text-decoration-none" href="{{ path("home")}}">Accueil</a></li>
+                    <li><a class="text-decoration-none" href="{{ path("sophrology")}}">Sophrologie</a></li>
+                    <li><a class="text-decoration-none" href="{{ path("seances")}}">Séances</a></li>
+                    <li><a class="text-decoration-none" href="{{ path("event_index")}}">Actualités</a></li>
+                    <li><a class="text-decoration-none" href="{{ path("contact")}}">Contact</a></li>
+                    <li><a class="text-decoration-none" href="{{ path("faq")}}">Besoin d'aide ?</a></li>
                 </ul>
             </div>
             <div class="col-12 col-md-2 mt-3 mt-md-0">
                 <div class="d-flex justify-content-center">
                     <div>
                         <table class="mb-4">
-                            <h4 class="text-center text-md-left">Contact</h4>
+                            <h4 class="text-center text-md-left text-light">Contact</h4>
                             <tr>
-                                <td>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                <td class="pt-md-2 footer-text-td">
+                                    <svg class="svg-footer" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                                         <path d="M12 0c-4.198 0-8 3.403-8 7.602 0 4.198 3.469 9.21 8 16.398 4.531-7.188
                                         8-12.2 8-16.398 0-4.199-3.801-7.602-8-7.602zm0 11c-1.657 0-3-1.343-3-3s1.343-3
                                         3-3 3 1.343 3 3-1.343 3-3 3z"/>
@@ -42,8 +43,8 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>
-                                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-telephone-fill"
+                                <td class="footer-text-td">
+                                    <svg  width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-telephone-fill"
                                          fill="currentColor"
                                          xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd"
@@ -61,7 +62,7 @@
                 </div>
             </div>
             <div class="col-12 col-md-2 text-center">
-                <h4>Retrouvez nous sur </h4>
+                <h4 class="text-light">Retrouvez nous sur </h4>
                 <div class="d-flex justify-content-center p-4">
                     <div class="pr-5">
                         <a href="#" class="social-network">
@@ -101,17 +102,10 @@
         <div class="col-12">
             <ul class="text-center pl-0 py-2">
                 <li>
-                    <a class="text-decoration-none" href="">Mentions légale</a>
+                    <a class="text-decoration-none footer-text-a" href="">Mentions légale</a>
                 </li>
-                <li>Site internet réalisé avec ❤ par la Wild Code School - copyright © Inspire-expire.com</li>
+                <li  class="footer-text-li">Site internet réalisé avec ❤ par la Wild Code School - copyright © Inspire-expire.com</li>
             </ul>
         </div>
-    </div>
-    <div class="btn-admin">
-        {% if app.user %}
-            <a class="btn btn-sm btn-admin-link" href="{{ path('app_logout') }}"> Se déconnecter</a>
-        {% else %}
-            <a class="btn btn-sm btn-admin-link" href="{{ path('app_login') }}"> Se connecter</a>
-        {% endif %}
     </div>
 </footer>

@@ -1,0 +1,40 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Seance Individuelle{% endblock %}
+{% block stylesheets %}
+    {{ encore_entry_link_tags('seances') }}
+{% endblock %}
+
+{% block body %}
+    <header>
+        <h1 class="timetable-title text-center text-uppercase">Seance individuelle</h1>
+    </header>
+    <div class="container-fluid py-3">
+        <div class=" text-center justify-content-center">
+            <h2>Déroulement d'une séance</h2>
+        </div>
+        <div class="row pt-md-5 chronological justify-content-center">
+            <div class=" etape">
+                <h3 class="  text-md-left pl-2 font-weight-bold">Etape 1 - Entretien préalable</h3>
+                <p class="text-center text-md-left pb-5 pb-md-0 pl-2 mr-md-5">Définir l'objectif pour lequel vous
+                    souhaitez être
+                    accompagné(e)</p>
+            </div>
+            <div class="etape1">
+                <h3 class="text-center pt-5 pb-md-3 pt-md-0 font-weight-bold">Etape 2 - Pratique de <br>la sophrologie
+                </h3>
+                <div class="chronological">
+                    <p class="text-center ml-md-5 mr-md-5">Les exercices de respirations associées à des mouvements
+                        physiques
+                        doux vous amènent peut à peu à un état de détente du corps et du mental.</p>
+                </div>
+            </div>
+
+            <div class="etape1">
+                <h3 class="pt-5 pt-md-0 text-center font-weight-bold">Etape 3 - Temps d'échange <br>après la séance</h3>
+                <p class="pl-md-5 pt-md-5 text-center">Exprimer le vécu de votre séance</p>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

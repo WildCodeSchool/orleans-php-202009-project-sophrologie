@@ -15,6 +15,7 @@ use Symfony\Component\Form\Extension\Core\Type\UrlType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Vich\UploaderBundle\Form\Type\VichFileType;
 
 class EventType extends AbstractType
 {
@@ -34,13 +35,11 @@ class EventType extends AbstractType
                     'placeholder' => 'salon du bien être',
                 ],
             ])
-            ->add('url', UrlType::class, [
-                'label' => 'Lien de l\'image',
-                'required' => false,
-                'attr' => [
-                    'placeholder' => 'https//image.jpeg',
-                ],
-            ])
+            ->add('pictureFile', VichFileType::class, [
+                'required'      => false,
+                'label' => false,
+                'attr' => ['placeholder' => 'Sélectionner un fichier'],
+                      ])
             ->add('eventdate', DateType::class, [
                 'label' => 'Date de publication',
                 'widget' => 'single_text',

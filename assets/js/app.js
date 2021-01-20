@@ -16,6 +16,8 @@ import '../styles/specialityAdmin.scss';
 import '../styles/newEvent.scss';
 import '../styles/adminList.scss';
 import '../styles/login.scss';
+import '../styles/navbarAdmin.scss';
+import bsCustomFileInput from 'bs-custom-file-input';
 
 // Need jQuery? Install it with "yarn add jquery", then uncomment to import it.
 // import $ from 'jquery';
@@ -31,4 +33,9 @@ require('bootstrap');
 
 $(document).ready(() => {
     $('[data-toggle="popover"]').popover();
+});
+
+$(document).ready(() => {
+    $('[data-toggle="popover"]').popover();
+    bsCustomFileInput.init();
 });

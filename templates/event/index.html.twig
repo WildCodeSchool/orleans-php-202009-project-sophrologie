@@ -13,36 +13,32 @@
     </header>
 
 {% block form_row %}
-<div class="form_row">
+<div class="container-fluid w-25 form_row text-primary">
+
     {{ form_start(form) }}
 
     {{ form_widget(form) }}
 
-    <button>Rechercher</button>
+    <button class="btn btn-primary">Rechercher</button>
 
     {{ form_end(form) }}
 </div>
 {% endblock form_row %}
 
-    <section class="container sheettop">
-        <div class="row">
+    <section class="container-fluid w-75 sheettop">
 
+            <div class="row mx-0 d-flex justify-content-center container-fluid mt-2 pt-3">
             {% for event in events %}
-                <div class="col-sm-12 col-md-6 col-lg-4">
-                    <div class="card margin">
 
-                        <div class="card-header text-center">{{ event.category.name }}</div>
+                <ul class="col-lg-3 col-md-6  col-sm-12 list-group list-group-flush m-5 p-2">
 
-                        <img class="card-img-top" src="{{ event.url }}" alt="{{ event.title }}">
-                        <div class="card-body">
-                            <h5 class="card-title text-center"> {{ event.title }} </h5>
-                            <h5 class="card-title text-center"> {{event.eventdate is empty ? '' : event.eventdate|date('d/m/Y')}}</h5>
-                            <p class="card-text">{{ event.description }}</p>
+                    <li class="list-group-item text-center text-uppercase themes-sophro "><h3>{{ event.category.name }}</h3></li>
+                    <li class="list-group-item text-center text-uppercase themes-sophro h-50"><h5>{{ event.title }} </h5></li>
+                    <li><img class="img-fluid mb-4" src="{{ vich_uploader_asset(event, 'pictureFile') }}" alt="{{ event.title }}"/> </li>
+                    <li class="w-100 h-100 text-justify pb-4"><h6>{{event.eventdate is empty ? '' : event.eventdate|date('d/m/Y')}}</h6> {{ event.description }}</li>
+                    <li> <a href="{{ path ('event_show',{'id' :event.id}) }}" class="btn btn-primary" role="button">En savoir plus</a></li>
+                </ul>
 
-                            <a href="{{ path ('event_show',{'id' :event.id}) }}" class="btn btn-primary" role="button">En savoir plus</a>
-                            </div>
-                    </div>
-                </div>
             {% else %}
                 "Il n'y a actuellement aucun évènement de programmé, merci de venir consulter cette section ultérieurement"
             {% endfor %}

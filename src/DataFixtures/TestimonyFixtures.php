@@ -5,6 +5,7 @@ namespace App\DataFixtures;
 use App\Entity\Testimony;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
+use Faker;
 
 class TestimonyFixtures extends Fixture
 {
@@ -14,34 +15,18 @@ class TestimonyFixtures extends Fixture
      */
     public function load(ObjectManager $manager)
     {
-        $testimony = new Testimony();
-        $testimony->setDescription('Actualités');
-        $testimony->setFirtsname('Prénom');
-        $testimony->setTitle('Titre');
-        $testimony->setAge(1);
-        $testimony->setDate('01-01-0000');
-        $manager->persist($testimony);
-        $this->addReference('actualites', $testimony);
+        $faker = Faker\Factory::create('fr_FR');
 
-
-        $testimony1 = new Testimony();
-        $testimony->setDescription('Actualités');
-        $testimony->setFirtsname('Prénom');
-        $testimony->setTitle('Titre');
-        $testimony->setAge(1);
-        $testimony->setDate('01-01-0000');
-        $manager->persist($testimony1);
-        $this->addReference('evenements', $testimony);
-
-        $testimony2 = new Testimony();
-        $testimony->setDescription('Actualités');
-        $testimony->setFirtsname('Prénom');
-        $testimony->setTitle('Titre');
-        $testimony->setAge(1);
-        $testimony->setDate('01-01-0000');
-        $manager->persist($testimony2);
-        $this->addReference('enregistrements', $testimony);
-
+        for ($i = 0; $i < 10; $i++) {
+            $testimony = new Testimony();
+            $testimony->setDescription($faker->sentence);
+            $testimony->setFirtsname($faker->firstName);
+            $testimony->setTitle($faker->jobTitle);
+            $testimony->setAge($faker->numberBetween(9, 60));
+            $testimony->setDate($faker->dateTime);
+            $manager->persist($testimony);
+            $this->setReference('témoignage', $testimony);
+        }
 
         // $product = new Product();
         // $manager->persist($product);

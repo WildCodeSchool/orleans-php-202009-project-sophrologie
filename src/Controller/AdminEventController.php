@@ -50,6 +50,7 @@ class AdminEventController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->persist($event);
             $entityManager->flush();
+            $this->addFlash('success', 'L\'actualité a bien été ajoutée');
             return $this->redirectToRoute('admin_event_index');
         }
 
@@ -69,7 +70,7 @@ class AdminEventController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
-
+            $this->addFlash('success', 'L\'actualité a bien été modifiée');
             return $this->redirectToRoute('admin_event_index');
         }
 
@@ -91,6 +92,7 @@ class AdminEventController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($event);
             $entityManager->flush();
+            $this->addFlash('danger', 'L\'actualité a bien été supprimée');
         }
 
         return $this->redirectToRoute('admin_event_index');

@@ -16,7 +16,7 @@ a {
     color: $light;
 
     &:hover {
-        color: $black;
+        color: $navbar-dark-hover-color;
   }
 }
 
@@ -38,19 +38,24 @@ h4 {
     background-color: $footer;
     color: $light;
     position: relative;
-}
 
-.btn-admin {
-    position: absolute;
-    bottom: 15px;
-    left: 15px;
-
-    .btn-admin-link {
-        color: transparent;
+    > h4 {
+        font-size: $font-navbar-footer-link;
     }
 }
 
-.btn-admin-link:hover {
-    background-color: $light;
-    color: $info;
+.social-network {
+    fill: $light;
+    }
+
+.svg-footer{
+    fill: $light;
+}
+
+.footer-text-a,
+.footer-text-p,
+.footer-text-td,
+.footer-text-li {
+    font-size: $font-navbar-footer-p;
+    font-family: $sub-title-font;
 }
