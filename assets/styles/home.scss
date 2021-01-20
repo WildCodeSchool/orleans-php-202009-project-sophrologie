@@ -23,10 +23,9 @@ header {
 
 .background-image {
     background-image: url("../images/pissenlits.jpg");
-    //background-repeat:no-repeat;
     background-size: cover;
-    filter: brightness(80%);
-    height: 70vh;
+    filter: brightness(75%);
+    height: 80vh;
 }
 
 .home-page-logo {
@@ -45,13 +44,21 @@ header {
     position: absolute;
     bottom: 1%;
 
-    a, a:hover {
+    a {
         color: $primary;
+        border: 2px outset $primary;
+        background-color: $light;
+    }
+
+    a:hover {
+        color: $light;
+        border: 2px solid $light;
+        background-color: $primary;
     }
 }
 
 .title {
-    text-shadow: 2px 2px $primary;
+    text-shadow: 3px 3px 5px $primary;
 }
 
 .sophro-picture {
