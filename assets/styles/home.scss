@@ -4,6 +4,13 @@ p {
     font-family: $text-font;
 }
 
+.bannername {
+    font-size: 60px;
+}
+.bannertitle {
+    font-size: 50px;
+}
+
 h1,
 h2,
 h3 {
@@ -22,6 +29,18 @@ h6 {
     width: 100%;
 }
 
+header {
+
+    background-image: url("../images/pissenlits.jpg");
+    }
+.logo {
+    width : 90px;
+
+}
+.banner {
+    opacity: 80%;
+    filter : brightness(80%);
+}
 .section1 {
     position: relative;
     height: 85vh;
@@ -35,11 +54,7 @@ h6 {
     position: absolute;
 }
 
-.intro-btn {
-    top: 10px;
-    left: 10px;
-    position: absolute;
-}
+
 
 .sophro-picture {
     border-radius: 50%;
