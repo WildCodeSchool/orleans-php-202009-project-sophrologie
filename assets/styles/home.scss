@@ -24,6 +24,11 @@ h6 {
 
 .section1 {
     position: relative;
+    height: 85vh;
+    background-image: url("../images/accueil.jpg");
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-position: right 50% top 13%;;
 }
 
 .title {
@@ -31,43 +36,36 @@ h6 {
 }
 
 .intro-btn {
-    bottom: 10px;
+    top: 10px;
+    left: 10px;
     position: absolute;
 }
 
 .sophro-picture {
     border-radius: 50%;
-    box-shadow: 5px 5px 2px 1px rgba(0, 0, 0, .5);
-    height: 250px;
-    width: 250px;
+    height: 275px;
+    width: 275px;
 }
 
+.speciality-card:hover {
+    background-color: $bg-card;
 
-.card-text {
-    opacity: 0;
-    transition: opacity 1s;
-}
+    .speciality-card-title {
+        background-color: transparent;
+    }
 
-.card-img-overlay:hover {
-    .card-text {
-        opacity: 1;
+    .speciality-card-text {
+        background-color: transparent;
     }
 }
 
-.speciality {
-    img {
-        box-shadow: 5px 5px 5px $dark;
-        filter: brightness(100%);
-        transition: filter 1s;
-    }
-}
-
-.speciality:hover {
-    img {
-        filter: brightness(75%);
+@media screen and (max-width: 500px) {
+    .section1 {
+        height: 30vh;
     }
 
-    h5 {
-        display: none;
+    .intro-btn {
+        top: 5px;
+        left: 5px;
     }
 }

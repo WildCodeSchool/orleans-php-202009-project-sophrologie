@@ -24,7 +24,10 @@ class EventFixtures extends Fixture
             $event = new Event();
 
             $event->setTitle($faker->text(50));
-            $event->setUrl($faker->imageUrl(300, 300));
+            $image = 'https://loremflickr.com/g/320/240/zen';
+            $picture = uniqid() . '.jpg';
+            copy($image, __DIR__ . '/../../public/uploads/' . $picture);
+            $event->setPicture($picture);
             $event->setDescription($faker->text(200));
             $event->setEventlink($faker->url());
             $event->setDate($faker->dateTime());
@@ -32,8 +35,10 @@ class EventFixtures extends Fixture
             $event->setEventdate($faker->dateTime());
             $event->setSummary($faker->text(500));
             $event->setArticle($faker->text(1500));
-            $event->setVideo($faker->url());
+            $event->setVideo('https://www.youtube.com/embed/vnprysVcddk');
             $event->setArchive($faker->boolean);
+            $event->setPictureFile();
+            $event->setUploadedAt($faker->dateTime());
             $manager->persist($event);
         }
         $manager->flush();

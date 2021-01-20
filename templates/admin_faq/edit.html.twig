@@ -1,0 +1,20 @@
+{% extends 'layout.html.twig' %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+
+
+{% block stylesheets %}
+    {{ encore_entry_link_tags('faq') }}
+{% endblock %}
+
+{% block body %}
+    <section class="container my-5">
+        <h1 class="mb-5 text-center">Modifier"{{ faq.subject }}"</h1>
+        <div class="admin-edit-faq">
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <button class="btn btn-primary">Modifier</button>
+            {{ form_end(form) }}
+        </div>
+        <a class="btn btn-outline-primary mt-5" href="{{ path('admin_faq_index') }}">Retour à la liste</a>
+    </section>
+{% endblock %}

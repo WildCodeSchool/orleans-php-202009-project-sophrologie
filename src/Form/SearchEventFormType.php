@@ -20,7 +20,7 @@ class SearchEventFormType extends AbstractType
                 'choice_label' => 'name',
                 'multiple' => true,
                 'expanded' => true,
-                'label' => 'Afficher seulement ces catégories: ',
+                'label' => 'Selectionner une catégories: ',
                 'label_attr' => [
                     'class' => 'checkbox-inline'
                 ]

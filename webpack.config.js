@@ -38,15 +38,17 @@ Encore
     .addEntry('adminHome', './assets/styles/adminHome.scss')
     .addEntry('footer', './assets/styles/footer.scss')
     .addEntry('event', './assets/styles/event.scss')
-    .addEntry('navbarAdmin', './assets/js/navbarAdmin.js')
+    .addEntry('navbarAdmin', './assets/styles/navbarAdmin.scss')
     .addEntry('contact', './assets/styles/contact.scss')
     .addEntry('home', './assets/styles/home.scss')
     .addEntry('navbar', './assets/styles/navbar.scss')
     .addEntry('speciality', './assets/styles/specialityAdmin.scss')
     .addEntry('newEvent', './assets/styles/newEvent.scss')
+    .addEntry('seances', './assets/styles/seances.scss')
     .addEntry('adminList', './assets/styles/adminList.scss')
     .addEntry('login', './assets/styles/login.scss')
     .addEntry('sophrology', './assets/styles/sophrology.scss')
+    .addEntry('faq', './assets/styles/faq.scss')
 
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
     .splitEntryChunks()
@@ -75,7 +77,7 @@ Encore
     })
 
     // enables Sass/SCSS support
-    .enableSassLoader()
+    .enableSassLoader();
 
 // uncomment if you use TypeScript
 // .enableTypeScriptLoader()

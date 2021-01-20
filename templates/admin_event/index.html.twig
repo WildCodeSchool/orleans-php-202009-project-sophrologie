@@ -52,7 +52,7 @@
 
                     <td class="text-center">
                         <div class="btn-group">
-                            <a class="btn btn-sm btn-outline-secondary"
+                            <a class="btn btn-sm btn-outline-primary"
                                href="{{ path('admin_event_edit', {'id': event.id}) }}">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor"
                                      class="bi bi-pen" viewBox="0 0 16 16">
@@ -65,7 +65,7 @@
                         <form action="{{ path('admin_event_archive', {'id': event.id}) }}"
                               onsubmit="return confirm('voulez vous archiver cette actualité?');" method="post">
                             <input type="hidden" name="_token" value="{{ csrf_token('archive' ~ event.id) }}">
-                            <button class="btn btn-sm  btn-outline-secondary">
+                            <button class="btn btn-sm  btn-outline-primary">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                      class="bi bi-box-arrow-in-down" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd"
@@ -128,7 +128,7 @@
                     <td>{{ event.date is empty ? 'N/A' : event.date|date('d/m/Y') }}</td>
                     <td class="text-center">
                         <div class="btn-group">
-                            <a class="btn btn-sm btn-outline-secondary"
+                            <a class="btn btn-sm btn-outline-primary"
                                href="{{ path('admin_event_edit', {'id': event.id}) }}">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor"
                                      class="bi bi-pen" viewBox="0 0 16 16">
@@ -142,7 +142,7 @@
                         <form action="{{ path('admin_event_archive', {'id': event.id}) }}"
                               onsubmit="return confirm('voulez vous republier cette actualité?');" method="post">
                             <input type="hidden" name="_token" value="{{ csrf_token('archive' ~ event.id) }}">
-                            <button class="btn btn-sm  btn-outline-secondary">
+                            <button class="btn btn-sm  btn-outline-primary">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                      class="bi bi-box-arrow-up" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd"
