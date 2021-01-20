@@ -20,40 +20,56 @@ h6 {
 header {
     position: relative;
     background-image: url("../images/pissenlits.jpg");
+    background-repeat:no-repeat;
+    background-size: cover;
     height: 70vh;
+    filter: brightness(75%);
 }
 
 .home-page-logo {
     position: absolute;
     top: 2%;
-    filter: brightness(150%);
 }
 
 .home-page-titles {
     position: absolute;
     bottom: 2%;
-}
-
-.intro-img {
-    height: 80%;
-    width: 100%;
-    opacity: 0.75;
-    filter: brightness(90%);
-}
-
-
-.section1 {
-    position: relative;
-    height: 85vh;
-    background-image: url("../images/accueil.jpg");
-    background-repeat:no-repeat;
-    background-size: cover;
-    background-position: right 50% top 13%;;
+    a {
+        color: $primary;
+    }
+    a:hover {
+        color: $primary;
+    }
 }
 
 .title {
-    position: absolute;
+    text-shadow: 2px 2px $dark;
 }
+
+h1 > .title {
+    border: 2px solid $dark;
+}
+
+//.intro-img {
+//    height: 80%;
+//    width: 100%;
+//    opacity: 0.75;
+//    filter: brightness(90%);
+//}
+//
+//
+//.section1 {
+//    position: relative;
+//    height: 85vh;
+//    background-image: url("../images/accueil.jpg");
+//    background-repeat:no-repeat;
+//    background-size: cover;
+//    background-position: right 50% top 13%;;
+//}
+//
+//.title {
+//    position: absolute;
+//}
 
 
 
