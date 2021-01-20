@@ -43,7 +43,7 @@ class AdminPriceController extends AbstractController
             $entityManager->persist($price);
             $entityManager->flush();
 
-            $this->addFlash('success', 'Le tarif à bien était ajouté');
+            $this->addFlash('success', 'Le tarif a bien été ajouter');
 
 
             return $this->redirectToRoute('admin_prices_index');
@@ -69,7 +69,7 @@ class AdminPriceController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            $this->addFlash('success', 'Le tarif à bien était modifier');
+            $this->addFlash('success', 'Le tarif a bien été modifier');
 
             return $this->redirectToRoute('admin_prices_index');
         }
@@ -93,7 +93,7 @@ class AdminPriceController extends AbstractController
             $entityManager->remove($price);
             $entityManager->flush();
 
-            $this->addFlash('success', 'Le tarif à bien était supprimé');
+            $this->addFlash('success', 'Le tarif a bien été supprimer');
         }
 
         return $this->redirectToRoute('admin_prices_index');
