@@ -57,12 +57,12 @@ class User implements UserInterface
     /**
      * @ORM\OneToMany(targetEntity=Report::class, mappedBy="author")
      */
-    private ArrayCollection $reportsDoneByAdmin;
+    private Collection $reportsDoneByAdmin;
 
     /**
      * @ORM\OneToMany(targetEntity=Report::class, mappedBy="patient")
      */
-    private ArrayCollection $reportsForUsers;
+    private Collection $reportsForUsers;
 
     public function __construct()
     {
