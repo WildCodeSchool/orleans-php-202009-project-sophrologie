@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Report;
+use App\Entity\User;
 use App\Form\ReportType;
 use App\Repository\ReportRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -15,9 +16,10 @@ class AdminReportController extends AbstractController
     /**
      * @Route("/admin/reports", name="admin_reports")
      * @param Request $request
+     * @var User $user
      * @return Response
      */
-    public function index(Request $request): Response
+    public function index(Request $request, User $user): Response
     {
         $report = new Report();
         $formReport = $this->createForm(ReportType::class, $report);
@@ -25,7 +27,7 @@ class AdminReportController extends AbstractController
 
         if ($formReport->isSubmitted() && $formReport->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
-            $report->setAuthor($this->getUser());
+            $report->setAuthor($user);
 
             $entityManager->persist($report);
             $entityManager->flush();
