@@ -1,0 +1,14 @@
+{% extends 'layoutAdmin.html.twig' %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+
+{% block title %}New Prices{% endblock %}
+
+{% block body %}
+    <h1 class="text-center pt-5">Modifier un tarif</h1>
+    <div class="container">
+        {%  include('admin_price/_form.html.twig') with {'label_button': 'Modifier'} %}
+
+        <a class="btn btn-outline-primary text-dark mt-3" href="{{ path('admin_prices_index') }}">Retour à la liste</a>
+    </div>
+{% endblock %}
+

@@ -4,10 +4,22 @@ namespace App\Entity;
 
 use App\Repository\EventRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\Collection;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use DateTime;
+use DateTimeInterface;
+use DateTimeImmutable;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * @ORM\Entity(repositoryClass=EventRepository::class)
+ * @Vich\Uploadable
+ * @UniqueEntity(
+ *     fields={"title"},
+ *     message="L'actualité existe déjà'"
+ * )
  */
 class Event
 {
@@ -34,14 +46,12 @@ class Event
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      * @Assert\Length(max=255)
-     * @Assert\Url()
      */
-    private ?string $url;
+    private ?string $picture = null;
 
     /**
      * @ORM\Column(type="date", nullable=true)
      * @Assert\Type("DateTime")
-
      */
     private ?\DateTimeInterface $date;
 
@@ -59,7 +69,6 @@ class Event
     private ?string $article;
 
     /**
-     *     /**
      * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="events")
      * @ORM\JoinColumn(nullable=false)
      */
@@ -69,7 +78,6 @@ class Event
     /**
      * @ORM\Column(type="date", nullable=true)
      * @Assert\Type("DateTime")
-
      */
     private ?\DateTimeInterface $eventdate;
 
@@ -89,6 +97,27 @@ class Event
      * @ORM\Column(type="boolean")
      */
     private bool $archive;
+
+    /**
+     * @Vich\UploadableField(mapping="picture_file", fileNameProperty="picture")
+     * @var File|null
+     * @Assert\File(maxSize="1000k", mimeTypes={"image/jpeg", "image/png", "image/pdf"})
+     */
+
+    private ?File $pictureFile = null;
+
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     * @var DateTimeInterface
+     */
+
+    private ?\DateTimeInterface $uploadedAt ;
+
+
+    public function __construct()
+    {
+        $this->uploadedAt = new DateTimeImmutable();
+    }
 
     public function getId(): ?int
     {
@@ -119,14 +148,14 @@ class Event
         return $this;
     }
 
-    public function getUrl(): ?string
+    public function getPicture(): ?string
     {
-        return $this->url;
+        return $this->picture;
     }
 
-    public function setUrl(?string $url): self
+    public function setPicture(?string $picture): self
     {
-        $this->url = $url;
+        $this->picture = $picture;
 
         return $this;
     }
@@ -224,6 +253,32 @@ class Event
     public function setArchive(bool $archive): self
     {
         $this->archive = $archive;
+
+        return $this;
+    }
+
+    public function setPictureFile(?File $pictureFile = null): void
+    {
+        $this->pictureFile = $pictureFile;
+        if (null !== $pictureFile) {
+            $this->uploadedAt = new DateTimeImmutable('now');
+        }
+    }
+
+
+    public function getPictureFile(): ?File
+    {
+        return $this->pictureFile;
+    }
+
+    public function getUploadedAt(): ?\DateTimeInterface
+    {
+        return $this->uploadedAt;
+    }
+
+    public function setUploadedAt(?\DateTimeInterface $uploadedAt): self
+    {
+        $this->uploadedAt = $uploadedAt;
 
         return $this;
     }
