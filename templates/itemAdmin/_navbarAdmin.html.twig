@@ -1,58 +1,35 @@
 {% block stylesheets %}
     {{ encore_entry_link_tags('navbarAdmin') }}
 {% endblock %}
-
-<nav class="navbar navbar-expand-lg navbar-light d-flex align-items-center justify-content-center">
-    <div class="d-flex justify-content-center align-items-center flex-lg-row
-                flex-column">
-        <p class="mb-lg-0 mx-0 ml-2 mr-5 text-light">
-            <a href="{{ path('admin_home') }}" class="mx-2 text-decoration-none text-light text-uppercase">
-                ESPACE
-                <img src="{{ asset('build/images/worker.png') }}"
-                     alt="logo_admin"
-                     class="logo-admin d-none d-lg-inline">
-                ADMINISTRATEUR
-            </a>
-        </p>
-
-        <button class="navbar-toggler my-2" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    </div>
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-5">
-
-            <li class="nav-item">
+<nav class="navbar navbar-expand-lg navbar navbar-dark shadow p-2">
+{#    <a class="navbar-brand nav-link text-center text-lg-left" href="#">#}
+{#        <img class="h-25 w-25" src="{{ asset('build/images/logo.png') }}"/>#}
+{#    </a>#}
+     <a href="{{ path('admin_home') }}" class="mx-3 text-decoration-none text-light text-uppercase d-flex align-items-center">
+        <img src="{{ asset('build/images/worker.png') }}" alt="logo_admin" class="logo-admin d-none d-lg-inline mr-2">
+        ADMINISTRATEUR
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNav">
+        <ul class="navbar-nav ">
+            <li class="nav-item pr-3">
                 <a class="nav-link text-light text-uppercase" href="{{ path("admin_event_index") }}">Actualités</a>
             </li>
-            <li class="border border-3 bg-light">
-            </li>
-            <li class="nav-item">
+            <li class="nav-item pr-3">
                 <a class="nav-link text-light text-uppercase" href="{{ path("admin_index_speciality") }}">Spécialités</a>
             </li>
-            <li class="border border-3 bg-light">
-            </li>
-            <li class="nav-item">
+            <li class="nav-item pr-3">
                 <a class="nav-link text-light text-uppercase" href="#">Tarifications</a>
             </li>
-            <li class="border border-3 bg-light">
-            </li>
-            <li class="nav-item">
+            <li class="nav-item pr-3">
                 <a class="nav-link text-light text-uppercase" href="#">Témoignages</a>
             </li>
-            <li class="border border-3 bg-light">
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-light text-uppercase" href="{{ path("home") }}">Retour sur site</a>
+            <li class="nav-item pr-3">
+                <a class="nav-link text-light btn btn-outline-light" href="{{ path('app_logout') }}">Se déconnecter</a>
             </li>
         </ul>
     </div>
-    <li class="mt-lg-2 mt-lg-0  my-2 list-unstyled d-flex align-items-center">
-        {% if app.user %}
-            <a class="text-light btn btn-outline-light" href="{{ path('app_logout') }}"> Se déconnecter</a>
-        {% else %}
-            <a class="text-light btn btn-outline-light" href="{{ path('app_login') }}"> Se connecter</a>
-        {% endif %}
-    </li>
 </nav>
-
