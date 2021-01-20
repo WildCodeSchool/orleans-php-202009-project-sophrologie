@@ -1,0 +1,45 @@
+{% extends 'layoutAdmin.html.twig' %}
+
+{% block title %}Témoignage index{% endblock %}
+
+{% block body %}
+    <h1>Témoignage index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Numméro id</th>
+                <th>Titre</th>
+                <th>Description</th>
+                <th>Date</th>
+                <th>Prénom</th>
+                <th>Nom</th>
+                <th>Âge</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for testimony in testimonies %}
+            <tr>
+                <td>{{ testimony.id }}</td>
+                <td>{{ testimony.title }}</td>
+                <td>{{ testimony.description }}</td>
+                <td>{{ testimony.date ? testimony.date|date('Y-m-d') : '' }}</td>
+                <td>{{ testimony.firtsname }}</td>
+                <td>{{ testimony.lastname }}</td>
+                <td>{{ testimony.age }}</td>
+                <td>
+                    <a href="{{ path('testimony_show', {'id': testimony.id}) }}">Voir</a>
+                    <a href="{{ path('testimony_edit', {'id': testimony.id}) }}">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">Information non disponible</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('testimony_new') }}">Ajouter</a>
+{% endblock %}
