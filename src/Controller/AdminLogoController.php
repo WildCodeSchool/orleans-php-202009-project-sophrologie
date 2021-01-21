@@ -18,11 +18,12 @@ use Symfony\Component\Routing\Annotation\Route;
 class AdminLogoController extends AbstractController
 {
     /**
-     * @Route("/", name="logo_index", methods={"GET"})
+     *     * @Route("/index", name="index")
      */
+
     public function index(LogoRepository $logoRepository): Response
     {
-        return $this->render('logo/index.html.twig', [
+        return $this->render('admin_logo/index.html.twig', [
             'logos' => $logoRepository->findAll(),
         ]);
     }
@@ -43,6 +44,8 @@ class AdminLogoController extends AbstractController
             $entityManager->persist($logo);
             $entityManager->flush();
             $this->addFlash('success', 'L\'entreprise a bien été ajoutée');
+
+            return $this->redirectToRoute('admin_logo_index');
         }
 
         return $this->render('admin_logo/new.html.twig', [
