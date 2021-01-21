@@ -43,8 +43,6 @@ class AdminLogoController extends AbstractController
             $entityManager->persist($logo);
             $entityManager->flush();
             $this->addFlash('success', 'L\'entreprise a bien été ajoutée');
-
-            return $this->redirectToRoute('admin_logo_index');
         }
 
         return $this->render('admin_logo/new.html.twig', [

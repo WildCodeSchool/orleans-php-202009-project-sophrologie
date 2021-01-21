@@ -7,6 +7,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\UrlType;
 
 class LogoType extends AbstractType
 {
@@ -20,7 +21,7 @@ class LogoType extends AbstractType
                     'placeholder' => 'Entreprise X',
                 ],
             ])
-            ->add('Logo', TextType::class, [
+            ->add('Logo', UrlType::class, [
                 'label' => 'URL du logo de l\'entreprise',
                 'attr' => [
                     'placeholder' => 'logo entreprise X',
@@ -28,9 +29,9 @@ class LogoType extends AbstractType
             ])
 
             ->add('Description', TextType::class, [
-                'label' => 'URL du logo de l\'entreprise',
+                'label' => 'Description',
                 'attr' => [
-                    'placeholder' => 'logo entreprise X',
+                    'placeholder' => 'description du partenariat avec l\'entreprise X',
                 ],
             ])
         ;

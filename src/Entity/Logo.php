@@ -9,6 +9,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 /**
  * @ORM\Entity(repositoryClass=LogoRepository::class)
  */
+
 class Logo
 {
     /**
