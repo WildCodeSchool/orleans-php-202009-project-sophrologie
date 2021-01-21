@@ -12,21 +12,33 @@ class SpecialityFixtures extends Fixture
     {
         $speciality1 = new Speciality();
         $speciality1->setTitle('Mieux vivre au quotidien');
-        $speciality1->getDescription('En savoir plus: Apprendre à mieux gérer vos émotions, 
-        tout particulièrement le stress ou l\'anxiété afin de retrouver un état de bien-être au quotidien.');
+        $speciality1->setDescription(' 
+Gérer son stress, son anxiété 
+Canaliser ses émotions 
+Évacuer ses tensions
+Dormir en toute sérénité
+');
+        $speciality1->setImage('1');
         $manager->persist($speciality1);
 
         $speciality2 = new Speciality();
-        $speciality2->setTitle('Admin');
-        $speciality2->getDescription('En savoir plus: Apprendre à mieux gérer vos émotions,
-         tout particulièrement le stress ou l\'anxiété afin de retrouver un état de bien-être au quotidien.');
-
+        $speciality2->setTitle('Mieux être au travail ');
+        $speciality2->setDescription('Rester concentré, être plus attentif
+Etre plus performant au travail 
+Préparer un entretien
+Réussir un examen/un concours  ');
+        $speciality2->setImage('1');
         $manager->persist($speciality2);
 
         $speciality3 = new Speciality();
-        $speciality3->setTitle('Admin');
-         $speciality3->getDescription('En savoir plus: Apprendre à mieux gérer vos émotions, 
-         tout particulièrement le stress ou l\'anxiété afin de retrouver un état de bien-être au quotidien.');
+        $speciality3->setTitle('Mincir sereinement et apaiser les troubles du comportement alimentaire');
+         $speciality3->setDescription('Mal-être dans son corps
+Perdre du poids
+Calmer vos pulsions alimentaires
+Reconnaître la faim/ la satiété
+Retrouver confiance en soi
+');
+        $speciality3->setImage('1');
 
         $manager->persist($speciality3);
 
