@@ -1,0 +1,16 @@
+{% extends 'layoutAdmin.html.twig' %}
+{% form_theme formReport 'bootstrap_4_layout.html.twig' %}
+
+{% block stylesheets %}
+{% endblock %}
+
+{% block body %}
+    <section class="container">
+        <h1 class="text-center my-5">Vos comptes-rendus</h1>
+
+        {{ form_start(formReport) }}
+        {{ form_widget(formReport) }}
+        <button class="btn btn-primary">Envoyer</button>
+        {{ form_end(formReport) }}
+    </section>
+{% endblock %}
