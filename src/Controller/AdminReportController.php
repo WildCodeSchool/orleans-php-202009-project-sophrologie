@@ -17,10 +17,9 @@ class AdminReportController extends AbstractController
     /**
      * @Route("/admin/reports", name="admin_reports")
      * @param Request $request
-     * @param UserRepository $userRepository
      * @return Response|null
      */
-    public function index(Request $request, UserRepository $userRepository): ?Response
+    public function index(Request $request): ?Response
     {
         $report = new Report();
         $formReport = $this->createForm(ReportType::class, $report);
@@ -28,10 +27,7 @@ class AdminReportController extends AbstractController
 
         if ($formReport->isSubmitted() && $formReport->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
-            $user = $this->getUser();
-            $report->setAuthor($userRepository->findOneBy([
-                'id' => $user->getId()
-            ]));
+            $report->setAuthor(null);
 
             $entityManager->persist($report);
             $entityManager->flush();
