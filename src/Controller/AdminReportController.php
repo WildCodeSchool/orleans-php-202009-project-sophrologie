@@ -6,6 +6,7 @@ use App\Entity\Report;
 use App\Entity\User;
 use App\Form\ReportType;
 use App\Repository\ReportRepository;
+use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -16,10 +17,10 @@ class AdminReportController extends AbstractController
     /**
      * @Route("/admin/reports", name="admin_reports")
      * @param Request $request
-     * @param User $user
+     * @param UserRepository $userRepository
      * @return Response|null
      */
-    public function index(Request $request, User $user): ?Response
+    public function index(Request $request, UserRepository $userRepository): ?Response
     {
         $report = new Report();
         $formReport = $this->createForm(ReportType::class, $report);
@@ -27,7 +28,10 @@ class AdminReportController extends AbstractController
 
         if ($formReport->isSubmitted() && $formReport->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
-            $report->setAuthor($user);
+            $user = $this->getUser();
+            $report->setAuthor($userRepository->findOneBy([
+                'id' => $user->getId()
+            ]));
 
             $entityManager->persist($report);
             $entityManager->flush();
