@@ -13,15 +13,16 @@
     </header>
 
 {% block form_row %}
-<div class="container-fluid w-25 form_row text-primary">
-
+<div class="container-fluid w-25 form_row text-primary ">
+<h5>
     {{ form_start(form) }}
 
     {{ form_widget(form) }}
 
-    <button class="btn btn-primary">Rechercher</button>
+    <button class="btn btn-lg btn-primary p-2">Rechercher</button>
 
     {{ form_end(form) }}
+    </h5>
 </div>
 {% endblock form_row %}
 
