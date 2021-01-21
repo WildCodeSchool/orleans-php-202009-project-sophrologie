@@ -17,22 +17,22 @@
         5: {'day':'Sat', 'jour':'SAMEDI', 'horaire':'9h00-13h00'},
         6: {'day':'Sun', 'jour':'DIMANCHE', 'horaire':'Fermé'},
     } %}
-    <header class="my-5">
-        <h1 class="timetable-title text-center py-5">CONTACT</h1>
+    <header>
+        <h1 class="text-center py-5">CONTACT ET HORAIRES</h1>
     </header>
-    <section class="timetable-section py-5 d-flex align-items-center">
+    <section class="timetable-section mt-0 py-2 d-flex align-items-center">
         <div class="card container p-0 my-5">
             <div class="row no-gutters">
                 <div class="p-0 col-lg-6 col-sm-12 col-12">
-                    <img class="img-timetable w-100 h-100" src="{{ asset('build/images/contact-timetable.jpg') }}"
+                    <img class="img-timetable w-100 h-100" src="{{ asset('build/images/office.png') }}"
                          alt="Image journal horaires"/>
                 </div>
                 <div class="col-lg-6 col-sm-12 col-12 mb-0">
                     <div class="card-body">
                         <h2 class="card-title mb-4 text-center">Horaires d'ouverture</h2>
-                        <ul class="list-group list-group-flush text-center d-flex align-items-center">
+                        <ul class="list-group list-group-flush text-center d-flex align-items-center ">
                             {% for day in days %}
-                                <li class="{% if "now"|date('D') == day.day %}list-group-item w-50 strongDay {% else %}
+                                <li class="{% if "now"|date('D') == day.day %}list-group-item w-50 strongDay  {% else %}
                                 list-group-item w-50{% endif %}">{{ day.jour }} : {{ day.horaire }}</li>
                             {% endfor %}
                         </ul>
@@ -45,9 +45,10 @@
             </div>
         </div>
     </section>
-    <section class="form-section container my-5">
+
+    <section class="card container my-5 p-0">
         <div class="contact-right row mx-0">
-            <div class="col-lg-6 col-sm-12 col-12 mb-0">
+            <div class="col-lg-6 col-sm-12 col-12 px-5">
                 <h3 class="text-center pt-4">Vous avez des questions ?</h3>
                 <h3 class="text-center mb-4">Vous souhaitez prendre un RDV ?</h3>
                 {{ form_start(form) }}
@@ -82,25 +83,28 @@
                     </div>
                 </div>
 
-                <button class="btn btn-primary text-light my-2">{{ ('Envoyer') }}</button>
+                <button class="btn btn-primary text-light my-4">{{ ('Envoyer') }}</button>
 
                 {{ form_end(form) }}
             </div>
             <div class="p-0 col-lg-6 col-sm-12 col-12">
-                <img class="img-timetable w-100 h-100" src="{{ asset('build/images/phone-contact.jpg') }}"
+                <img class="img-timetable w-100 h-100" src="{{ asset('build/images/contact.jpg') }}"
                      alt="Image téléphone contact"/>
             </div>
         </div>
     </section>
-    <section class="timetable-section py-5 d-flex align-items-center">
+
+    <section class="timetable-section py-2 d-flex align-items-center">
         <div class="card container p-0 my-5">
             <div class="row no-gutters">
                 <div class="p-0 col-lg-6 col-sm-12 col-12">
-                    <img class="img-timetable w-100 h-100" src="{{ asset('build/images/office.jpg') }}"
-                         alt="Image journal horaires"/>
+                    <iframe width="100%" height="500"
+                            frameborder="no" scrolling="no" marginheight="0" marginwidth="0"
+                            src="https://www.openstreetmap.org/export/embed.html?bbox=1.95020%2C47.88027%2C1.95422%2C47.87873&amp;layer=mapnik&amp;marker=47.87967%2C1.95240"></iframe>
+                    <a href="https://www.openstreetmap.org/?mlat=47.87967&amp;mlon=1.95240#map=19/47.87976/1.95282"></a>
                 </div>
-                <div class="col-lg-6 col-sm-12 col-12 py-4">
-                    <div class="card-body">
+                <div class="col-lg-6 col-sm-12 col-12 py-3">
+                    <div class="card-body ">
                         <div class="mt-2">
                             <h3 class="text-center pb-2">Vous souhaitez me contacter par téléphone ?</h3>
                             <p class="lead text-center">Appelez moi au 06 27 30 98 90</p>
@@ -118,12 +122,6 @@
             </div>
         </div>
     </section>
-    <section class="map-section">
-        <div class="p-0 col-lg-12 col-sm-12">
-            <iframe width="100%" height="500"
-                    frameborder="50" scrolling="no" marginheight="0" marginwidth="0"
-                    src="https://www.openstreetmap.org/export/embed.html?bbox=1.95020%2C47.88027%2C1.95422%2C47.87873&amp;layer=mapnik&amp;marker=47.87967%2C1.95240"></iframe>
-            <a href="https://www.openstreetmap.org/?mlat=47.87967&amp;mlon=1.95240#map=19/47.87976/1.95282"></a>
-        </div>
-    </section>
+
+
 {% endblock %}
