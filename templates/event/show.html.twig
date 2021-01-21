@@ -6,7 +6,8 @@
     {% endblock %}
 {% block body %}
     <section class="container sheettop mb-3 mb-lg-5">
-        <h5 class="mb-4 text-lg-right">Publié le {{event.date is empty ? '' : event.date|date('d/m/Y')}}</h5>
+
+        <h4 class="mb-4 text-center">{{ event.category.name }}</h4>
         <h2 class="mb-4 text-center">{{ event.title }}</h2>
         <h4 class="mb-4 text-center">{{event.eventdate is empty ? '' : event.eventdate|date('d/m/Y')}}</h4>
 
@@ -28,20 +29,31 @@
         </section>
 
 
-        <div class="container mr-auto px-0">
+        <div class="container mr-auto px-0 mb-4">
             {% if event.eventlink != '' %}
-                <a href="{{ event.eventlink}}" class="btn btn-primary text-light mb-5">Lien vers le site de l'évènement</a>
+                <a href="{{ event.eventlink}}" class=" text-primary mb-5">Site de l'évènement</a>
             {% else %}
             {% endif %}
-            <div>
+        </div>
+            <div class="text-xl-center">
                 {% if event.video != '' %}
-                    <iframe width="560" height="315" src="{{ event.video}}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe  width="560" height="315" src="{{ event.video}}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 {% else %}
                 {% endif %}
             </div>
-        </div>
+
     </section>
 
+<div class="container mr-auto px-0">
+    <h5 class="mb-4 text-lg-left pt-5">
+        {% if event.date != '' %}
+            {{ 'publié le ' }}{{event.date is empty ? '' : event.date|date('d/m/Y')}}
+        {% else %}
+        {% endif %}
+    </h5>
+
+    <a href="{{ path("event_index") }}" class="btn btn-primary text-light mb-5">Retour à la liste des actualités</a>
+</div>
 {% endblock %}
 
 

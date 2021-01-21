@@ -10,9 +10,51 @@ img {
     width: 50%;
 }
 
+.section-card-client {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.image-logo {
+    width: 250px;
+    height: 250px;
+}
+
+.card-client {
+    .card-client-text {
+        display: none;
+    }
+
+    .image-logo {
+        display: block;
+    }
+}
+
+.card-client:hover {
+    .card-client-text {
+        display: block;
+    }
+
+    .image-logo {
+        display: none;
+    }
+}
+
 @media screen and (max-width: 1000px) {
     .sophro-img,
     .sophro-text {
         width: 100%;
+    }
+
+    .card-client {
+        align-items: center;
+
+        .card-client-text {
+            display: block;
+        }
+
+        .image-logo {
+            display: none;
+        }
     }
 }
