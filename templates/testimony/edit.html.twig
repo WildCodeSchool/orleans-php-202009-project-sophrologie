@@ -1,13 +1,26 @@
 {% extends 'layoutAdmin.html.twig' %}
 
-{% block title %}Modification du témoignage{% endblock %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+
+{% block stylesheets %}
+    {{ encore_entry_link_tags('newEvent') }}
+{% endblock %}
+
+{% block title %}{{parent()}}| Modification du témoignage{% endblock %}
 
 {% block body %}
-    <h1>Modification du témoignage</h1>
 
-    {{ include('testimony/_form.html.twig', {'button_label': 'Modifier'}) }}
-
-    <a href="{{ path('testimony_index') }}">Retour</a>
-
-    {{ include('testimony/_delete_form.html.twig') }}
+    <section class="sheettop">
+        <main class="container ">
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <h1 class="title mb-5">Modification du témoignage "{{ testimony.title}}"</h1>
+                </div>
+            </div>
+            <div class="admin-edit-event">
+                {% include 'testimony/_form.html.twig' with {'button_label': 'Modifier'} %}
+            </div>
+            <a class="btn btn-outline-primary mt-5" href="{{ path('testimony_index') }}">Retour à la liste</a>
+        </main>
+    </section>
 {% endblock %}
