@@ -7,12 +7,12 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/collective/session", name="collective_session")
+ * @Route("/collective/session", name="collective_session_")
  */
 class CollectiveSessionController extends AbstractController
 {
     /**
-     * @Route("/", name="collective_session_index")
+     * @Route("/", name="index")
      */
     public function index(): Response
     {
