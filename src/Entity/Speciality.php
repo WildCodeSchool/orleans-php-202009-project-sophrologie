@@ -30,7 +30,7 @@ class Speciality
      * @Assert\NotBlank()
      * @Assert\Length(max="255")
      */
-    private ?string $description;
+    private string $description;
 
     /**
      * @ORM\Column(type="string", length=255)
