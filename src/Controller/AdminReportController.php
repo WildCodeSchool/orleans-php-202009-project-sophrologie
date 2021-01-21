@@ -16,10 +16,10 @@ class AdminReportController extends AbstractController
     /**
      * @Route("/admin/reports", name="admin_reports")
      * @param Request $request
-     * @var User $user
-     * @return Response
+     * @param User $user
+     * @return Response|null
      */
-    public function index(Request $request, User $user): Response
+    public function index(Request $request, User $user): ?Response
     {
         $report = new Report();
         $formReport = $this->createForm(ReportType::class, $report);
@@ -33,6 +33,8 @@ class AdminReportController extends AbstractController
             $entityManager->flush();
 
             $this->addFlash('success', 'Votre message a bien été envoyé !');
+
+            return $this->redirectToRoute('admin_home');
         }
 
         return $this->render('admin_report/index.html.twig', [
