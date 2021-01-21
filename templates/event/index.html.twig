@@ -36,7 +36,7 @@
                     <li class="list-group-item text-center text-uppercase themes-sophro "><h3>{{ event.category.name }}</h3></li>
                     <li class="list-group-item text-center text-uppercase themes-sophro h-50"><h5>{{ event.title }} </h5></li>
                     <li><img class="img-fluid mb-4" src="{{ vich_uploader_asset(event, 'pictureFile') }}" alt="{{ event.title }}"/> </li>
-                    <li class="w-100 h-100 text-justify pb-4"><h6>{{event.eventdate is empty ? '' : event.eventdate|date('d/m/Y')}}</h6> {{ event.description }}</li>
+                    <li class="w-100 h-100 text-left pb-4"><h6>{{event.eventdate is empty ? '' : event.eventdate|date('d/m/Y')}}</h6> {{ event.description }}</li>
                     <li> <a href="{{ path ('event_show',{'id' :event.id}) }}" class="btn btn-primary" role="button">En savoir plus</a></li>
                 </ul>
 
