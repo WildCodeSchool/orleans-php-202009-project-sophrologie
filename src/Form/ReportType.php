@@ -31,7 +31,7 @@ class ReportType extends AbstractType
                 },
                 'expanded' => false,
                 'multiple' => false,
-                'label' => 'Patient rencontré',
+                'label' => 'Patient(e) rencontré(e)',
                 'query_builder' => function (UserRepository $userRepository) {
                     return $userRepository->createQueryBuilder('u')
                         ->Where('u.roles LIKE :role')
