@@ -7,9 +7,9 @@
 
 {% block body %}
     <header>
-        <h1 class="timetable-title text-center text-uppercase">Seance individuelle</h1>
+        <h1 class="timetable-title text-center text-uppercase pt-5">Seance individuelle</h1>
     </header>
-    <div class="container-fluid py-3">
+    <div class="container-fluid py-3 px-0">
         <div class=" text-center justify-content-center">
             <h2>Déroulement d'une séance</h2>
         </div>
@@ -36,12 +36,12 @@
             </div>
         </div>
         <section class="background-section">
-            <h2 class="my-5 text-center text-uppercase">Forfaits/Tarifs des séances</h2>
+            <h2 class="my-5 text-center text-uppercase pt-5">Forfaits/Tarifs des séances</h2>
             <div class="container text-center">
                 <div class="row">
                     {% for price in prices %}
                         <div class="col-md-4">
-                            <div class="card mb-5 mb-lg-0">
+                            <div class="card mb-5">
                                 <div class="card-body">
                                     <h3 class="card-title text-uppercase text-center">{{ price.name }}</h3>
                                     <hr>
