@@ -12,20 +12,18 @@
     <section class="container mb-5">
         <div>
             <h1 class="my-5 text-center">Mon espace personnel</h1>
-            <p class="text-center">Bienvenue
+            <p class="text-center mb-5">Bienvenue
                 <strong>{{ app.user.firstname }} {{ app.user.lastname }}</strong>
             </p>
-            <p>
-                Prénom : <strong>{{ app.user.firstname }}</strong> <br>
-                Nom : <strong>{{ app.user.lastname }}</strong> <br>
-                Adresse email : <strong>{{ app.user.email }}</strong> <br>
-            </p>
+            <p class="mb-0 mt-3">Prénom : <strong>{{ app.user.firstname }}</strong></p>
+            <p class="mb-0 mt-3">Nom : <strong>{{ app.user.lastname }}</strong></p>
+            <p class="mb-0 mt-3">Adresse email : <strong>{{ app.user.email }}</strong></p>
         </div>
 
         <hr>
 
-        <div class="mb-5">
-            <h3 class="mb-3">Modifier mes données personnelles</h3>
+        <div class="my-4">
+            <h3 class="mb-4">Modifier mes données personnelles</h3>
             <div class="accordionForm">
                 <div class="card w-100">
                     <div class="card-header" id="headingThree">
@@ -57,24 +55,28 @@
 
         <hr>
 
-        <h3 class="mb-3">Mes comptes rendus</h3>
-        <div id="accordion">
-            {% for report in reports %}
-            <div class="card w-100 my-2">
-                <div class="card-header" id="headingOne{{ loop.index }}">
-                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne{{ loop.index }}"
-                            aria-expanded="true" aria-controls="collapseOne1">
-                        <h4 class="title-collapse">Compte rendu n° {{ loop.index }}</h4>
-                    </button>
-                </div>
+        <div class="my-4">
+            <h3 class="mb-4">Mes comptes rendus</h3>
+            <div id="accordion">
+                {% for report in reports %}
+                    <div class="card w-100 my-2">
+                        <div class="card-header" id="headingOne{{ loop.index }}">
+                            <button class="btn btn-link" data-toggle="collapse"
+                                    data-target="#collapseOne{{ loop.index }}"
+                                    aria-expanded="true" aria-controls="collapseOne1">
+                                <h4 class="title-collapse">Compte rendu n° {{ loop.index }}</h4>
+                            </button>
+                        </div>
 
-                <div id="collapseOne{{ loop.index }}" class="collapse" aria-labelledby="headingOne{{ loop.index }}" data-parent="#accordion">
-                    <div class="card-body">
-                        <p class="m-0 report-message">{{ report.message }}</p>
+                        <div id="collapseOne{{ loop.index }}" class="collapse"
+                             aria-labelledby="headingOne{{ loop.index }}" data-parent="#accordion">
+                            <div class="card-body">
+                                <p class="m-0 report-message">{{ report.message }}</p>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                {% endfor %}
             </div>
-            {% endfor %}
         </div>
     </section>
 {% endblock %}
