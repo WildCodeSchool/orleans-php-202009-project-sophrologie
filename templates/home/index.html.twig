@@ -84,13 +84,15 @@
                             <h3>{{ speciality.title }}</h3>
                         </li>
                         <li class="speciality-card-text list-group-item">
+                            <p class="p-0">{{ speciality.keywords }}</p>
+                        </li>
+                        <li class="speciality-card-text list-group-item">
                             <p class="p-0">{{ speciality.description }}</p>
                         </li>
                     </ul>
                 {% endfor %}
             </div>
-
-
-
     </section>
+
+
 {% endblock %}
