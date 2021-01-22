@@ -30,8 +30,8 @@ class AdminEventController extends AbstractController
         $form = $this->createForm(SearchAdminEventType::class, $eventSearch);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-            $events = $eventRepository->findLikeName($eventSearch);
-            $eventsArchive = $eventRepository->findLikeName($eventSearch);
+            $events = $eventRepository->findLikeName($eventSearch, false);
+            $eventsArchive = $eventRepository->findLikeName($eventSearch, true);
         }
 
 
