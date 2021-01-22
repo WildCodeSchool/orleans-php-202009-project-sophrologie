@@ -2,14 +2,14 @@
 {% form_theme formEditUser 'bootstrap_4_layout.html.twig' %}
 
 {% block stylesheets %}
-    {{ encore_entry_link_tags('home') }}
+    {{ encore_entry_link_tags('myAccount') }}
 {% endblock %}
 
 {% block title %}Mon espace personnel{% endblock %}
 
 
 {% block body %}
-    <section class="container">
+    <section class="container mb-5">
         <div>
             <h1 class="my-5 text-center">Mon espace personnel</h1>
             <p class="text-center">Bienvenue
@@ -29,12 +29,10 @@
             <div class="accordionForm">
                 <div class="card w-100">
                     <div class="card-header" id="headingThree">
-                        <h5 class="mb-0">
-                            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseThree"
-                                    aria-expanded="true" aria-controls="collapseThree">
-                                Formulaire d'édition
-                            </button>
-                        </h5>
+                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseThree"
+                                aria-expanded="true" aria-controls="collapseThree">
+                            <h4 class="title-collapse">Formulaire d'édition</h4>
+                        </button>
                     </div>
                     <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion"
                          style="">
@@ -64,17 +62,15 @@
             {% for report in reports %}
             <div class="card w-100 my-2">
                 <div class="card-header" id="headingOne{{ loop.index }}">
-                    <h5 class="mb-0">
-                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne{{ loop.index }}"
-                                aria-expanded="true" aria-controls="collapseOne1">
-                            Compte rendu n° {{ loop.index }}
-                        </button>
-                    </h5>
+                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne{{ loop.index }}"
+                            aria-expanded="true" aria-controls="collapseOne1">
+                        <h4 class="title-collapse">Compte rendu n° {{ loop.index }}</h4>
+                    </button>
                 </div>
 
                 <div id="collapseOne{{ loop.index }}" class="collapse" aria-labelledby="headingOne{{ loop.index }}" data-parent="#accordion">
                     <div class="card-body">
-                        <p class="m-0">{{ report.message }}</p>
+                        <p class="m-0 report-message">{{ report.message }}</p>
                     </div>
                 </div>
             </div>

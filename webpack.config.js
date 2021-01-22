@@ -49,6 +49,7 @@ Encore
     .addEntry('login', './assets/styles/login.scss')
     .addEntry('sophrology', './assets/styles/sophrology.scss')
     .addEntry('faq', './assets/styles/faq.scss')
+    .addEntry('myAccount', './assets/styles/myAccount.scss')
 
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
     .splitEntryChunks()
