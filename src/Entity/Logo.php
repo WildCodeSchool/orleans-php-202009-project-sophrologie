@@ -20,7 +20,8 @@ class Logo
     private int $id;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank()
      * @Assert\Length(max=255)
      */
     private ?string $name;
