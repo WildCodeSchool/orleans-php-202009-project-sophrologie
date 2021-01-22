@@ -1,0 +1,102 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Séances Collectives{% endblock %}
+{% block stylesheets %}
+    {{ encore_entry_link_tags('collectiveSessions') }}
+{% endblock %}
+
+{% block body %}
+    <header class="mb-5 banner-seanceCollective">
+        <h1 class="text-center text-uppercase py-5">Séances Collectives</h1>
+    </header>
+    <main class="container-fluid px-0 mx-0">
+        <section class=" my-3 py-3">
+            <div class="row mx-md-3 justify-content-center">
+                <div class="col-md-5 mr-md-5">
+                    <h2 class="mb-4">Séances collectives tout public : </h2>
+                    <p>Ces séances s’adressent selon le groupe défini soit aux adultes, aux enfants, aux jeunes mamans
+                        ou aux séniors. En cours d’année en fonction des besoins, je propose des séances collectives à
+                        des petits
+                        groupes. <br>
+                        N’hésitez pas à me communiquer un thème via le <a class="text-primary" href="">
+                            formulaire de contact</a> afin que je propose une séance collective.
+                        Voici quelques exemples non limitatifs de thématiques possibles pour des séances collectives :
+                    <ul>
+                        <li><strong>Apprendre à gérer vos émotions.</strong></li>
+                        <li><strong>Un temps pour soi.</strong></li>
+                        <li><strong>La sophrologie pour les jeunes mamans après un accouchement.</strong></li>
+                        <li><strong>La sophrologie pour apprendre aux enfants à mieux se concentrer à l’école.</strong>
+                        </li>
+                    </ul>
+                    <a class="btn btn-primary mt-5" href="">Evènements à venir
+                    </a>
+                    </p>
+                </div>
+                <div class="col-md-5">
+                    <img class="w-100 h-100 shadow p-1" src="{{ asset('build/images/seanceCollective.jpeg') }}"
+                         alt="seance collective">
+                </div>
+            </div>
+        </section>
+
+        <section class="my-5 py-5 banner-seanceCollective">
+            <div class="row mx-md-3 justify-content-center">
+                <div class="col-md-5 mr-md-5 my-3">
+                    <img class="w-100 h-100 shadow p-1" src="{{ asset('build/images/sophro-entreprise.jpg') }}" alt="">
+                </div>
+                <div class="col-md-5 my-3">
+                    <h2 class="mb-4">Séances en entreprises privées/publiques : </h2>
+                    <p> La sophrologie se révèle être un formidable outil de gestion des Ressources Humaines en
+                        entreprise. En effet, la sophrologie est un très bon moyen de <strong>prévention des
+                            risques</strong>
+                        psychosociaux, des troubles <strong>musculo-squelettiques</strong> et elle permet aussi
+                        d'atteindre une meilleure<strong>qualité de vie au travail.</strong><br>
+                        La sophrologie permet à chacun de découvrir ses propres seuils de tolérance et propose
+                        différents outils pour éviter le point de basculement.
+                        La sophrologie permet de répondre, à la fois, aux besoins de l'entreprise et de ses
+                        collaborateurs par l'apport de techniques de développement personnel.
+                        Ainsi, elle permet de :
+                    </p>
+                    <ul>
+                        <li><strong>Prendre confiance en soi.</strong></li>
+                        <li><strong>Accroître sa motivation.</strong></li>
+                        <li><strong>S’adapter à toutes les situations.</strong></li>
+                        <li><strong>Garder sa concentration et accroître sa capacité de mémorisation.</strong></li>
+                    </ul>
+                    <p>Je propose des séances de groupe selon un thème ou un objectif défini au préalable selon le
+                        besoin. Vous êtes <strong>gérant(e) d'entreprise, directeur(trice) des Ressources Humaines ou
+                            du CHSCT</strong>, responsable d'un <strong>CE ou encore Chief Happiness Officer </strong>
+                        vous souhaitez faire rentrer la <strong>sophrologie dans votre entreprise</strong>,
+                        je vous propose alors de nous rencontrer afin d'étudier ensemble votre projet.
+                    </p>
+
+                    <a class="btn btn-primary mt-5" href="{{ path("contact") }}#contact">Demande de devis
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="row mx-0 d-flex justify-content-center  mt-2 pt-3">
+                <ul class="col-md-2 col-sm-12 list-group list-group-flush m-4 p-3 text-center">
+                    <li class="list-group-item text-center text-uppercase mb-4"><h3>Bien être</h3>
+                    <li>Gérer le <strong>stress, la fatigue</strong></li>
+                    <li>Apprendre à <strong>déconnecter</strong></li>
+                    <li> Rééquilibrer la <strong>vie professionnelle et personnelle</strong></li>
+                </ul>
+                <ul class="col-md-2 col-sm-12 list-group list-group-flush m-4 p-3 text-center">
+                    <li class="list-group-item text-center text-uppercase mb-4 "><h3>Travail en équipe</h3>
+                    </li>
+                    <li>Renforcer la <strong>capacité d'écoute</strong></li>
+                    <li>Accroître <strong>l'adaptabilité</strong></li>
+                    <li>Développer votre <strong>créativité</strong></li>
+                </ul>
+                <ul class="col-md-2 col-sm-12 list-group list-group-flush m-4 p-3 text-center">
+                    <li class="list-group-item text-center text-uppercase mb-4"><h3>Performance</h3></li>
+                    <li>Favoriser <strong>la concentration</strong></li>
+                    <li>Retrouver de <strong>l'énergie</strong></li>
+                    <li>Se préparer <strong>mentalement</strong></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+{% endblock %}
