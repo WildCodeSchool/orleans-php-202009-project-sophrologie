@@ -62,6 +62,37 @@
                 sophrologie, toutefois certaines mutuelles proposent un remboursement.
             </p>
         </section>
+        <section class=" my-5 d-flex justify-content-center align-items-center">
+            <div id="carouselContent " class="carousel slide  w-100" data-ride="carousel">
+
+                <div class="carousel-inner d-inline-block  " role="listbox">
+
+                    <h2 class="text-center">Ils m'ont fait confiance</h2>
+
+                    {% for testimony in testimonies %}
+
+                        <div class="carousel-item {{ loop.first ? 'active': '' }} text-center py-5 px-5 w-80">
+
+                            <h3 class="py-4">{{ testimony.title }}</h3>
+                            <p>"{{ testimony.description }}"</p>
+                            <div>
+                                <span class="px-5">{{ testimony.date ? testimony.date|date('d-m-Y') : '' }}</span>
+                                <span class="px-5">{{ testimony.firtsname }}</span>
+                            </div>
+                        </div>
+                    {% endfor %}
+
+                </div>
+                <a class="carousel-control-prev" href="#carouselContent" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselContent" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </section>
     </div>
 
 {% endblock %}

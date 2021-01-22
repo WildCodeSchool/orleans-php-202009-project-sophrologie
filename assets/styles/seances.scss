@@ -122,3 +122,15 @@ h6 {
 .background-section {
     background-color: $grey1;
 }
+
+.carousel-item.active,
+.carousel-item-next,
+.carousel-item-prev{
+    display:block;
+}
+
+.carousel-item {
+
+}
+
+
