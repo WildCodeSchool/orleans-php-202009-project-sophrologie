@@ -1,6 +1,6 @@
 {% extends 'layoutAdmin.html.twig' %}
 
-{% block title %}Prices index{% endblock %}
+{% block title %}Tarifs  | {{ parent() }}{% endblock %}
 
 {% block body %}
     {% for label, messages in app.flashes %}
@@ -82,5 +82,9 @@
             {% endfor %}
             </tbody>
         </table>
+    </div>
+
+    <div class="container-fluid mb-5">
+        <a class="btn btn-danger" href="{{ path('admin_home') }}">Retour à l'accueil admin</a>
     </div>
 {% endblock %}
