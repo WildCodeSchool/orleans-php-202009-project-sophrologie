@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Faq;
+use App\Repository\FaqRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
@@ -16,6 +17,11 @@ class FaqController extends AbstractController
      */
     public function index(): Response
     {
-        return $this->render('faq/index.html.twig');
+        $faqs = $this->getDoctrine()
+            ->getRepository(Faq::class)
+            ->findAll();
+        return $this->render('faq/index.html.twig', [
+            'faqs' => $faqs
+        ]);
     }
 }

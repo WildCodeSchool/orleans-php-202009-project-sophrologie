@@ -1,18 +1,35 @@
 {% extends 'layout.html.twig' %}
+{% form_theme formEditUser 'bootstrap_4_layout.html.twig' %}
 
 {% block title %}Mon compte personnel{% endblock %}
 
 
 {% block body %}
     <section class="container">
-        <h1 class="my-5 text-center">Mon compte personnel</h1>
+        <div>        <h1 class="my-5 text-center">Mon compte personnel</h1>
 
-        <p class="text-center">Bienvenue sur votre espace <strong>{{ app.user.firstname }} {{ app.user.lastname }}</strong></p>
+            <p class="text-center">Bienvenue sur votre espace <strong>{{ app.user.firstname }} {{ app.user.lastname }}</strong></p>
 
-        <p>
-            Prénom : <strong>{{ app.user.firstname }}</strong> <br>
-            Nom : <strong>{{ app.user.lastname }}</strong> <br>
-            Adresse email : <strong>{{ app.user.email }}</strong> <br>
-        </p>
+            <p>
+                Prénom : <strong>{{ app.user.firstname }}</strong> <br>
+                Nom : <strong>{{ app.user.lastname }}</strong> <br>
+                Adresse email : <strong>{{ app.user.email }}</strong> <br>
+            </p>
+        </div>
+
+        <div>
+            {{ form_start(formEditUser) }}
+
+            {{ form_label(formEditUser.lastname, 'Nom :') }}
+            {{ form_widget(formEditUser.lastname) }}
+
+            {{ form_label(formEditUser.firstname, 'Prénom :') }}
+            {{ form_widget(formEditUser.firstname) }}
+
+            {{ form_label(formEditUser.email, 'Adresse email :') }}
+            {{ form_widget(formEditUser.email) }}
+            <button class="btn btn-primary">{{ 'Sauvegarder' }}</button>
+            {{ form_end(formEditUser) }}
+        </div>
     </section>
 {% endblock %}

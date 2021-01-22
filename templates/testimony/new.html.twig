@@ -1,11 +1,28 @@
-{% extends 'base.html.twig' %}
+{% extends 'layoutAdmin.html.twig' %}
 
-{% block title %}New Testimony{% endblock %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+
+{% block stylesheets %}
+    {{ encore_entry_link_tags('newEvent') }}
+{% endblock %}
+
+{% block title %}{{parent()}}|Nouveau Témoignage{% endblock %}
 
 {% block body %}
-    <h1>Create new Testimony</h1>
 
-    {{ include('testimony/_form.html.twig') }}
+    <main class="container ">
+        <section class="sheettop">
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <h1 class="title mb-5">Ajouter un témoignage</h1>
+                </div>
+            </div>
+            <div class="table-add-event">
+                {% include 'testimony/_form.html.twig' with {'label_button': 'Ajouter'} %}
+            </div>
 
-    <a href="{{ path('testimony_index') }}">back to list</a>
+            <a class="btn btn-outline-primary mt-5" href="{{ path('testimony_index') }}">Retour à la liste</a>
+
+        </section>
+    </main>
 {% endblock %}

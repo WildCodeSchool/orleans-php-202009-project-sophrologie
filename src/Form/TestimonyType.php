@@ -30,7 +30,7 @@ class TestimonyType extends AbstractType
                 ],
             ])
             ->add('date', DateType::class, [
-                'label' => 'Date du témoignagz',
+                'label' => 'Date du témoignage',
                 'widget' => 'single_text',
                 'format' => 'yyyy-MM-dd',
                 'required' => false,

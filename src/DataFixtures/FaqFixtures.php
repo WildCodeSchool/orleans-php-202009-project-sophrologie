@@ -18,7 +18,7 @@ class FaqFixtures extends Fixture
     public function load(ObjectManager $manager)
     {
         $faker = Faker\Factory::create('fr_FR');
-        for ($i = 1; $i <= 10; $i++) {
+        for ($i = 1; $i <= 5; $i++) {
             $faq = new Faq();
             $faq->setSubject($faker->text);
             $faq->setFeedback($faker->text);

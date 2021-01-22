@@ -2,7 +2,7 @@
     {{ encore_entry_link_tags('navbar') }}
 {% endblock %}
 <nav class="navbar navbar-expand-lg navbar navbar-dark shadow p-2">
-    <a class="navbar-brand nav-link text-center text-lg-left" href="#">
+    <a class="navbar-brand nav-link text-center text-lg-left mr-0" href="#">
         <img class="h-25 w-25" src="{{ asset('build/images/logo.png') }}"/>
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -10,7 +10,7 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav px-5 ml-auto">
+        <ul class="navbar-nav ml-auto">
             <li class="nav-item pr-3">
                 <a class="nav-link" href="{{ path("home") }}">Accueil</a>
             </li>
@@ -24,7 +24,7 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="{{ path("seances") }}">Séance individuelle</a>
-                    <a class="dropdown-item" href="#">Séance collective</a>
+                    <a class="dropdown-item" href="{{ path("collective_session_index") }}">Séance collective</a>
                 </div>
             </li>
             <li class="nav-item pr-3">
@@ -37,9 +37,9 @@
             <li class="nav-item dropdown pr-3">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                    aria-haspopup="true" aria-expanded="false">
-                    <i class="fas fa-user"></i>
+                    <img src="{{ asset('build/images/user.png') }}" alt="logo user" class="logo-user">
                 </a>
-                <div class="dropdown-menu dropdown-menu-right">
+                <div class="dropdown-menu dropdown-menu-right w-25">
                     {% if app.user %}
                         <a class="dropdown-item" href="{{ path('app_logout') }}">Se déconnecter</a>
                         {% if is_granted("ROLE_ADMIN") %}

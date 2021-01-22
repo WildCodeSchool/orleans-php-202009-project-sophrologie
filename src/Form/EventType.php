@@ -41,7 +41,7 @@ class EventType extends AbstractType
                 'attr' => ['placeholder' => 'Sélectionner un fichier'],
                       ])
             ->add('eventdate', DateType::class, [
-                'label' => 'Date de publication',
+                'label' => 'Date de la manifestation',
                 'widget' => 'single_text',
                 'format' => 'yyyy-MM-dd',
                 'required' => false,
@@ -68,7 +68,7 @@ class EventType extends AbstractType
                 ],
             ])
             ->add('date', DateType::class, [
-                'label' => 'Date de la manifestation',
+                'label' => 'Date de publication',
                 'widget' => 'single_text',
                 'format' => 'yyyy-MM-dd',
                 'required' => false,
