@@ -35,7 +35,7 @@ class UserFixtures extends Fixture
             $user->setFirstname('UserFirstname' . $i);
             $user->setLastname('UserLastname' . $i);
             $user->setEmail('user' . $i . '@inspireexpire.com');
-            $user->setRoles(['ROLE_ADMIN']);
+            $user->setRoles(['ROLE_USER']);
             $user->setPassword($this->passwordEncoder->encodePassword(
                 $user,
                 'contributorpassword'

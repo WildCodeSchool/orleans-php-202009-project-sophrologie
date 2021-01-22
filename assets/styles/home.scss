@@ -17,28 +17,48 @@ h6 {
     font-family: $sub-title-font;
 }
 
-.intro-img {
-    height: 80%;
-    width: 100%;
+header {
+    position: relative;
 }
 
-.section1 {
-    position: relative;
-    height: 85vh;
-    background-image: url("../images/accueil.jpg");
-    background-repeat:no-repeat;
+.background-image {
+    background-image: url("../images/pissenlits.jpg");
     background-size: cover;
-    background-position: right 50% top 13%;;
+    filter: brightness(75%);
+    height: 80vh;
+}
+
+.home-page-logo {
+    position: absolute;
+    top: 2%;
+
+    .logo {
+        height: 40%;
+        width: 100%;
+        max-height: 250px;
+        max-width: 750px;
+    }
+}
+
+.home-page-titles {
+    position: absolute;
+    bottom: 1%;
+
+    a {
+        color: $primary;
+        border: 2px outset $primary;
+        background-color: $light;
+    }
+
+    a:hover {
+        color: $light;
+        border: 2px solid $light;
+        background-color: $primary;
+    }
 }
 
 .title {
-    position: absolute;
-}
-
-.intro-btn {
-    top: 10px;
-    left: 10px;
-    position: absolute;
+    text-shadow: 3px 3px 5px $primary;
 }
 
 .sophro-picture {
@@ -56,16 +76,5 @@ h6 {
 
     .speciality-card-text {
         background-color: transparent;
-    }
-}
-
-@media screen and (max-width: 500px) {
-    .section1 {
-        height: 30vh;
-    }
-
-    .intro-btn {
-        top: 5px;
-        left: 5px;
     }
 }
