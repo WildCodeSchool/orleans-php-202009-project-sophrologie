@@ -1,35 +1,82 @@
 {% extends 'layout.html.twig' %}
 {% form_theme formEditUser 'bootstrap_4_layout.html.twig' %}
 
-{% block title %}Mon compte personnel{% endblock %}
+{% block stylesheets %}
+    {{ encore_entry_link_tags('myAccount') }}
+{% endblock %}
+
+{% block title %}Mon espace personnel{% endblock %}
 
 
 {% block body %}
-    <section class="container">
-        <div>        <h1 class="my-5 text-center">Mon compte personnel</h1>
-
-            <p class="text-center">Bienvenue sur votre espace <strong>{{ app.user.firstname }} {{ app.user.lastname }}</strong></p>
-
-            <p>
-                Prénom : <strong>{{ app.user.firstname }}</strong> <br>
-                Nom : <strong>{{ app.user.lastname }}</strong> <br>
-                Adresse email : <strong>{{ app.user.email }}</strong> <br>
+    <section class="container mb-5">
+        <div>
+            <h1 class="my-5 text-center">Mon espace personnel</h1>
+            <p class="text-center mb-5">Bienvenue
+                <strong>{{ app.user.firstname }} {{ app.user.lastname }}</strong>
             </p>
+            <p class="mb-0 mt-3">Prénom : <strong>{{ app.user.firstname }}</strong></p>
+            <p class="mb-0 mt-3">Nom : <strong>{{ app.user.lastname }}</strong></p>
+            <p class="mb-0 mt-3">Adresse email : <strong>{{ app.user.email }}</strong></p>
         </div>
 
-        <div>
-            {{ form_start(formEditUser) }}
+        <hr>
 
-            {{ form_label(formEditUser.lastname, 'Nom :') }}
-            {{ form_widget(formEditUser.lastname) }}
+        <div class="my-4">
+            <h3 class="mb-4">Modifier mes données personnelles</h3>
+            <div class="accordionForm">
+                <div class="card w-100">
+                    <div class="card-header" id="headingThree">
+                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseThree"
+                                aria-expanded="true" aria-controls="collapseThree">
+                            <h4 class="title-collapse">Formulaire d'édition</h4>
+                        </button>
+                    </div>
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion"
+                         style="">
+                        <div class="card-body">
+                            {{ form_start(formEditUser) }}
 
-            {{ form_label(formEditUser.firstname, 'Prénom :') }}
-            {{ form_widget(formEditUser.firstname) }}
+                            <p class="m-0">{{ form_label(formEditUser.lastname, 'Nom :') }}</p>
+                            <p>{{ form_widget(formEditUser.lastname) }}</p>
 
-            {{ form_label(formEditUser.email, 'Adresse email :') }}
-            {{ form_widget(formEditUser.email) }}
-            <button class="btn btn-primary">{{ 'Sauvegarder' }}</button>
-            {{ form_end(formEditUser) }}
+                            <p class="m-0 mt-3">{{ form_label(formEditUser.firstname, 'Prénom :') }}</p>
+                            <p>{{ form_widget(formEditUser.firstname) }}</p>
+
+                            <p class="m-0 mt-3">{{ form_label(formEditUser.email, 'Adresse email :') }}</p>
+                            <p>{{ form_widget(formEditUser.email) }}</p>
+                            <button class="btn btn-primary"><p class="m-0">{{ 'Sauvegarder' }}</p></button>
+                            {{ form_end(formEditUser) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="my-4">
+            <h3 class="mb-4">Mes comptes rendus</h3>
+            <div id="accordion">
+                {% for report in reports %}
+                    <div class="card w-100 my-2">
+                        <div class="card-header" id="headingOne{{ loop.index }}">
+                            <button class="btn btn-link" data-toggle="collapse"
+                                    data-target="#collapseOne{{ loop.index }}"
+                                    aria-expanded="true" aria-controls="collapseOne1">
+                                <h4 class="title-collapse">Compte rendu n° {{ loop.index }}</h4>
+                            </button>
+                        </div>
+
+                        <div id="collapseOne{{ loop.index }}" class="collapse"
+                             aria-labelledby="headingOne{{ loop.index }}" data-parent="#accordion">
+                            <div class="card-body">
+                                <p class="m-0 report-message">{{ report.message }}</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
         </div>
     </section>
 {% endblock %}
