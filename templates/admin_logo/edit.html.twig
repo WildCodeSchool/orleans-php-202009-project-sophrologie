@@ -5,7 +5,7 @@
 {% block body %}
     <h1>Edit Logo</h1>
 
-    {{ include('logo/_form.html.twig', {'button_label': 'Update'}) }}
+    {% include 'admin_logo/_form.html.twig' with {'label_button': 'Modifier'} %}
 
     <a href="{{ path('logo_index') }}">back to list</a>
 
