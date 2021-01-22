@@ -76,8 +76,14 @@
                             <h3 class="py-4">{{ testimony.title }}</h3>
                             <p>"{{ testimony.description }}"</p>
                             <div>
-                                <span class="px-5">{{ testimony.date ? testimony.date|date('d-m-Y') : '' }}</span>
-                                <span class="px-5">{{ testimony.firtsname }}</span>
+                                <span class="px-5">fait le {{ testimony.date ? testimony.date|date('d-m-Y') : '' }}</span>
+                                {% if testimony.age is not null %}
+                                <span class="px-5">{{ testimony.firtsname }}, {{ testimony.age}} ans</span>
+                                {% else %}
+                                    <span class="px-5">{{ testimony.firtsname }}</span>
+                                {% endif %}
+
+
                             </div>
                         </div>
                     {% endfor %}
