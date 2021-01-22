@@ -1,13 +1,30 @@
-{% extends 'base.html.twig' %}
+{% extends 'layoutAdmin.html.twig' %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
 
-{% block title %}Edit Logo{% endblock %}
+{% block title %}{{parent()}}| Modification d'entreprises partenaires {% endblock %}
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('newEvent') }}
+    {% endblock %}
+
 
 {% block body %}
-    <h1>Edit Logo</h1>
 
-    {% include 'admin_logo/_form.html.twig' with {'label_button': 'Modifier'} %}
+    <main class="container ">
+        <section class="sheettop">
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <h1 class="title mb-5">Modifier une entreprise partenaire</h1>
+                </div>
+            </div>
+            <div class="table-add-event">
 
-    <a href="{{ path('logo_index') }}">back to list</a>
+                {% include 'admin_logo/_form.html.twig' with {'label_button': 'Modifier'} %}
 
-    {{ include('logo/_delete_form.html.twig') }}
+                <a href="{{ path('admin_logo_index') }}">back to list</a>
+            </div>
+
+        </section>
+    </main>
+
 {% endblock %}
+
