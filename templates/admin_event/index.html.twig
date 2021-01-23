@@ -1,4 +1,5 @@
 {% extends 'layoutAdmin.html.twig' %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
 
 {% block title %}Actualités | {{ parent() }}{% endblock %}
     {% block stylesheets %}
@@ -9,8 +10,23 @@
 
 {% block body %}
 
+
     <main class="sheettop container">
+
+        <div class="row">
+            <div class="col">
+                {{ form_start(form) }}
+                {{ form_widget(form) }}
+                <button class="btn btn-primary">Search</button>
+                {{ form_end(form) }}
+            </div>
+        </div>
+
         <h1 class="title">Liste des actualités</h1>
+
+
+
+
 
         <a class="btn btn-primary" href="{{ path('admin_event_new') }}">
             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-plus-circle" fill="currentColor"
@@ -119,7 +135,7 @@
             </tr>
             </thead>
             <tbody>
-            {% for event in eventsArchive %}
+        {% for event in eventsArchive %}
 
 
                 <tr>
@@ -183,4 +199,4 @@
         </a>
 
     </main>
-{% endblock %}
+ {% endblock %}
