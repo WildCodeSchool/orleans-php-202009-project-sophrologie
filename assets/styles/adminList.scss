@@ -36,3 +36,7 @@ h6 {
 .table-hover{
     margin-top : $spacing-2;
 }
+
+table {
+    border: 2px solid $primary;
+}
