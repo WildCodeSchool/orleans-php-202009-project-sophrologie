@@ -94,5 +94,26 @@
             </div>
     </section>
 
+    <section class="sheettop">
+        <div class="container-fluid">
+            <div class="row">
+                {%  for speciality in specialities %}
+                    <div class="layout col-sm-12 col-md-6 col-lg-4 ">
+                        <img class="card-img-top" src="{{ event.url }}"
+                             alt="image of {{ event.title }}">
+                        <div class="card-img-overlay">
+                            <h3 class="title card-title text-white text-center">{{ event.title }}</h3>
+                            <div class="description p-3"> <p class="text-white"> {{ event.description }}</p>
+                            </div>
+                            <div class="description p-3"> <p class="text-white"> {{ event.description }}</p>
+                            </div>
+                        </div>
+                    </div>
+                {% else %}
+                    "Il n'y a actuellement aucun évènement de programmé, merci de venir consulter cette section ultérieurement"
+                {% endfor %}
+            </div>
+        </div>
+    </section>
 
 {% endblock %}
