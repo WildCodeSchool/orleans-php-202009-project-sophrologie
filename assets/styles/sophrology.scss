@@ -1,13 +1,7 @@
 @import 'app.scss';
 
-img {
-    width: 100%;
-    height: auto;
-}
-
-.sophro-img,
-.sophro-text {
-    width: 50%;
+.sophro-header {
+    background-color: $grey1;
 }
 
 .section-card-client {

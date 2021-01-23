@@ -1,4 +1,4 @@
-{% extends 'layout.html.twig' %}
+{% extends 'layoutAdmin.html.twig' %}
 {% form_theme form 'bootstrap_4_layout.html.twig' %}
 
 
@@ -17,4 +17,7 @@
             </div>
         <a class="btn btn-outline-primary mt-5" href="{{ path('admin_index_speciality') }}">Retour à la liste</a>
     </section>
+<section class="container mb-5">
+    <a class="btn btn-outline-primary text-dark mt-3" href="{{ path('admin_index_speciality') }}">Retour à la liste</a>
+</section>
 {% endblock %}
