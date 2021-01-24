@@ -40,8 +40,9 @@ Réussir un examen/un concours  ');
         $manager->persist($speciality2);
 
         $speciality3 = new Speciality();
-        $speciality3->setTitle('Mincir sereinement et apaiser les troubles du comportement alimentaire');
-        $speciality3->setKeywords('Mal-être dans son corps
+        $speciality3->setTitle('Mincir plus sereinement');
+        $speciality3->setKeywords(' Apaiser les troubles du comportement alimentaire
+        Mal-être dans son corps
 Perdre du poids
 Calmer vos pulsions alimentaires
 Reconnaître la faim/ la satiété

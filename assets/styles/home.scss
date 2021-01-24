@@ -67,14 +67,50 @@ header {
     width: 275px;
 }
 
-.speciality-card:hover {
-    background-color: $bg-card;
 
-    .speciality-card-title {
-        background-color: transparent;
+
+.section-card-speciality {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+.card-speciality {
+    .card-speciality-text {
+        display: none;
     }
 
-    .speciality-card-text {
-        background-color: transparent;
+    .card-speciality-keywords {
+        display: block;
     }
+}
+
+.card-speciality:hover {
+    .card-speciality-text {
+        display: block;
+
+    }
+
+    .card-speciality-keywords {
+        display: none;
+    }
+}
+
+
+@media screen and (max-width: 1000px) {
+    .sophro-img,
+    .sophro-text {
+        width: 100%;
+    }
+
+    .card-speciality {
+        align-items: center;
+        width: 100%;
+        .card-speciality-text {
+            display: block;
+            }
+       .icon {
+           display: none;
+       }
+     }
 }
