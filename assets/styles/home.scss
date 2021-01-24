@@ -106,11 +106,17 @@ header {
     .card-speciality {
         align-items: center;
         width: 100%;
+
         .card-speciality-text {
             display: block;
             }
-       .icon {
-           display: none;
+
+        .mobilehr {
+            display: block;
+        }
+
+        .icon {
+            display: none;
        }
      }
 }
