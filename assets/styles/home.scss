@@ -73,10 +73,9 @@ header {
     display: flex;
     justify-content: space-evenly;
 }
-
-p {
-    margin-bottom: 0;
-}
+.ckeditor p {
+    margin:0
+    }
 
 .card-speciality {
     .card-speciality-text {
