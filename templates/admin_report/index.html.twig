@@ -1,12 +1,13 @@
 {% extends 'layoutAdmin.html.twig' %}
+
 {% form_theme formReport 'bootstrap_4_layout.html.twig' %}
 {% form_theme filterReport 'bootstrap_4_layout.html.twig' %}
 
 {% block body %}
-    <section class="container">
+    <section class="container mb-5">
         <h1 class="text-center my-5">Vos comptes-rendus</h1>
 
-        <div id="accordion" class="mb-3">
+        <div id="accordionForm" class="mb-3">
             <h2 class="mt-5 mb-3">Ajouter un nouveau compte rendu</h2>
             <div class="card w-100 my-2">
                 <div class="card-header" id="headingOne">
@@ -17,7 +18,7 @@
                     </button>
                 </div>
                 <div id="collapseOne" class="collapse"
-                     aria-labelledby="headingOne" data-parent="#accordion">
+                     aria-labelledby="headingOne" data-parent="#accordionForm">
                     <div class="card-body">
                         {{ form_start(formReport) }}
                         <p class="mb-0">{{ form_label(formReport.message) }}</p>
@@ -26,7 +27,7 @@
                         <p>{{ form_widget(formReport.patient) }}</p>
                         <p class="mb-0">{{ form_label(formReport.date) }}</p>
                         <p>{{ form_widget(formReport.date) }}</p>
-                        <button class="btn btn-primary"><p class="mb-0">Envoyer</p></button>
+                        <button class="btn btn-primary">Envoyer</button>
                         {{ form_end(formReport) }}
                     </div>
                 </div>
@@ -35,28 +36,18 @@
 
         <hr>
 
+        <h2 class="mt-4 mb-3">Répertoire de tous vos comptes rendues</h2>
+        {{ form_start(filterReport) }}
+        <div class="row mb-3">
+            {{ form_row(filterReport.userSelected) }}
+            <button type="submit" class="btn btn-primary w-100 mb-3">Rechercher</button>
+            <a id="admin_reports" href="{{ path('admin_reports') }}" class="btn btn-success w-100">
+                Réinitialiser
+            </a>
+        </div>
+        {{ form_end(filterReport) }}
 
         <div id="accordion">
-            <h2 class="mt-4 mb-3">Répertoire de tous vos comptes rendues</h2>
-            {{ form_start(filterReport) }}
-            <div class="row mb-3">
-                <div class="col-12 col-lg-6 d-flex flex-column justify-content-between">
-                    <h3 class="text-light bg-primary p-1 text-center rounded">Filtrer par date</h3>
-                    {{ form_row(filterReport.sinceDate) }}
-                    {{ form_row(filterReport.toDate) }}
-                </div>
-                <div class="col-12 col-lg-6 d-flex flex-column">
-                    <h3 class="text-light bg-primary p-1 text-center rounded">Filtrer par date</h3>
-                    {{ form_row(filterReport.userSelected) }}
-                    <button type="submit" class="btn btn-primary w-100 mb-3">Rechercher</button>
-                    <a id="admin_reports" href="{{ path('admin_reports') }}" class="btn btn-success w-100">
-                        Réinitialiser
-                    </a>
-                </div>
-            </div>
-            {{ form_end(filterReport) }}
-
-
             {% for report in reports %}
                 <div class="card w-100 my-2">
                     <div class="card-header" id="headingOne{{ loop.index }}">
@@ -84,6 +75,6 @@
                 </div>
             {% endfor %}
         </div>
-
     </section>
 {% endblock %}
+

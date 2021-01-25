@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Entity\Report;
+use App\Entity\SearchAdminReports;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -17,6 +18,26 @@ class ReportRepository extends ServiceEntityRepository
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Report::class);
+    }
+
+    public function findWithFilterUsers(SearchAdminReports $search): ?array
+    {
+        if ($search->getUserSelected()) {
+            $query = $this->createQueryBuilder('r')
+                ->andWhere('r.patient = :patient')
+                ->setParameter('patient', $search->getUserSelected());
+            return $query->getQuery()->getResult();
+        }
+
+        return $query = $this->findAllDesc();
+    }
+
+    public function findAllDesc(): array
+    {
+        return $this->createQueryBuilder('r')
+            ->orderBy('r.id', 'DESC')
+            ->getQuery()
+            ->getResult();
     }
 
     // /**
