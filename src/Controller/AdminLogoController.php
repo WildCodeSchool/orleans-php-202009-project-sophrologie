@@ -77,7 +77,8 @@ class AdminLogoController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="logo_delete", methods={"DELETE"})
+     * @Route("/delete/{id}", name="delete", methods={"DELETE"})
+     * @return Response
      */
     public function delete(Request $request, Logo $logo): Response
     {
@@ -85,8 +86,9 @@ class AdminLogoController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($logo);
             $entityManager->flush();
+            $this->addFlash('danger', 'L\'entreprise a bien été supprimée');
         }
 
-        return $this->redirectToRoute('logo_index');
+        return $this->redirectToRoute('admin_logo_index');
     }
 }
