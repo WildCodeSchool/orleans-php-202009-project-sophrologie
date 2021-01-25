@@ -1,121 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Arizonia&family=PT+Serif&family=Playfair+Display:ital@0;1&display=swap');
-@import 'variables.scss';
-@import '~bootstrap/scss/bootstrap';
+@import 'app.scss';
 
-p,
-a {
-    font-family: $text-font;
-}
-
-h1,
-h2 {
-    font-family: $title-font;
-    color: $primary;
-}
-
-h3,
-h4,
-h5,
-h6 {
-    font-family: $sub-title-font;
-}
-
-.etape {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    background-color: $arrow;
-    height: 250px;
-    width: 500px;
-    clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 0% 50%, 0% 0%);
-
-    > h3 {
-        box-sizing: border-box;
-
-        & p {
-            box-sizing: content-box;
-    }
-  }
-}
-
-.etape1 {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    background-color: $arrow;
-    height: 250px;
-    width: 500px;
-    clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
-
-    > h3 {
-        box-sizing: border-box;
-
-        & p {
-            box-sizing: content-box;
-            margin-left: 80px;
-    }
-  }
+.rounded-circle {
+    width: 80px;
+    height: 80px;
+    background: $secondary;
+    position: absolute;
+    font-size: 30px;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%)
 }
 
 
-.chronological {
-    color: $grey3;
-    margin: 0px 40px 0px 70px;
-
-}
-
-@media screen and (max-width: 800px) {
-    .chronological {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        margin: 0;
-  }
-
-    .etape {
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        background-color: $arrow;
-        height: 250px;
-        width: 500px;
-        clip-path: polygon(100% 0, 100% 75%, 50% 100%, 0 75%, 0 0, 50% 0);
-
-        > h3 {
-            box-sizing: border-box;
-            text-align: center;
-
-            & p {
-                box-sizing: border-box;
-                width: 150px;
-      }
-    }
-  }
-
-    .etape1 {
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        background-color: $arrow;
-        height: 250px;
-        width: 500px;
-        clip-path: polygon(50% 25%, 100% 0, 100% 75%, 50% 100%, 0 75%, 0% 0%);
-
-        > h3 {
-            box-sizing: border-box;
-            font-size: 20px;
-
-            & p {
-                box-sizing: border-box;
-                font-size: 15px;
-                width: 150px;
-      }
-
-    }
-  }
-}
-
-.card:hover {
+.tarif:hover {
     transform: translateY(-15px);
 }
 
