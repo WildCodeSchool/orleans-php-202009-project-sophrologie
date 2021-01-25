@@ -9,8 +9,13 @@
         <h1 class="text-center my-5">Vos comptes-rendus</h1>
 
         {{ form_start(formReport) }}
-        {{ form_widget(formReport) }}
-        <button class="btn btn-primary">Envoyer</button>
+        <p class="mb-0">{{ form_label(formReport.message) }}</p>
+        <p>{{ form_widget(formReport.message) }}</p>
+        <p class="mb-0">{{ form_label(formReport.patient) }}</p>
+        <p>{{ form_widget(formReport.patient) }}</p>
+        <p class="mb-0">{{ form_label(formReport.date) }}</p>
+        <p>{{ form_widget(formReport.date) }}</p>
+        <button class="btn btn-primary"><p class="mb-0">Envoyer</p></button>
         {{ form_end(formReport) }}
     </section>
 {% endblock %}

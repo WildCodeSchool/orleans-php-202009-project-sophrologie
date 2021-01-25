@@ -8,25 +8,24 @@
     {% endblock %}
 {% block body %}
 
-    <header>
-        <h1 class="card-title text-center py-5">Actualités</h1>
+    <header xmlns="http://www.w3.org/1999/html">
+        <h1 class="card-title text-center py-5 event-bg">Actualités</h1>
     </header>
 
 {% block form_row %}
-<div class="container-fluid w-25 form_row text-primary ">
-<h5>
+<div class="container-fluid w-50 form_row text-primary ">
+<h5 class = "text-uppercase">
     {{ form_start(form) }}
 
     {{ form_widget(form) }}
 
-    <button class="btn btn-lg btn-primary p-2">Rechercher</button>
+    <button class="btn btn-lg btn-primary p-2 mb-5">Rechercher</button>
 
     {{ form_end(form) }}
-    </h5>
 </div>
 {% endblock form_row %}
 
-    <section class="container-fluid w-75 sheettop">
+    <section class="container-fluid w-75 sheettop event-bg">
 
             <div class="row mx-0 d-flex justify-content-center container-fluid mt-2 pt-3">
             {% for event in events %}

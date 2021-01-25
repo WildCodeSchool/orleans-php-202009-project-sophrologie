@@ -15,13 +15,13 @@ use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 
 /**
- * @Route("/admin/event", name="admin_event_")
+ * @Route("/admin/actualite", name="admin_event_")
  */
 class AdminEventController extends AbstractController
 {
     /**
      *
-     * @Route("/index", name="index")
+     * @Route("/", name="index")
      */
 
     public function index(Request $request, EventRepository $eventRepository): Response
@@ -44,7 +44,7 @@ class AdminEventController extends AbstractController
 
 
     /**
-     * @Route("/new", name="new")
+     * @Route("/nouveau", name="new")
      * @param Request $request
      * @param EntityManagerInterface $entityManager
      * @return Response
@@ -68,7 +68,7 @@ class AdminEventController extends AbstractController
     }
 
     /**
-     * @Route("/edit/{id}", name="edit")
+     * @Route("/modifier/{id}", name="edit")
      * @ParamConverter("event", class="App\Entity\Event", options={"mapping": {"id": "id"}})
      */
     public function edit(Request $request, Event $event): Response
@@ -89,7 +89,7 @@ class AdminEventController extends AbstractController
     }
 
     /**
-     * @Route("/delete/{id}", name="delete", methods={"DELETE"})
+     * @Route("/supprimer/{id}", name="delete", methods={"DELETE"})
      * @return Response
      */
 

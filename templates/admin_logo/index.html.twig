@@ -9,6 +9,8 @@
 
     <main class="sheettop container">
 
+        <h1 class ="title mt-5 mb-5">Liste des entreprises partenaires et logos </h1>
+
         <a class="btn btn-primary" href="{{ path('admin_logo_new') }}">
             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-plus-circle" fill="currentColor"
                  xmlns="http://www.w3.org/2000/svg">
@@ -19,7 +21,6 @@
             Ajouter une nouvelle entreprise
         </a>
 
-        <h1>Entreprises partenaires - Logos </h1>
 
         <table class=" table table-hover event-list">
             <thead class="bg-primary text-light">
@@ -73,11 +74,7 @@
             {% endfor %}
             </tbody>
         </table>
-
-
-        <a class="btn btn-primary" href="{{ path("admin_home") }}">
-
-
+        <a class="btn btn-danger" href="{{ path("admin_home") }}">
             Accueil administration
         </a>
     </main>

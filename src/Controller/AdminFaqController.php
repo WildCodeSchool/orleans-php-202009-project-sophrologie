@@ -20,7 +20,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 class AdminFaqController extends AbstractController
 {
     /**
-     * @Route("/index", name="index")
+     * @Route("/", name="index")
      * @return Response
      */
     public function index(): Response
@@ -39,7 +39,7 @@ class AdminFaqController extends AbstractController
     /**
      * @param Request $request
      * @return Response
-     * @Route("/new",  name="new")
+     * @Route("/nouveau",  name="new")
      */
     public function new(Request $request): Response
     {
@@ -61,7 +61,7 @@ class AdminFaqController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="edit", methods={"GET","POST"})
+     * @Route("/{id}/modifier", name="edit", methods={"GET","POST"})
      * @param Request $request
      * @param Faq $faq
      * @return Response
@@ -86,7 +86,7 @@ class AdminFaqController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/delete", name="delete", methods={"DELETE"})
+     * @Route("/{id}/supprimer", name="delete", methods={"DELETE"})
      * @param Request $request
      * @param Faq $faq
      * @return Response
