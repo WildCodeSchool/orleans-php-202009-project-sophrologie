@@ -24,9 +24,7 @@ class ReportType extends AbstractType
             ])
             ->add('patient', EntityType::class, [
                 'class' => User::class,
-                'choice_label' => function (User $user) {
-                    return $user->getFullname();
-                },
+                'choice_label' => 'fullname',
                 'expanded' => false,
                 'multiple' => false,
                 'label' => 'Patient(e) rencontré(e)',
