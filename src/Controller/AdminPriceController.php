@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/admin/price", name="admin_prices_")
+ * @Route("/admin/tarif", name="admin_prices_")
  */
 class AdminPriceController extends AbstractController
 {
@@ -28,7 +28,7 @@ class AdminPriceController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="new", methods={"GET","POST"})
+     * @Route("/nouveau", name="new", methods={"GET","POST"})
      * @param Request $request
      * @return Response
      */
@@ -56,7 +56,7 @@ class AdminPriceController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="edit", methods={"GET","POST"})
+     * @Route("/{id}/modifier", name="edit", methods={"GET","POST"})
      * @param Request $request
      * @param Price $price
      * @return Response

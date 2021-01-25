@@ -15,7 +15,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class AdminReportController extends AbstractController
 {
     /**
-     * @Route("/admin/reports", name="admin_reports")
+     * @Route("/admin/rapport", name="admin_reports")
      * @param Request $request
      * @return Response|null
      */

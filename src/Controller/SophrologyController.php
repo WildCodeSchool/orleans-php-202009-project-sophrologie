@@ -10,7 +10,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class SophrologyController extends AbstractController
 {
     /**
-     * @Route("/sophrology/", name="sophrology")
+     * @Route("/sophrologie/", name="sophrology")
      * @return Response
      */
     public function index(): Response
