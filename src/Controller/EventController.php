@@ -12,7 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
- * @Route("/actualités", name="event_")
+ * @Route("/actualites", name="event_")
  */
 class EventController extends AbstractController
 {

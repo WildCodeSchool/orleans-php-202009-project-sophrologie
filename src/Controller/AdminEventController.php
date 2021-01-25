@@ -15,7 +15,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 
 /**
- * @Route("/admin/actualité", name="admin_event_")
+ * @Route("/admin/actualite", name="admin_event_")
  */
 class AdminEventController extends AbstractController
 {

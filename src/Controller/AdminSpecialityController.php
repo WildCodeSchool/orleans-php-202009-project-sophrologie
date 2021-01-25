@@ -12,7 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
 /**
  * Class AdminHomeController
  * @package App\Controller
- * @Route("/admin/specialité", name="admin_")
+ * @Route("/admin/specialite", name="admin_")
  */
 class AdminSpecialityController extends AbstractController
 {
