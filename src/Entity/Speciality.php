@@ -26,18 +26,35 @@ class Speciality
     private ?string $title;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @return string
+     */
+    public function getKeywords(): string
+    {
+        return $this->keywords;
+    }
+
+    /**
+     * @param string $keywords
+     */
+    public function setKeywords(string $keywords): void
+    {
+        $this->keywords = $keywords;
+    }
+
+    /**
+     * @ORM\Column(type="text")
      * @Assert\NotBlank()
-     * @Assert\Length(max="255")
+
      */
     private string $description;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="text")
      * @Assert\NotBlank()
-     * @Assert\Length(max="255")
      */
-    private ?string $image;
+    private string $keywords;
+
+
 
     public function getId(): ?int
     {
@@ -64,18 +81,6 @@ class Speciality
     public function setDescription(string $description): self
     {
         $this->description = $description;
-
-        return $this;
-    }
-
-    public function getImage(): ?string
-    {
-        return $this->image;
-    }
-
-    public function setImage(string $image): self
-    {
-        $this->image = $image;
 
         return $this;
     }

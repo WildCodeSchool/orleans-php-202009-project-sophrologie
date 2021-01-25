@@ -44,6 +44,11 @@ header {
     position: absolute;
     bottom: 1%;
 
+    :nth-child(2),
+    :nth-child(3) {
+        font-size: $font-size-title;
+    }
+
     a {
         color: $primary;
         border: 2px outset $primary;
