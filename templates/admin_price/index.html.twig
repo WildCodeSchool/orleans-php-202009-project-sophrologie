@@ -82,9 +82,10 @@
             {% endfor %}
             </tbody>
         </table>
+        <a class="btn btn-danger" href="{{ path("admin_home") }}">
+            Accueil administration
+        </a>
     </div>
 
-    <div class="container-fluid mb-5">
-        <a class="btn btn-danger" href="{{ path('admin_home') }}">Retour à l'accueil admin</a>
-    </div>
+
 {% endblock %}
