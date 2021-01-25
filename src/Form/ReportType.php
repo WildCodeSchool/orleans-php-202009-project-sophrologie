@@ -25,9 +25,7 @@ class ReportType extends AbstractType
             ->add('patient', EntityType::class, [
                 'class' => User::class,
                 'choice_label' => function (User $user) {
-                    return strtoupper($user->getLastname() ?: 'John')
-                        . ' ' .
-                            ucfirst($user->getFirstname() ?: 'Doe');
+                    return $user->getFullname();
                 },
                 'expanded' => false,
                 'multiple' => false,
