@@ -74,6 +74,9 @@ header {
     justify-content: space-evenly;
 }
 
+p {
+    margin-bottom: 0;
+}
 
 .card-speciality {
     .card-speciality-text {
@@ -98,10 +101,7 @@ header {
 
 
 @media screen and (max-width: 1000px) {
-    .sophro-img,
-    .sophro-text {
-        width: 100%;
-    }
+
 
     .card-speciality {
         align-items: center;

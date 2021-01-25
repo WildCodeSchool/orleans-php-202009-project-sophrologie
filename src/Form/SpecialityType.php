@@ -3,6 +3,7 @@
 namespace App\Form;
 
 use App\Entity\Speciality;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
@@ -23,19 +24,18 @@ class SpecialityType extends AbstractType
                     'placeholder' => 'Spécialité',
                 ],
             ])
-            ->add('keywords', TextType::class, [
-                    'label' => 'Mots Clefs',
-                    'attr' => [
-                        'placeholder' => 'gestion du stress, mal être dans son corps',
-                    ],
-                ])
-            ->add('description', TextareaType::class, [
-                    'label' => 'Titre',
-                    'attr' => [
-                        'placeholder' => 'Apprendre à être plus attentif à ce que vous faites,
-                         à vivre dans le moment présent......',
-                    ],
-                ]);
+            ->add('keywords', CKEditorType::class, [
+                'label' => 'Mots Clefs',
+                'attr' => [
+                    'placeholder' => 'gestion du stress, mal être dans son corps',
+                ],
+            ])
+            ->add('description', CKEditorType::class, [
+                'label' => 'Description',
+                'attr' => [
+                    'placeholder' => 'Apprendre à être plus attentif à ce que vous faites,
+                         à vivre dans le moment présent....',
+                ]]);
     }
 
 
