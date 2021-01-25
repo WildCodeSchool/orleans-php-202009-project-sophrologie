@@ -25,7 +25,8 @@ class ReportRepository extends ServiceEntityRepository
         if ($search->getUserSelected()) {
             $query = $this->createQueryBuilder('r')
                 ->andWhere('r.patient = :patient')
-                ->setParameter('patient', $search->getUserSelected());
+                ->setParameter('patient', $search->getUserSelected())
+                ->orderBy('r.id', 'DESC');
             return $query->getQuery()->getResult();
         }
 
