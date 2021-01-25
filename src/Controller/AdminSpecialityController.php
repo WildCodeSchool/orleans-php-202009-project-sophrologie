@@ -12,12 +12,12 @@ use Symfony\Component\Routing\Annotation\Route;
 /**
  * Class AdminHomeController
  * @package App\Controller
- * @Route("/admin/speciality", name="admin_")
+ * @Route("/admin/specialité", name="admin_")
  */
 class AdminSpecialityController extends AbstractController
 {
     /**
-     * @Route("/index", name="index_speciality")
+     * @Route("/", name="index_speciality")
      * @return Response
      */
     public function index(): Response
@@ -36,7 +36,7 @@ class AdminSpecialityController extends AbstractController
     /**
      * @param Request $request
      * @return Response
-     * @Route("/new",  name="new_speciality")
+     * @Route("/nouveau",  name="new_speciality")
      */
     public function new(Request $request): Response
     {
@@ -56,7 +56,7 @@ class AdminSpecialityController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="edit_speciality", methods={"GET","POST"})
+     * @Route("/{id}/modifier", name="edit_speciality", methods={"GET","POST"})
      * @param Request $request
      * @param Speciality $speciality
      * @return Response
@@ -80,7 +80,7 @@ class AdminSpecialityController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/delete", name="delete_speciality", methods={"DELETE"})
+     * @Route("/{id}/supprimer", name="delete_speciality", methods={"DELETE"})
      * @param Request $request
      * @param Speciality $speciality
      * @return Response

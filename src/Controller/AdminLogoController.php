@@ -19,7 +19,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 class AdminLogoController extends AbstractController
 {
     /**
-     *     * @Route("/index", name="index")
+     *     * @Route("/", name="index")
      */
 
     public function index(LogoRepository $logoRepository): Response
@@ -30,7 +30,7 @@ class AdminLogoController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="new")
+     * @Route("/nouveau", name="new")
      * @param Request $request
      * @param EntityManagerInterface $entityManager
      * @return Response
@@ -56,7 +56,7 @@ class AdminLogoController extends AbstractController
     }
 
     /**
-     * @Route("/edit/{id}", name="edit")
+     * @Route("/modifier/{id}", name="edit")
      * @ParamConverter("logo", class="App\Entity\Logo", options={"mapping": {"id": "id"}})
      */
     public function edit(Request $request, Logo $logo): Response
