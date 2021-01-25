@@ -50,7 +50,7 @@ class Logo
     /**
      * @Vich\UploadableField(mapping="logo_file", fileNameProperty="logo")
      * @var File
-     * @Assert\File(maxSize="1000k", mimeTypes={"image/jpeg", "image/png", "image/pdf"})
+     * @Assert\File(maxSize="1000k", mimeTypes={"image/jpeg", "image/png"})
      */
 
 
