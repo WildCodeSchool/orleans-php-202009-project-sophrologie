@@ -2,7 +2,9 @@
     {{ encore_entry_link_tags('navbarAdmin') }}
 {% endblock %}
 <nav class="navbar navbar-expand-lg navbar navbar-dark shadow p-2">
-     <a href="{{ path('admin_home') }}" class="mx-3 text-decoration-none text-light text-uppercase d-flex align-items-center">
+
+    <a href="{{ path('admin_home') }}" class="mx-3 text-decoration-none text-light text-uppercase d-flex align-items-center">
+
         <img src="{{ asset('build/images/worker.png') }}" alt="logo_admin" class="logo-admin d-none d-lg-inline mr-2">
         ADMINISTRATEUR
     </a>
