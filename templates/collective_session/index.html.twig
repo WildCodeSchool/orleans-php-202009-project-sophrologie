@@ -108,16 +108,10 @@
                             <div class="card mb-5">
                                 <div class="card-body">
                                     {% if vich_uploader_asset(logo, 'logoFile') != '' %}
-                                        <h3 class="card-title text-center">{{ logo.name }}</h3>
-                                    {% else %}
-                                    {% endif %}
-
-                                    {% if vich_uploader_asset(logo, 'logoFile') != '' %}
                                         <img class="img-fluid mb-4" src="{{ vich_uploader_asset(logo, 'logoFile') }}" alt="{{ logo.name }}">
                                     {% else %}
                                         <h3 class="card-title text-center">{{ logo.name }}</h3>
                                     {% endif %}
-
                                     <p class="text-center"> {{ logo.description }}</p>
 
                                 </div>
