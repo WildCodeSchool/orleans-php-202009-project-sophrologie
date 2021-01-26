@@ -15,8 +15,8 @@ class LogoFixtures extends Fixture
         for ($i = 1; $i <= 10; $i++) {
             $logocompany = new logo();
 
-            $logocompany->setName($faker->text(150));
-            $image = 'https://loremflickr.com/g/320/240/logo';
+            $logocompany->setName($faker->text(20));
+            $image = 'https://loremflickr.com/g/350/250/logo';
             $logo = uniqid() . '.jpg';
             copy($image, __DIR__ . '/../../public/uploads/' . $logo);
             $logocompany->setLogo($logo);
