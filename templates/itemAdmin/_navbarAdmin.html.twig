@@ -2,39 +2,45 @@
     {{ encore_entry_link_tags('navbarAdmin') }}
 {% endblock %}
 <nav class="navbar navbar-expand-lg navbar navbar-dark shadow p-2">
-     <a href="{{ path('admin_home') }}" class="mx-3 text-decoration-none text-light text-uppercase d-flex align-items-center">
-        <img src="{{ asset('build/images/worker.png') }}" alt="logo_admin" class="logo-admin d-none d-lg-inline mr-2">
-        ADMINISTRATEUR
+    <a class="navbar-brand nav-link text-center text-lg-left mr-0" href="{{ path('admin_home') }}">
+        <img class="h-25 w-25" src="{{ asset('build/images/logo.png') }}" alt="logo-company"/>
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNav">
-        <ul class="navbar-nav ">
-            <li class="nav-item pr-3">
+    <div class="collapse navbar-collapse d-flex justify-content-lg-end" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item pr-3 d-flex flex-column justify-content-center">
                 <a class="nav-link text-light text-uppercase" href="{{ path("admin_event_index") }}">Actualités</a>
             </li>
-            <li class="nav-item pr-3">
-                <a class="nav-link text-light text-uppercase" href="{{ path("admin_index_speciality") }}">Spécialités</a>
+            <li class="nav-item pr-3 d-flex flex-column justify-content-center">
+                <a class="nav-link text-light text-uppercase"
+                   href="{{ path("admin_index_speciality") }}">Spécialités</a>
             </li>
-            <li class="nav-item pr-3">
+            <li class="nav-item pr-3 d-flex flex-column justify-content-center">
                 <a class="nav-link text-light text-uppercase" href="{{ path('admin_prices_index') }}">Tarifications</a>
             </li>
-            <li class="nav-item pr-3">
+            <li class="nav-item pr-3 d-flex flex-column justify-content-center">
                 <a class="nav-link text-light text-uppercase" href="{{ path('testimony_index') }}">Témoignages</a>
             </li>
-            <li class="nav-item pr-3">
+            <li class="nav-item pr-3 d-flex flex-column justify-content-center">
                 <a class="nav-link text-light text-uppercase" href="{{ path("admin_logo_index") }}">Logos</a>
             </li>
-            <li class="nav-item pr-3">
+            <li class="nav-item pr-3 d-flex flex-column justify-content-center">
                 <a class="nav-link text-light text-uppercase" href="{{ path("admin_faq_index") }}">FAQ</a>
             </li>
-            <li class="nav-item pr-3">
-                <a class="nav-link text-light text-uppercase" href="{{ path("home") }}">Retour sur site</a>
+            <li class="nav-item pr-3 d-flex flex-column justify-content-center">
+                <a class="nav-link text-light text-uppercase" href="{{ path("admin_reports") }}">Rapports</a>
             </li>
-            <li class="nav-item pr-3">
-                <a class="nav-link text-light btn btn-outline-light" href="{{ path('app_logout') }}">Se déconnecter</a>
+            <li class="nav-item pr-3 d-flex flex-column justify-content-center">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    <img src="{{ asset('build/images/worker.png') }}" alt="logo_admin" class="logo-admin">
+                </a>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <a class="dropdown-item" href="{{ path('app_logout') }}">Se déconnecter</a>
+                </div>
             </li>
         </ul>
     </div>
