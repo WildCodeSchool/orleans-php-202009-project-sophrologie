@@ -3,7 +3,7 @@
 {% endblock %}
 <nav class="navbar navbar-expand-lg navbar navbar-dark shadow p-2">
     <a class="navbar-brand nav-link text-center text-lg-left mr-0" href="#">
-        <img class="h-25 w-25" src="{{ asset('build/images/logo.png') }}"/>
+        <img class="h-25 w-25" src="{{ asset('build/images/logo.png') }}" alt="logo-company"/>
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,7 +39,7 @@
                    aria-haspopup="true" aria-expanded="false">
                     <img src="{{ asset('build/images/user.png') }}" alt="logo user" class="logo-user">
                 </a>
-                <div class="dropdown-menu dropdown-menu-right w-25">
+                <div class="dropdown-menu dropdown-menu-right">
                     {% if app.user %}
                         <a class="dropdown-item" href="{{ path('app_logout') }}">Se déconnecter</a>
                         {% if is_granted("ROLE_ADMIN") %}
@@ -49,6 +49,7 @@
                         {% endif %}
                     {% else %}
                         <a class="dropdown-item" href="{{ path('app_login') }}">Se connecter</a>
+                        <a class="dropdown-item" href="{{ path('app_register') }}">Créer un compte</a>
                     {% endif %}
                 </div>
             </li>

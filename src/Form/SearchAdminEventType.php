@@ -16,6 +16,9 @@ class SearchAdminEventType extends AbstractType
             ->setMethod('GET')
             ->add('search', SearchType::class, [
                'required' => false,
+                'attr' => [
+                    'placeholder' => 'Ecrivez votre recherche ..'],
+                'label' => false,
         ])
         ;
     }

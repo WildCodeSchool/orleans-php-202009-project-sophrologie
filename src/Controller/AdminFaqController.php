@@ -20,7 +20,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 class AdminFaqController extends AbstractController
 {
     /**
-     * @Route("/index", name="index")
+     * @Route("/", name="index")
      * @return Response
      */
     public function index(): Response
@@ -39,7 +39,7 @@ class AdminFaqController extends AbstractController
     /**
      * @param Request $request
      * @return Response
-     * @Route("/new",  name="new")
+     * @Route("/nouveau",  name="new")
      */
     public function new(Request $request): Response
     {
@@ -50,6 +50,9 @@ class AdminFaqController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($faq);
             $entityManager->flush();
+
+            $this->addFlash('success', 'La nouvelle question/réponse a bien été ajoutée');
+
             return $this->redirectToRoute('admin_faq_index');
         }
         return $this->render('admin_faq/new.html.twig', [
@@ -58,7 +61,7 @@ class AdminFaqController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="edit", methods={"GET","POST"})
+     * @Route("/{id}/modifier", name="edit", methods={"GET","POST"})
      * @param Request $request
      * @param Faq $faq
      * @return Response
@@ -71,6 +74,8 @@ class AdminFaqController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
+            $this->addFlash('success', 'La question/réponse a bien été modifiée');
+
             return $this->redirectToRoute('admin_faq_index');
         }
 
@@ -81,7 +86,7 @@ class AdminFaqController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/delete", name="delete", methods={"DELETE"})
+     * @Route("/{id}/supprimer", name="delete", methods={"DELETE"})
      * @param Request $request
      * @param Faq $faq
      * @return Response
@@ -92,6 +97,8 @@ class AdminFaqController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($faq);
             $entityManager->flush();
+
+            $this->addFlash('success', 'La question/réponse a bien été suprimée');
         }
 
         return $this->redirectToRoute('admin_faq_index');

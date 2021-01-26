@@ -44,6 +44,11 @@ header {
     position: absolute;
     bottom: 1%;
 
+    :nth-child(2),
+    :nth-child(3) {
+        font-size: $font-size-title;
+    }
+
     a {
         color: $primary;
         border: 2px outset $primary;
@@ -67,14 +72,60 @@ header {
     width: 275px;
 }
 
-.speciality-card:hover {
-    background-color: $bg-card;
 
-    .speciality-card-title {
-        background-color: transparent;
+
+.section-card-speciality {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.ckeditor p {
+    margin:0
     }
 
-    .speciality-card-text {
-        background-color: transparent;
+.card-speciality {
+    .card-speciality-text {
+        display: none;
     }
+
+    .card-speciality-keywords {
+        display: block;
+    }
+}
+
+.card-speciality:hover {
+    .card-speciality-text {
+        display: block;
+
+    }
+
+    .card-speciality-keywords {
+        display: none;
+    }
+}
+
+.italics {
+    font-size: 12px;
+    color : $dark;
+}
+
+@media screen and (max-width: 1000px) {
+
+
+    .card-speciality {
+        align-items: center;
+        width: 100%;
+
+        .card-speciality-text {
+            display: block;
+            }
+
+        .mobilehr {
+            display: block;
+        }
+
+        .icon {
+            display: none;
+       }
+     }
 }
