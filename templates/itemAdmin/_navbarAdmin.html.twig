@@ -3,7 +3,8 @@
 {% endblock %}
 <nav class="navbar navbar-expand-lg navbar navbar-dark shadow p-2">
      <a href="{{ path('admin_home') }}" class="mx-3 text-decoration-none text-light text-uppercase d-flex align-items-center">
-        <img src="{{ asset('build/images/worker.png') }}" alt="logo_admin" class="logo-admin mr-2">
+        <img src="{{ asset('build/images/worker.png') }}" alt="logo_admin" class="logo-admin d-none d-lg-inline mr-2">
+        ADMINISTRATEUR
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,7 +31,7 @@
                 <a class="nav-link text-light text-uppercase" href="{{ path("admin_faq_index") }}">FAQ</a>
             </li>
             <li class="nav-item pr-3">
-                <a class="nav-link text-light text-uppercase" href="{{ path("admin_reports") }}">Comptes rendues</a>
+                <a class="nav-link text-light text-uppercase" href="{{ path("home") }}">Retour sur site</a>
             </li>
             <li class="nav-item pr-3">
                 <a class="nav-link text-light btn btn-outline-light" href="{{ path('app_logout') }}">Se déconnecter</a>

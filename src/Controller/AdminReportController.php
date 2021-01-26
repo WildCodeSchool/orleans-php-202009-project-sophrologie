@@ -49,7 +49,7 @@ class AdminReportController extends AbstractController
         if ($filterSearchReports->isSubmitted() && $filterSearchReports->isValid()) {
             $reports = $reportRepository->findWithFilterUsers($searchReports);
         } else {
-            $reports = $reportRepository->findAllDesc();
+            $reports = $reportRepository->findBy([], ['id' => 'DESC']);
         }
 
         return $this->render('admin_report/index.html.twig', [

@@ -10,13 +10,13 @@
         <h1 class="text-center my-5">Vos comptes-rendus</h1>
 
         <div id="accordion" class="mb-3">
-            <h2 class="mt-5 mb-3">Ajouter un nouveau compte rendu</h2>
+            <h2 class="mt-5 mb-3">Formulaire d'ajout de compte rendu</h2>
             <div class="card w-100 my-2">
                 <div class="card-header" id="headingOne">
                     <button class="btn btn-link" data-toggle="collapse"
                             data-target="#collapseOne"
                             aria-expanded="true" aria-controls="collapseOne1">
-                        <h4 class="title-collapse">Formulaire d'ajout de compte rendu</h4>
+                        <h3 class="title-collapse">Ajouter un nouveau compte rendu</h3>
                     </button>
                 </div>
                 <div id="collapseOne" class="collapse"
@@ -60,11 +60,11 @@
                         <button class="btn btn-link w-100" data-toggle="collapse"
                                 data-target="#collapseOne{{ loop.index }}"
                                 aria-expanded="true" aria-controls="collapseOne1">
-                            <h4 class="title-collapse m-0 d-flex justify-content-lg-between flex-lg-row flex-column flex-wrap">
+                            <h3 class="title-collapse m-0 d-flex justify-content-lg-between flex-lg-row flex-column flex-wrap">
                                 <div>Compte rendu n° {{ report.id }}</div>
                                 <div>{{ report.patient.lastname|upper }} {{ report.patient.firstname|lower|capitalize }}</div>
                                 <div>{{ report.date|date('d/m/Y') }}</div>
-                            </h4>
+                            </h3>
                         </button>
                     </div>
 

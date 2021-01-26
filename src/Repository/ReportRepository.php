@@ -30,15 +30,7 @@ class ReportRepository extends ServiceEntityRepository
             return $query->getQuery()->getResult();
         }
 
-        return $query = $this->findAllDesc();
-    }
-
-    public function findAllDesc(): array
-    {
-        return $this->createQueryBuilder('r')
-            ->orderBy('r.id', 'DESC')
-            ->getQuery()
-            ->getResult();
+        return $query = $this->findBy([], ['id' => 'DESC']);
     }
 
     // /**
