@@ -18,7 +18,7 @@
             <thead>
                 <tr class="text-lg-left text-center bg-primary text-light">
                     <th scope="col">Titre</th>
-                    <th scope="col">Description</th>
+                    <th scope="col">Mots clefs</th>
                     <th scope="col">Modifier</th>
                     <th scope="col">Supprimer</th>
 
@@ -28,7 +28,7 @@
             {% for speciality in specialities %}
                 <tr>
                     <td>{{ speciality.title }}</td>
-                    <td>{{ speciality.description }}</td>
+                    <td>{{ speciality.keywords }}</td>
                     <td class="text-center">
                         <div class="btn-group ">
                             <a class="btn btn-sm btn-outline-primary mr-2" href="{{ path('admin_edit_speciality', {id: speciality.id}) }}">
@@ -46,9 +46,9 @@
             {% endfor %}
             </tbody>
         </table>
+        <a class="btn btn-danger" href="{{ path("admin_home") }}">
+            Accueil administration
+        </a>
     </section>
 
-    <section class="container-fluid mb-5">
-        <a class="btn btn-danger" href="{{ path('home') }}">Retour à l'accueil admin</a>
-    </section>
 {% endblock %}

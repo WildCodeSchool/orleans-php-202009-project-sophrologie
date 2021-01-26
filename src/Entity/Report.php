@@ -34,6 +34,11 @@ class Report
      */
     private ?User $patient;
 
+    /**
+     * @ORM\Column(type="date")
+     */
+    private ?\DateTimeInterface $date;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -71,6 +76,18 @@ class Report
     public function setPatient(?User $patient): self
     {
         $this->patient = $patient;
+
+        return $this;
+    }
+
+    public function getDate(): ?\DateTimeInterface
+    {
+        return $this->date;
+    }
+
+    public function setDate(\DateTimeInterface $date): self
+    {
+        $this->date = $date;
 
         return $this;
     }

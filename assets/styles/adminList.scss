@@ -1,9 +1,11 @@
 @import 'app.scss';
 
 p,
-a {
+a,
+button {
     font-family: $text-font;
 }
+
 
 h1,
 h2,
@@ -23,7 +25,6 @@ h6 {
 
 .title {
     text-align: center;
-
 }
 
 .event-list {
@@ -37,7 +38,12 @@ h6 {
     margin-top : $spacing-2;
 }
 
+
 .little {
     width: 60px; height: 60px;
     object-fit: contain;
+}
+
+table {
+    border: 2px solid $primary;
 }

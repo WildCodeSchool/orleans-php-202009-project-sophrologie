@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Logo;
 
 /**
- * @Route("/collective/session", name="collective_session_")
+ * @Route("/collectives/seances", name="collective_session_")
  */
 class CollectiveSessionController extends AbstractController
 {
