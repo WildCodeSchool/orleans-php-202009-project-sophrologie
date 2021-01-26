@@ -9,40 +9,50 @@
 {% block body %}
 
     <header xmlns="http://www.w3.org/1999/html">
-        <h1 class="card-title text-center py-5 event-bg">Actualités</h1>
+        <h1 class="text-center py-5 event-bg mb-0">Actualités</h1>
     </header>
-
-{% block form_row %}
-<div class="container-fluid w-50 form_row text-primary ">
-<h5 class = "text-uppercase">
-    {{ form_start(form) }}
-
-    {{ form_widget(form) }}
-
-    <button class="btn btn-lg btn-primary p-2 mb-5">Rechercher</button>
-
-    {{ form_end(form) }}
-</div>
-{% endblock form_row %}
-
-    <section class="container-fluid w-75 sheettop event-bg">
-
-            <div class="row mx-0 d-flex justify-content-center container-fluid mt-2 pt-3">
+    <section class="container event-bg-filter my-5">
+            <p>Je vous propose de découvrir les évènements et salons auxquels je
+                participe ainsi que des enregistrements vidéos afin que vous puissiez librement pratiquer la sophrologie
+                chez vous en toute autonomie ou bien dans le cadre du prolongement des séances.
+            </p>
+            {% block form_row %}
+                    <div class="text-uppercase text-primary ">
+                        {{ form_start(form) }}
+                        <div class=" d-flex align-items-end">
+                            {{ form_widget(form) }}
+                            <button class="btn btn-lg btn-primary p-2 mb-3">Rechercher</button>
+                        </div>
+                        {{ form_end(form) }}
+                    </div>
+            {% endblock form_row %}
+    </section>
+    <section class="container-fluid event-bg py-5">
+        <div class="row mx-0 d-flex justify-content-center py-3">
             {% for event in events %}
-
-                <ul class="col-lg-3 col-md-6  col-sm-12 list-group list-group-flush m-5 p-2">
-
-                    <li class="list-group-item text-center text-uppercase themes-sophro "><h3>{{ event.category.name }}</h3></li>
-                    <li class="list-group-item text-center text-uppercase themes-sophro h-50"><h5>{{ event.title }} </h5></li>
-                    <li><img class="img-fluid mb-4" src="{{ vich_uploader_asset(event, 'pictureFile') }}" alt="{{ event.title }}"/> </li>
-                    <li class="w-100 h-100 text-left pb-4"><h6>{{event.eventdate is empty ? '' : event.eventdate|date('d/m/Y')}}</h6> {{ event.description }}</li>
-                    <li> <a href="{{ path ('event_show',{'id' :event.id}) }}" class="btn btn-primary" role="button">En savoir plus</a></li>
-                </ul>
-
+                <div class=" card col-md-3 col-sm-12 list-group m-4 p-5">
+                    <div class="text-center text-uppercase">
+                        <h5>{{ event.category.name }}</h5>
+                    </div>
+                    <hr/>
+                    <div class="text-center text-uppercase mb-2">
+                        <h4>{{ event.title }} </h4>
+                    </div>
+                    <div>
+                        <img class="mb-4 w-100 h-100" src="{{ vich_uploader_asset(event, 'pictureFile') }}"
+                             alt="{{ event.title }}"/>
+                    </div>
+                    <div class="w-100 h-100 text-left py-4">
+                        <h6>{{ event.eventdate is empty ? '' : event.eventdate|date('d/m/Y') }}</h6> {{ event.description }}
+                    </div>
+                    <div>
+                        <a href="{{ path ('event_show',{'id' :event.id}) }}" class="btn btn-primary" role="button">En
+                            savoir plus</a>
+                    </div>
+                </div>
             {% else %}
                 "Il n'y a actuellement aucun évènement de programmé, merci de venir consulter cette section ultérieurement"
             {% endfor %}
         </div>
     </section>
-
 {% endblock %}

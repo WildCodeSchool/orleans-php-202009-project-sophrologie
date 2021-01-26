@@ -28,7 +28,7 @@
                         <li><strong>La sophrologie pour apprendre aux enfants à mieux se concentrer à l’école.</strong>
                         </li>
                     </ul>
-                    <a class="btn btn-primary mt-5" href="">Evènements à venir
+                    <a class="btn btn-primary mt-5" href="{{ path('event_index') }}">Evènements à venir
                     </a>
                     </p>
                 </div>
@@ -76,27 +76,62 @@
             </div>
         </section>
         <section>
-            <div class="row mx-0 d-flex justify-content-center  mt-2 pt-3">
-                <ul class="col-md-2 col-sm-12 list-group list-group-flush m-4 p-3 text-center">
-                    <li class="list-group-item text-center text-uppercase mb-4"><h3>Bien être</h3>
-                    <li>Gérer le <strong>stress, la fatigue</strong></li>
-                    <li>Apprendre à <strong>déconnecter</strong></li>
-                    <li> Rééquilibrer la <strong>vie professionnelle et personnelle</strong></li>
-                </ul>
-                <ul class="col-md-2 col-sm-12 list-group list-group-flush m-4 p-3 text-center">
-                    <li class="list-group-item text-center text-uppercase mb-4 "><h3>Travail en équipe</h3>
-                    </li>
-                    <li>Renforcer la <strong>capacité d'écoute</strong></li>
-                    <li>Accroître <strong>l'adaptabilité</strong></li>
-                    <li>Développer votre <strong>créativité</strong></li>
-                </ul>
-                <ul class="col-md-2 col-sm-12 list-group list-group-flush m-4 p-3 text-center">
-                    <li class="list-group-item text-center text-uppercase mb-4"><h3>Performance</h3></li>
-                    <li>Favoriser <strong>la concentration</strong></li>
-                    <li>Retrouver de <strong>l'énergie</strong></li>
-                    <li>Se préparer <strong>mentalement</strong></li>
-                </ul>
+            <div class="row">
+                <div class="card mb-5 col-md-4 border-0">
+                    <div class="card-body">
+                        <h3 class="card-title text-uppercase text-center">Bien être</h3>
+                        <hr class="line">
+                        <p class="text-center">Gérer le <strong>stress, la fatigue</strong></p>
+                        <p class="text-center">Apprendre à <strong>déconnecter</strong></p>
+                        <p class="text-center">Rééquilibrer la <strong>vie professionnelle et personnelle</strong></p>
+                    </div>
+                </div>
+
+                <div class="card mb-5 col-md-4 border-0">
+                    <div class="card-body">
+                        <h3 class="card-title text-uppercase text-center">Travail en équipe</h3>
+                        <hr class="line">
+                        <p class="text-center">Renforcer la <strong>capacité d'écoute</strong></p>
+                        <p class="text-center">Accroître <strong>l'adaptabilité</strong></p>
+                        <p class="text-center">Développer votre <strong>créativité</strong></p>
+                    </div>
+                </div>
+
+                <div class="card mb-5 col-md-4 border-0">
+                    <div class="card-body">
+                        <h3 class="card-title text-uppercase text-center">Performance</h3>
+                        <hr class="line">
+                        <p class="text-center">Favoriser <strong>la concentration</strong></p>
+                        <p class="text-center">Retrouver de <strong>l'énergie</strong></p>
+                        <p class="text-center">Se préparer <strong>mentalement</strong></p>
+                    </div>
+                </div>
             </div>
         </section>
+        <section class="my-5 py-5 banner-seanceCollective">
+            <h2 class="mb-4 text-center pb-5">Ils m'ont fait confiance : </h2>
+
+            <div class="container-fluid text-center">
+                <div class="row">
+                    {% for logo in logos %}
+                        <div class="col-md-2">
+                            <div class="card mb-5">
+                                <div class="card-body">
+                                    {% if vich_uploader_asset(logo, 'logoFile') != '' %}
+                                        <img class="img-fluid mb-4" src="{{ vich_uploader_asset(logo, 'logoFile') }}" alt="{{ logo.name }}">
+                                    {% else %}
+                                        <h3 class="card-title text-center">{{ logo.name }}</h3>
+                                    {% endif %}
+                                    <p class="text-center"> {{ logo.description }}</p>
+
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+        </section>
+
     </main>
 {% endblock %}
