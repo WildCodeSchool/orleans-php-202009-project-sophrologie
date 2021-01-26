@@ -11,12 +11,12 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Mailer\MailerInterface;
-use Symfony\Component\Mime\Address;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use SymfonyCasts\Bundle\ResetPassword\Controller\ResetPasswordControllerTrait;
 use SymfonyCasts\Bundle\ResetPassword\Exception\ResetPasswordExceptionInterface;
 use SymfonyCasts\Bundle\ResetPassword\ResetPasswordHelperInterface;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @Route("/reset-password")
@@ -36,6 +36,9 @@ class ResetPasswordController extends AbstractController
      * Display & process form to request a password reset.
      *
      * @Route("", name="app_forgot_password_request")
+     * @param Request $request
+     * @param MailerInterface $mailer
+     * @return Response
      */
     public function request(Request $request, MailerInterface $mailer): Response
     {
@@ -76,6 +79,10 @@ class ResetPasswordController extends AbstractController
      * Validates and process the reset URL that the user clicked in their email.
      *
      * @Route("/reset/{token}", name="app_reset_password")
+     * @param Request $request
+     * @param UserPasswordEncoderInterface $passwordEncoder
+     * @param string|null $token
+     * @return Response
      */
     public function reset(
         Request $request,
@@ -99,7 +106,7 @@ class ResetPasswordController extends AbstractController
             $user = $this->resetPasswordHelper->validateTokenAndFetchUser($token);
         } catch (ResetPasswordExceptionInterface $e) {
             $this->addFlash('reset_password_error', sprintf(
-                'There was a problem validating your reset request - %s',
+                'Il y a un problème avec la requête  - %s',
                 $e->getReason()
             ));
 
