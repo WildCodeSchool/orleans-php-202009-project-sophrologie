@@ -140,18 +140,23 @@ header {
     from {
         transform:rotate(0deg) scale(0.1);
     }
+
     20% {
         transform: rotate(360deg) scale(1.1);
     }
+
     40% {
         transform: rotate(390deg) translate(-60px, 0px);
     }
+
     60% {
         transform: rotate(330deg) translate(80px, -40px);
     }
+
     80% {
         transform: rotate(390deg)  translate(-60px, -150px);
     }
+
     to {
         transform: rotate(345deg)  translate(80px, -500px);
     }
@@ -173,20 +178,25 @@ header {
 
 @keyframes error500 {
     from {
-        transform:rotate(0deg) scale(0.1);
+        transform: rotate(0deg) scale(0.1);
     }
+
     20% {
         transform: rotate(-360deg) scale(1.1);
     }
+
     40% {
         transform: rotate(-390deg) translate(50px, 0px);
     }
+
     60% {
         transform: rotate(-330deg) translate(-40px, -50px);
     }
+
     80% {
         transform: rotate(-390deg)  translate(50px, -150px);
     }
+
     to {
         transform: rotate(-345deg)  translate(-40px, -300px);
     }
