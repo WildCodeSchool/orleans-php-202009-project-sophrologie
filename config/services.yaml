@@ -6,6 +6,7 @@
 parameters:
     mailer_admin: '%env(resolve:MAILER_ADMIN_ADDRESS)%'
     upload_directory: '%kernel.project_dir%/public/uploads/picture'
+
 services:
     # default configuration for services in *this* file
     _defaults:

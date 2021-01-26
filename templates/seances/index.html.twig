@@ -6,99 +6,121 @@
 {% endblock %}
 
 {% block body %}
-    <header>
-        <h1 class="timetable-title text-center text-uppercase pt-5">Seance individuelle</h1>
+    <header class="background-section">
+        <h1 class="timetable-title text-center text-uppercase py-5">Séance individuelle</h1>
     </header>
-    <div class="container-fluid py-3 px-0">
-        <div class=" text-center justify-content-center">
-            <h2>Déroulement d'une séance</h2>
-        </div>
-        <div class="row pt-md-5 chronological justify-content-center">
-            <div class=" etape">
-                <h3 class="  text-md-left pl-2 font-weight-bold">Etape 1 - Entretien préalable</h3>
-                <p class="text-center text-md-left pb-5 pb-md-0 pl-2 mr-md-5">Définir l'objectif pour lequel vous
-                    souhaitez être
-                    accompagné(e)</p>
-            </div>
-            <div class="etape1">
-                <h3 class="text-center pt-5 pb-md-3 pt-md-0 font-weight-bold">Etape 2 - Pratique de <br>la sophrologie
-                </h3>
-                <div class="chronological">
-                    <p class="text-center ml-md-5 mr-md-5">Les exercices de respirations associées à des mouvements
-                        physiques
-                        doux vous amènent peut à peu à un état de détente du corps et du mental.</p>
-                </div>
-            </div>
+    <section class="container-fluid">
+        <div class="row px-3 mx-5 pb-0 pb-md-5">
 
-            <div class="etape1">
-                <h3 class="pt-5 pt-md-0 text-center font-weight-bold">Etape 3 - Temps d'échange <br>après la séance</h3>
-                <p class="pl-md-5 pt-md-5 text-center">Exprimer le vécu de votre séance</p>
-            </div>
-        </div>
-        <section class="background-section">
-            <h2 class="my-5 text-center text-uppercase pt-5">Forfaits/Tarifs des séances</h2>
-            <div class="container text-center">
-                <div class="row">
-                    {% for price in prices %}
-                        <div class="col-md-4">
-                            <div class="card mb-5">
-                                <div class="card-body">
-                                    <h3 class="card-title text-uppercase text-center">{{ price.name }}</h3>
-                                    <hr>
-                                    <h1 class="text-center price py-5">{{ price.price }}€ *</h1>
-                                    <p class="text-center">Possibilité de séance en ligne, sur prise de rendez-vous</p>
-                                    <p class="text-center text-muted"> Types de paiements
-                                        autorisés: {{ price.description }}</p>
-                                    <a href="{{ path("contact") }}#contact" class="btn btn-block btn-primary text-uppercase text-light">
-                                        Prendre rendez-vous
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    {% endfor %}
-                </div>
-            </div>
-            <p class="text-muted py-3 text-center">* La sécurité sociale ne prend pas en charge les séances de
-                sophrologie, toutefois certaines mutuelles proposent un remboursement.
+                <h2 class="pb-3 mt-5 pt-2">Le déroulement d’une séance individuelle de sophrologie  </h2>
+
+            <p> La pratique ne requiert aucune tenue particulière ni capacités physiques et tous les exercices sont
+                adaptables à vos contraintes personnelles quelles qu'elles soient.
             </p>
-        </section>
-        <section class=" my-5 d-flex justify-content-center align-items-center">
-            <div id="carouselContent " class="carousel slide  w-100" data-ride="carousel">
+        </div>
+        <div class="row mt-5 justify-content-around">
+            <div class="card col-10 col-md-3 mt-5 mt-md-0  mb-5">
+                <div class="card-body">
+                    <div class="rounded-circle pt-3 mb-2 text-primary text-center"><strong>1</strong></div>
+                    <h5 class="card-title mt-5 text-center">L’Entretien préalable</h5>
+                    <hr>
+                    <p class="card-text">C’est un temps qui permet vous permet d’exprimer vos besoins, vos attentes
+                        Je vous aide à définir l’objectif pour lequel vous souhaitez être accompagné(e).
+                        A l’issue de cet entretien, j’établi un programme de consultation pour vous faire atteindre
+                        l’objectif visé.
+                    </p>
+                </div>
+            </div>
+            <div class="card col-10 col-md-3 mt-5 mt-md-0 mb-5">
+                <div class="card-body">
+                    <div class="rounded-circle pt-3 text-primary text-center"><strong>2</strong></div>
+                    <h5 class="card-title mt-5 text-center"> La Pratique de la sophrologie</h5>
+                    <hr>
+                    <p class="card-text">
+                        Je vous propose des exercices de respiration associés (ou non) à des mouvements physiques doux
+                        qui vous amènent peu à peu à un état de détente du corps et du mental. Cette relaxation est
+                        propice à l’émergence de la visualisation d’images positives.
+                    </p>
+                </div>
+            </div>
+            <div class="card col-10 col-md-3 mt-5 mt-md-0 mb-5">
+                <div class="card-body ">
+                    <div class="rounded-circle pt-3 mb-2 text-primary text-center"><strong>3</strong></div>
+                    <h5 class="card-title mt-5 text-center">Le Temps d'échange après la séance</h5>
+                    <hr>
+                    <p class="card-text">C’est un dialogue au cours duquel vous pouvez vous exprimer librement sur le
+                        vécu de votre séance.
+                    </p>
+                </div>
+            </div>
 
-                <div class="carousel-inner d-inline-block  " role="listbox">
-
-                    <h2 class="text-center">Ils m'ont fait confiance</h2>
-
-                    {% for testimony in testimonies %}
-
-                        <div class="carousel-item {{ loop.first ? 'active': '' }} text-center py-5 px-5 w-80">
-
-                            <h3 class="py-4">{{ testimony.title }}</h3>
-                            <p>"{{ testimony.description }}"</p>
-                            <div>
-                                <span class="px-5">fait le {{ testimony.date ? testimony.date|date('d-m-Y') : '' }}</span>
-                                {% if testimony.age is not null %}
-                                <span class="px-5">{{ testimony.firtsname }}, {{ testimony.age}} ans</span>
-                                {% else %}
-                                    <span class="px-5">{{ testimony.firtsname }}</span>
-                                {% endif %}
-
-
+        </div>
+    </section>
+    <section class="background-section">
+        <h2 class="my-5 text-center text-uppercase pt-5">Forfaits/Tarifs des séances</h2>
+        <div class="container text-center">
+            <div class="row">
+                {% for price in prices %}
+                    <div class="col-md-4">
+                        <div class="card tarif mb-5">
+                            <div class="card-body">
+                                <h3 class="card-title text-uppercase text-center">{{ price.name }}</h3>
+                                <hr>
+                                <h1 class="text-center price py-5">{{ price.price }}€ *</h1>
+                                <p class="text-center">Possibilité de séance en ligne, sur prise de rendez-vous</p>
+                                <p class="text-center text-muted"> Types de paiements
+                                    autorisés: {{ price.description }}</p>
+                                <a href="{{ path("contact") }}#contact"
+                                   class="btn btn-block btn-primary text-uppercase text-light">
+                                    Prendre rendez-vous
+                                </a>
                             </div>
                         </div>
-                    {% endfor %}
-
-                </div>
-                <a class="carousel-control-prev" href="#carouselContent" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselContent" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
+                    </div>
+                {% endfor %}
             </div>
-        </section>
+        </div>
+        <p class="text-muted py-3 text-center">* La sécurité sociale ne prend pas en charge les séances de
+            sophrologie, toutefois certaines mutuelles proposent un remboursement.
+        </p>
+    </section>
+    <section class=" my-5 d-flex justify-content-center align-items-center">
+        <div id="carouselContent " class="carousel slide  w-100" data-ride="carousel">
+
+            <div class="carousel-inner d-inline-block  " role="listbox">
+
+                <h2 class="text-center">Ils m'ont fait confiance</h2>
+
+                {% for testimony in testimonies %}
+
+                    <div class="carousel-item {{ loop.first ? 'active': '' }} text-center py-5 px-5 w-80">
+
+                        <h3 class="py-4">{{ testimony.title }}</h3>
+                        <p>"{{ testimony.description }}"</p>
+                        <div>
+                            <span class="px-5">fait le {{ testimony.date ? testimony.date|date('d-m-Y') : '' }}</span>
+                            {% if testimony.age is not null %}
+                                <span class="px-5">{{ testimony.firtsname }}, {{ testimony.age }} ans</span>
+                            {% else %}
+                                <span class="px-5">{{ testimony.firtsname }}</span>
+                            {% endif %}
+
+
+                        </div>
+                    </div>
+                {% endfor %}
+
+            </div>
+            <a class="carousel-control-prev" href="#carouselContent" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselContent" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </section>
     </div>
 
 {% endblock %}

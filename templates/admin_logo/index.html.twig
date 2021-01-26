@@ -30,7 +30,7 @@
                 <th>Logo</th>
                 <th>Description</th>
                 <th>Modifier</th>
-                <th>Supprimer</th>
+                <th class="text-center">Supprimer</th>
             </tr>
             </thead>
             <tbody>
@@ -38,7 +38,7 @@
                 <tr>
 
                     <td>{{ logo.name }}</td>
-                    <td><img class="img-thumbnail" src="{{ logo.logo }}" alt="{{ logo.name }}"></td>
+                    <td><img class="img-thumbnail little" src="{{ vich_uploader_asset(logo, 'logoFile') }}" alt="{{ logo.name }}"></td>
                     <td>{{ logo.description }}</td>
                     <td>  <div class="btn-group">
                             <a class="btn btn-sm btn-outline-primary"
