@@ -34,7 +34,7 @@ class ChangePasswordFormType extends AbstractType
                 'second_options' => [
                     'label' => 'Répétez votre nouveau mot de passe',
                 ],
-                'invalid_message' => 'The password fields must match.',
+                'invalid_message' => 'Les champs du mot de passe doivent être identique.',
                 // Instead of being set onto the object directly,
                 // this is read and encoded in the controller
                 'mapped' => false,

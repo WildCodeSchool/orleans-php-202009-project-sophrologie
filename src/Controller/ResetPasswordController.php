@@ -99,7 +99,7 @@ class ResetPasswordController extends AbstractController
 
         $token = $this->getTokenFromSession();
         if (null === $token) {
-            throw $this->createNotFoundException('No reset password token found in the URL or in the session.');
+            throw $this->createNotFoundException('Pas de mot de passe trouvé dans le lien ou la session.');
         }
 
         try {
@@ -170,7 +170,7 @@ class ResetPasswordController extends AbstractController
         $email = (new TemplatedEmail())
             ->from('admin@inspireexpire.com')
             ->to($user->getEmail())
-            ->subject('Your password reset request')
+            ->subject('Demande de réinitialisation de mot de passe ')
             ->htmlTemplate('reset_password/email.html.twig')
             ->context([
                 'resetToken' => $resetToken,
