@@ -73,7 +73,7 @@
                     </td>
                     <td class="text-center">
                         <form action="{{ path('admin_event_archive', {'id': event.id}) }}"
-                              onsubmit="return confirm('voulez vous archiver cette actualité?');" method="post">
+                              onsubmit="return confirm('voulez-vous archiver cette actualité?');" method="post">
                             <input type="hidden" name="_token" value="{{ csrf_token('archive' ~ event.id) }}">
                             <button class="btn btn-sm  btn-outline-primary">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -89,7 +89,7 @@
                     </td>
                     <td class="text-center">
                         <form action="{{ path('admin_event_delete', {'id': event.id}) }}"
-                              onsubmit="return confirm('voulez vous supprimer?');" method="post">
+                              onsubmit="return confirm('voulez-vous supprimer?');" method="post">
                             <input type="hidden" name="_method" value="DELETE">
                             <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ event.id) }}">
                             <button class="btn btn-sm  btn-outline-danger">
@@ -150,7 +150,7 @@
                     </td>
                     <td class="text-center">
                         <form action="{{ path('admin_event_archive', {'id': event.id}) }}"
-                              onsubmit="return confirm('voulez vous republier cette actualité?');" method="post">
+                              onsubmit="return confirm('voulez-vous republier cette actualité?');" method="post">
                             <input type="hidden" name="_token" value="{{ csrf_token('archive' ~ event.id) }}">
                             <button class="btn btn-sm  btn-outline-primary">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -165,7 +165,7 @@
                     </td>
                     <td class="text-center">
                         <form action="{{ path('admin_event_delete', {'id': event.id}) }}"
-                              onsubmit="return confirm('voulez vous supprimer?');" method="post">
+                              onsubmit="return confirm('voulez-vous supprimer?');" method="post">
                             <input type="hidden" name="_method" value="DELETE">
                             <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ event.id) }}">
                             <button class="btn btn-sm  btn-outline-danger">
