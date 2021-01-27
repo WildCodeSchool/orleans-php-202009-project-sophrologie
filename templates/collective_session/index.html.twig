@@ -28,8 +28,10 @@
                         <li><strong>La sophrologie pour apprendre aux enfants à mieux se concentrer à l’école.</strong>
                         </li>
                     </ul>
-                    <a class="btn btn-primary mt-5" href="{{ path('event_index') }}">Evènements à venir
-                    </a>
+                    <div class=" d-flex justify-content-center">
+                        <a class="btn btn-primary my-3 mt-md-5" href="{{ path('event_index') }}">Evènements à venir
+                        </a>
+                    </div>
                     </p>
                 </div>
                 <div class="col-md-5">
@@ -69,9 +71,10 @@
                         vous souhaitez faire rentrer la <strong>sophrologie dans votre entreprise</strong>,
                         je vous propose alors de nous rencontrer afin d'étudier ensemble votre projet.
                     </p>
-
-                    <a class="btn btn-primary mt-5" href="{{ path("contact") }}#contact">Demande de devis
-                    </a>
+                    <div class=" d-flex justify-content-center">
+                        <a class="btn btn-primary mt-3" href="{{ path("contact") }}#contact">Demande de devis
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -118,7 +121,8 @@
                             <div class="card mb-5">
                                 <div class="card-body">
                                     {% if vich_uploader_asset(logo, 'logoFile') != '' %}
-                                        <img class="img-fluid mb-4" src="{{ vich_uploader_asset(logo, 'logoFile') }}" alt="{{ logo.name }}">
+                                        <img class="img-fluid mb-4" src="{{ vich_uploader_asset(logo, 'logoFile') }}"
+                                             alt="{{ logo.name }}">
                                     {% else %}
                                         <h3 class="card-title text-center">{{ logo.name }}</h3>
                                     {% endif %}
