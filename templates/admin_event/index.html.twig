@@ -6,27 +6,20 @@
         {{ encore_entry_link_tags('adminList') }}
     {% endblock %}
 
-
-
 {% block body %}
 
-
     <main class="sheettop container">
+
+        <h1 class="title mt-5 mb-5">Liste des actualités</h1>
 
         <div class="row">
             <div class="col">
                 {{ form_start(form) }}
-                {{ form_widget(form) }}
-                <button class="btn btn-primary">Search</button>
+                <p class="m-0">{{ form_widget(form) }}</p>
+                <p class=""><button class="btn btn-primary">Rechercher</button></p>
                 {{ form_end(form) }}
             </div>
         </div>
-
-        <h1 class="title">Liste des actualités</h1>
-
-
-
-
 
         <a class="btn btn-primary" href="{{ path('admin_event_new') }}">
             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-plus-circle" fill="currentColor"
@@ -39,13 +32,13 @@
         </a>
 
 
-        <table class=" table table-hover event-list">
-            <thead class="bg-secondary text-light col-12">
+        <table class=" table table-hover  event-list">
+            <thead class="bg-primary text-light col-12">
             <tr>
                 <th colspan="7" class="text-center">A la une sur le site</th>
             </tr>
             </thead>
-            <thead class="bg-primary text-light">
+            <thead class="bg-secondary text-light">
             <tr>
                 <th>Date de la manifestation</th>
                 <th>Titre</th>
@@ -77,6 +70,7 @@
                                 </svg>
                             </a>
                         </div>
+                    </td>
                     <td class="text-center">
                         <form action="{{ path('admin_event_archive', {'id': event.id}) }}"
                               onsubmit="return confirm('voulez vous archiver cette actualité?');" method="post">
@@ -117,12 +111,12 @@
         </table>
 
         <table class=" table table-hover event-list">
-            <thead class="bg-secondary text-light">
+            <thead class="bg-primary text-light">
             <tr>
                 <th colspan="7" class="text-center">Archives</th>
             </tr>
             </thead>
-            <thead class="bg-primary text-light">
+            <thead class="bg-secondary text-light">
             <tr>
                 <th>Date de la manifestation</th>
                 <th>Titre</th>
@@ -191,9 +185,9 @@
             </tbody>
         </table>
 
-        <a class="btn btn-primary" href="{{ path("admin_home") }}">
+        <a class="btn btn-danger" href="{{ path("admin_home") }}">
 
-            </svg>
+
             Accueil administration
         </a>
 

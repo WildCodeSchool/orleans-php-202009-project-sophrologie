@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/testimony")
+ * @Route("/temoignage")
  */
 class TestimonyController extends AbstractController
 {
@@ -28,7 +28,7 @@ class TestimonyController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="testimony_new", methods={"GET","POST"})
+     * @Route("/nouveau", name="testimony_new", methods={"GET","POST"})
      * @param Request $request
      * @return Response
      */
@@ -65,7 +65,7 @@ class TestimonyController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="testimony_edit", methods={"GET","POST"})
+     * @Route("/{id}/modifier", name="testimony_edit", methods={"GET","POST"})
      * @param Request $request
      * @param Testimony $testimony
      * @return Response

@@ -13,12 +13,15 @@ class LogoFixtures extends Fixture
     {
         $faker = Faker\Factory::create('fr_FR');
         for ($i = 1; $i <= 10; $i++) {
-            $logo = new logo();
+            $logocompany = new logo();
 
-            $logo->setName($faker->text(150));
-            $logo->setLogo($faker->imageUrl(50, 50));
-            $logo->setDescription($faker->text(150));
-            $manager->persist($logo);
+            $logocompany->setName($faker->text(20));
+            $image = 'https://loremflickr.com/g/350/250/logo';
+            $logo = uniqid() . '.jpg';
+            copy($image, __DIR__ . '/../../public/uploads/' . $logo);
+            $logocompany->setLogo($logo);
+            $logocompany->setDescription($faker->text(150));
+            $manager->persist($logocompany);
 
             $manager->flush();
         }

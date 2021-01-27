@@ -11,6 +11,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 
 /**
  * @Route("/admin/logo", name="admin_logo_")
@@ -18,7 +19,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class AdminLogoController extends AbstractController
 {
     /**
-     *     * @Route("/index", name="index")
+     *     * @Route("/", name="index")
      */
 
     public function index(LogoRepository $logoRepository): Response
@@ -29,7 +30,7 @@ class AdminLogoController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="new")
+     * @Route("/nouveau", name="new")
      * @param Request $request
      * @param EntityManagerInterface $entityManager
      * @return Response
@@ -55,17 +56,8 @@ class AdminLogoController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="logo_show", methods={"GET"})
-     */
-    public function show(Logo $logo): Response
-    {
-        return $this->render('logo/show.html.twig', [
-            'logo' => $logo,
-        ]);
-    }
-
-    /**
-     * @Route("/{id}/edit", name="logo_edit", methods={"GET","POST"})
+     * @Route("/modifier/{id}", name="edit")
+     * @ParamConverter("logo", class="App\Entity\Logo", options={"mapping": {"id": "id"}})
      */
     public function edit(Request $request, Logo $logo): Response
     {
@@ -74,18 +66,19 @@ class AdminLogoController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
-
-            return $this->redirectToRoute('logo_index');
+            $this->addFlash('success', 'L\'entreprise a bien été modifiée');
+            return $this->redirectToRoute('admin_logo_index');
         }
 
-        return $this->render('logo/edit.html.twig', [
+        return $this->render('admin_logo/edit.html.twig', [
             'logo' => $logo,
             'form' => $form->createView(),
         ]);
     }
 
     /**
-     * @Route("/{id}", name="logo_delete", methods={"DELETE"})
+     * @Route("/delete/{id}", name="delete", methods={"DELETE"})
+     * @return Response
      */
     public function delete(Request $request, Logo $logo): Response
     {
@@ -93,8 +86,9 @@ class AdminLogoController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($logo);
             $entityManager->flush();
+            $this->addFlash('danger', 'L\'entreprise a bien été supprimée');
         }
 
-        return $this->redirectToRoute('logo_index');
+        return $this->redirectToRoute('admin_logo_index');
     }
 }

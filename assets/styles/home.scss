@@ -72,14 +72,132 @@ header {
     width: 275px;
 }
 
-.speciality-card:hover {
-    background-color: $bg-card;
 
-    .speciality-card-title {
-        background-color: transparent;
+
+.section-card-speciality {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.ckeditor p {
+    margin:0
     }
 
-    .speciality-card-text {
-        background-color: transparent;
+.card-speciality {
+    .card-speciality-text {
+        display: none;
+    }
+
+    .card-speciality-keywords {
+        display: block;
+    }
+}
+
+.card-speciality:hover {
+    .card-speciality-text {
+        display: block;
+
+    }
+
+    .card-speciality-keywords {
+        display: none;
+    }
+}
+
+.italics {
+    font-size: 12px;
+    color : $dark;
+}
+
+@media screen and (max-width: 1000px) {
+
+
+    .card-speciality {
+        align-items: center;
+        width: 100%;
+
+        .card-speciality-text {
+            display: block;
+            }
+
+        .mobilehr {
+            display: block;
+        }
+
+        .icon {
+            display: none;
+       }
+     }
+}
+
+.dandelion-logo {
+    position: relative;
+    top: 40px;
+    animation: error404 8s ease-out 0s infinite;
+}
+
+@keyframes error404 {
+    from {
+        transform:rotate(0deg) scale(0.1);
+    }
+
+    20% {
+        transform: rotate(360deg) scale(1.1);
+    }
+
+    40% {
+        transform: rotate(390deg) translate(-60px, 0px);
+    }
+
+    60% {
+        transform: rotate(330deg) translate(80px, -40px);
+    }
+
+    80% {
+        transform: rotate(390deg)  translate(-60px, -150px);
+    }
+
+    to {
+        transform: rotate(345deg)  translate(80px, -500px);
+    }
+}
+
+.dandelion-logoA-500,
+.dandelion-logoB-500 {
+    position: relative;
+    top: 40px;
+}
+
+.dandelion-logoA-500 {
+    animation: error404 8s ease-out 0s infinite;
+}
+
+.dandelion-logoB-500 {
+    animation: error500 8s ease-out 0s infinite;
+}
+
+@keyframes error500 {
+    from {
+        transform: rotate(0deg) scale(0.1);
+    }
+
+    20% {
+        transform: rotate(-360deg) scale(1.1);
+    }
+
+    40% {
+        transform: rotate(-390deg) translate(50px, 0px);
+    }
+
+    60% {
+        transform: rotate(-330deg) translate(-40px, -50px);
+    }
+
+    80% {
+        transform: rotate(-390deg)  translate(50px, -150px);
+    }
+
+    to {
+        transform: rotate(-345deg)  translate(-40px, -300px);
     }
 }

@@ -101,7 +101,7 @@ class Event
     /**
      * @Vich\UploadableField(mapping="picture_file", fileNameProperty="picture")
      * @var File|null
-     * @Assert\File(maxSize="1000k", mimeTypes={"image/jpeg", "image/png", "image/pdf"})
+     * @Assert\File(maxSize="1000k", mimeTypes={"image/jpeg", "image/png"})
      */
 
     private ?File $pictureFile = null;
