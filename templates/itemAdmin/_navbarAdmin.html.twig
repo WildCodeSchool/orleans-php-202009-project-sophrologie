@@ -1,15 +1,19 @@
 {% block stylesheets %}
     {{ encore_entry_link_tags('navbarAdmin') }}
 {% endblock %}
-<nav class="navbar navbar-expand-lg navbar navbar-dark shadow p-2">
+<nav class="navbar navbar-expand-lg navbar navbar-dark shadow p-2 d-flex flex-lg-row flex-column">
     <a class="navbar-brand nav-link text-center text-lg-left mr-0" href="{{ path('admin_home') }}">
-        <img class="h-25 w-25" src="{{ asset('build/images/logo.png') }}" alt="logo-company"/>
+        <div class="w-100">
+            <img class="logo-company" src="{{ asset('build/images/logo.png') }}" alt="logo-company"/>
+        </div>
     </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse d-flex justify-content-lg-end" id="navbarNav">
+    <div class="w-100 text-left">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+    <div class="collapse navbar-collapse w-100 text-left" id="navbarNav">
         <ul class="navbar-nav">
             <li class="nav-item pr-3 d-flex flex-column justify-content-center">
                 <a class="nav-link text-light text-uppercase" href="{{ path("admin_event_index") }}">Actualités</a>
@@ -19,7 +23,7 @@
                    href="{{ path("admin_index_speciality") }}">Spécialités</a>
             </li>
             <li class="nav-item pr-3 d-flex flex-column justify-content-center">
-                <a class="nav-link text-light text-uppercase" href="{{ path('admin_prices_index') }}">Tarifications</a>
+                <a class="nav-link text-light text-uppercase" href="{{ path('admin_prices_index') }}">Tarifs</a>
             </li>
             <li class="nav-item pr-3 d-flex flex-column justify-content-center">
                 <a class="nav-link text-light text-uppercase" href="{{ path('testimony_index') }}">Témoignages</a>
