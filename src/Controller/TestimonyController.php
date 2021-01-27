@@ -11,12 +11,12 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/temoignage")
+ * @Route("/admin/temoignage")
  */
 class TestimonyController extends AbstractController
 {
     /**
-     * @Route("/", name="testimony_index", methods={"GET"})
+     * @Route("/", name="admin_testimony_index", methods={"GET"})
      * @param TestimonyRepository $testimonyRepository
      * @return Response
      */
@@ -43,7 +43,7 @@ class TestimonyController extends AbstractController
             $entityManager->persist($testimony);
             $entityManager->flush();
 
-            return $this->redirectToRoute('testimony_index');
+            return $this->redirectToRoute('admin_testimony_index');
         }
 
         return $this->render('testimony/new.html.twig', [
@@ -78,7 +78,7 @@ class TestimonyController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('testimony_index');
+            return $this->redirectToRoute('admin_testimony_index');
         }
 
         return $this->render('testimony/edit.html.twig', [
@@ -101,6 +101,6 @@ class TestimonyController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('testimony_index');
+        return $this->redirectToRoute('admin_testimony_index');
     }
 }
