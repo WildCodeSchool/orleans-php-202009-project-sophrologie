@@ -1,0 +1,40 @@
+{% extends 'layout.html.twig' %}
+
+{% block stylesheets %}
+    {{ encore_entry_link_tags('home') }}
+{% endblock %}
+
+{% block title %}
+    {{ status_code }} - Page non trouvée | INSPIRE & EXPIRE
+{% endblock %}
+
+{% block body %}
+    <section class="container-fluid">
+        <div class="d-flex justify-content-center mb-5">
+            <div class="d-flex align-items-end mr-5">
+                <h1 class="d-flex align-baseline display-4">Oops page en travaux ... ERREUR</h1>
+            </div>
+            <h2 class="display-1">5</h2>
+            <img src="{{ asset('build/images/dandelion.png') }}" alt="" class="dandelion-logoA-500">
+            <img src="{{ asset('build/images/dandelion.png') }}" alt="" class="dandelion-logoB-500">
+        </div>
+    </section>
+
+    <section class="container h-100 mb-5">
+        <div class="d-flex align-items-center justify-content-center py-5">
+            <h3 class="mb-0 mr-3">La page demandée est actuellement en maintenance</h3>
+            <div><a href="{{ path('home') }}" class="btn btn-primary">Retour à l'accueil</a></div>
+        </div>
+
+        <p>
+            Vous pouvez également retourner sur les pages que vous souhaitez
+            avec la barre de navigation juste au dessus.
+            <br>
+            Nous faisons de notre mieux pour régler ce léger souci.
+            <br>
+            Et surtout n'oubliez pas <strong>d'INSPIRER et d'EXPIRER</strong> doucement pour votre bien.
+        </p>
+
+
+    </section>
+{% endblock %}
