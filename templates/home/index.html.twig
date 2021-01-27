@@ -22,8 +22,8 @@
         </div>
     </header>
 
-    <section class="section2 container bg-white py-lg-5 pt-5 pb-3 px-0 mb-0 d-lg-flex text-lg-left">
-        <div class="d-flex flex-column align-items-center justify-content-center text-center text-lg-left px-2">
+    <section class="section2 container bg-white pt-5 pb-3 px-0 mb-0 d-lg-flex text-lg-left">
+        <div class="d-flex flex-column align-items-center justify-content-center px-2">
             <img class="sophro-picture mb-5 shadow p-1" src="{{ asset('build/images/profil.png') }}"
                  alt="picture of the sophrologist">
             <div class="mt-lg-5 mt-0">
@@ -35,12 +35,12 @@
                 </p>
 
                 <p class="mb-3 mb-lg-5">Formation spécialisée Equilibre pondéral et Comportement Adapté (EPCA)</p>
-                <p class="mb-3 mb-lg-5">BTS de diététique à Paris</p>
+                <p>BTS de diététique à Paris</p>
               </div>
         </div>
         <hr>
-        <div class="container ml-lg-5 text-center text-lg-left">
-            <h2 class="mb-2">Charlotte Ricordeau</h2>
+        <div class="container ml-lg-5">
+            <h2 class="mb-2 text-center">Charlotte Ricordeau</h2>
             <h5 class="my-4 d-flex flex-column flex-lg-row">
                 <div class="d-flex align-items-center justify-content-center mb-2 mb-lg-0">
                     <img class="ml-lg-0 ml-3 mr-2" src="{{ asset('build/images/star.png') }}" alt="logo star">Sophrologue
@@ -67,22 +67,25 @@
                 trop, etc… Comme la solution ne se trouve pas que dans l’assiette, je suis là pour vous redonner du
                 plaisir à
                 manger et vous proposer un accompagnement adapté vers un changement positif.</p>
-            <p>"Un esprit sain dans un corps sain" <l class="italics">citation extraite de la dixième Satire de Juvénal.</l></p>
-            <p><strong>Pourquoi mes deux métiers sont complémentaires ?</strong></p>
-                <p>- En tant que Diététicienne, je mets en œuvre une méthode cartésienne et scientifique, basée sur des
-                connaissances acquises dans le domaine de la physiologie du corps humain et du métabolisme biochimique de l’organisme</p>
-            <p>- En tant que Sophrologue, je mobilise d'autres compétences dans le domaine de la psychologie je me mets à
-                l’écoute de vos ressentis, de vos émotions. Par des techniques éprouvées comme le "lâcher prise" que
-                vous vous autoriserez lors des séances ou la maîtrise de la respiration que je vous ferai pratiquer,
-                je vous accompagnerai dans votre parcours vers un sentiment de bien-être.</p>
-            <p> <strong>Mes deux métiers m’aident à avoir le recul nécessaire</strong> pour mieux vous conseiller et prendre en compte <strong>la globalité de votre personne</strong> dans une approche combinée corps-esprit.
-            </p>
+            <p>"Un esprit sain dans un corps sain" <span class="italics">citation extraite de la dixième Satire de Juvénal.</span></p>
         </div>
+    </section>
+
+    <section class="container mb-5">
+        <p><strong>Pourquoi mes deux métiers sont complémentaires ?</strong></p>
+        <p>- En tant que Diététicienne, je mets en œuvre une méthode cartésienne et scientifique, basée sur des
+            connaissances acquises dans le domaine de la physiologie du corps humain et du métabolisme biochimique de l’organisme</p>
+        <p>- En tant que Sophrologue, je mobilise d'autres compétences dans le domaine de la psychologie je me mets à
+            l’écoute de vos ressentis, de vos émotions. Par des techniques éprouvées comme le "lâcher prise" que
+            vous vous autoriserez lors des séances ou la maîtrise de la respiration que je vous ferai pratiquer,
+            je vous accompagnerai dans votre parcours vers un sentiment de bien-être.</p>
+        <p> <strong>Mes deux métiers m’aident à avoir le recul nécessaire</strong> pour mieux vous conseiller et prendre en compte <strong>la globalité de votre personne</strong> dans une approche combinée corps-esprit.
+        </p>
     </section>
 
 
     <section class="section3 jumbotron m-0 py-4 py-lg-5">
-        <div class="container text-center text-lg-left px-0">
+        <div class="container px-0">
             <div class="d-flex flex-column">
                 <h2 class="mb-3 mb-lg-4">Qu'est ce que la sophrologie ?</h2>
                 <p class="mb-3 mb-lg-4">La sophrologie est une méthode de relaxation psychocorporelle qui permet de
@@ -100,12 +103,12 @@
     </section>
 
 
-    <section class="container-fluid section4 my-4 my-lg-4 ">
-        <h2 class="text-center mb-5 pb-2">Mes spécialités</h2>
+    <section class="container section4 my-4 my-lg-5">
+        <h2 class="text-lg-left text-center mb-3 pb-2">Mes spécialités</h2>
 
-        <div class="row container-fluid section-card-speciality">
+        <div class="row section-card-speciality">
             {% for speciality in specialities %}
-            <div class="col-lg-3 col-md-5 col-11 mx-1 mt-3 mb-5">
+            <div class="col-lg-4 col-md-5 col-11 my-3">
                 <div>
                 <h3 class="card-speciality-title text-center">{{ speciality.title }}</h3>
                 </div>
