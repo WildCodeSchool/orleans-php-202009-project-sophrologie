@@ -99,7 +99,7 @@ class TestimonyController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($testimony);
             $entityManager->flush();
-            $this->addFlash('success','Le témoignage à bien été supprimé');
+            $this->addFlash('success', 'Le témoignage à bien été supprimé');
         }
 
         return $this->redirectToRoute('testimony_index');
