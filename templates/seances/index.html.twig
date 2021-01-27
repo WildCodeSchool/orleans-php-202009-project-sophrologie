@@ -1,6 +1,7 @@
 {% extends 'layout.html.twig' %}
 
-{% block title %}Seance Individuelle{% endblock %}
+{% block title %}Séances individuelles | {{ parent() }}{% endblock %}
+
 {% block stylesheets %}
     {{ encore_entry_link_tags('seances') }}
 {% endblock %}
@@ -9,10 +10,10 @@
     <header class="background-section">
         <h1 class="timetable-title text-center text-uppercase py-5">Séance individuelle</h1>
     </header>
-    <section class="container-fluid">
-        <div class="row px-3 mx-5 pb-0 pb-md-5">
+    <section class="container-fluid my-5">
+        <div class="row mx-5">
 
-                <h2 class="pb-3 mt-5 pt-2">Le déroulement d’une séance individuelle de sophrologie  </h2>
+                <h2 class="my-3">Le déroulement d’une séance individuelle de sophrologie  </h2>
 
             <p> La pratique ne requiert aucune tenue particulière ni capacités physiques et tous les exercices sont
                 adaptables à vos contraintes personnelles quelles qu'elles soient.
@@ -56,9 +57,10 @@
 
         </div>
     </section>
-    <section class="background-section">
-        <h2 class="my-5 text-center text-uppercase pt-5">Forfaits/Tarifs des séances</h2>
-        <h5 class="my-5 text-center pt-5 pb-5"><strong> Durée d’une séance </strong>: 1h pour le bilan et 45 min pour les suivis. </h5>
+
+    <section class="background-section pt-5">
+        <h2 class="text-center">Forfaits/Tarifs des séances</h2>
+        <h5 class="my-5 text-center"><strong> Durée d’une séance </strong>: 1h pour le bilan et 45 min pour les suivis. </h5>
         <div class="container text-center">
             <div class="row">
                 {% for price in prices %}
@@ -85,12 +87,13 @@
             sophrologie, toutefois certaines mutuelles proposent un remboursement.
         </p>
     </section>
-    <section class=" my-5 d-flex justify-content-center align-items-center">
+
+    <section class="my-5 d-flex justify-content-center align-items-center">
         <div id="carouselContent " class="carousel slide  w-100" data-ride="carousel">
 
             <div class="carousel-inner d-inline-block  " role="listbox">
 
-                <h2 class="text-center text-uppercase">Ils m'ont fait confiance</h2>
+                <h2 class="text-center">Ils m'ont fait confiance</h2>
 
                 {% for testimony in testimonies %}
 
@@ -122,6 +125,5 @@
             </a>
         </div>
     </section>
-    </div>
 
 {% endblock %}

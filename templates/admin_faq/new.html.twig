@@ -1,6 +1,6 @@
 {% extends 'layout.html.twig' %}
 {% form_theme form 'bootstrap_4_layout.html.twig' %}
-
+{% block title %}Ajouter une nouvelle question/réponse | {{ parent() }}{% endblock %}
 
 {% block stylesheets %}
     {{ encore_entry_link_tags('faq') }}

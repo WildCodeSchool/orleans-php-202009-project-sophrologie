@@ -42,7 +42,7 @@ class TestimonyController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($testimony);
             $entityManager->flush();
-
+            $this->addFlash('success', 'Un nouveau témoignage à bien été ajouté.');
             return $this->redirectToRoute('testimony_index');
         }
 
@@ -77,7 +77,7 @@ class TestimonyController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
-
+            $this->addFlash('success', ' Le témoignage à bien été modifié');
             return $this->redirectToRoute('testimony_index');
         }
 
@@ -99,6 +99,7 @@ class TestimonyController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($testimony);
             $entityManager->flush();
+            $this->addFlash('success', 'Le témoignage à bien été supprimé');
         }
 
         return $this->redirectToRoute('testimony_index');
