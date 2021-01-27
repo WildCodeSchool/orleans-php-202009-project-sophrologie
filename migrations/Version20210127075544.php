@@ -19,7 +19,7 @@ final class Version20210127075544 extends AbstractMigration
 
     public function up(Schema $schema) : void
     {
-       // $this->addSql('INSERT INTO category (name) VALUES ("Actualités","Enregistrements","Evènements")');
+
         $this->addSql('INSERT INTO category (name) VALUES ("Actualités"),("Enregistrements"),("Evènements")');
 
         // this up() migration is auto-generated, please modify it to your needs
