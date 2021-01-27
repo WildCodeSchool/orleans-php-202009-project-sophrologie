@@ -51,6 +51,8 @@ Encore
     .addEntry('faq', './assets/styles/faq.scss')
     .addEntry('myAccount', './assets/styles/myAccount.scss')
     .addEntry('collectiveSessions', './assets/styles/collectiveSessions.scss')
+    .addEntry('request', './assets/styles/request.scss')
+    .addEntry('mention', './assets/styles/mention.scss')
 
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
     .splitEntryChunks()
