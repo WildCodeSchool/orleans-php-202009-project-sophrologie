@@ -1,6 +1,7 @@
 {% extends 'layout.html.twig' %}
 
-{% block title %}Seance Individuelle{% endblock %}
+{% block title %}Séances individuelles | {{ parent() }}{% endblock %}
+
 {% block stylesheets %}
     {{ encore_entry_link_tags('seances') }}
 {% endblock %}
