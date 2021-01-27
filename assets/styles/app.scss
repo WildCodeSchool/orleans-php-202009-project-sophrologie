@@ -3,6 +3,9 @@
 @import '~bootstrap/scss/bootstrap';
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
 
+* {
+    box-sizing: border-box;
+}
 
 p,
 a {
