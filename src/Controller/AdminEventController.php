@@ -115,7 +115,7 @@ class AdminEventController extends AbstractController
         if ($this->isCsrfTokenValid('archive' . $event->getId(), $request->request->get('_token'))) {
             $event->setArchive(!$event->getArchive());
             $this->getDoctrine()->getManager()->flush();
-
+            $this->addFlash('success', 'Le statut de l\'actualité a bien été modifié');
             return $this->redirectToRoute('admin_event_index');
         }
 
