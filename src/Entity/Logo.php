@@ -10,10 +10,15 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use DateTime;
 use DateTimeInterface;
 use DateTimeImmutable;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * @ORM\Entity(repositoryClass=LogoRepository::class)
  * @Vich\Uploadable
+ * @UniqueEntity(
+ *    fields={"name"},
+ *    message="L'entreprise existe déjà'"
+ * )
  */
 
 class Logo
@@ -34,7 +39,6 @@ class Logo
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
-     * @Assert\Url()
      * @Assert\Length(max=255)
      */
     private ?string $logo = null;
