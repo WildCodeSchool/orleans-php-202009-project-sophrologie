@@ -32,8 +32,8 @@
                         <h2 class="card-title mb-4 text-center">Horaires d'ouverture</h2>
                         <ul class="list-group list-group-flush text-center d-flex align-items-center ">
                             {% for day in days %}
-                                <li class="{% if "now"|date('D') == day.day %} strongDay py-2 {% else %}
-                                py-2 {% endif %}">{{ day.jour }} : {{ day.horaire }}</li>
+                                <p class="{% if "now"|date('D') == day.day %} strongDay {% else %}
+                                {% endif %}">{{ day.jour }} : {{ day.horaire }}</p>
                             {% endfor %}
                         </ul>
                         <p id="contact" class="card-text text-center mt-2"><small
@@ -51,37 +51,37 @@
                 <h3 class="text-center my-4">Vous souhaitez un Rendez-Vous ?</h3>
                 {{ form_start(form) }}
                 <div class="row">
-                    <div class="col my-3">
-                        {{ form_label(form.firstname, 'Prénom') }}
-                        {{ form_widget(form.firstname) }}
+                    <div class="col my-1">
+                        <p class="mb-0">{{ form_label(form.firstname, 'Prénom') }}</p>
+                        <p>{{ form_widget(form.firstname) }}</p>
                     </div>
-                    <div class="col my-3">
-                        {{ form_label(form.lastname, 'Nom') }}
-                        {{ form_widget(form.lastname) }}
+                    <div class="col my-1">
+                        <p class="mb-0">{{ form_label(form.lastname, 'Nom') }}</p>
+                        <p>{{ form_widget(form.lastname) }}</p>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col my-2">
-                        {{ form_label(form.phone, 'Numéro de téléphone') }}
-                        {{ form_widget(form.phone) }}
+                    <div class="col my-1">
+                        <p class="mb-0">{{ form_label(form.phone, 'Numéro de téléphone') }}</p>
+                        <p>{{ form_widget(form.phone) }}</p>
                     </div>
-                    <div class="col my-2">
-                        {{ form_label(form.email, 'Adresse Email') }}
-                        {{ form_widget(form.email) }}
+                    <div class="col my-1">
+                        <p class="mb-0">{{ form_label(form.email, 'Adresse Email') }}</p>
+                        <p>{{ form_widget(form.email) }}</p>
                     </div>
                 </div>
-                <div class="my-3">
-                    <div class="my-3">
-                        {{ form_label(form.theme, 'Thème') }}
-                        {{ form_widget(form.theme) }}
+                <div class="mt-1">
+                    <div>
+                        <p class="mb-0">{{ form_label(form.theme, 'Thème') }}</p>
+                        <p>{{ form_widget(form.theme) }}</p>
                     </div>
-                    <div class="my-3">
-                        {{ form_label(form.message, 'Message') }}
-                        {{ form_widget(form.message) }}
+                    <div>
+                        <p class="mb-0">{{ form_label(form.message, 'Message') }}</p>
+                        <p>{{ form_widget(form.message) }}</p>
                     </div>
                 </div>
 
-                <button class="btn btn-primary text-light my-4">{{ ('Envoyer') }}</button>
+                <button class="btn btn-primary text-light my-3">{{ ('Envoyer') }}</button>
 
                 {{ form_end(form) }}
             </div>
