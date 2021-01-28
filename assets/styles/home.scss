@@ -82,36 +82,42 @@ header {
     }
 
 .div-card {
-    transition: all 1.5s;
     border: 5px solid $grey1;
     border-radius: $border-radius;
     box-shadow: 2px 2px 2px darken($grey2, 10%);
+}
 
-    &:hover {
-        transform: rotateY(180deg);
-        background-color: $grey1;
-        border: 5px solid $primary;
+@media screen and (min-width: 1000px) {
 
-        .card-speciality-title,
-        .card-speciality {
+    .div-card {
+        transition: all 1.5s;
+
+        &:hover {
             transform: rotateY(180deg);
+            background-color: $grey1;
+            border: 5px solid $primary;
+
+            .card-speciality-title,
+            .card-speciality {
+                transform: rotateY(180deg);
+            }
+
+            .card-speciality-text {
+                display: block;
+            }
+
+            .card-speciality-keywords {
+                display: none;
+            }
         }
 
         .card-speciality-text {
-            display: block;
+            display: none;
         }
 
         .card-speciality-keywords {
-            display: none;
+            display: block;
         }
-    }
-
-    .card-speciality-text {
-        display: none;
-    }
-
-    .card-speciality-keywords {
-        display: block;
     }
 }
 
@@ -121,7 +127,6 @@ header {
 }
 
 @media screen and (max-width: 1000px) {
-
 
     .card-speciality {
         align-items: center;
