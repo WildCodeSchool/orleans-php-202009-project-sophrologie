@@ -33,7 +33,7 @@
                 {% for speciality in specialities %}
                     <tr>
                         <td>{{ speciality.title }}</td>
-                        <td>{{ speciality.keywords }}</td>
+                        <td>{{ speciality.keywords|raw }}</td>
                         <td class="text-center">
                             <div class="btn-group">
                                 <a class="btn btn-sm btn-outline-primary border rounded border-primary mr-2"
