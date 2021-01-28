@@ -4,8 +4,12 @@
 
 .social-network {
     svg:hover {
-        transform: scale(1.5);
+        transform: scale(1.3);
   }
+}
+
+.social-network svg {
+    transition: all 200ms;
 }
 
 footer {

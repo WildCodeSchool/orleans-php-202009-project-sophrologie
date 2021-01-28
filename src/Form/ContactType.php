@@ -18,19 +18,19 @@ class ContactType extends AbstractType
         $builder
             ->add('firstname', TextType::class, [
                 'attr' => [
-                    'placeholder' => 'Entrez votre prénom...',
+                    'placeholder' => 'Olivier',
                 ]])
             ->add('lastname', TextType::class, [
                 'attr' => [
-                    'placeholder' => 'Entrez votre nom...',
+                    'placeholder' => 'Serre',
                 ]])
             ->add('phone', TextType::class, [
                 'attr' => [
-                    'placeholder' => 'Entrez votre téléphone...'
+                    'placeholder' => '01 02 03 04 05'
                 ]])
             ->add('email', EmailType::class, [
                 'attr' => [
-                    'placeholder' => 'Entrez votre Email...',
+                    'placeholder' => 'olivier.serre@gmail.com',
                 ]])
             ->add('theme', ChoiceType::class, [
                 'choices' => [
@@ -42,7 +42,7 @@ class ContactType extends AbstractType
                 ])
             ->add('message', TextareaType::class, [
                 'attr' => [
-                    'placeholder' => 'Saisissez votre message...',
+                    'placeholder' => 'Bonjour, j\'aimerais avoir plus d\'informations au sujet de...',
                 ]]);
     }
 

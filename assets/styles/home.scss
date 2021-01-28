@@ -72,8 +72,6 @@ header {
     width: 275px;
 }
 
-
-
 .section-card-speciality {
     display: flex;
     justify-content: space-evenly;
@@ -83,24 +81,38 @@ header {
     margin:0
     }
 
-.card-speciality {
-    .card-speciality-text {
-        display: none;
-    }
 
-    .card-speciality-keywords {
-        display: block;
-    }
-}
 
-.card-speciality:hover {
-    .card-speciality-text {
-        display: block;
+@media screen and (min-width: 1000px) {
 
-    }
+    .div-card {
+        transition: all 2s;
+        border: 3px solid $grey1;
 
-    .card-speciality-keywords {
-        display: none;
+        &:hover {
+            transform: rotateY(180deg);
+
+            .card-speciality-title,
+            .card-speciality {
+                transform: rotateY(180deg);
+            }
+
+            .card-speciality-text {
+                display: block;
+            }
+
+            .card-speciality-keywords {
+                display: none;
+            }
+        }
+
+        .card-speciality-text {
+            display: none;
+        }
+
+        .card-speciality-keywords {
+            display: block;
+        }
     }
 }
 
@@ -110,7 +122,6 @@ header {
 }
 
 @media screen and (max-width: 1000px) {
-
 
     .card-speciality {
         align-items: center;

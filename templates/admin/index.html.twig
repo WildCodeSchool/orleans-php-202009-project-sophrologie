@@ -7,82 +7,75 @@
 {% endblock %}
 
 {% block body %}
-    <div class="container-fluids d-flex flex-column justify-content-center my-5">
+    <h1 class="text-center my-5">Les sections administrables</h1>
 
-        <div class="row">
-            <div class="col-12">
-                <div class="content-title rounded-top py-3 text-white">
-                    <h2 class="text-center font-weight-bolder">Section Administrable</h2>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="col-12 row container">
-            <div class="col d-flex justify-content-center my-5">
-                <a class="" href="{{ path("admin_event_index") }}" title="lien vers les spécialité">
-                    <div  class="card text-white">
-                        <img  src="/build/images/sphere.d33461c8.jpg" alt="Actualités">
+    <section class="d-flex justify-content-center mb-5">
+        <div class="row container-fluid d-flex justify-content-center">
+            <div class="div-card m-2">
+                <a href="{{ path("admin_event_index") }}" title="lien vers les spécialité">
+                    <div class="card text-white">
+                        <img src="/build/images/sphere.d33461c8.jpg" alt="Actualités">
                         <div class="position-absolute translate-middle w-100 h-100 d-flex justify-content-center align-items-center">
                             <span class="card-title text-section">Actualités</span>
                         </div>
                     </div>
                 </a>
             </div>
-            <div class="col d-flex justify-content-center my-5">
-                <a class="" href="{{ path("admin_index_speciality") }}" title="lien vers les spécialité">
-                    <div  class="card text-white">
-                        <img  src="/build/images/specialite.abd16613.png" alt="Spécialités">
+
+            <div class="div-card m-2">
+                <a href="{{ path("admin_index_speciality") }}" title="lien vers les spécialité">
+                    <div class="card text-white">
+                        <img src="/build/images/specialite.abd16613.png" alt="Spécialités">
                         <div class="position-absolute translate-middle w-100 h-100 d-flex justify-content-center align-items-center">
                             <span class="card-title text-section">Spécialités</span>
                         </div>
                     </div>
                 </a>
             </div>
-            <div class="col d-flex justify-content-center my-5">
-                <a class="" href="{{ path('admin_prices_index') }}" title="lien vers les spécialité">
-                    <div  class="card text-white">
-                        <img  src="/build/images/seance.08f36c0c.jpg" alt="speciality">
+            <div class="div-card m-2">
+                <a href="{{ path('admin_prices_index') }}" title="lien vers les spécialité">
+                    <div class="card text-white">
+                        <img src="/build/images/seance.08f36c0c.jpg" alt="speciality">
                         <div class="position-absolute translate-middle w-100 h-100 d-flex justify-content-center align-items-center">
                             <span class="card-title text-section">Tarifs</span>
                         </div>
                     </div>
                 </a>
             </div>
-            <div class="col d-flex justify-content-center my-5">
-                <a class="" href="{{ path('testimony_index') }}" title="lien vers les témoignages">
+            <div class="div-card m-2">
+                <a href="{{ path('testimony_index') }}" title="lien vers les témoignages">
                     <div class=" card text-white">
-                        <img  src="/build/images/actualite.4a3b64a8.jpg" alt="témoignages">
+                        <img src="/build/images/actualite.4a3b64a8.jpg" alt="témoignages">
                         <div class="position-absolute translate-middle w-100 h-100 d-flex justify-content-center align-items-center">
                             <span class="card-title text-section">Témoignages</span>
                         </div>
                     </div>
                 </a>
             </div>
-            <div class="col d-flex justify-content-center my-5">
+            <div class="div-card m-2">
                 <a class="" href="{{ path("admin_logo_index") }}" title="lien vers les logos">
-                    <div  class="card text-white">
-                        <img  src="/build/images/temoignage.05149101.png" alt="logos">
+                    <div class="card text-white">
+                        <img src="/build/images/temoignage.05149101.png" alt="logos">
                         <div class="position-absolute translate-middle w-100 h-100 d-flex justify-content-center align-items-center">
                             <span class="card-title text-section">Logos</span>
                         </div>
                     </div>
                 </a>
             </div>
-            <div class="col d-flex justify-content-center my-5">
+            <div class="div-card m-2">
                 <a class="" href="{{ path("admin_faq_index") }}" title="Foire aux questions">
-                    <div  class="card text-white">
-                        <img  src="/build/images/handup.16526b6f.jpg" alt="FAQ">
+                    <div class="card text-white">
+                        <img src="/build/images/handup.16526b6f.jpg" alt="FAQ">
                         <div class="position-absolute translate-middle w-100 h-100 d-flex justify-content-center align-items-center">
                             <span class="card-title text-section">FAQ</span>
                         </div>
                     </div>
                 </a>
             </div>
-            <div class="col d-flex justify-content-center my-5">
+            <div class="div-card m-2">
                 <a class="" href="{{ path("admin_reports") }}" title="lien vers les comptes-rendus">
-                    <div  class="card text-white">
-                        <img  src="/build/images/report.abacf5b8.jpg" alt="testimony">
+                    <div class="card text-white">
+                        <img src="/build/images/report.abacf5b8.jpg" alt="testimony">
                         <div class="position-absolute translate-middle w-100 h-100 d-flex justify-content-center align-items-center">
                             <span class="card-title text-section">Comptes-rendus</span>
                         </div>
@@ -90,5 +83,5 @@
                 </a>
             </div>
         </div>
-    </div>
+    </section>
 {% endblock %}
