@@ -21,14 +21,14 @@ class PriceType extends AbstractType
                     'placeholder' => 'forfait',
                 ],])
             ->add('price', MoneyType::class, [
-                'label' => 'Prix',
+                'label' => 'Tarif',
                 'attr' => [
-                    'placeholder' => 'Tarif',
+                    'placeholder' => '30',
                 ],])
             ->add('description', TextType::class, [
-                'label' => 'Description',
+                'label' => 'Modes de paiements',
                 'attr' => [
-                    'placeholder' => 'Type de paiements',
+                    'placeholder' => 'chèque,....',
                 ],])
         ;
     }

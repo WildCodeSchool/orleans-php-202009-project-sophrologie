@@ -11,17 +11,18 @@
     </header>
     <main class="container-fluid px-0 mx-0">
         <section class=" my-3 py-3">
-            <div class="row mx-md-3 justify-content-center">
-                <div class="col-md-5 mr-md-5">
+            <div class="row mx-0 mx-lg-3 justify-content-center">
+                <div class="col-11 col-lg-6 ">
                     <h2 class="mb-4">Séances collectives tout public : </h2>
-                    <p>Ces séances s’adressent selon le groupe défini soit aux adultes, aux enfants, aux jeunes mamans
+                    <p class="mt-lg-5"> Ces séances s’adressent selon le groupe défini soit aux adultes, aux enfants, aux jeunes mamans
                         ou aux séniors. En cours d’année, en fonction des besoins, je propose des séances collectives à
                         des petits
                         groupes. <br>
-                        N’hésitez pas à me communiquer un thème via le <a class="text-primary" href="">
+                        N’hésitez pas à me communiquer un thème via le
+                        <a class="text-primary" href="{{ path('contact') }}#contact">
                             formulaire de contact</a> afin que je propose une séance collective. <br />
                         Voici quelques exemples non limitatifs de thématiques possibles pour des séances collectives :
-                    <ul>
+                    <ul class="mt-lg-4">
                         <li><strong>Apprendre à gérer vos émotions</strong></li>
                         <li><strong>Un temps pour soi</strong></li>
                         <li><strong>La sophrologie pour les jeunes mamans après un accouchement</strong></li>
@@ -29,12 +30,12 @@
                         </li>
                     </ul>
                     <div class=" d-flex justify-content-center">
-                        <a class="btn btn-primary my-3 mt-md-5" href="{{ path('event_index') }}">Évènements à venir
+                        <a class="btn btn-primary my-3 mt-lg-5" href="{{ path('event_index') }}">Évènements à venir
                         </a>
                     </div>
                     </p>
                 </div>
-                <div class="col-md-5">
+                <div class="col-11 col-lg-6">
                     <img class="w-100 h-100 shadow p-1" src="{{ asset('build/images/seanceCollective.jpeg') }}"
                          alt="seance collective">
                 </div>
@@ -42,13 +43,13 @@
         </section>
 
         <section class="my-5 py-5 banner-seanceCollective">
-            <div class="row mx-md-3 justify-content-center">
-                <div class="col-md-5 mr-md-5 my-3">
+            <div class="row mx-0 mx-lg-3 justify-content-center">
+                <div class="col-11 col-lg-6 my-3">
                     <img class="w-100 h-100 shadow p-1" src="{{ asset('build/images/sophro-entreprise.jpg') }}" alt="">
                 </div>
-                <div class="col-md-5 my-3">
+                <div class="col-11 col-lg-6 my-3">
                     <h2 class="mb-4">Séances en entreprises privées/publiques : </h2>
-                    <p> La sophrologie se révèle être un formidable outil de gestion des Ressources Humaines en
+                    <p class="mt-lg-5"> La sophrologie se révèle être un formidable outil de gestion des Ressources Humaines en
                         entreprise. En effet, la sophrologie est un très bon moyen de <strong>prévention des
                             risques</strong>
                         psychosociaux, des troubles <strong>musculo-squelettiques</strong> et elle permet aussi
@@ -59,7 +60,7 @@
                         collaborateurs par l'apport de techniques de développements personnels.
                         Ainsi, elle permet de :
                     </p>
-                    <ul>
+                    <ul class="my-lg-3">
                         <li><strong>Prendre confiance en soi</strong></li>
                         <li><strong>Accroître sa motivation</strong></li>
                         <li><strong>S’adapter à toutes les situations</strong></li>
@@ -78,9 +79,8 @@
                 </div>
             </div>
         </section>
-        <section>
-            <div class="row">
-                <div class="card mb-5 col-md-4 border-0">
+        <section class="row mx-0">
+                <div class="card mb-5 col-lg-4 border-0">
                     <div class="card-body">
                         <h3 class="card-title text-uppercase text-center">Bien être</h3>
                         <hr class="line">
@@ -90,7 +90,7 @@
                     </div>
                 </div>
 
-                <div class="card mb-5 col-md-4 border-0">
+                <div class="card mb-5 col-lg-4 border-0">
                     <div class="card-body">
                         <h3 class="card-title text-uppercase text-center">Travail en équipe</h3>
                         <hr class="line">
@@ -100,7 +100,7 @@
                     </div>
                 </div>
 
-                <div class="card mb-5 col-md-4 border-0">
+                <div class="card mb-5 col-lg-4 border-0">
                     <div class="card-body">
                         <h3 class="card-title text-uppercase text-center">Performance</h3>
                         <hr class="line">
@@ -109,16 +109,15 @@
                         <p class="text-center">Se préparer <strong>mentalement</strong></p>
                     </div>
                 </div>
-            </div>
         </section>
-        <section class="my-5 py-5 banner-seanceCollective">
+        <section class="mt-5 py-5 banner-seanceCollective">
             <h2 class="mb-4 text-center pb-5">Ils m'ont fait confiance : </h2>
 
             <div class="container-fluid text-center">
-                <div class="row">
+                <div class="row mx-0">
                     {% for logo in logos %}
-                        <div class="col-md-2">
-                            <div class="card mb-5">
+                        <div class="col-lg-2 mb-5">
+                            <div class="card logo h-100 w-100">
                                 <div class="card-body">
                                     {% if vich_uploader_asset(logo, 'logoFile') != '' %}
                                         <img class="img-fluid mb-4" src="{{ vich_uploader_asset(logo, 'logoFile') }}"
