@@ -11,18 +11,19 @@
     <header xmlns="http://www.w3.org/1999/html">
         <h1 class="text-center py-5 event-bg mb-0">Actualités</h1>
     </header>
+
     <section class="container event-bg-filter my-5">
             <p>Je vous propose de découvrir les évènements et salons auxquels je
                 participe ainsi que des enregistrements vidéos afin que vous puissiez librement pratiquer la sophrologie
                 chez vous en toute autonomie ou bien dans le cadre du prolongement des séances.
             </p>
             {% block form_row %}
-                    <div class="text-uppercase text-primary ">
-                        {{ form_start(form) }}
-                        <div class=" d-flex align-items-end">
+            <div class="text text-primary ckeditor">
+                {{ form_start(form) }}
+
                             {{ form_widget(form) }}
-                            <button class="btn btn-lg btn-primary p-2 mb-3">Rechercher</button>
-                        </div>
+                            <p><button class="btn btn-lg btn-primary p-2 mb-1 pb-2">Rechercher</button></p>
+
                         {{ form_end(form) }}
                     </div>
             {% endblock form_row %}
@@ -55,5 +56,6 @@
             {% endfor %}
         </div>
     </section>
+
 {% endblock %}
 
