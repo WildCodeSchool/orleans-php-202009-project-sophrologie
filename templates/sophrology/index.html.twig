@@ -1,6 +1,6 @@
 {% extends 'layout.html.twig' %}
 
-{% block title %}Inspire & Expire Sophrologie{% endblock %}
+{% block title %}La Sophrologie | {{ parent() }}{% endblock %}
 
 {% block stylesheets %}
     {{ encore_entry_link_tags('sophrology') }}
@@ -38,7 +38,7 @@
     </section>
     <section class="row mx-0 py-5 d-flex justify-content-around sophro-header">
         <h2 class="text-center mb-5">En quoi la Sophrologie peut-elle vous aider?</h2>
-        <p class="mx-5 px-5">La sophrologie est particulièrement efficace pour
+        <p class="mx-lg-5 px-lg-4 mx-3">La sophrologie est particulièrement efficace pour
             surmonter des situations complexes et améliorer votre bien-être au quotidien. Vous apprendrez d’une part
             des techniques et outils afin d’atteindre vos objectifs, et d’autre part, vous pourrez les réutiliser en
             autonomie chez vous grâce à une pratique régulière.
@@ -72,7 +72,7 @@
             </div>
             <div class="mb-4">
                 <p><strong class="text-uppercase">Mal-être corporel/ Mincir sereinement</strong> <br/>
-                Vous aider à apaiser un <strong>mal être corporel</strong>, vous permettre de <strong>mincir sereinement</strong>
+                Vous aider à apaiser un <strong>mal-être corporel</strong>, vous permettre de <strong>mincir sereinement</strong>
                     et vous accompagner à réduire vos troubles du
                     <strong>comportement alimentaire</strong> (les pulsions alimentaires, la reconnaissance de la
                     faim/ la satiété, stopper les grignotages répétitifs ou des troubles digestifs…)
@@ -85,8 +85,8 @@
                 </p>
             </div>
         </div>
-        <div class="col-md-5 col-sm-11 col-11 mt-5 mb-3">
-            <img class="shadow p-1 my-4 w-100 h-90" src="{{ asset('build/images/waterfalls.jpg') }}"
+        <div class="col-md-5 col-sm-11 col-11 my-2">
+            <img class="shadow p-1 mt-lg-5 my-2 w-100 h-90" src="{{ asset('build/images/waterfalls.jpg') }}"
                  alt="Image femme balançoire"/>
         </div>
     </section>
@@ -105,7 +105,7 @@
         </div>
     </section>
     <section class="sophro-header py-5 mx-0 px-0">
-        <h2 class="text-center mb-5 pb-2">La Sophrologie, pour qui ?</h2>
+        <h2 class="text-center mb-lg-5 mb-2">La Sophrologie, pour qui ?</h2>
         <div class="row container-fluid section-card-client">
             <div class="col-lg-3 col-md-5 col-11 mx-1 mt-3 mb-5">
                 <div>
@@ -117,7 +117,7 @@
                 </div>
                 <div class="card-client d-flex justify-content-center">
                     <img src="{{ asset('build/images/couple.png') }}" alt="Image adultes" class="image-logo">
-                    <div class="card-client-text"> L’adulte mène plusieurs vies à la fois, vous devez vous partager
+                    <div class="card-client-text"><p class="m-0">L’adulte mène plusieurs vies à la fois, vous devez vous partager
                         entre
                         une vie
                         personnelle, une vie familiale et une vie professionnelle. Il faut savoir prendre un temps
@@ -136,7 +136,7 @@
                         donner
                         des
                         outils
-                        pour dormir sereinement.
+                        pour dormir sereinement.</p>
                     </div>
                 </div>
             </div>
@@ -150,14 +150,14 @@
                 </div>
                 <div class="card-client d-flex justify-content-center">
                     <img src="{{ asset('build/images/motherhood.png') }}" alt="Image maman" class="image-logo">
-                    <div class="card-client-text"><strong>Beaucoup de changements s’opèrent pendant votre grossesse et à
+                    <div class="card-client-text"><p class="m-0"><strong>Beaucoup de changements s’opèrent pendant votre grossesse et à
                             l’arrivée
                             de votre bébé</strong>. Votre corps de femme s’est modifié, votre vie de couple s’est
                         transformée,
                         votre attachement à votre bébé est devenu omniprésent… La sophrologie est une méthode douce
                         d’harmonisation du corps et de l’esprit idéale pour vous remettre en forme suite à
                         l’accouchement, <strong>vous réapproprier votre corps, tisser des liens harmonieux avec votre
-                            bébé</strong> et vous établir pleinement dans votre nouveau rôle de mère.
+                            bébé</strong> et vous établir pleinement dans votre nouveau rôle de mère.</p>
                     </div>
                 </div>
             </div>
@@ -171,14 +171,14 @@
                 </div>
                 <div class="card-client d-flex justify-content-center">
                     <img src="{{ asset('build/images/son.png') }}" alt="Image garçon" class="image-logo">
-                    <div class="card-client-text"> L'adolescence est une étape de transition bien souvent
+                    <div class="card-client-text"><p class="m-0">L'adolescence est une étape de transition bien souvent
                         synonyme d'émotions
                         fortes, de fatigue, de manque de concentration, de mal-être ou de manque de confiance en soi.
                         La sophrologie permet aux adolescents d'aborder cette période de la vie plus sereinement en
                         travaillant sur l'acceptation de ces changements physiques ou émotionnels. La sophrologie permet
                         de <strong>mieux vivre dans son corps</strong>, de <strong>réguler son sommeil</strong>, de
                         renforcer la <strong>confiance en soi</strong>, de développer sa <strong>concentration</strong>
-                        et de mieux <strong>se préparer à un examen.</strong>
+                        et de mieux <strong>se préparer à un examen.</strong></p>
                     </div>
                 </div>
             </div>
@@ -192,7 +192,7 @@
                 </div>
                 <div class="card-client d-flex justify-content-center">
                     <img src="{{ asset('build/images/daughter.png') }}" alt="Image enfant" class="image-logo">
-                    <div class="card-client-text "> Les enfants sont de plus en plus nombreux à souffrir de nervosité
+                    <div class="card-client-text "><p class="m-0">Les enfants sont de plus en plus nombreux à souffrir de nervosité
                         pouvant se révéler
                         par une <strong>hyperactivité</strong> ou des <strong>difficultés relationnelles ou de sommeil</strong>. Si
                         le recours à un psychologue peut être dans certains cas nécessaires, la sophrologie se révèle être une aide complémentaire
@@ -202,7 +202,7 @@
                         tristesse, peur…). Cela passe essentiellement par des exercices de respiration et des mouvements
                         ludiques permettant
                         aux enfants de <strong>se concentrer</strong> en étant à l’écoute de leurs ressentis. <br/>
-                        <strong>Les séances de sophrologie peuvent commencer à partir de 4 ans.</strong>
+                            <strong>Les séances de sophrologie peuvent commencer à partir de 4 ans.</strong></p>
                     </div>
                 </div>
             </div>
@@ -217,17 +217,17 @@
                 </div>
                 <div class="card-client d-flex justify-content-center">
                     <img src="{{ asset('build/images/briefcase.png') }}" alt="Image sacoche" class="image-logo">
-                    <div class="card-client-text ">Sur le plan professionnel, la sophrologie permet de mieux vivre les
+                    <div class="card-client-text "><p class="m-0">Sur le plan professionnel, la sophrologie permet de mieux vivre les
                         situations
                         de stress, comme la surcharge de travail, la peur des changements organisationnels.
                         Pour les managers, c’est un outil d’amélioration du travail collectif et de cohésion d’équipe <br/>
                         La sophrologie apprend à être plus concentré(e) à ce que l’on fait, à vivre dans le moment
                         présent, et à ne pas toujours être dans une course contre la montre… Une pause réparatrice
-                        permet d’<strong>plus performant(e)</strong> , mais il faut d’abord accepter de prendre un véritable
+                        permet d’être <strong>plus performant(e)</strong> , mais il faut d’abord accepter de prendre un véritable
                         temps pour vous-même.<br/>
                         La sophrologie peut vous être utile en prévention d’un burn-out, pour vous
                         <strong>préparer à un entretien</strong> ou pour améliorer vos chances de réussir un
-                        <strong>challenge professionnel</strong>.
+                        <strong>challenge professionnel</strong>.</p>
                     </div>
                 </div>
             </div>

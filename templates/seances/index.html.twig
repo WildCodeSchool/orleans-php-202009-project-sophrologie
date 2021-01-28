@@ -1,6 +1,7 @@
 {% extends 'layout.html.twig' %}
 
-{% block title %}Seance Individuelle{% endblock %}
+{% block title %}Séances individuelles | {{ parent() }}{% endblock %}
+
 {% block stylesheets %}
     {{ encore_entry_link_tags('seances') }}
 {% endblock %}
@@ -9,11 +10,9 @@
     <header class="background-section">
         <h1 class="timetable-title text-center text-uppercase py-5">Séance individuelle</h1>
     </header>
-    <section class="container-fluid">
-        <div class="row px-3 mx-5 pb-0 pb-md-5">
-
-                <h2 class="pb-3 mt-5 pt-2">Le déroulement d’une séance individuelle de sophrologie  </h2>
-
+    <section class="container-fluid my-5">
+        <div class="row mx-2 mx-md-5">
+                <h2 class="my-3">Le déroulement d’une séance individuelle de sophrologie  </h2>
             <p> La pratique ne requiert aucune tenue particulière ni capacités physiques et tous les exercices sont
                 adaptables à vos contraintes personnelles quelles qu'elles soient.
             </p>
@@ -24,9 +23,9 @@
                     <div class="rounded-circle pt-3 mb-2 text-primary text-center"><strong>1</strong></div>
                     <h5 class="card-title mt-5 text-center">L’Entretien préalable</h5>
                     <hr>
-                    <p class="card-text">C’est un temps qui permet vous permet d’exprimer vos besoins, vos attentes
+                    <p class="card-text">C’est un temps qui vous permet d’exprimer vos besoins, vos attentes. <br />
                         Je vous aide à définir l’objectif pour lequel vous souhaitez être accompagné(e).
-                        A l’issue de cet entretien, j’établi un programme de consultation pour vous faire atteindre
+                        A l’issue de cet entretien, j’établis un programme de consultation pour vous faire atteindre
                         l’objectif visé.
                     </p>
                 </div>
@@ -38,8 +37,8 @@
                     <hr>
                     <p class="card-text">
                         Je vous propose des exercices de respiration associés (ou non) à des mouvements physiques doux
-                        qui vous amènent peu à peu à un état de détente du corps et du mental. Cette relaxation est
-                        propice à l’émergence de la visualisation d’images positives.
+                        qui vous amènent peu à peu à un état de détente du corps et du mental. <br />
+                        Cette relaxation est propice à l’émergence de la visualisation d’images positives.
                     </p>
                 </div>
             </div>
@@ -56,13 +55,14 @@
 
         </div>
     </section>
-    <section class="background-section">
-        <h2 class="my-5 text-center text-uppercase pt-5">Forfaits/Tarifs des séances</h2>
-        <h5 class="my-5 text-center pt-5 pb-5"><strong> Durée d’une séance </strong>: 1h pour le bilan et 45 min pour les suivis. </h5>
+
+    <section class="background-section pt-5">
+        <h2 class="text-center">Forfaits/Tarifs des séances</h2>
+        <h5 class="my-5 text-center"><strong> Durée d’une séance </strong>: 1h pour le bilan et 45 min pour les suivis. </h5>
         <div class="container text-center">
             <div class="row">
                 {% for price in prices %}
-                    <div class="col-md-4">
+                    <div class="col-md-4 w-100 h-100">
                         <div class="card tarif mb-5">
                             <div class="card-body">
                                 <h3 class="card-title text-uppercase text-center">{{ price.name }}</h3>
@@ -85,12 +85,13 @@
             sophrologie, toutefois certaines mutuelles proposent un remboursement.
         </p>
     </section>
-    <section class=" my-5 d-flex justify-content-center align-items-center">
+
+    <section class="my-5 d-flex justify-content-center align-items-center">
         <div id="carouselContent " class="carousel slide  w-100" data-ride="carousel">
 
             <div class="carousel-inner d-inline-block  " role="listbox">
 
-                <h2 class="text-center text-uppercase">Ils m'ont fait confiance</h2>
+                <h2 class="text-center">Ils m'ont fait confiance</h2>
 
                 {% for testimony in testimonies %}
 
@@ -122,6 +123,5 @@
             </a>
         </div>
     </section>
-    </div>
 
 {% endblock %}

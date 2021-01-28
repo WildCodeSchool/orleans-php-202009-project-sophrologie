@@ -20,3 +20,9 @@ h5,
 h6 {
     font-family: $sub-title-font;
 }
+
+.ckeditor {
+    margin:0;
+    font-family: $text-font;
+    font-size: $font-size-p;
+}
