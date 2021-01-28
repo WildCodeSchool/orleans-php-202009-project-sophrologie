@@ -29,7 +29,7 @@ final class Version20210127075544 extends AbstractMigration
     public function down(Schema $schema) : void
     {
 
-        $this->addSql('');
+        $this->addSql('TRUNCATE TABLE category');
 
     }
 }
