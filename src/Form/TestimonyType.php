@@ -19,7 +19,7 @@ class TestimonyType extends AbstractType
             ->add('title', TextType::class, [
                 'label' => 'Titre',
                 'attr' => [
-                    'placeholder' => 'Témoignage'
+                    'placeholder' => 'Une aide précieuse'
                 ]
             ])
             ->add('description', TextareaType::class, [
@@ -38,19 +38,19 @@ class TestimonyType extends AbstractType
             ->add('firtsname', TextType::class, [
                 'label' => 'Prénom',
                 'attr' => [
-                    'placeholder' => 'Témoignage'
+                    'placeholder' => 'Jean'
                 ]
             ])
             ->add('lastname', TextType::class, [
                 'label' => 'Nom',
                 'attr' => [
-                    'placeholder' => 'Témoignage'
+                    'placeholder' => 'Dupont'
                 ]
             ])
             ->add('age', IntegerType::class, [
                 'label' => 'Age',
                 'attr' => [
-                    'placeholder' => 'Témoignage'
+                    'placeholder' => '28 ans'
                 ]
             ])
         ;
