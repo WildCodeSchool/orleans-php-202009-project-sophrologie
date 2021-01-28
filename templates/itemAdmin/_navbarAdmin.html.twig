@@ -1,7 +1,7 @@
 {% block stylesheets %}
     {{ encore_entry_link_tags('navbarAdmin') }}
 {% endblock %}
-<nav class="text-center">
+<nav class="text-center py-2">
     <a class="navbar-brand nav-link mr-0" href="{{ path('admin_home') }}">
         <div class="w-100">
             <img class="logo-company" src="{{ asset('build/images/logo.png') }}" alt="logo-company"/>
@@ -48,14 +48,15 @@
             </li>
 
             <li class="nav-item pr-3 d-flex flex-column justify-content-center">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                   aria-haspopup="true" aria-expanded="false">
-                    <img src="{{ asset('build/images/worker.png') }}" alt="logo_admin" class="logo-admin">
-                </a>
-                <div class="dropdown-menu dropdown-menu-right">
-                    <a class="dropdown-item" href="{{ path('app_logout') }}">Se déconnecter</a>
-                    <a class="dropdown-item" href="{{ path('home') }}">Revenir à l'accueil</a>
-
+                <div class="btn-group">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
+                        <img src="{{ asset('build/images/worker.png') }}" alt="logo_admin" class="logo-admin">
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a class="dropdown-item" href="{{ path('app_logout') }}">Se déconnecter</a>
+                        <a class="dropdown-item" href="{{ path('home') }}">Revenir à l'accueil</a>
+                    </div>
                 </div>
             </li>
 
