@@ -33,7 +33,7 @@ class TestimonyType extends AbstractType
                 'label' => 'Date du témoignage',
                 'widget' => 'single_text',
                 'format' => 'yyyy-MM-dd',
-                'required' => false,
+                'required' => true,
             ])
             ->add('firtsname', TextType::class, [
                 'label' => 'Prénom',
@@ -43,6 +43,7 @@ class TestimonyType extends AbstractType
             ])
             ->add('lastname', TextType::class, [
                 'label' => 'Nom',
+                'required' => false,
                 'attr' => [
                     'placeholder' => 'Dupont'
                 ]
