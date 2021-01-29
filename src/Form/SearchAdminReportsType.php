@@ -28,8 +28,8 @@ class SearchAdminReportsType extends AbstractType
                 ],
                 'query_builder' => function (UserRepository $userRepository) {
                     return $userRepository->createQueryBuilder('u')
-                        ->Where('u.roles LIKE :role')
-                        ->setParameter('role', '%' . 'ROLE_USER' . '%')
+                        ->Where('u.roles NOT LIKE :role')
+                        ->setParameter('role', '%' . 'ROLE_ADMIN' . '%')
                         ->orderBy('u.lastname', 'ASC');
                 }]);
     }
