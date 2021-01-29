@@ -16,6 +16,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Vich\UploaderBundle\Form\Type\VichFileType;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class EventType extends AbstractType
 {
@@ -35,7 +36,7 @@ class EventType extends AbstractType
                     'placeholder' => 'salon du bien être',
                 ],
             ])
-            ->add('pictureFile', VichFileType::class, [
+            ->add('pictureFile', VichImageType::class, [
                 'required'      => false,
                 'label' => false,
                 'attr' => ['placeholder' => 'Sélectionner un fichier'],
