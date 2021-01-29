@@ -54,6 +54,7 @@ class Testimony
 
     /**
      * @ORM\Column(type="integer", nullable=true)
+     * @Assert\Positive
      */
     private ?int $age;
 
