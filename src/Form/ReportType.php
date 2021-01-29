@@ -18,7 +18,7 @@ class ReportType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('message', TextareaType::class, [
+            ->add('message', CKEditorType::class, [
                 'label' => 'Votre message',
                 'attr' => ['placeholder' => 'Ecrire votre compte rendu de la séance ici']
             ])
