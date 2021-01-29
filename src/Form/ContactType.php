@@ -17,22 +17,37 @@ class ContactType extends AbstractType
     {
         $builder
             ->add('firstname', TextType::class, [
+                'label_attr' => [
+                    'class' => 'm-0'
+                ],
                 'attr' => [
                     'placeholder' => 'Olivier',
                 ]])
             ->add('lastname', TextType::class, [
+                'label_attr' => [
+                    'class' => 'm-0'
+                ],
                 'attr' => [
                     'placeholder' => 'Serre',
                 ]])
             ->add('phone', TextType::class, [
+                'label_attr' => [
+                    'class' => 'm-0'
+                ],
                 'attr' => [
                     'placeholder' => '01 02 03 04 05'
                 ]])
             ->add('email', EmailType::class, [
+                'label_attr' => [
+                    'class' => 'm-0'
+                ],
                 'attr' => [
                     'placeholder' => 'olivier.serre@gmail.com',
                 ]])
             ->add('theme', ChoiceType::class, [
+                'label_attr' => [
+                    'class' => 'm-0'
+                ],
                 'choices' => [
                     'Je souhaite obtenir des informations supplémentaires' => 'Demande d\'informations',
                     'Je suis une entreprise (demande de devis personnalisé)' => 'Demande de devis',
@@ -41,6 +56,9 @@ class ContactType extends AbstractType
                     ]
                 ])
             ->add('message', TextareaType::class, [
+                'label_attr' => [
+                    'class' => 'm-0'
+                ],
                 'attr' => [
                     'placeholder' => 'Bonjour, j\'aimerais avoir plus d\'informations au sujet de...',
                 ]]);
