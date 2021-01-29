@@ -71,7 +71,7 @@
                         <div id="collapseOne{{ loop.index }}" class="collapse"
                              aria-labelledby="headingOne{{ loop.index }}" data-parent="#accordion">
                             <div class="card-body">
-                                <p class="m-0 report-message">{{ report.message }}</p>
+                                <p class="m-0 report-message">{{ report.message|raw }}</p>
                             </div>
                         </div>
                     </div>
