@@ -9,6 +9,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\UrlType;
 use Vich\UploaderBundle\Form\Type\VichFileType;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class LogoType extends AbstractType
 {
@@ -22,7 +23,7 @@ class LogoType extends AbstractType
                     'placeholder' => 'Entreprise X',
                 ],
             ])
-            ->add('logoFile', VichFileType::class, [
+            ->add('logoFile', VichImageType::class, [
                 'required'      => false,
                 'label' => false,
                 'attr' => ['placeholder' => 'Sélectionner un fichier'],
