@@ -29,3 +29,11 @@ h6 {
     font-family: $text-font;
 }
 
+
+.vich-image {
+  a {
+    img {
+      height: 100px;
+    }
+  }
+}
