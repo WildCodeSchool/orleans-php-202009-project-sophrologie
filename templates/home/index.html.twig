@@ -111,13 +111,11 @@
     </section>
 
 
-    <section class="container section4 mt-4 mt-lg-5">
+    <section class="container section4 mt-4 mb-3 mt-lg-5">
         <h2 class="text-lg-left text-center mb-0 mb-lg-3 pb-2">Mes spécialités</h2>
-    </section>
-    <section class="container-fluid mb-5">
-        <div class="row section-card-speciality px-lg-2 px-5">
+        <div class="row m-0 section-card-speciality">
             {% for speciality in specialities %}
-                <div class="card col-12 col-lg-5 mx-lg-2 mx-0 mb-lg-5 my-3">
+                <div class="card mb-lg-2 my-3">
                     <div class="card-body">
                         <h3 class="card-title text-center">{{ speciality.title }}</h3>
                         <hr>

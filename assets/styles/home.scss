@@ -86,7 +86,18 @@ header {
 
 .section-card-speciality {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
+}
+
+.card {
+    width: 49%;
+}
+
+@media screen and (max-width: 1000px) {
+
+    .card {
+        width: 100%;
+    }
 }
 
 .italics {
