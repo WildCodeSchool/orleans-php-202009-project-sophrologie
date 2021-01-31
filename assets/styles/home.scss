@@ -17,6 +17,14 @@ h6 {
     font-family: $sub-title-font;
 }
 
+ul {
+
+    li {
+        font-family: $text-font;
+        font-size: $font-size-p;
+    }
+}
+
 header {
     position: relative;
 }
