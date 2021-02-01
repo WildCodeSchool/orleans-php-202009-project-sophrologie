@@ -10,26 +10,26 @@
 
 {% block body %}
     <section class="container mb-5">
+        <h1 class="my-5 text-center">Bienvenue dans votre espace personnel</h1>
+        <hr>
         <div>
-            <h1 class="my-5 text-center">Mon espace personnel</h1>
-            <p class="text-center mb-5">Bienvenue
-                <strong>{{ app.user.firstname }} {{ app.user.lastname }}</strong>
-            </p>
+            <h2>Mes informations personnelles</h2>
+
             <p class="mb-0 mt-3">Prénom : <strong>{{ app.user.firstname }}</strong></p>
             <p class="mb-0 mt-3">Nom : <strong>{{ app.user.lastname }}</strong></p>
             <p class="mb-0 mt-3">Adresse email : <strong>{{ app.user.email }}</strong></p>
         </div>
 
-        <hr>
+{#        <hr>#}
 
         <div class="my-4">
-            <h3 class="mb-4">Modifier mes données personnelles</h3>
+{#            <h3 class="mb-4">Formulaire de modification</h3>#}
             <div class="accordionForm">
                 <div class="card w-100">
                     <div class="card-header" id="headingThree">
                         <button class="btn btn-link" data-toggle="collapse" data-target="#collapseThree"
                                 aria-expanded="true" aria-controls="collapseThree">
-                            <h4 class="title-collapse">Formulaire d'édition</h4>
+                            <h3 class="title-collapse">Modifier mes données personnelles</h3>
                         </button>
                     </div>
                     <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion"
@@ -56,7 +56,7 @@
         <hr>
 
         <div class="my-4">
-            <h3 class="mb-4">Mes comptes rendus</h3>
+            <h2 class="mb-4">Mes comptes rendus</h2>
             <div id="accordion">
                 {% for report in reports %}
                     <div class="card w-100 my-2">
@@ -64,7 +64,7 @@
                             <button class="btn btn-link" data-toggle="collapse"
                                     data-target="#collapseOne{{ loop.index }}"
                                     aria-expanded="true" aria-controls="collapseOne1">
-                                <h4 class="title-collapse">Compte rendu n° {{ loop.index }} | Séance du {{ report.date|date('d/m/Y') }}</h4>
+                                <h3 class="title-collapse">Compte rendu n° {{ loop.index }} | Séance du {{ report.date|date('d/m/Y') }}</h3>
                             </button>
                         </div>
 
@@ -75,6 +75,8 @@
                             </div>
                         </div>
                     </div>
+                {% else %}
+                    <p class="m-0">Vous n'avez pas encore de comptes-rendues pour le moment</p>
                 {% endfor %}
             </div>
         </div>
