@@ -13,3 +13,10 @@ table {
     bottom: $etape;
     right: $font-size-h2;
 }
+
+@media screen and (max-width: 1200px) {
+    #up img {
+        width: $font-size-h2;
+    }
+}
+

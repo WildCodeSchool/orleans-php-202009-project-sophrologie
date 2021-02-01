@@ -176,6 +176,10 @@ header {
     .home-page-btn {
         bottom: 10%;
     }
+
+    #up img {
+        width: $font-size-h2;
+    }
 }
 
 @media screen and (max-width: 500px) {
