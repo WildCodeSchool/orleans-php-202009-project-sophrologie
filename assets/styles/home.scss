@@ -1,7 +1,9 @@
 @import 'app.scss';
 
-p {
+p,
+li {
     font-family: $text-font;
+    font-size: $font-size-p;
 }
 
 h1,
@@ -17,14 +19,6 @@ h6 {
     font-family: $sub-title-font;
 }
 
-ul {
-
-    li {
-        font-family: $text-font;
-        font-size: $font-size-p;
-    }
-}
-
 header {
     position: relative;
 }
@@ -32,30 +26,35 @@ header {
 .background-image {
     background-image: url("../images/pissenlits.jpg");
     background-size: cover;
-    filter: brightness(75%);
+    filter: brightness(65%);
     height: 80vh;
 }
 
 .home-page-logo {
     position: absolute;
-    top: 2%;
+    top: 0.5%;
 
     .logo {
         height: 40%;
         width: 100%;
-        max-height: 250px;
-        max-width: 750px;
+        max-height: 200px;
+        max-width: 650px;
     }
 }
 
 .home-page-titles {
     position: absolute;
-    bottom: 1%;
+    bottom: 40%;
 
     :nth-child(2),
     :nth-child(1) {
         font-size: $font-size-home-title;
     }
+}
+
+.home-page-btn {
+    position: absolute;
+    bottom: 15%;
 
     a {
         color: $primary;
@@ -68,14 +67,6 @@ header {
         border: 2px solid $light;
         background-color: $primary;
     }
-}
-
-.title {
-    text-shadow:
-    1.2px 1.2px 1px $primary,
-    -1.2px 1.2px 1px $dark,
-    1.2px -1.2px 1px $primary,
-    -1.2px -1.2px 1px $dark;
 }
 
 .sophro-picture {
@@ -174,5 +165,25 @@ header {
 
     to {
         transform: rotate(-345deg)  translate(-40px, -300px);
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .home-page-titles {
+        bottom: 30%;
+    }
+
+    .home-page-btn {
+        bottom: 10%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .home-page-titles {
+        bottom: 25%;
+    }
+
+    .home-page-btn {
+        bottom: 10%;
     }
 }
