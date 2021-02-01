@@ -12,13 +12,16 @@
 }
 
 
-.tarif:hover {
+.price:hover {
     transform: translateY(-15px);
 }
 
-.tarif {
+.price {
     transition: all 200ms;
+}
 
+.price-height{
+    height: 500px;
 }
 
 .background-section {
