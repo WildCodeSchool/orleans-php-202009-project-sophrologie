@@ -7,3 +7,9 @@
 table {
     border: 2px solid $primary;
 }
+
+#up {
+    position: fixed;
+    bottom: $etape;
+    right: $font-size-h2;
+}

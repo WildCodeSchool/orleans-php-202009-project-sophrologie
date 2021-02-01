@@ -12,3 +12,9 @@ li {
     font-family: $text-font;
     font-size:$font-size-p;
 }
+
+#up {
+    position: fixed;
+    bottom: $etape;
+    right: $font-size-h2;
+}

@@ -187,3 +187,10 @@ header {
         bottom: 10%;
     }
 }
+
+#up {
+    position: fixed;
+    bottom: $etape;
+    right: $font-size-h2;
+}
+

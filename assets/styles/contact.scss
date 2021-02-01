@@ -7,3 +7,9 @@
 .contact-section {
     background-color: $grey1;
 }
+
+#up {
+    position: fixed;
+    bottom: $etape;
+    right: $font-size-h2;
+}
