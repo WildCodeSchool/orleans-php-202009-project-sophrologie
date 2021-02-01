@@ -24,28 +24,10 @@ a {
   }
 }
 
-.footer-ul {
-    list-style: none;
-}
-
 h4,
 h5,
 h6 {
     font-family: $sub-title-font;
-}
-
-h4 {
-    text-transform: uppercase;
-}
-
-.footer {
-    background-color: $footer;
-    color: $light;
-    position: relative;
-
-    > h4 {
-        font-size: $font-navbar-footer-link;
-    }
 }
 
 .social-network {
@@ -56,10 +38,7 @@ h4 {
     fill: $light;
 }
 
-.footer-text-a,
-.footer-text-p,
-.footer-text-td,
-.footer-text-li {
-    font-size: $font-navbar-footer-p;
-    font-family: $sub-title-font;
+.logo-footer {
+    width: 250px;
+    height: auto;
 }
