@@ -5,30 +5,34 @@
         {{ encore_entry_link_tags('event') }}
     {% endblock %}
 {% block body %}
-    <section class="container sheettop mb-3 mb-lg-5">
 
-        <h4 class="mb-4 text-center">{{ event.category.name }}</h4>
-        <h2 class="mb-4 text-center">{{ event.title }}</h2>
-        <h4 class="mb-4 text-center">{{event.eventdate is empty ? '' : event.eventdate|date('d/m/Y')}}</h4>
 
-        <section class="section2 jumbotron container bg-white py-4 py-lg-5 px-0 mb-0 d-lg-flex text-lg-left">
-            <div class="d-flex align-items-center justify-content-center">
-                <img class="img-fluid " src="{{ vich_uploader_asset(event, 'pictureFile') }}" alt="{{ event.title }}">
+
+        <h1 class="text-center py-5 event-bg mb-5">{{ event.title }}</h1>
+
+    <section class="w-100">
+        <div class="container-fluid px-lg-5 px-3 pb-5 d-flex flex-xl-row justify-content-between flex-column">
+            <div class="d-flex justify-content-around align-items-left mx-xl-5 mb-xl-0 mb-5">
+                <img class="img " src="{{ vich_uploader_asset(event, 'pictureFile') }}" alt="{{ event.title }}">
             </div>
-            <div class="container ml-lg-5 text-left text-lg-left">
+            <div class="mx-xl-5">
                 <p class="card-text">{{ event.description }}</p>
-                <p class="card-text">{{ event.summary }}</p>
-
+                <p class="card-text text-muted">{{ event.summary }}</p>
             </div>
+        </div>
+    </section>
+
+
+
+    <section class="w-100 py-5 ">
+        <div class="container-fluid ml-5 px-lg-5 px-3 pb-5 ">
+
+            <p class="card-text mr-5">{{ event.article|raw }}</p>
+        </div>
 
         </section>
-        <section class="section2 jumbotron container bg-white py-4 py-lg-5 px-0 mb-0 d-lg-flex text-lg-left">
-            <div class="d-flex container text-left text-lg-left p-0">
-            <p class="card-text">{{ event.article|raw }}</p>
-            </div>
-        </section>
 
-
+<section class="w-100 py-5 ">
         <div class="container mr-auto px-0 mb-4">
             {% if event.eventlink != '' %}
                 <a href="{{ event.eventlink}}" class=" text-primary mb-5">Site de l'évènement</a>
@@ -42,8 +46,6 @@
                 {% endif %}
             </div>
 
-    </section>
-
 <div class="container mr-auto px-0">
     <h5 class="mb-4 text-lg-left pt-5">
         {% if event.date != '' %}
@@ -54,6 +56,8 @@
 
     <a href="{{ path("event_index") }}" class="btn btn-primary text-light mb-5">Retour à la liste des actualités</a>
 </div>
+
+
 {% endblock %}
 
 
