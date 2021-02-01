@@ -5,25 +5,27 @@
         {{ encore_entry_link_tags('event') }}
     {% endblock %}
 {% block body %}
-    <section class="container sheettop mb-3 mb-lg-5">
 
-        <h4 class="mb-4 text-center">{{ event.category.name }}</h4>
-        <h2 class="mb-4 text-center">{{ event.title }}</h2>
-        <h4 class="mb-4 text-center">{{event.eventdate is empty ? '' : event.eventdate|date('d/m/Y')}}</h4>
+    <header>
+        <h1 class="text-center py-5 event-bg mb-0">{{ event.title }}</h1>
+    </header>
+    <section class="container pt-5 mb-3 mb-lg-5">
 
-        <section class="section2 jumbotron container bg-white py-4 py-lg-5 px-0 mb-0 d-lg-flex text-lg-left">
-            <div class="d-flex align-items-center justify-content-center">
-                <img class="img-fluid " src="{{ vich_uploader_asset(event, 'pictureFile') }}" alt="{{ event.title }}">
+          <h4 class="mb-4 text-center">{{event.eventdate is empty ? '' : event.eventdate|date('d/m/Y')}}</h4>
+    </section>
+        <section class="container bg-white py-4 py-lg-5 px-0 mb-0 d-lg-flex text-lg-left">
+            <div class = "row">
+                <div  class="col-lg-4"> <img class="img-fluid " src="{{ vich_uploader_asset(event, 'pictureFile') }}" alt="{{ event.title }}"></div>
+                <div class = "col-lg-8 text-left">
+                    <p class="card-text">{{ event.description }}</p>
+                    <p class="card-text text-muted">{{ event.summary }}</p>
+                </div>
             </div>
-            <div class="container ml-lg-5 text-left text-lg-left">
-                <p class="card-text">{{ event.description }}</p>
-                <p class="card-text">{{ event.summary }}</p>
 
-            </div>
+</section>
 
-        </section>
-        <section class="section2 jumbotron container bg-white py-4 py-lg-5 px-0 mb-0 d-lg-flex text-lg-left">
-            <div class="d-flex container text-left text-lg-left p-0">
+        <section class="section2 container bg-white py-4 py-lg-5 px-0 mb-0 d-lg-flex text-lg-left">
+            <div class="d-flex text-left text-lg-left p-0">
             <p class="card-text">{{ event.article|raw }}</p>
             </div>
         </section>
