@@ -31,6 +31,11 @@
         </section>
 
 
+
+
+ 
+
+<section class="w-100 py-5 ">
         <div class="container mr-auto px-0 mb-4">
             {% if event.eventlink != '' %}
                 <a href="{{ event.eventlink}}" class=" text-primary mb-5">Site de l'évènement</a>
@@ -43,8 +48,7 @@
                 {% else %}
                 {% endif %}
             </div>
-
-    </section>
+            </section>
 
 <div class="container mr-auto px-0">
     <h5 class="mb-4 text-lg-left pt-5">
@@ -56,6 +60,8 @@
 
     <a href="{{ path("event_index") }}" class="btn btn-primary text-light mb-5">Retour à la liste des actualités</a>
 </div>
+
+
 {% endblock %}
 
 
