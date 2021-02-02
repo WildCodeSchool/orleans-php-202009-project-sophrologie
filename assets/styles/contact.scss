@@ -7,16 +7,3 @@
 .contact-section {
     background-color: $grey1;
 }
-
-#up {
-    position: fixed;
-    bottom: $etape;
-    right: $font-size-h2;
-}
-
-@media screen and (max-width: 1200px) {
-    #up img {
-        width: $font-size-h2;
-    }
-}
-

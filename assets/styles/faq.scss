@@ -8,15 +8,3 @@ table {
     border: 2px solid $primary;
 }
 
-#up {
-    position: fixed;
-    bottom: $etape;
-    right: $font-size-h2;
-}
-
-@media screen and (max-width: 1200px) {
-    #up img {
-        width: $font-size-h2;
-    }
-}
-

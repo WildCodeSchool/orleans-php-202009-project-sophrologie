@@ -176,10 +176,6 @@ header {
     .home-page-btn {
         bottom: 10%;
     }
-
-    #up img {
-        width: $font-size-h2;
-    }
 }
 
 @media screen and (max-width: 500px) {
@@ -190,11 +186,5 @@ header {
     .home-page-btn {
         bottom: 10%;
     }
-}
-
-#up {
-    position: fixed;
-    bottom: $etape;
-    right: $font-size-h2;
 }
 
