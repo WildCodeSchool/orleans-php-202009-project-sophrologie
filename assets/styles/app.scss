@@ -35,3 +35,12 @@ h6 {
 strong {
     color: $strongWord;
 }
+
+.up {
+    position: fixed;
+    bottom: $etape;
+    right: $font-size-h2;
+    width: $font-size-home-title;
+    height: $font-size-home-title;
+}
+

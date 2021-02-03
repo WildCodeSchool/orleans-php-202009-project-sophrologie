@@ -47,3 +47,8 @@ h6 {
 table {
     border: 2px solid $primary;
 }
+
+.table-name {
+    border: 2px solid $primary;
+    background-color: darken($secondary, 10%);
+}
