@@ -121,14 +121,13 @@
         <div class="row m-0 section-card-speciality">
             {% for speciality in specialities %}
                 <div class="card mb-lg-2 my-3">
-                    <div class="card-body">
+                    <img class="w-100 h-100" src="{{ vich_uploader_asset(speciality, 'posterFile') }}"
+                         alt=""/>
+                    <div class="card">
                         <h3 class="card-title text-center">{{ speciality.title }}</h3>
                         <hr>
                         <p class="italics ">
                             {{ speciality.keywords|raw }}
-                        </p>
-                        <p class="card-text">
-                            {{ speciality.description|raw }}
                         </p>
                     </div>
                 </div>

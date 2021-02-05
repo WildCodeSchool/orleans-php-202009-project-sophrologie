@@ -3,11 +3,16 @@
 namespace App\Entity;
 
 use App\Repository\SpecialityRepository;
+use DateTime;
+use DateTimeInterface;
+use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass=SpecialityRepository::class)
+ * @Vich\Uploadable
  */
 class Speciality
 {
@@ -54,7 +59,24 @@ class Speciality
      */
     private string $keywords;
 
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private ?string $poster = '';
 
+    /**
+     * @Vich\UploadableField(mapping="posters_files", fileNameProperty="poster")
+     * @var File|null
+     * @Assert\File(
+     *     maxSize="1500000",
+     *     mimeTypes = {"image/png", "image/jpeg", "image/jpg", "image/gif"})
+     */
+    private ?File $posterFile = null;
+
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private ?DateTimeInterface $updatedAt;
 
     public function getId(): ?int
     {
@@ -83,5 +105,31 @@ class Speciality
         $this->description = $description;
 
         return $this;
+    }
+
+    public function getPoster(): ?string
+    {
+        return $this->poster;
+    }
+
+    public function setPoster(?string $poster): self
+    {
+        $this->poster = $poster;
+
+        return $this;
+    }
+
+    public function setPosterFile(?File $image = null): Speciality
+    {
+        $this->posterFile = $image;
+        if ($image) {
+            $this->updatedAt = new DateTime('now');
+        }
+        return $this;
+    }
+
+    public function getPosterFile(): ?File
+    {
+        return $this->posterFile;
     }
 }
