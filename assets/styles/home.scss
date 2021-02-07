@@ -84,13 +84,6 @@ header {
     width: 49%;
 }
 
-@media screen and (max-width: 1000px) {
-
-    .card {
-        width: 100%;
-    }
-}
-
 .italics {
     font-size: 12px;
     color : $grey2;
@@ -178,13 +171,33 @@ header {
     }
 }
 
-@media screen and (max-width: 500px) {
-    .home-page-titles {
-        bottom: 25%;
-    }
+@media screen and (max-width: 1000px) {
 
+    .card {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 500px) {
     .home-page-btn {
         bottom: 10%;
     }
+
+    .home-page-titles {
+
+        :nth-child(2),
+        :nth-child(1) {
+            font-size: $font-size-h2;
+        }
+    }
 }
+
+@media screen and (max-width: 350px) {
+    .home-page-titles {
+        :nth-child(1n+1) {
+            font-size: $font-size-h3;
+        }
+    }
+}
+
 
