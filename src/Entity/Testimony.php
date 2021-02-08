@@ -20,18 +20,11 @@ class Testimony
     private ?int $id;
 
     /**
-     * @ORM\Column(type="string", length=100)
-     * @Assert\NotBlank
-     * @Assert\Length(max="100")
-     */
-    private ?string $title;
-
-    /**
      * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank
      * @Assert\Length(max="255")
      */
-    private ?string $description;
+    private ?string $feature;
 
     /**
      * @ORM\Column(type="date")
@@ -47,42 +40,36 @@ class Testimony
     private ?string $firtsname;
 
     /**
-     * @ORM\Column(type="string", length=75, nullable=true)
-     * @Assert\Length(max="75")
-     */
-    private ?string $lastname;
-
-    /**
      * @ORM\Column(type="integer", nullable=true)
      * @Assert\Positive
      */
     private ?int $age;
+
+    /**
+     * @ORM\Column(type="text")
+     * @Assert\NotBlank
+     */
+    private ?string $description;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank
+     */
+    private ?string $title;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getTitle(): ?string
+    public function getFeature(): ?string
     {
-        return $this->title;
+        return $this->feature;
     }
 
-    public function setTitle(string $title): self
+    public function setFeature(string $feature): self
     {
-        $this->title = $title;
-
-        return $this;
-    }
-
-    public function getDescription(): ?string
-    {
-        return $this->description;
-    }
-
-    public function setDescription(string $description): self
-    {
-        $this->description = $description;
+        $this->feature = $feature;
 
         return $this;
     }
@@ -111,18 +98,6 @@ class Testimony
         return $this;
     }
 
-    public function getLastname(): ?string
-    {
-        return $this->lastname;
-    }
-
-    public function setLastname(?string $lastname): self
-    {
-        $this->lastname = $lastname;
-
-        return $this;
-    }
-
     public function getAge(): ?int
     {
         return $this->age;
@@ -131,6 +106,30 @@ class Testimony
     public function setAge(?int $age): self
     {
         $this->age = $age;
+
+        return $this;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(string $description): self
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    public function getTitle(): ?string
+    {
+        return $this->title;
+    }
+
+    public function setTitle(string $title): self
+    {
+        $this->title = $title;
 
         return $this;
     }

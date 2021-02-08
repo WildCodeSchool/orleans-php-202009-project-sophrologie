@@ -16,20 +16,20 @@
                 <td>{{ testimony.title }}</td>
             </tr>
             <tr>
+                <th>Caractéristique</th>
+                <td>{{ testimony.feature }}</td>
+            </tr>
+            <tr>
                 <th>Description</th>
                 <td>{{ testimony.description }}</td>
             </tr>
             <tr>
                 <th>Date</th>
-                <td>{{ testimony.date ? testimony.date|date('Y-m-d') : '' }}</td>
+                <td>{{ testimony.date ? testimony.date|date('d/m/Y') : '' }}</td>
             </tr>
             <tr>
                 <th>Prénom</th>
                 <td>{{ testimony.firtsname }}</td>
-            </tr>
-            <tr>
-                <th>Nom</th>
-                <td>{{ testimony.lastname }}</td>
             </tr>
             <tr>
                 <th>Âge</th>

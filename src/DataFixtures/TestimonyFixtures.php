@@ -22,6 +22,7 @@ class TestimonyFixtures extends Fixture
             $testimony->setDescription($faker->sentence);
             $testimony->setFirtsname($faker->firstName);
             $testimony->setTitle($faker->jobTitle);
+            $testimony->setFeature($faker->colorName);
             $testimony->setAge($faker->numberBetween(9, 60));
             $testimony->setDate($faker->dateTime);
             $manager->persist($testimony);
