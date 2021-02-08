@@ -12,6 +12,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Vich\UploaderBundle\Form\Type\VichFileType;
 
 class SpecialityType extends AbstractType
 {
@@ -35,7 +36,11 @@ class SpecialityType extends AbstractType
                 'attr' => [
                     'placeholder' => 'Apprendre à être plus attentif à ce que vous faites,
                          à vivre dans le moment présent....',
-                ]]);
+                ]])
+            ->add('posterFile', VichFileType::class, [
+                'required' => false,
+            ])
+        ;
     }
 
 
