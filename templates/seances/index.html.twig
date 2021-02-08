@@ -88,10 +88,10 @@
         </p>
     </section>
     <section id="carouselExampleControls" class="carousel slide my-5 "
-             data-ride="carousel">
+             data-ride="carousel" >
         <div class="carousel-inner ">
             <h2 class="text-center">Ils m'ont fait confiance</h2>
-            <div class="container  text-center ">
+            <div class="container  text-center " >
                 {% for testimony in testimonies %}
                     <div class="carousel-item {{ loop.first ? 'active': '' }}">
                         <h4 class="py-4">{{ testimony.firtsname }}, {{ testimony.age }}
