@@ -47,7 +47,9 @@ class Speciality
     }
 
     /**
-     * @ORM\Column(type="text", nullable=true)
+     * @ORM\Column(type="text")
+     * @Assert\NotBlank()
+
      */
     private string $description;
 

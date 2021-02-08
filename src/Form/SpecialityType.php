@@ -31,12 +31,12 @@ class SpecialityType extends AbstractType
                     'placeholder' => 'gestion du stress, mal être dans son corps',
                 ],
             ])
-//            ->add('description', CKEditorType::class, [
-//                'label' => 'Description',
-//                'attr' => [
-//                    'placeholder' => 'Apprendre à être plus attentif à ce que vous faites,
-//                         à vivre dans le moment présent....',
-//                ]])
+            ->add('description', CKEditorType::class, [
+                'label' => 'Description',
+                'attr' => [
+                    'placeholder' => 'Apprendre à être plus attentif à ce que vous faites,
+                         à vivre dans le moment présent....',
+                ]])
             ->add('posterFile', VichFileType::class, [
                 'required' => false,
             ])
