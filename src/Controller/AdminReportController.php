@@ -54,8 +54,27 @@ class AdminReportController extends AbstractController
 
         return $this->render('admin_report/index.html.twig', [
             'formReport' => $formReport->createView(),
-            'filterReport'  => $filterSearchReports->createView(),
-            'reports'       => $reports,
+            'filterReport' => $filterSearchReports->createView(),
+            'reports' => $reports,
         ]);
+    }
+
+    /**
+     * @Route("/admin/rapport/{id}/supprimer", name="admin_report_delete", methods={"DELETE"})
+     * @param Request $request
+     * @param Report $report
+     * @return Response
+     */
+    public function delete(Request $request, Report $report): Response
+    {
+        if ($this->isCsrfTokenValid('delete' . $report->getId(), $request->request->get('_token'))) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->remove($report);
+            $entityManager->flush();
+
+            $this->addFlash('success', 'Le rapport a bien été supprimé');
+        }
+
+        return $this->redirectToRoute('admin_reports');
     }
 }

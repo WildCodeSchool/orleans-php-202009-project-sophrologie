@@ -59,15 +59,19 @@
             {% for report in reports %}
                 <div class="card w-100 my-2">
                     <div class="card-header" id="headingOne{{ loop.index }}">
-                        <button class="btn btn-link w-100" data-toggle="collapse"
-                                data-target="#collapseOne{{ loop.index }}"
-                                aria-expanded="true" aria-controls="collapseOne1">
-                            <h3 class="title-collapse m-0 d-flex justify-content-lg-between flex-lg-row flex-column flex-wrap">
-                                <div>Compte rendu n° {{ report.id }}</div>
-                                <div>{{ report.patient.lastname|upper }} {{ report.patient.firstname|lower|capitalize }}</div>
-                                <div>{{ report.date|date('d/m/Y') }}</div>
-                            </h3>
-                        </button>
+                        <div class="d-flex">
+                            <button class="btn btn-link w-100" data-toggle="collapse"
+                                    data-target="#collapseOne{{ loop.index }}"
+                                    aria-expanded="true" aria-controls="collapseOne1">
+                                <h3 class="title-collapse m-0 d-flex justify-content-lg-between flex-lg-row flex-column flex-wrap">
+                                    <div>Compte rendu n° {{ report.id }}</div>
+                                    <div>{{ report.patient.lastname|upper }} {{ report.patient.firstname|lower|capitalize }}</div>
+                                    <div>{{ report.date|date('d/m/Y') }}</div>
+                                </h3>
+                            </button>
+                            <div class="d-flex align-items-center">{% include 'admin_report/_delete.html.twig' %}</div>
+                        </div>
+
                     </div>
 
                     <div id="collapseOne{{ loop.index }}" class="collapse"
