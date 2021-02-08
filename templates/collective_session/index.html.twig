@@ -6,14 +6,15 @@
 {% endblock %}
 
 {% block body %}
-    <header class="mb-5 banner-seanceCollective">
-        <h1 class="text-center text-uppercase py-5">Séances Collectives</h1>
+    <header class="banner-seanceCollective">
+        <h1 class="text-center text-uppercase py-5 mb-0">Séances Collectives</h1>
     </header>
     <main class="container-fluid px-0 mx-0">
-        <section class=" my-3 py-3">
+        <section class="py-5">
+            <h2 class="mb-4 text-center">Séances collectives tout public : </h2>
             <div class="row mx-0 mx-lg-3 justify-content-center">
                 <div class="col-11 col-lg-6 ">
-                    <h2 class="mb-4">Séances collectives tout public : </h2>
+{#                    <h2 class="mb-4">Séances collectives tout public : </h2>#}
                     <p class="mt-lg-5"> Ces séances s’adressent selon le groupe défini soit aux adultes, aux enfants, aux jeunes mamans
                         ou aux séniors. En cours d’année, en fonction des besoins, je propose des séances collectives à
                         des petits
@@ -35,20 +36,20 @@
                     </div>
                     </p>
                 </div>
-                <div class="col-11 col-lg-6 pt-lg-5 mt-lg-3">
+                <div class="col-11 col-lg-6 d-flex align-items-center">
                     <img class="w-100 shadow p-1" src="{{ asset('build/images/seanceCollective.jpeg') }}"
                          alt="seance collective">
                 </div>
             </div>
         </section>
-        <section class="my-5 py-5 banner-seanceCollective">
+        <section class="py-5 banner-seanceCollective">
+            <h2 class="mb-4 text-center">Séances en entreprises privées/publiques : </h2>
             <div class="row mx-0 mx-lg-3 justify-content-center">
                 <div class="col-11 col-lg-6 my-3 pt-lg-5 mt-lg-5">
                     <img class=" w-100 shadow p-1" src="{{ asset('build/images/sophro-entreprise.jpg') }}" alt="">
                 </div>
                 <div class="col-11 col-lg-6 my-3">
-                    <h2 class="mb-4">Séances en entreprises privées/publiques : </h2>
-                    <p class="mt-lg-5"> La sophrologie se révèle être un formidable outil de gestion des Ressources Humaines en
+                    <p> La sophrologie se révèle être un formidable outil de gestion des Ressources Humaines en
                         entreprise. En effet, la sophrologie est un très bon moyen de <strong>prévention des
                             risques</strong>
                         psychosociaux, des troubles <strong>musculo-squelettiques</strong> et elle permet aussi
@@ -78,8 +79,8 @@
                 </div>
             </div>
         </section>
-        <section class="row mx-0">
-                <div class="card mb-5 col-lg-4 border-0">
+        <section class="row mx-0 py-5">
+                <div class="card col-lg-4 border-0">
                     <div class="card-body">
                         <h3 class="card-title text-uppercase text-center">Bien être</h3>
                         <hr class="line">
@@ -89,7 +90,7 @@
                     </div>
                 </div>
 
-                <div class="card mb-5 col-lg-4 border-0">
+                <div class="card col-lg-4 border-0">
                     <div class="card-body">
                         <h3 class="card-title text-uppercase text-center">Travail en équipe</h3>
                         <hr class="line">
@@ -99,7 +100,7 @@
                     </div>
                 </div>
 
-                <div class="card mb-5 col-lg-4 border-0">
+                <div class="card col-lg-4 border-0">
                     <div class="card-body">
                         <h3 class="card-title text-uppercase text-center">Performance</h3>
                         <hr class="line">
@@ -109,7 +110,7 @@
                     </div>
                 </div>
         </section>
-        <section class="mt-5 py-5 banner-seanceCollective">
+        <section class="py-5 banner-seanceCollective">
             <h2 class="mb-4 text-center pb-5">Ils m'ont fait confiance : </h2>
 
             <div class="container-fluid text-center">
