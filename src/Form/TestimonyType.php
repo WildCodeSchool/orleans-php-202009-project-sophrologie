@@ -16,10 +16,17 @@ class TestimonyType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
+
             ->add('title', TextType::class, [
                 'label' => 'Titre',
                 'attr' => [
                     'placeholder' => 'Une aide précieuse'
+                ]
+            ])
+            ->add('feature', TextType::class, [
+                'label' => 'Caractéristique',
+                'attr' => [
+                    'placeholder' => 'D\'une autre horizon'
                 ]
             ])
             ->add('description', TextareaType::class, [
@@ -39,13 +46,6 @@ class TestimonyType extends AbstractType
                 'label' => 'Prénom',
                 'attr' => [
                     'placeholder' => 'Jean'
-                ]
-            ])
-            ->add('lastname', TextType::class, [
-                'label' => 'Nom',
-                'required' => false,
-                'attr' => [
-                    'placeholder' => 'Dupont'
                 ]
             ])
             ->add('age', IntegerType::class, [
