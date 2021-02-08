@@ -1,5 +1,10 @@
 @import 'app.scss';
 
+p.nota {
+    font-size: $font-size-p-smaller;
+    opacity: 0.8;
+}
+
 .sophro-header {
     background-color: $grey1;
 }
@@ -36,8 +41,8 @@
 }
 
 .img-rounded-card {
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
 }
 
 @media screen and (max-width: 1200px) {
