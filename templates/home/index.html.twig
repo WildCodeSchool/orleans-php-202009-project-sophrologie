@@ -10,7 +10,7 @@
     <header>
         <div class="background-image">
         </div>
-        <div class="home-page-logo w-100 text-center mt-2">
+        <div class="home-page-logo w-100 text-center mt-2 p-lg-0 p-3">
             <img class="logo" src="{{ asset('build/images/logo.png') }}"/>
         </div>
         <div class="home-page-titles w-100 text-center">
@@ -118,15 +118,17 @@
 
     <section class="container section4 my-4">
         <h2 class="text-lg-left text-center mb-0 mb-lg-3 pb-2">Mes spécialités</h2>
-        <div class="row m-0 section-card-speciality">
+        <div class="row m-0 section-card-speciality d-flex justify-content-between">
             {% for speciality in specialities %}
-                <div class="card mb-lg-2 my-3">
-                    <img class="w-100 h-100" src="{{ vich_uploader_asset(speciality, 'posterFile') }}"
-                         alt=""/>
-                    <div class="card">
-                        <h3 class="card-title text-center">{{ speciality.title }}</h3>
-                        <hr>
-                        <p class="italics ">
+                <div class="mb-lg-2 my-3 d-flex card">
+                    <div class="d-flex justify-content-center">
+                        <img src="{{ vich_uploader_asset(speciality, 'posterFile') }}"
+                             alt="" class="img-speciality-card"/>
+                    </div>
+                    <div class="my-2 p-3">
+                        <h3 class="text-center">{{ speciality.title }}</h3>
+                        <hr class="w-75">
+                        <p class="italics">
                             {{ speciality.keywords|raw }}
                         </p>
                     </div>
