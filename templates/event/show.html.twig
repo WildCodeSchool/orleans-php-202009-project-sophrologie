@@ -11,55 +11,58 @@
     </header>
     <section class="container pt-5 mb-3 mb-lg-5">
 
-          <h4 class="mb-4 text-center">{{event.eventdate is empty ? '' : event.eventdate|date('d/m/Y')}}</h4>
+        <h4 class="mb-4 text-center">{{ event.eventdate is empty ? '' : event.eventdate|date('d/m/Y') }}</h4>
     </section>
-        <section class="container bg-white py-4 py-lg-5 px-0 mb-0 d-lg-flex text-lg-left">
-            <div class = "row">
-                <div  class="col-lg-4"> <img class="img-fluid " src="{{ vich_uploader_asset(event, 'pictureFile') }}" alt="{{ event.title }}"></div>
-                <div class = "col-lg-8 text-left">
-                    <p class="card-text">{{ event.description }}</p>
-                    <p class="card-text text-muted">{{ event.summary }}</p>
-                </div>
+    <section class="container bg-white py-4 py-lg-5 px-2 mb-0 d-lg-flex text-lg-left">
+        <div class="row">
+            <div class="col-lg-4"><img class="img-fluid " src="{{ vich_uploader_asset(event, 'pictureFile') }}"
+                                       alt="{{ event.title }}"></div>
+            <div class="col-lg-8 text-left">
+                <p class="card-text">{{ event.description }}</p>
+                <p class="card-text text-muted">{{ event.summary }}</p>
             </div>
+        </div>
 
-</section>
+    </section>
 
-        <section class="section2 container bg-white py-4 py-lg-5 px-0 mb-0 d-lg-flex text-lg-left">
-            <div class="d-flex text-left text-lg-left p-0">
+    <section class="section2 container bg-white py-4 py-lg-5 px-0 mb-0 d-lg-flex text-lg-left">
+        <div class="d-flex text-left text-lg-left p-0">
             <p class="card-text">{{ event.article|raw }}</p>
-            </div>
-        </section>
+        </div>
+    </section>
 
 
 
 
- 
 
-<section class="w-100 py-5 ">
+
+    <section class="w-100 py-5 ">
         <div class="container mr-auto px-0 mb-4">
             {% if event.eventlink != '' %}
-                <a href="{{ event.eventlink}}" class=" text-primary mb-5">Site de l'évènement</a>
+                <a href="{{ event.eventlink }}" class=" text-primary mb-5">Site de l'évènement</a>
             {% else %}
             {% endif %}
         </div>
-            <div class="text-xl-center">
-                {% if event.video != '' %}
-                    <iframe  width="560" height="315" src="{{ event.video}}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                {% else %}
-                {% endif %}
-            </div>
-            </section>
+        <div class="text-xl-center">
+            {% if event.video != '' %}
+                <iframe width="560" height="315" src="{{ event.video }}" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+            {% else %}
+            {% endif %}
+        </div>
+    </section>
 
-<div class="container mr-auto px-0">
-    <h5 class="mb-4 text-lg-left pt-5">
-        {% if event.date != '' %}
-            {{ 'publié le ' }}{{event.date is empty ? '' : event.date|date('d/m/Y')}}
-        {% else %}
-        {% endif %}
-    </h5>
+    <div class="container mr-auto px-0">
+        <h5 class="mb-4 text-lg-left pt-5">
+            {% if event.date != '' %}
+                {{ 'publié le ' }}{{ event.date is empty ? '' : event.date|date('d/m/Y') }}
+            {% else %}
+            {% endif %}
+        </h5>
 
-    <a href="{{ path("event_index") }}" class="btn btn-primary text-light mb-5">Retour à la liste des actualités</a>
-</div>
+        <a href="{{ path("event_index") }}" class="btn btn-primary text-light mb-5">Retour à la liste des actualités</a>
+    </div>
 
 
 {% endblock %}

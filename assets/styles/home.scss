@@ -44,7 +44,7 @@ header {
 
 .home-page-titles {
     position: absolute;
-    bottom: 40%;
+    bottom: 35%;
 
     :nth-child(2),
     :nth-child(1) {
@@ -54,7 +54,7 @@ header {
 
 .home-page-btn {
     position: absolute;
-    bottom: 15%;
+    bottom: 10%;
 
     a {
         color: $primary;
