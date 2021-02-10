@@ -52,9 +52,9 @@ class Testimony
     private ?string $description;
 
     /**
-     * @ORM\Column(type="string", length=255)
-     * @Assert\NotBlank
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
+
     private ?string $title;
 
     public function getId(): ?int
