@@ -100,7 +100,7 @@
                 {% for testimony in testimonies %}
                     <div class="carousel-item {{ loop.first ? 'active': '' }}">
                         <h4 class="py-4">{{ testimony.firtsname }}, {{ testimony.age }}
-                            ans, {{ testimony.title }} {{ testimony.feature }},
+                            ans, {{ testimony.feature }},
                             Le {{ testimony.date ? testimony.date|date('d/m/Y') : '' }}</h4>
                         <p>"{{ testimony.description }}"</p>
                     </div>
