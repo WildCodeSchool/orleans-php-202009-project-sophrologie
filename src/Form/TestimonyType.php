@@ -17,12 +17,7 @@ class TestimonyType extends AbstractType
     {
         $builder
 
-            ->add('title', TextType::class, [
-                'label' => 'Titre',
-                'attr' => [
-                    'placeholder' => 'Une aide précieuse'
-                ]
-            ])
+
             ->add('feature', TextType::class, [
                 'label' => 'Caractéristique',
                 'attr' => [
